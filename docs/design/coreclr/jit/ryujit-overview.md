@@ -47,15 +47,14 @@ is defined in
 
 ## `Compiler` object
 
-The `Compiler` object is the primary data structure of the JIT. It is defined in
-[src/coreclr/jit/compiler.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/compiler.h).  While it is
-not part of the JIT's IR per se, it serves as the root from which the data structures that implement the IR are
-accessible. For example, the `Compiler` object points to the head of the function's `BasicBlock` list with the
-`fgFirstBB` field, as well as having additional pointers to the end of the list, and other distinguished
-locations. `ICorJitCompiler::compileMethod()` is invoked for each method, and creates a new `Compiler` object. Thus,
-the JIT need not worry about thread synchronization while accessing `Compiler` state. The EE has the necessary
-synchronization to ensure there is a single JIT compiled copy of a method when two or more threads try to trigger
-JIT compilation of the same method.
+The `Compiler` object is the primary data structure of the JIT. While it is not part of the JIT's IR per se, it
+serves as the root from which the data structures that implement the IR are accessible. For example, the `Compiler`
+object points to the head of the function's `BasicBlock` list with the `fgFirstBB` field, as well as having
+additional pointers to the end of the list, and other distinguished locations. `ICorJitCompiler::compileMethod()` is
+invoked for each method, and creates a new `Compiler` object. Thus, the JIT need not worry about thread
+synchronization while accessing `Compiler` state. The EE has the necessary synchronization to ensure there is a
+single JIT compiled copy of a method when two or more threads try to trigger JIT compilation of the same method. It
+is defined in [src/coreclr/jit/compiler.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/compiler.h).
 
 ## Overview of the IR
 
@@ -67,7 +66,7 @@ representation"); this form persists throughout the JIT's front end. During the 
 rationalization phase--the HIR for each block is lowered to a linearly-ordered, node-oriented form (LIR: "low-level
 intermediate representation"). The fundamental distinction between HIR and LIR is in ordering semantics, though there
 are also some restrictions on the types of nodes that may appear in an HIR or LIR block. `BasicBlock` is defined in
-[src/coreclr/jit/block.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/block.h)
+[src/coreclr/jit/block.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/block.h).
 
 Both HIR and LIR blocks are composed of `GenTree` nodes that define the operations performed by the block. A
 `GenTree` node may consume some number of operands and may produce a singly-defined, at-most-singly-used value as a
@@ -75,8 +74,9 @@ result. These values are referred to interchangably as *SDSU* (single def, singl
 Definitions (aka, defs) of SDSU temps are represented by `GenTree` nodes themselves, and uses are represented by
 edges from the using node to the defining node. Furthermore, SDSU temps defined in one block may not be used in a
 different block. In cases where a value must be multiply-defined, multiply-used, or defined in one block and used in
-another, the IR provides another class of temporary: the local var (aka, local variable). Local vars are defined by
-assignment nodes in HIR or store nodes in LIR, and are used by local var nodes in both forms.
+another, the IR provides another class of temporary: the local variable (aka, local var). Local vars are defined by
+assignment nodes in HIR or store nodes in LIR, and are used by local var nodes in both forms.  `GenTree` is defined
+in [src/coreclr/jit/gentree.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/gentree.h).
 
 An HIR block is composed of a doubly-linked list of statement nodes (`Statement`), each of which references a single
 expression tree (`m_rootNode`). The `GenTree` nodes in this tree execute in "tree order", which is defined as the
