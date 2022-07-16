@@ -66,7 +66,8 @@ protected regions and handlers described in a table of `EHblkDsc` values. At the
 representation"); this form persists throughout the JIT's front end. During the first phase of the back end--the
 rationalization phase--the HIR for each block is lowered to a linearly-ordered, node-oriented form (LIR: "low-level
 intermediate representation"). The fundamental distinction between HIR and LIR is in ordering semantics, though there
-are also some restrictions on the types of nodes that may appear in an HIR or LIR block.
+are also some restrictions on the types of nodes that may appear in an HIR or LIR block. `BasicBlock` is defined in
+[src/coreclr/jit/block.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/block.h)
 
 Both HIR and LIR blocks are composed of `GenTree` nodes that define the operations performed by the block. A
 `GenTree` node may consume some number of operands and may produce a singly-defined, at-most-singly-used value as a
