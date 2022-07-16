@@ -35,6 +35,7 @@ The following are the key methods on this interface:
   * `getVersionIdentifier` is the mechanism by which the JIT/EE interface is versioned.
   There is a single GUID (manually generated) which the JIT and EE must agree on.
   * `getMaxIntrinsicSIMDVectorLength` communicates to the EE the largest SIMD vector length that the JIT can support.
+
 * `ICorJitInfo` – this is the interface that the EE implements. It has many methods defined on it that allow the JIT to
 look up metadata tokens, traverse type signatures, compute field and vtable offsets, find method entry points,
 construct string literals, etc. This bulk of this interface is inherited from `ICorDynamicInfo` which is defined in
@@ -46,13 +47,15 @@ is defined in
 
 ## `Compiler` object
 
-The `Compiler` object is the primary data structure of the JIT. While it is not part of the JIT's IR per se, it
-serves as the root from which the data structures that implement the IR are accessible. For example, the `Compiler`
-object points to the head of the function's `BasicBlock` list with the `fgFirstBB` field, as well as having
-additional pointers to the end of the list, and other distinguished locations. `ICorJitCompiler::compileMethod()` is
-invoked for each method, and creates a new `Compiler` object. Thus, the JIT need not worry about thread
-synchronization while accessing `Compiler` state. The EE has the necessary synchronization to ensure there is a
-single JIT compiled copy of a method when two or more threads try to trigger JIT compilation of the same method.
+The `Compiler` object is the primary data structure of the JIT. It is defined in
+[src/coreclr/jit/compiler.h](https://github.com/dotnet/runtime/blob/main/src/coreclr/jit/compiler.h).  While it is
+not part of the JIT's IR per se, it serves as the root from which the data structures that implement the IR are
+accessible. For example, the `Compiler` object points to the head of the function's `BasicBlock` list with the
+`fgFirstBB` field, as well as having additional pointers to the end of the list, and other distinguished
+locations. `ICorJitCompiler::compileMethod()` is invoked for each method, and creates a new `Compiler` object. Thus,
+the JIT need not worry about thread synchronization while accessing `Compiler` state. The EE has the necessary
+synchronization to ensure there is a single JIT compiled copy of a method when two or more threads try to trigger
+JIT compilation of the same method.
 
 ## Overview of the IR
 
