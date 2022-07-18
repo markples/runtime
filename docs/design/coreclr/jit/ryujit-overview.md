@@ -83,8 +83,7 @@ expression tree (`m_rootNode`). The `GenTree` nodes in this tree execute in "tre
 order produced by a depth-first, left-to-right traversal of the tree, with two notable exceptions:
 * Binary nodes marked with the `GTF_REVERSE_OPS` flag execute their right operand tree (`gtOp2`) before their left
 operand tree (`gtOp1`)
-* Dynamically-sized block copy nodes where `gtEvalSizeFirst` is `true` execute the `gtDynamicSize` tree
-before executing their other operand trees.
+* <something about conditionals/qmark?>
 
 In addition to tree order, HIR also requires that no SDSU temp is defined in one statement and used in another. In
 situations where the requirements of tree and statement order prove onerous (e.g. when code must execute at a
