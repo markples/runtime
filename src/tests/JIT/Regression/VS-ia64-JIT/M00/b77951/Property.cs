@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+namespace b77951
+{
 public class Property
 {
     public const int NULLDATA = 999999;
@@ -29,4 +31,4 @@ public class Property
         }
     }
 }
-
+}

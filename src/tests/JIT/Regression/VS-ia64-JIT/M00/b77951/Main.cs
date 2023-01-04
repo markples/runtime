@@ -1,7 +1,10 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-public class Test_Main
+using Xunit;
+namespace b77951
+{
+public class Test
 {
     public static int Main()
     {
@@ -20,4 +23,5 @@ public class Test_Main
         // Successful execution.        
         return 100;
     }
+}
 }
