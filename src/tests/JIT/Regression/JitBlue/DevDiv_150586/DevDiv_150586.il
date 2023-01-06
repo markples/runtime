@@ -20,7 +20,7 @@
 
 .namespace DevDiv_150586
 {
-.class public auto ansi beforefieldinit Bug.Program
+.class public auto ansi beforefieldinit Program
        extends [System.Runtime]System.Object
 {
   .method private hidebysig static string 
@@ -49,7 +49,7 @@
              [1] bool V_1)
     IL_0000:  ldstr      ""
     IL_0005:  ldloca.s   foundObj
-    IL_0007:  call       string Bug.Program::GetResourceString(string,
+    IL_0007:  call       string DevDiv_150586.Program::GetResourceString(string,
                                                                object&)
     IL_000c:  ldloc.0
     IL_000d:  unbox.any  [System.Runtime]System.Boolean
@@ -74,7 +74,7 @@
     .locals init ([0] int32 V_0)
     .try
     {
-      IL_0000:  call       string Bug.Program::RString()
+      IL_0000:  call       string DevDiv_150586.Program::RString()
       IL_0005:  pop
       IL_0006:  leave.s    IL_0018
 
@@ -108,5 +108,5 @@
     IL_0006:  ret
   } // end of method Program::.ctor
 
-} // end of class Bug.Program
+} // end of class Program
 }

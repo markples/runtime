@@ -14,7 +14,7 @@
 
 .namespace GitHub_26311
 {
-.class interface private abstract auto ansi GitHub_26311.Interface`1<TKey>
+.class interface private abstract auto ansi Interface`1<TKey>
 {
   .method public hidebysig newslot abstract virtual
           instance int32  TailCallWithManyArgs(!TKey[] keys,
@@ -27,7 +27,7 @@
 
 } // end of class GitHub_26311.Interface`1
 
-.class private auto ansi beforefieldinit GitHub_26311.GenericClassOverInterface`1<T>
+.class private auto ansi beforefieldinit GenericClassOverInterface`1<T>
        extends [System.Runtime]System.Object
        implements class GitHub_26311.Interface`1<!T>
 {
@@ -170,7 +170,7 @@
   } // end of property GenericClassOverInterface`1::Default
 } // end of class GitHub_26311.GenericClassOverInterface`1
 
-.class public auto ansi beforefieldinit GitHub_26311.Program
+.class public auto ansi beforefieldinit Program
        extends [System.Runtime]System.Object
 {
   .method public hidebysig static int32  Test() cil managed noinlining

@@ -39,16 +39,16 @@
 
 .namespace b473131
 {
-.class public auto ansi sealed mynamespace.e_t
+.class public auto ansi sealed e_t
        extends [mscorlib]System.Enum
 {
   .field public specialname rtspecialname int16 value__
-  .field public static literal valuetype mynamespace.e_t one = int16(0x0000)
-  .field public static literal valuetype mynamespace.e_t two = int16(0x0001)
-  .field public static literal valuetype mynamespace.e_t three = int16(0x0002)
-} // end of class mynamespace.e_t
+  .field public static literal valuetype b473131.e_t one = int16(0x0000)
+  .field public static literal valuetype b473131.e_t two = int16(0x0001)
+  .field public static literal valuetype b473131.e_t three = int16(0x0002)
+} // end of class e_t
 
-.class public auto ansi beforefieldinit mynamespace.myclass
+.class public auto ansi beforefieldinit myclass
        extends [mscorlib]System.Object
 {
   .method public hidebysig static int16  foo(int16& x) cil managed noinlining
@@ -58,7 +58,7 @@
     IL_0000:  ldstr      "{0}"
     IL_0005:  ldarg.0
     IL_0006:  ldind.i2
-    IL_0007:  box        mynamespace.e_t
+    IL_0007:  box        b473131.e_t
     IL_000c:  call       void [System.Console]System.Console::WriteLine(string,
                                                                   object)
     IL_0011:  ldc.i4.2
@@ -73,12 +73,12 @@
     .entrypoint
     // Code size       16 (0x10)
     .maxstack  1
-    .locals init (valuetype mynamespace.e_t V_0)
+    .locals init (valuetype b473131.e_t V_0)
     IL_0000:  ldc.i4.1
     IL_0001:  stloc.0
     IL_0002:  ldloca.s   V_0
-    IL_0004:  ldflda     int16 mynamespace.e_t::value__
-    IL_0009:  call       int16 mynamespace.myclass::foo(int16&)
+    IL_0004:  ldflda     int16 b473131.e_t::value__
+    IL_0009:  call       int16 b473131.myclass::foo(int16&)
     IL_000e:  pop
 ldc.i4 100
     IL_000f:  ret
@@ -94,7 +94,7 @@ ldc.i4 100
     IL_0006:  ret
   } // end of method myclass::.ctor
 
-} // end of class mynamespace.myclass
+} // end of class myclass
 
 
 // =============================================================

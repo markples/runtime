@@ -286,14 +286,14 @@
 
 .namespace b473131_struct
 {
-.class /*02000002*/ public sequential ansi sealed beforefieldinit mynamespace.e_t
+.class /*02000002*/ public sequential ansi sealed beforefieldinit e_t
        extends [mscorlib/*23000001*/]System.ValueType/*01000001*/
 {
   .field /*04000001*/ public uint8 one
   .field /*04000002*/ public uint8 two
-} // end of class mynamespace.e_t
+} // end of class e_t
 
-.class /*02000003*/ public auto ansi beforefieldinit mynamespace.myclass
+.class /*02000003*/ public auto ansi beforefieldinit myclass
        extends [mscorlib/*23000001*/]System.Object/*01000002*/
 {
   .method /*06000001*/ public hidebysig static 
@@ -306,13 +306,13 @@
     .maxstack  8
     IL_0000:  /* 72   | (70)000001       */ ldstr      "{0}" /* 70000001 */
     IL_0005:  /* 02   |                  */ ldarg.0
-//    IL_0006:  /* 71   | (02)000002       */ ldobj      mynamespace.e_t/*02000002*/
+//    IL_0006:  /* 71   | (02)000002       */ ldobj      b473131_struct.e_t/*02000002*/
 ldind.u1
-    IL_000b:  /* 8C   | (02)000002       */ box        mynamespace.e_t/*02000002*/
+    IL_000b:  /* 8C   | (02)000002       */ box        b473131_struct.e_t/*02000002*/
     IL_0010:  /* 28   | (0A)000005       */ call       void [System.Console]System.Console::WriteLine(string,
                                                                                                                         object) /* 0A000005 */
     IL_0015:  /* 02   |                  */ ldarg.0
-//    IL_0016:  /* 71   | (02)000002       */ ldobj      mynamespace.e_t/*02000002*/
+//    IL_0016:  /* 71   | (02)000002       */ ldobj      b473131_struct.e_t/*02000002*/
 ldind.u1
     IL_001b:  /* 2A   |                  */ ret
   } // end of method myclass::foo
@@ -328,16 +328,16 @@ ldind.u1
     // Method begins at RVA 0x2070
     // Code size       25 (0x19)
     .maxstack  2
-    .locals /*11000001*/ init (valuetype mynamespace.e_t/*02000002*/ V_0)
+    .locals /*11000001*/ init (valuetype b473131_struct.e_t/*02000002*/ V_0)
     IL_0000:  /* 12   | 00               */ ldloca.s   V_0
     IL_0002:  /* 18   |                  */ ldc.i4.2
-    IL_0003:  /* 7D   | (04)000001       */ stfld      uint8 mynamespace.e_t/*02000002*/::one /* 04000001 */
+    IL_0003:  /* 7D   | (04)000001       */ stfld      uint8 b473131_struct.e_t/*02000002*/::one /* 04000001 */
     IL_0008:  /* 12   | 00               */ ldloca.s   V_0
     IL_000a:  /* 19   |                  */ ldc.i4.3
-    IL_000b:  /* 7D   | (04)000002       */ stfld      uint8 mynamespace.e_t/*02000002*/::two /* 04000002 */
+    IL_000b:  /* 7D   | (04)000002       */ stfld      uint8 b473131_struct.e_t/*02000002*/::two /* 04000002 */
     IL_0010:  /* 12   | 00               */ ldloca.s   V_0
-ldflda     uint8 mynamespace.e_t::two
-    IL_0012:  /* 28   | (06)000001       */ call       uint8/*02000002*/ mynamespace.myclass/*02000003*/::foo(uint8/*02000002*/&) /* 06000001 */
+ldflda     uint8 b473131_struct.e_t::two
+    IL_0012:  /* 28   | (06)000001       */ call       uint8/*02000002*/ b473131_struct.myclass/*02000003*/::foo(uint8/*02000002*/&) /* 06000001 */
     IL_0017:  /* 26   |                  */ pop
 ldc.i4 100
     IL_0018:  /* 2A   |                  */ ret
@@ -355,7 +355,7 @@ ldc.i4 100
     IL_0006:  /* 2A   |                  */ ret
   } // end of method myclass::.ctor
 
-} // end of class mynamespace.myclass
+} // end of class myclass
 
 
 // =============================================================

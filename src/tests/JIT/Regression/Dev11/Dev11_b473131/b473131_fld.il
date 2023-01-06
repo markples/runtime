@@ -287,16 +287,16 @@
 
 .namespace b473131_fld
 {
-.class /*02000002*/ public auto ansi sealed mynamespace.e_t
+.class /*02000002*/ public auto ansi sealed e_t
        extends [mscorlib/*23000001*/]System.Enum/*01000001*/
 {
   .field /*04000001*/ public specialname rtspecialname uint8 value__
-  .field /*04000002*/ public static literal valuetype mynamespace.e_t/*02000002*/ one = uint8(0x00)
-  .field /*04000003*/ public static literal valuetype mynamespace.e_t/*02000002*/ two = uint8(0x01)
-  .field /*04000004*/ public static literal valuetype mynamespace.e_t/*02000002*/ three = uint8(0x02)
-} // end of class mynamespace.e_t
+  .field /*04000002*/ public static literal valuetype b473131_fld.e_t/*02000002*/ one = uint8(0x00)
+  .field /*04000003*/ public static literal valuetype b473131_fld.e_t/*02000002*/ two = uint8(0x01)
+  .field /*04000004*/ public static literal valuetype b473131_fld.e_t/*02000002*/ three = uint8(0x02)
+} // end of class e_t
 
-.class /*02000003*/ public auto ansi beforefieldinit mynamespace.myclass
+.class /*02000003*/ public auto ansi beforefieldinit myclass
        extends [mscorlib/*23000001*/]System.Object/*01000002*/
 {
   .method /*06000001*/ public hidebysig static 
@@ -310,7 +310,7 @@
     IL_0000:  /* 72   | (70)000001       */ ldstr      "{0}" /* 70000001 */
     IL_0005:  /* 02   |                  */ ldarg.0
     //IL_0006:  /* 47   |                  */ ldind.u1
-    IL_0007:  /* 8C   | (02)000002       */ box        mynamespace.e_t/*02000002*/
+    IL_0007:  /* 8C   | (02)000002       */ box        b473131_fld.e_t/*02000002*/
     IL_000c:  /* 28   | (0A)000004       */ call       void [System.Console]System.Console::WriteLine(string,
                                                                                                                         object) /* 0A000004 */
     IL_0011:  /* 18   |                  */ ldc.i4.2
@@ -328,12 +328,12 @@
     // Method begins at RVA 0x2064
     // Code size       11 (0xb)
     .maxstack  1
-    .locals /*11000001*/ init (valuetype mynamespace.e_t/*02000002*/ V_0)
+    .locals /*11000001*/ init (valuetype b473131_fld.e_t/*02000002*/ V_0)
     IL_0000:  /* 17   |                  */ ldc.i4.1
     IL_0001:  /* 0A   |                  */ stloc.0
     IL_0002:  /* 12   | 00               */ ldloca.s   V_0
-ldfld     uint8 mynamespace.e_t::value__
-    IL_0004:  /* 28   | (06)000001       */ call       uint8 mynamespace.myclass/*02000003*/::foo(uint8/*02000002*/) /* 06000001 */
+ldfld     uint8 b473131_fld.e_t::value__
+    IL_0004:  /* 28   | (06)000001       */ call       uint8 b473131_fld.myclass/*02000003*/::foo(uint8/*02000002*/) /* 06000001 */
     IL_0009:  /* 26   |                  */ pop
 ldc.i4 100
     IL_000a:  /* 2A   |                  */ ret
@@ -351,7 +351,7 @@ ldc.i4 100
     IL_0006:  /* 2A   |                  */ ret
   } // end of method myclass::.ctor
 
-} // end of class mynamespace.myclass
+} // end of class myclass
 
 
 // =============================================================

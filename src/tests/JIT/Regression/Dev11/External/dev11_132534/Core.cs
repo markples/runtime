@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 using System;
 
-namespace Test
+namespace CSharpPart_132534
 {
     public static class IntValues
     {
@@ -229,7 +229,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_2(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_2(
                 arg0,
                 arg1,
                 arg2,
@@ -256,7 +256,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_3(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_3(
                 arg0,
                 arg1,
                 arg2,
@@ -283,7 +283,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_4(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_4(
                 arg0,
                 arg1,
                 arg2,
@@ -310,7 +310,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_5(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_5(
                 arg0,
                 arg1,
                 arg2,
@@ -337,7 +337,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_6(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_6(
                 arg0,
                 arg1,
                 arg2,
@@ -364,7 +364,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_7(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_7(
                 arg0,
                 arg1,
                 arg2,
@@ -391,7 +391,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_8(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_8(
                 arg0,
                 arg1,
                 arg2,
@@ -418,7 +418,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_9(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_9(
                 arg0,
                 arg1,
                 arg2,
@@ -445,7 +445,7 @@ namespace Test
             CallerSide.PrepareForWrapperCall();
 
 
-            ILJmpWrappers.Pass6Args_Maxstack_10(
+            Test.ILJmpWrappers.Pass6Args_Maxstack_10(
                 arg0,
                 arg1,
                 arg2,

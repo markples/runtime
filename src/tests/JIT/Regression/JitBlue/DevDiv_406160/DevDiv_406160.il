@@ -16,7 +16,7 @@
 
 .namespace DevDiv_406160
 {
-.class public auto ansi beforefieldinit Bug.Program
+.class public auto ansi beforefieldinit Program
        extends [System.Runtime]System.Object
 {
   .method static char ILGEN_METHOD(int16, unsigned int16, native unsigned int)
@@ -63,7 +63,7 @@
     IL_0001:  ldc.i4.0
     IL_0002:  ldc.i4.0
      IL_0003:  ldc.i4.0
-    IL_0004:  call       char   Bug.Program::ILGEN_METHOD(int16, unsigned int16, native unsigned int)
+    IL_0004:  call       char   DevDiv_406160.Program::ILGEN_METHOD(int16, unsigned int16, native unsigned int)
 	IL_0005:  pop
     IL_0009:  ldstr      "Pass"
     IL_000e:  call       void [System.Console]System.Console::WriteLine(string)
@@ -81,5 +81,5 @@
     IL_0006:  ret
   } // end of method Program::.ctor
 
-} // end of class Bug.Program
+} // end of class Program
 }

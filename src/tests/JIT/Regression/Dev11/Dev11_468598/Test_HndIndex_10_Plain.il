@@ -22,30 +22,30 @@
 .corflags 0x00000001    // ILONLY
 
 
-.namespace Test_HndIndex_10_Plain
+.namespace HndIndex_10_Plain
 {
 .class
     private auto ansi beforefieldinit sealed abstract
-    Test.App
+    App
         extends [mscorlib]System.Object
 {
-.class public auto ansi Test_Test_HndIndex_10_Plain extends [mscorlib] System.Object {
+.class nested public auto ansi Test_HndIndex_10_Plain extends [mscorlib] System.Object {
     .method public hidebysig static int32 Main() cil managed
     {
         .entrypoint
         .maxstack 8
-        .locals init (class Test.DerivedClass derivedInstance, int32 exitCode)
+        .locals init (class HndIndex_10_Plain.DerivedClass derivedInstance, int32 exitCode)
 
         .try
         {
             ldstr       "Hello World"
             ldstr       "Hello World 2"
-            newobj      instance void Test.DerivedClass::.ctor(string, string)
+            newobj      instance void HndIndex_10_Plain.DerivedClass::.ctor(string, string)
             stloc       derivedInstance
 
             ldstr       "Value of Test: "
             ldloc       derivedInstance
-            callvirt    instance string Test.BaseClass::get_Test()
+            callvirt    instance string HndIndex_10_Plain.BaseClass::get_Test()
             call        string [mscorlib]System.String::Concat(string, string)
             call        void [System.Console]System.Console::WriteLine(string)
 
@@ -87,7 +87,7 @@
 
 .class
     private auto ansi beforefieldinit
-    Test.BaseClass
+    BaseClass
         extends [mscorlib]System.Object
 {
     .field private string test
@@ -96,7 +96,7 @@
     {
         .maxstack 8
         ldarg.0
-        ldfld       string Test.BaseClass::test
+        ldfld       string HndIndex_10_Plain.BaseClass::test
         ret
     }
 
@@ -113,20 +113,20 @@
 
         ldarg.0
         ldarg       input
-        stfld       string Test.BaseClass::test
+        stfld       string HndIndex_10_Plain.BaseClass::test
         ret
     }
 
     .property instance string Test()
     {
-        .get instance string Test.BaseClass::get_Test()
+        .get instance string HndIndex_10_Plain.BaseClass::get_Test()
     }
 }
 
 
 .class
     public sequential ansi sealed beforefieldinit
-    Test.StackFiller16
+    StackFiller16
         extends System.ValueType
 {
     .field public uint64 f01
@@ -146,73 +146,73 @@
     .field public uint64 f15
     .field public uint64 f16
 
-    .method public hidebysig static void Fill(valuetype Test.StackFiller16& targetRef) cil managed noinlining
+    .method public hidebysig static void Fill(valuetype HndIndex_10_Plain.StackFiller16& targetRef) cil managed noinlining
     {
         .maxstack 8
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f01
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f01
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f02
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f02
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f03
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f03
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f04
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f04
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f05
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f05
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f06
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f06
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f07
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f07
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f08
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f08
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f09
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f09
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f10
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f10
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f11
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f11
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f12
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f12
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f13
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f13
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f14
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f14
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f15
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f15
 
         ldarg       targetRef
         ldc.i8      0xabababababababab
-        stfld       uint64 Test.StackFiller16::f16
+        stfld       uint64 HndIndex_10_Plain.StackFiller16::f16
         ret
     }
 }
@@ -220,8 +220,8 @@
 
 .class
     private auto ansi beforefieldinit
-    Test.DerivedClass
-        extends Test.BaseClass
+    DerivedClass
+        extends HndIndex_10_Plain.BaseClass
 {
     .method public hidebysig specialname rtspecialname instance void .ctor(string input, string input2) cil managed noinlining
     {
@@ -229,12 +229,12 @@
 
         ldarg.0
         ldarg       input
-        call        instance void Test.BaseClass::.ctor(string)
+        call        instance void HndIndex_10_Plain.BaseClass::.ctor(string)
 
-        call        void Test.DerivedClass::SetExceptionSP()
+        call        void HndIndex_10_Plain.DerivedClass::SetExceptionSP()
 
         ldarg       input
-        call        void Test.DerivedClass::FillStackAndCallout(string)
+        call        void HndIndex_10_Plain.DerivedClass::FillStackAndCallout(string)
         ret
     }
 
@@ -246,14 +246,14 @@
         .try
         {
             ldstr       "In the setup try block."
-            call        void Test.App::WriteLine(string)
-            call        void Test.DerivedClass::ThrowInvalidOperationException()
+            call        void HndIndex_10_Plain.App::WriteLine(string)
+            call        void HndIndex_10_Plain.DerivedClass::ThrowInvalidOperationException()
             leave       RETURN_TO_CALLER
         }
         catch [mscorlib]System.InvalidOperationException
         {
             ldstr       "In the setup catch block."
-            call        void Test.App::WriteLine(string)
+            call        void HndIndex_10_Plain.App::WriteLine(string)
             leave       RETURN_TO_CALLER
         }
 
@@ -266,32 +266,32 @@
     {
         .maxstack 8
 
-        .locals init (valuetype Test.StackFiller16 filler1)
+        .locals init (valuetype HndIndex_10_Plain.StackFiller16 filler1)
 
         ldloca      filler1
-        call        void Test.StackFiller16::Fill(valuetype Test.StackFiller16&)
+        call        void HndIndex_10_Plain.StackFiller16::Fill(valuetype HndIndex_10_Plain.StackFiller16&)
 
         ldarg       input
         ldloca      filler1
-        call        void Test.DerivedClass::AccessExceptionSP(string, valuetype Test.StackFiller16&)
+        call        void HndIndex_10_Plain.DerivedClass::AccessExceptionSP(string, valuetype HndIndex_10_Plain.StackFiller16&)
         ret
     }
 
 
-    .method public hidebysig static void AccessExceptionSP(string input, valuetype Test.StackFiller16& filler1) cil managed noinlining
+    .method public hidebysig static void AccessExceptionSP(string input, valuetype HndIndex_10_Plain.StackFiller16& filler1) cil managed noinlining
     {
         .maxstack 8
 
         .try
         {
             ldstr       "In the outer try block."
-            call        void Test.App::WriteLine(string)
+            call        void HndIndex_10_Plain.App::WriteLine(string)
             leave       RETURN_TO_CALLER
         }
         finally
         {
             ldstr       "In the outer finally block."
-            call        void Test.App::WriteLine(string)
+            call        void HndIndex_10_Plain.App::WriteLine(string)
 
 
             ldarg       input
@@ -300,7 +300,7 @@
             .try
             {
                 ldstr       "In the inner try block."
-                call        void Test.App::WriteLine(string)
+                call        void HndIndex_10_Plain.App::WriteLine(string)
                 leave       DONE_WITH_INNER_TRY
             }
             catch [mscorlib]System.InvalidOperationException
@@ -310,7 +310,7 @@
 
             ENTER_INNER_CATCH:
                 ldstr       "In the inner catch block."
-                call        void Test.App::WriteLine(string)
+                call        void HndIndex_10_Plain.App::WriteLine(string)
                 leave       DONE_WITH_INNER_TRY
             }
 
@@ -320,12 +320,12 @@
 
     RETURN_TO_CALLER:
         ldstr       "In the return block."
-        call        void Test.App::WriteLine(string)
+        call        void HndIndex_10_Plain.App::WriteLine(string)
         br          REAL_RETURN_BLOCK
 
     REAL_RETURN_BLOCK:
         ldstr       "In the real return block."
-        call        void Test.App::WriteLine(string)
+        call        void HndIndex_10_Plain.App::WriteLine(string)
         ret
     }
 

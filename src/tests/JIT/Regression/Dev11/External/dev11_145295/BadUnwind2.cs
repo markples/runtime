@@ -108,8 +108,8 @@ namespace CSharpPart_145295
 
         public static int Main()
         {
-            App.DispatchCalloutSequence("TopLevel", ILPart.CallThroughFrameWithMultipleEndfinallyOps_TopLevel);
-            App.DispatchCalloutSequence("Nested", ILPart.CallThroughFrameWithMultipleEndfinallyOps_Nested);
+            App.DispatchCalloutSequence("TopLevel", Test.ILPart.CallThroughFrameWithMultipleEndfinallyOps_TopLevel);
+            App.DispatchCalloutSequence("Nested", Test.ILPart.CallThroughFrameWithMultipleEndfinallyOps_Nested);
 
             if (App.s_numberOfFailures == 0)
             {
