@@ -12,6 +12,8 @@
 }
 
 
+.namespace b26957
+{
 .class public EvenOdd
 { 
 	.method static bool IsEven(int32 N)
@@ -28,7 +30,7 @@
 	    ldarg.0
 	    ldc.i4.1
 	    sub
-	    tail. call  bool EvenOdd::IsOdd( int32 )
+	    tail. call  bool b26957.EvenOdd::IsOdd( int32 )
 	    ret
         
   	} // EvenOdd::IsEven
@@ -48,7 +50,7 @@
 	    ldarg       N
 	    ldc.i4.1
 	    sub
-	    tail. call  bool EvenOdd::IsEven( int32 )
+	    tail. call  bool b26957.EvenOdd::IsEven( int32 )
 	    ret
         
 	} // EvenOdd::IsOdd
@@ -63,7 +65,7 @@
     	ldstr       " is "
     	call        void [System.Console]System.Console::Write( class [mscorlib]System.String )
     	ldarg       N
-    	call        bool EvenOdd::IsEven(int32)
+    	call        bool b26957.EvenOdd::IsEven(int32)
     	brfalse     LoadOdd
     	ldstr       "even"
         
@@ -84,13 +86,13 @@
   	.maxstack     1
     
   	ldc.i4.5
-  	call          void EvenOdd::Test( int32 )
+  	call          void b26957.EvenOdd::Test( int32 )
   	ldc.i4.2
-  	call          void EvenOdd::Test( int32 )
+  	call          void b26957.EvenOdd::Test( int32 )
   	ldc.i4        100
-  	call          void EvenOdd::Test( int32 )
+  	call          void b26957.EvenOdd::Test( int32 )
   	ldc.i4        10001
-  	call          void EvenOdd::Test( int32 )
+  	call          void b26957.EvenOdd::Test( int32 )
 ldc.i4 100
   	ret
     
@@ -99,3 +101,4 @@ ldc.i4 100
   
 } // EvenOdd
 // End of File
+}

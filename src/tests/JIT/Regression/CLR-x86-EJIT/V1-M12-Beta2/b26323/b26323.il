@@ -9,7 +9,7 @@
 }
 .assembly b26323 { }
 .assembly extern xunit.core {}
-.namespace Test
+.namespace b26323
 {
   .class public auto ansi App extends [mscorlib]System.Object
   {
@@ -21,7 +21,7 @@
 		call       instance void [mscorlib]System.Object::.ctor()
 		ldarg.0
 		ldc.i4     5
-		stfld      int32 Test.App::m_nField
+		stfld      int32 b26323.App::m_nField
 		ldstr      "In constructor."
 		call       void [System.Console]System.Console::WriteLine(class System.String)
 		ret
@@ -34,11 +34,11 @@
       )
       .entrypoint
       .maxstack  2
-      .locals ([0] class Test.App app)
-      IL_0001:  newobj     instance vararg void Test.App::.ctor(...)
+      .locals ([0] class b26323.App app)
+      IL_0001:  newobj     instance vararg void b26323.App::.ctor(...)
       IL_0006:  stloc.0
       IL_0007:  ldloc.0
-      IL_0008:  ldfld      int32 Test.App::m_nField
+      IL_0008:  ldfld      int32 b26323.App::m_nField
       IL_000d:  ldc.i4.5
       IL_000e:  beq.s      IL_001c
 

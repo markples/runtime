@@ -10,6 +10,8 @@
 .assembly b10894
 {
 }
+.namespace b10894
+{
 .class public EvenOdd
 { .method static bool IsEven(int32 N)
   { .maxstack   2
@@ -22,7 +24,7 @@ NonZero:
     ldarg.0
     ldc.i4.1
     sub
-    tail. call  bool EvenOdd::IsOdd(int32)
+    tail. call  bool b10894.EvenOdd::IsOdd(int32)
     ret
   } // end of method 'EvenOdd::IsEven'
 
@@ -37,7 +39,7 @@ NonZero:
     ldarg       N
     ldc.i4.1
     sub
-    tail. call  bool EvenOdd::IsEven(int32)
+    tail. call  bool b10894.EvenOdd::IsEven(int32)
     ret
   } // end of method 'EvenOdd::IsOdd'
 
@@ -48,7 +50,7 @@ NonZero:
     ldstr       " is "
     call        void [System.Console]System.Console::Write(class [mscorlib]System.String)
     ldarg       N
-    call        bool EvenOdd::IsEven(int32)
+    call        bool b10894.EvenOdd::IsEven(int32)
     brfalse     LoadOdd
     ldstr       "even"
 Print:
@@ -65,14 +67,15 @@ LoadOdd:
 { .entrypoint
   .maxstack     1
   ldc.i4.5
-  call          void EvenOdd::Test(int32)
+  call          void b10894.EvenOdd::Test(int32)
   ldc.i4.2
-  call          void EvenOdd::Test(int32)
+  call          void b10894.EvenOdd::Test(int32)
   ldc.i4        100
-  call          void EvenOdd::Test(int32)
+  call          void b10894.EvenOdd::Test(int32)
   ldc.i4        10001
-  call          void EvenOdd::Test(int32)
+  call          void b10894.EvenOdd::Test(int32)
 ldc.i4 100
   ret
 } // end of global method 'main'
 } // end of class 'EvenOdd'
+}

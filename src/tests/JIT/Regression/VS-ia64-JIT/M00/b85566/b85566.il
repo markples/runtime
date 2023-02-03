@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b85566'{}
+.namespace b85566
+{
 .class public s {
 .method public static int32 main() {
 .entrypoint
@@ -21,5 +23,6 @@
   ldc.i4 325
   sub
  ret
+}
 }
 }

@@ -11,6 +11,8 @@
 .assembly extern xunit.core {}
 
 
+.namespace b28158_64
+{
 .class public auto ansi beforefieldinit test
        extends [mscorlib]System.Object
 {
@@ -32579,4 +32581,5 @@
     IL_end:  ldc.i4 100
     		ret
   }  
+}
 }

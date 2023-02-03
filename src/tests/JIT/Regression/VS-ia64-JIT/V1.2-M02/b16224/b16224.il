@@ -5,11 +5,13 @@
 .assembly 'b16224'{}
 .assembly extern xunit.core {}
 
+.namespace b16224
+{
   .class public sequential ansi sealed beforefieldinit VT
          extends [mscorlib]System.ValueType
   {
     .field private int32 m_n
-    .field private valuetype VT[] m_dummyGCRef
+    .field private valuetype b16224.VT[] m_dummyGCRef
 
     .method public hidebysig static int32 Main() cil managed
     {
@@ -21,3 +23,4 @@
 	ret
     }
   } 
+}

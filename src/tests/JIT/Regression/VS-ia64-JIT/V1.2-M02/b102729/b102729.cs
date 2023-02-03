@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b102729
+{
 struct Foo
 {
 #pragma warning disable 0414
@@ -34,4 +36,5 @@ public class Bar
 
         return 100;
     }
+}
 }

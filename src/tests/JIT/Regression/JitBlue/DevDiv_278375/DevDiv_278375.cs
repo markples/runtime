@@ -3,6 +3,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_278375
+{
 struct MyStruct
 {
     // Struct containing 4 fields, 3 of which are longs that will be decomposed.
@@ -127,4 +129,5 @@ public class Program
         }
         return returnVal;
     }
+}
 }

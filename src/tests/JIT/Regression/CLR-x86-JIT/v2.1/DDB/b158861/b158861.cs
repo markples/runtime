@@ -7,6 +7,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b158861
+{
 public class My
 {
 
@@ -45,4 +47,5 @@ public class My
 
     }
 
+}
 }

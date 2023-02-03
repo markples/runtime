@@ -8,6 +8,8 @@
 .assembly GitHub_13501 { }
 .assembly extern xunit.core {}
 
+.namespace GitHub_13501
+{
 .class public Program extends [mscorlib]System.Object
 {
     .method public hidebysig static int32 Main() cil managed
@@ -26,7 +28,7 @@
         ldc.i4 0
         conv.i
         ldc.i4 0
-        call native int Program::Test_Cast_gtFoldExprConst(native int, bool)
+        call native int GitHub_13501.Program::Test_Cast_gtFoldExprConst(native int, bool)
         ldc.i4 -1
         conv.u
         bne.un FAIL
@@ -38,7 +40,7 @@
         ldc.i4 0
         conv.i
         ldc.i4 0
-        call native int Program::Test_Cast_EvalCastForConstantArgs(native int, bool)
+        call native int GitHub_13501.Program::Test_Cast_EvalCastForConstantArgs(native int, bool)
         ldc.i4 -1
         conv.u
         bne.un FAIL
@@ -50,7 +52,7 @@
         ldc.i4 0
         conv.i
         ldc.i4 -1
-        call native int Program::Test_Cast_Codegen(native int, int32)
+        call native int GitHub_13501.Program::Test_Cast_Codegen(native int, int32)
         ldc.i4 -1
         conv.u
         bne.un FAIL
@@ -100,4 +102,5 @@
         add.ovf.un
         ret
     }
+}
 }

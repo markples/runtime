@@ -9,6 +9,8 @@
 }
 .assembly 'b31292' {}
 .assembly extern xunit.core {}
+.namespace b31292
+{
 .class public ILGEN_0x59e058c0 {
 
 .method static int32 Method_0x2dd7( unsigned int64 Arg_0x3) {
@@ -40,7 +42,7 @@ ret
 .maxstack	20
 .try {
 ldc.i8 0x65d25f3b4fa63daa 
-call int32 ILGEN_0x59e058c0::Method_0x2dd7(unsigned int64 Arg_0x3)
+call int32 b31292.ILGEN_0x59e058c0::Method_0x2dd7(unsigned int64 Arg_0x3)
  pop
   leave stop
  } catch [mscorlib]System.OverflowException {
@@ -52,4 +54,5 @@ ldc.i4 100
 ret
 }
 
+}
 }

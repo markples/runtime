@@ -33,6 +33,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+namespace GitHub_19149
+{
 unsafe struct CommandBytes : IEquatable<CommandBytes>
 {
     private const int ChunkLength = 3;
@@ -245,4 +247,5 @@ public static class Program
 
         return (result1 && result2) ? 100 : -1;
     }
+}
 }

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DefaultNamespace
+namespace b13944
 {
     public class X
     {

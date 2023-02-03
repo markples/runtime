@@ -12,13 +12,15 @@
 }
 
 .data tls FieldData = int32(51966)
+.namespace b07847
+{
 .class public test {
 
 	.field public static int32 TLSFieldData at FieldData
 	.method public static int32 main() 
 	{
 		.entrypoint
-		ldsfld	int32 test::TLSFieldData  
+		ldsfld	int32 b07847.test::TLSFieldData  
 		ldc.i4  51966
 		beq		Passed1
 		br		Failed
@@ -26,8 +28,8 @@
 Passed1:
 		ldc.i4  51967
 		dup
-		stsfld	int32 test::TLSFieldData  
-		ldsfld	int32 test::TLSFieldData  
+		stsfld	int32 b07847.test::TLSFieldData  
+		ldsfld	int32 b07847.test::TLSFieldData  
 		beq		Passed2
 		br		Failed
 		
@@ -43,4 +45,5 @@ Failed:
 		ldc.i4  1
 		ret
 	}
+}
 }

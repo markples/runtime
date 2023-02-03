@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Numerics;
 
-namespace Test
+namespace GitHub_8220
 {
 
     public class Program

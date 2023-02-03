@@ -6,6 +6,8 @@
 
 using System;
 
+namespace GitHub_19444
+{
 class C0
 {
 }
@@ -66,3 +68,4 @@ public class GitHub_19444
     }
 }
 
+}

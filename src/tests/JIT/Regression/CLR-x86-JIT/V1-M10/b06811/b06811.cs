@@ -5,6 +5,8 @@ using System;
 using System.Collections;
 
 
+namespace b06811
+{
 public class test
 {
     public static int Main()
@@ -31,4 +33,5 @@ public class test
             return 1;
         }
     }
+}
 }

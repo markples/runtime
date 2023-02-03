@@ -15,6 +15,8 @@
 // -- bug --
 // 0xABBA is the errorlevel on success
 // ----------------------------------
+.namespace b10897
+{
 .class public bug {
 
 .method static int32 jumpee(){
@@ -25,13 +27,13 @@
 
 .method static int32 jumper(){
 .maxstack 20
-	jmp int32 bug::jumpee()
+	jmp int32 b10897.bug::jumpee()
 }
 
 .method public static int32 main() {
 .entrypoint
 .maxstack 20
-	call int32 bug::jumper()
+	call int32 b10897.bug::jumper()
     ldc.i4 0xABBA
     ceq
     ldc.i4 1
@@ -39,5 +41,6 @@
 ldc.i4 100
 add
 	ret
+}
 }
 }

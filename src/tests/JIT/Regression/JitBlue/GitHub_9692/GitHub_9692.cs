@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 // Tests for moving exits out of loops and ensuring that doing so doesn't
 // violate EH clause nesting rules.
 
-namespace N
+namespace GitHub_9692
 {
     public class C
     {

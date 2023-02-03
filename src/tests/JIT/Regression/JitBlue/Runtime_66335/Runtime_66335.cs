@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_66335
+{
 public class Runtime_66335
 {
     private static S0 s_24;
@@ -35,3 +37,4 @@ public class Runtime_66335
     }
 }
 
+}

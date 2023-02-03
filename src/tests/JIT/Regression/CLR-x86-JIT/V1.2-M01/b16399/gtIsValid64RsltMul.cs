@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b16399
+{
 public struct AA
 {
     public static char[, , , ,][, ,] Static1(char param1, int param2, bool[,] param3,
@@ -39,4 +41,5 @@ public class App
     }
     public static int m1;
     public static byte[,][, , ,] m2;
+}
 }

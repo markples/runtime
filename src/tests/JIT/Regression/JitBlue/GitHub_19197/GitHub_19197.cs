@@ -8,6 +8,8 @@
 using System;
 using System.Numerics;
 
+namespace GitHub_19197
+{
 public class GitHub_19171
 {
     static int returnVal = 100;
@@ -58,4 +60,5 @@ public class GitHub_19171
         Vector3EqualsTest();
         return returnVal;
     }
+}
 }

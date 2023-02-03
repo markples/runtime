@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_12949_5
+{
 struct R
 {
     int a;
@@ -42,4 +44,5 @@ public class B
         Console.WriteLine("Passed: {0}", result);
         return result ? 100 : 0;
     }
+}
 }

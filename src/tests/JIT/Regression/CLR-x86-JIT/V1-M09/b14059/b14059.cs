@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b14059
+{
 public class test
 {
     static byte by = 13;
@@ -14,4 +16,5 @@ public class test
         Console.WriteLine(by1);
         return 100;
     }
+}
 }

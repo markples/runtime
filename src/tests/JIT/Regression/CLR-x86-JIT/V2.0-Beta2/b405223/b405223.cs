@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b405223
+{
 public class Class1
 {
 
@@ -24,4 +26,5 @@ public class Class1
             return 100;
         }
     }
+}
 }

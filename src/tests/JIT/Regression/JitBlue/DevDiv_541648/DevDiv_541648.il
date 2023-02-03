@@ -13,6 +13,8 @@
 // of the block store was the address of a scalar field.
 
 
+.namespace DevDiv_541648
+{
 .class public sequential ansi sealed beforefieldinit MyStruct
        extends [System.Runtime]System.ValueType
 {
@@ -26,34 +28,34 @@
   {
          ldarg.0
          ldarg.1
-         stfld      int32 MyStruct::f1
+         stfld      int32 DevDiv_541648.MyStruct::f1
 
          ldarg.0
          ldarg.1
          ldc.i4.1
          add
-         stfld      int32 MyStruct::f2
+         stfld      int32 DevDiv_541648.MyStruct::f2
 
          ldarg.0
          ldarg.1
          ldc.i4.2
          add
          conv.i8
-         stfld      int64 MyStruct::f3
+         stfld      int64 DevDiv_541648.MyStruct::f3
 
          ldarg.0
          ldarg.1
          ldc.i4.3
          add
          conv.i8
-         stfld      int64 MyStruct::f4
+         stfld      int64 DevDiv_541648.MyStruct::f4
 
          ldarg.0
          ldarg.1
          ldc.i4.4
          add
          conv.i8
-         stfld      int64 MyStruct::f5
+         stfld      int64 DevDiv_541648.MyStruct::f5
 
          ret
   } // end of method MyStruct::.ctor
@@ -65,17 +67,17 @@
 {
   .field public static literal int32 Pass = int32(0x00000064)
   .field public static literal int32 Fail = int32(0xFFFFFFFF)
-  .method public hidebysig static valuetype MyStruct 
-          Test(valuetype MyStruct& c) cil managed noinlining
+  .method public hidebysig static valuetype DevDiv_541648.MyStruct 
+          Test(valuetype DevDiv_541648.MyStruct& c) cil managed noinlining
   {
-    .locals init ([0] valuetype MyStruct V_0)
+    .locals init ([0] valuetype DevDiv_541648.MyStruct V_0)
         ldloca.s   0
         ldarg.s    0
 
         // Here we take the address of the second field and copy 28 bytes from it (the size of the
         // remaining part of the struct.
 
-        ldflda     int32 MyStruct::f2
+        ldflda     int32 DevDiv_541648.MyStruct::f2
         ldc.i4     28
         cpblk
         br.s       L1
@@ -93,8 +95,8 @@
     // Code size       59 (0x3b)
     .maxstack  2
     .locals init ([0] int32 retVal,
-             [1] valuetype MyStruct c,
-             [2] valuetype MyStruct s,
+             [1] valuetype DevDiv_541648.MyStruct c,
+             [2] valuetype DevDiv_541648.MyStruct s,
              [3] bool V_3,
              [4] int32 V_4)
 
@@ -102,12 +104,12 @@
          stloc.0
          ldloca.s   c
          ldc.i4.1
-         call       instance void MyStruct::.ctor(int32)
+         call       instance void DevDiv_541648.MyStruct::.ctor(int32)
          ldloca.s   c
-         call       valuetype MyStruct DevDiv_541648::Test(valuetype MyStruct&)
+         call       valuetype DevDiv_541648.MyStruct DevDiv_541648.DevDiv_541648::Test(valuetype DevDiv_541648.MyStruct&)
          stloc.2
          ldloc.2
-         ldfld      int32 MyStruct::f1
+         ldfld      int32 DevDiv_541648.MyStruct::f1
          ldc.i4.2
          ceq
          ldc.i4.0
@@ -142,3 +144,4 @@
 
 } // end of class DevDiv_541648
 
+}

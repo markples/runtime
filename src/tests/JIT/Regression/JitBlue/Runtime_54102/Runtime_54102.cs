@@ -10,6 +10,8 @@ using System.Runtime.CompilerServices;
 // Debug: Outputs 0
 // Release: Outputs 1
 
+namespace Runtime_54102
+{
 struct S0
 {
     public ushort F1;
@@ -49,4 +51,5 @@ public class Program
         int ret = vr0.F0.F0.F3 + vr0.F0.F4.F1;
         return ret;
     }
+}
 }

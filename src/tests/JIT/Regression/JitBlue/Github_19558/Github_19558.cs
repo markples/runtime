@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+namespace Github_19558
+{
 struct S0
 {
     public uint F1;
@@ -43,4 +45,5 @@ public class Program
 
         return arg1;
     }
+}
 }

@@ -4,6 +4,8 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Runtime_72265
+{
 public unsafe class Runtime_72265
 {
     public static int Main()
@@ -28,4 +30,5 @@ public unsafe class Runtime_72265
         public int Index;
         public int Value;
     }
+}
 }

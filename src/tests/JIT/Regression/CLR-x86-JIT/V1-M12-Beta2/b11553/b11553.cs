@@ -5,6 +5,8 @@ using System;
 using System.IO;
 using System.Reflection;
 
+namespace b11553
+{
 public class test
 {
     public static int Main()
@@ -31,3 +33,4 @@ public class test
     }
 }
 
+}

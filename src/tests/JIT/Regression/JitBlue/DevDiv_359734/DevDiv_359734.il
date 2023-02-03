@@ -15,6 +15,8 @@
 .assembly extern mscorlib{}
 .assembly 'DevDiv_359734'{}
 .assembly extern xunit.core {}
+.namespace DevDiv_359734
+{
 .class public ILGEN_CLASS
 {
     .method static char ILGEN_METHOD(bool, char, int16, int32)
@@ -105,7 +107,7 @@
             dup
             dup
             dup
-            call char ILGEN_CLASS::ILGEN_METHOD(bool, char, int16, int32)
+            call char DevDiv_359734.ILGEN_CLASS::ILGEN_METHOD(bool, char, int16, int32)
             pop
             leave.s done
         }
@@ -118,4 +120,5 @@
         ldc.i4 100
         ret
     }
+}
 }

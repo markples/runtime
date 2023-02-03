@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b88793
+{
 public class CC
 {
     static void Method1(ref ulong param1, __arglist)
@@ -26,4 +28,5 @@ public class CC
         Method1(ref ul, __arglist());
         return 100;
     }
+}
 }

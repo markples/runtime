@@ -4,6 +4,8 @@
 
 using System;
 
+namespace DevDiv_816617
+{
 public static class Repro
 {
     static double NegativeZero = -0.0;
@@ -28,4 +30,5 @@ public static class Repro
             return 101;
         }
     }
+}
 }

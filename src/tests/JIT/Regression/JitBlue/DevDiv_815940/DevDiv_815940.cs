@@ -4,6 +4,8 @@
 
 using System;
 
+namespace DevDiv_815940
+{
 public class Repro
 {
     static char c1 = (char)32768;
@@ -25,4 +27,5 @@ public class Repro
             return 100;
         }
     }
+}
 }

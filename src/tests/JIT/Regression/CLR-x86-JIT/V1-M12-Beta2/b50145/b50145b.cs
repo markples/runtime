@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b50145b
+{
 public class test
 {
     public static int Main()
@@ -23,4 +25,5 @@ public class test
             return 100;
         }
     }
+}
 }

@@ -7,6 +7,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_11814
+{
 public class MutateStructArg
 {
     public struct P
@@ -41,4 +43,5 @@ public class MutateStructArg
         a.X = 100;
         return a;                 // Copy the modified value to the return value (bug was that this was returning original unmodified arg)
     }
+}
 }

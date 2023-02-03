@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b89277
+{
 public class A
 {
     public static int Main()
@@ -24,4 +26,5 @@ public class A
         }
         catch (Exception) { }
     }
+}
 }

@@ -12,6 +12,8 @@
 
 
 
+.namespace GitHub_26311
+{
 .class interface private abstract auto ansi GitHub_26311.Interface`1<TKey>
 {
   .method public hidebysig newslot abstract virtual
@@ -182,7 +184,7 @@
     IL_0000:  ldc.i4.6
     IL_0001:  newarr     [System.Runtime]System.Int32
     IL_0006:  dup
-    IL_0007:  ldtoken    field valuetype '<PrivateImplementationDetails>'/'__StaticArrayInitTypeSize=24' '<PrivateImplementationDetails>'::DB17E883A647963A26D973378923EF4649801319
+    IL_0007:  ldtoken    field valuetype 'GitHub_26311.<PrivateImplementationDetails>'/'__StaticArrayInitTypeSize=24' 'GitHub_26311.<PrivateImplementationDetails>'::DB17E883A647963A26D973378923EF4649801319
     IL_000c:  call       void [System.Runtime]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [System.Runtime]System.Array,
                                                                                                               valuetype [System.Runtime]System.RuntimeFieldHandle)
     IL_0011:  stloc.0
@@ -284,7 +286,7 @@
     .size 24
   } // end of class '__StaticArrayInitTypeSize=24'
 
-  .field static assembly initonly valuetype '<PrivateImplementationDetails>'/'__StaticArrayInitTypeSize=24' DB17E883A647963A26D973378923EF4649801319 at I_00002B7C
+  .field static assembly initonly valuetype 'GitHub_26311.<PrivateImplementationDetails>'/'__StaticArrayInitTypeSize=24' DB17E883A647963A26D973378923EF4649801319 at I_00002B7C
 } // end of class '<PrivateImplementationDetails>'
 
 
@@ -293,3 +295,4 @@
 .data cil I_00002B7C = bytearray (
                  00 00 00 00 01 00 00 00 02 00 00 00 03 00 00 00
                  04 00 00 00 05 00 00 00)
+}

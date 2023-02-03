@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b124232
+{
 interface I<T>
 {
 }
@@ -36,3 +38,4 @@ public class Test_genisinst
 }
 
 
+}

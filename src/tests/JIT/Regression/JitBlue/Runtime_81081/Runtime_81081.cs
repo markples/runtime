@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+namespace Runtime_81081
+{
 public class Runtime_81081
 {
     public static int Main()
@@ -22,4 +24,5 @@ public class Runtime_81081
     {
         public object A, B;
     }
+}
 }

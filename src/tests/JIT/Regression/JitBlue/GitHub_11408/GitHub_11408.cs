@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_11408
+{
 class GitHub_11408
 {
     const int Pass = 100;
@@ -41,4 +43,5 @@ class GitHub_11408
             }
         }
     }
+}
 }

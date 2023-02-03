@@ -5,6 +5,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b565808
+{
 public class ContentType
 {
     public static int errorCount = 0;
@@ -43,4 +45,5 @@ public class My
 
     }
 
+}
 }

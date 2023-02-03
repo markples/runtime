@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b00735
+{
 public struct AA
 {
     static void f()
@@ -22,4 +24,5 @@ public struct AA
         f();
         return 100;
     }
+}
 }

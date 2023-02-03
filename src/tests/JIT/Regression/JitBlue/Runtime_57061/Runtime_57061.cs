@@ -8,6 +8,8 @@
 // Crashes the runtime
 using System.Runtime.CompilerServices;
 
+namespace Runtime_57061
+{
 struct S0
 {
     public bool F0;
@@ -101,4 +103,5 @@ public class Runtime_57061
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     private static int Bound() => 0;
+}
 }

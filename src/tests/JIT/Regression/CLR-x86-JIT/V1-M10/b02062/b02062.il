@@ -10,6 +10,8 @@
 .assembly b02062
 {
 }
+.namespace b02062
+{
 .class public test
 {
   .field public        int32 m_i
@@ -18,7 +20,7 @@
 	.method public specialname static rtspecialname void .cctor() il managed
 	{
 		ldc.i4 555
-		stsfld	int32 test::s_i
+		stsfld	int32 b02062.test::s_i
 		ret
 	}
 
@@ -28,19 +30,19 @@
 		call instance void [mscorlib]System.Object::.ctor()
 		ldarg 0
 		ldarg 1
-		stfld	int32 test::m_i
+		stfld	int32 b02062.test::m_i
 		ret
 	}
 
 	.method public static int32 main() il managed
 	{
 		.entrypoint
-		.locals(class test)
+		.locals(class b02062.test)
 		
 		ldc.i4  666
 		dup
-		stsfld	int32 test::s_i
-		ldsfld	int32 test::s_i
+		stsfld	int32 b02062.test::s_i
+		ldsfld	int32 b02062.test::s_i
 		beq PASS1
 		
 FAIL1:	ldstr "Test failed. Looks like the static field access was incorrectly done"
@@ -52,13 +54,13 @@ PASS1:	ldstr "Static test passed"
 		call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 		
 		ldc.i4 777
-		newobj instance void test::.ctor(int32)
+		newobj instance void b02062.test::.ctor(int32)
 		dup
 		dup
 		stloc 0
 		ldc.i4 888
-		stfld int32 test::m_i
-		ldfld int32 test::m_i
+		stfld int32 b02062.test::m_i
+		ldfld int32 b02062.test::m_i
 		ldc.i4 888
 		beq PASS2
 		
@@ -72,4 +74,5 @@ PASS2:	ldstr "Even instance test passed"
 		ldc.i4 100
 		ret
 	}
+}
 }

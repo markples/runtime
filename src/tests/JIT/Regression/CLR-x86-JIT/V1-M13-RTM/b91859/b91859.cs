@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b91859
+{
 public class AA
 {
     public static int Main()
@@ -12,4 +14,5 @@ public class AA
             (b ? new AA() : (b ? new AA() : null));
         return 100;
     }
+}
 }

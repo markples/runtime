@@ -29,6 +29,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b173313
+{
 .class private auto ansi beforefieldinit A
        extends [mscorlib]System.Object
 {
@@ -45,7 +47,7 @@
 } // end of class A
 
 .class private auto ansi beforefieldinit B
-       extends A
+       extends b173313.A
 {
   .method public hidebysig specialname rtspecialname 
           instance void  .ctor() cil managed
@@ -53,14 +55,14 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldarg.0
-    IL_0001:  call       instance void A::.ctor()
+    IL_0001:  call       instance void b173313.A::.ctor()
     IL_0006:  ret
   } // end of method B::.ctor
 
 } // end of class B
 
 .class public auto ansi beforefieldinit My
-       extends B
+       extends b173313.B
 {
   .method private hidebysig static object 
           foo<T>(bool b,
@@ -95,7 +97,7 @@
     IL_0000:  nop
     IL_0001:  ldc.i4.0
     IL_0002:  ldnull
-    IL_0003:  call       object My::foo<class A>(bool,
+    IL_0003:  call       object b173313.My::foo<class b173313.A>(bool,
                                                  object)
     IL_0008:  pop
     IL_0009:  ldc.i4 100
@@ -108,7 +110,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldarg.0
-    IL_0001:  call       instance void B::.ctor()
+    IL_0001:  call       instance void b173313.B::.ctor()
     IL_0006:  ret
   } // end of method My::.ctor
 
@@ -119,3 +121,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file a.res
+}

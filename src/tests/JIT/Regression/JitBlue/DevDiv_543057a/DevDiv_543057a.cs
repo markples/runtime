@@ -17,6 +17,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_543057a
+{
 public class DevDiv_543057
 
 {
@@ -71,3 +73,4 @@ public class DevDiv_543057
     }
 }
 
+}

@@ -6,6 +6,8 @@ using System.Runtime.Intrinsics;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_71219
+{
 public class Runtime_71219
 {
     public static int Main()
@@ -53,4 +55,5 @@ public class Runtime_71219
         [FieldOffset(4)]
         public long Long;
     }
+}
 }

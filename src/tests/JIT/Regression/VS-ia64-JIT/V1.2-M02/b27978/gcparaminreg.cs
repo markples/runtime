@@ -9,6 +9,8 @@
 
 using System;
 
+namespace b27978
+{
 public class test
 {
     public static int Main()
@@ -37,3 +39,4 @@ public class test
 
 
 
+}

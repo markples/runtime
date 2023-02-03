@@ -1,6 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
 
+namespace Runtime_59871
+{
 public class Runtime_59871
 {
     LargeStruct _large;
@@ -38,4 +40,5 @@ public class Runtime_59871
         [FieldOffset(0)]
         public DateTime DateTime;
     }
+}
 }

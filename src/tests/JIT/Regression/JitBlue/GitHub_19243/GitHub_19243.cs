@@ -3,6 +3,8 @@
 //
 // This test exposed a bug with the ordering of evaluation of a cpblk.
 
+namespace GitHub_19243
+{
 struct S0
 {
     public long F0;
@@ -42,4 +44,5 @@ public class GitHub_19243
         M7() = s_13.F5;
         return checkValue(s_37.F0);
     }
+}
 }

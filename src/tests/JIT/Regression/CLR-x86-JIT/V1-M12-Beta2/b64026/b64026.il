@@ -12,6 +12,8 @@
 {
 }
 .assembly extern xunit.core {}
+.namespace b64026
+{
 .class private auto ansi beforefieldinit A
        extends [mscorlib]System.Object
 {
@@ -35,7 +37,7 @@
 } // end of class A
 
 .class private auto ansi beforefieldinit B
-       extends A
+       extends b64026.A
 {
   .method public hidebysig virtual instance int32
           f1() 
@@ -50,7 +52,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldarg.0
-    IL_0001:  call       instance void A::.ctor()
+    IL_0001:  call       instance void b64026.A::.ctor()
     IL_0006:  ret
   } // end of method B::.ctor
 
@@ -59,12 +61,12 @@
 .class public auto ansi beforefieldinit Test_b64026
        extends [mscorlib]System.Object
 {
-  .field public static class B b1
+  .field public static class b64026.B b1
   .method public hidebysig static int32 f1a() 
   {
-    ldsfld     class B Test_b64026::b1
+    ldsfld     class b64026.B b64026.Test_b64026::b1
     dup
-    ldvirtftn   instance int32 A::f1()
+    ldvirtftn   instance int32 b64026.A::f1()
     calli instance int32 ()
     ret
   }
@@ -77,7 +79,7 @@
     .entrypoint
     // Code size       279 (0x117)
     .maxstack  2
-    	call       int32 Test_b64026::f1a()
+    	call       int32 b64026.Test_b64026::f1a()
     	ret
   } // end of method Test::Main
 
@@ -86,8 +88,8 @@
   {
     // Code size       11 (0xb)
     .maxstack  8
-    IL_0000:  newobj     instance void B::.ctor()
-    IL_0005:  stsfld     class B Test_b64026::b1
+    IL_0000:  newobj     instance void b64026.B::.ctor()
+    IL_0005:  stsfld     class b64026.B b64026.Test_b64026::b1
     IL_000a:  ret
   } // end of method Test::.cctor
 
@@ -101,4 +103,5 @@
     IL_0006:  ret
   } // end of method Test::.ctor
 
+}
 }

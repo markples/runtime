@@ -13,6 +13,8 @@
 #define EXPECTED "0"
 #define THRASHED "1"
 
+.namespace Runtime_74635
+{
 .class public Runtime_74635 extends [System.Runtime]System.Object
 {
   .method public static int32 Main()
@@ -54,9 +56,9 @@
   .method private static bool ProblemWithDevirtualization() noinlining
   {
     ldc.i4 EXPECTED
-    newobj instance void Struct::.ctor(int32)
-    box valuetype Struct
-    callvirt instance int32 Interface::ReturnSelf()
+    newobj instance void Runtime_74635.Struct::.ctor(int32)
+    box valuetype Runtime_74635.Struct
+    callvirt instance int32 Runtime_74635.Interface::ReturnSelf()
     ldc.i4 EXPECTED
     bne.un FAILED
 
@@ -72,10 +74,10 @@
   {
     ldc.i4 EXPECTED
     ldc.i4 THRASHED
-    newobj instance void Struct::.ctor(int32, int32)
+    newobj instance void Runtime_74635.Struct::.ctor(int32, int32)
     pop
 
-    ldsfld int32 Struct::StaticValue
+    ldsfld int32 Runtime_74635.Struct::StaticValue
     ldc.i4 EXPECTED
     bne.un FAILED
 
@@ -89,7 +91,7 @@
 
   .method private static bool ProblemWithLocAlloc() noinlining
   {
-    sizeof valuetype Struct
+    sizeof valuetype Runtime_74635.Struct
     localloc
     call int32 .this::ReturnExpectedWithLocAlloc(void*)
     ldc.i4 EXPECTED
@@ -110,7 +112,7 @@
     stind.i4
 
     ldarg pLocAlloc
-    ldfld int32 Struct::Value
+    ldfld int32 Runtime_74635.Struct::Value
     ldarg pLocAlloc
     ldc.i4 THRASHED
     stind.i4
@@ -119,16 +121,16 @@
 
   .method private static bool ProblemWithCapturingCtors() noinlining
   {
-    .locals (valuetype Closure closure)
+    .locals (valuetype Runtime_74635.Closure closure)
 
     ldc.i4 EXPECTED
     ldloca closure
-    newobj instance void Struct::.ctor(int32, valuetype Closure&)
+    newobj instance void Runtime_74635.Struct::.ctor(int32, valuetype Runtime_74635.Closure&)
     ldloc closure
-    ldfld valuetype Struct& Closure::StructRef
+    ldfld valuetype Runtime_74635.Struct& Runtime_74635.Closure::StructRef
     ldc.i4 THRASHED
-    stfld int32 Struct::Value
-    ldfld int32 Struct::Value
+    stfld int32 Runtime_74635.Struct::Value
+    ldfld int32 Runtime_74635.Struct::Value
     ldc.i4 EXPECTED
     bne.un FAILED
 
@@ -146,7 +148,7 @@
   .method public abstract virtual int32 ReturnSelf() { }
 }
 
-.class sealed sequential Struct extends [System.Runtime]System.ValueType implements Interface
+.class sealed sequential Struct extends [System.Runtime]System.ValueType implements Runtime_74635.Interface
 {
   .field public static int32 StaticValue
 
@@ -177,7 +179,7 @@
     ret
   }
 
-  .method public void .ctor(int32 val, valuetype Closure& closureRef) noinlining
+  .method public void .ctor(int32 val, valuetype Runtime_74635.Closure& closureRef) noinlining
   {
     ldarg THIS
     ldarg val
@@ -185,7 +187,7 @@
 
     ldarg closureRef
     ldarg THIS
-    stfld valuetype Struct& Closure::StructRef
+    stfld valuetype Runtime_74635.Struct& Runtime_74635.Closure::StructRef
 
     ret
   }
@@ -206,5 +208,6 @@
 {
   .custom instance void [System.Runtime]System.Runtime.CompilerServices.IsByRefLikeAttribute::.ctor() = (01 00 00 00)
 
-  .field public valuetype Struct& StructRef
+  .field public valuetype Runtime_74635.Struct& StructRef
+}
 }

@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_21295
+{
 class B
 {
     public virtual int F() => 33;
@@ -35,4 +37,5 @@ public class X
         // may incorrectly devirtualize the call to F()
         return G().F() + 67;
     }
+}
 }

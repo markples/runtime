@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b28077
+{
 struct S
 {
 #pragma warning disable 0414
@@ -35,4 +37,5 @@ public class Test_struct5_2
         c(sM, sM2, sM3, sM4);
         return 100;
     }
+}
 }

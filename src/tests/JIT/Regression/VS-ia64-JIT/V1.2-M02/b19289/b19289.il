@@ -10,6 +10,8 @@
 .assembly 'b19289'{}
 .assembly extern xunit.core {}
 
+.namespace b19289
+{
 .class public auto ansi beforefieldinit MyClass
        extends [mscorlib]System.Object
 {
@@ -47,4 +49,5 @@
     IL_0015:  ldc.i4 1 ret
     IL_0016:  ldc.i4 100 ret
   }
+}
 }

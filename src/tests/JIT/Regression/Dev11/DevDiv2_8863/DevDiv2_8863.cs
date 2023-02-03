@@ -4,6 +4,8 @@
 
 using System;
 
+namespace DevDiv2_8863
+{
 public class Base
 {
     public virtual Base Get()
@@ -78,3 +80,4 @@ public class Program
     }
 }
 
+}

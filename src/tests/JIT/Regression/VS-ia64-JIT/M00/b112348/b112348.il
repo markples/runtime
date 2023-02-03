@@ -26,7 +26,7 @@
 .corflags 0x00000001    //  ILONLY
 
 
-.namespace JitTest
+.namespace b112348
 {
   .class public auto ansi Test
          extends [mscorlib]System.Object
@@ -125,7 +125,7 @@
       IL_0063:  ldloc.0
       IL_0064:  ldc.i4     0xffffd8f0
       IL_0069:  ldc.i4.0
-      IL_006a:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_006a:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_006f:  brfalse    IL_0168
@@ -133,7 +133,7 @@
       IL_0074:  ldloc.0
       IL_0075:  ldc.i4.m1
       IL_0076:  ldc.i4.0
-      IL_0077:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_0077:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_007c:  brfalse    IL_0168
@@ -141,7 +141,7 @@
       IL_0081:  ldloc.0
       IL_0082:  ldc.i4.0
       IL_0083:  ldc.i4.0
-      IL_0084:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_0084:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_0089:  brfalse    IL_0168
@@ -149,7 +149,7 @@
       IL_008e:  ldloc.0
       IL_008f:  ldc.i4.1
       IL_0090:  ldc.i4.0
-      IL_0091:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_0091:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_0096:  brfalse    IL_0168
@@ -157,7 +157,7 @@
       IL_009b:  ldloc.0
       IL_009c:  ldc.i4     0x3e8
       IL_00a1:  ldc.i4.0
-      IL_00a2:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_00a2:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_00a7:  brfalse    IL_0168
@@ -192,7 +192,7 @@
       IL_010f:  ldloc.0
       IL_0110:  ldc.i4     0xffffd8f0
       IL_0115:  ldc.i4.0
-      IL_0116:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_0116:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_011b:  brfalse    IL_0168
@@ -200,7 +200,7 @@
       IL_0120:  ldloc.0
       IL_0121:  ldc.i4.m1
       IL_0122:  ldc.i4.0
-      IL_0123:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_0123:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_0128:  brfalse    IL_0168
@@ -208,7 +208,7 @@
       IL_012d:  ldloc.0
       IL_012e:  ldc.i4.0
       IL_012f:  ldc.i4.0
-      IL_0130:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_0130:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_0135:  brfalse    IL_0168
@@ -216,7 +216,7 @@
       IL_013a:  ldloc.0
       IL_013b:  ldc.i4.1
       IL_013c:  ldc.i4.0
-      IL_013d:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_013d:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_0142:  brfalse    IL_0168
@@ -224,7 +224,7 @@
       IL_0147:  ldloc.0
       IL_0148:  ldc.i4     0x3e8
       IL_014d:  ldc.i4.0
-      IL_014e:  call       int32 JitTest.Test::try_index(int32[0...],
+      IL_014e:  call       int32 b112348.Test::try_index(int32[0...],
                                                          int32,
                                                          int32)
       IL_0153:  brfalse    IL_0168

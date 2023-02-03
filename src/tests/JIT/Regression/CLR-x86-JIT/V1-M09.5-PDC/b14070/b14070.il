@@ -10,6 +10,8 @@
 .assembly b14070
 {
 }
+.namespace b14070
+{
 .class public ILGEN_622380794 {
 
 .field static	int64 field_0x1
@@ -22,7 +24,7 @@
  ldc.r4 0
  stloc.0
  
- ldsflda int64 ILGEN_622380794::field_0x1
+ ldsflda int64 b14070.ILGEN_622380794::field_0x1
  ldind.i8
  conv.u
  ldloc local_0x2
@@ -31,5 +33,6 @@
 ldc.i4 100
 add
 ret
+}
 }
 }

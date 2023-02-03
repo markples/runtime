@@ -9,6 +9,8 @@
 }
 .assembly 'b140118' {}
 .assembly extern xunit.core {}
+.namespace b140118
+{
 .class public ILGEN_0x1c9344b9 {
 .field static	int16[] field_0x0
 .method static int32 Method_0xcf54fbcb() {
@@ -24,10 +26,10 @@
 
 ldc.i4 255
  newarr [mscorlib]System.Int16 
- stsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ stsfld int16[] b140118.ILGEN_0x1c9344b9::field_0x0
 
 Start_Orphan_0:
- ldsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ ldsfld int16[] b140118.ILGEN_0x1c9344b9::field_0x0
  ldloc local_0x3
  ldloc local_0x8
  blt.un Branch_0x2
@@ -37,7 +39,7 @@ Start_Orphan_0:
  sub
  br Branch_0x3
  Branch_0x2:
- ldsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ ldsfld int16[] b140118.ILGEN_0x1c9344b9::field_0x0
  ldlen
  ldc.i4.1
  sub
@@ -45,7 +47,7 @@ Start_Orphan_0:
  ldelema [mscorlib]System.Int16
 
 Start_Orphan_3:
- ldsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ ldsfld int16[] b140118.ILGEN_0x1c9344b9::field_0x0
  ldc.i4 55
  ldc.i4 0x6cedf978
  stelem.i2
@@ -71,10 +73,11 @@ EOM: ret
 )
 .entrypoint
 .maxstack	20
-call int32 ILGEN_0x1c9344b9::Method_0xcf54fbcb()
+call int32 b140118.ILGEN_0x1c9344b9::Method_0xcf54fbcb()
 pop
 ldc.i4 100
  ret
 }
 
+}
 }

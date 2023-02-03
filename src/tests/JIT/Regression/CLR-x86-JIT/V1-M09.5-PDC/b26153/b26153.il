@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b26153' {}
+.namespace b26153
+{
 .class public ILGEN_0xf7c4ec97 {
 
 .field static	unsigned int32[] field_0xc
@@ -25,7 +27,7 @@ stloc local_0xc
 
 ldc.i4 255
  newarr [mscorlib]System.UInt32 
- stsfld unsigned int32[] ILGEN_0xf7c4ec97::field_0xc
+ stsfld unsigned int32[] b26153.ILGEN_0xf7c4ec97::field_0xc
 
 Start_Orphan_1:
  ldloca local_0xa
@@ -38,7 +40,7 @@ End_Orphan_1:
  conv.ovf.i8.un
 
 Start_Orphan_4:
- ldsfld unsigned int32[] ILGEN_0xf7c4ec97::field_0xc
+ ldsfld unsigned int32[] b26153.ILGEN_0xf7c4ec97::field_0xc
  ldc.i4 6
  ldc.i4 1
  stelem.i4
@@ -61,3 +63,4 @@ ret
 }
 }
 
+}

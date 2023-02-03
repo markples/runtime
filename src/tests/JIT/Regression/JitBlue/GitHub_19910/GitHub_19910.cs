@@ -6,7 +6,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using System.Runtime.CompilerServices;
 
-namespace GitHub_19910
+namespace GitHub_19910_GitHub_19910
 {
     public class Program
     {

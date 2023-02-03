@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b16896' {}
+.namespace b16896
+{
 .class public ILGEN_0x38e6a02d {
 
 .field static	unsigned int64 field_0x3
@@ -42,11 +44,11 @@ ldc.r4 float32(0x7b5d5f1c)
 stloc local_0x10
 
 ldc.i8 0x2e955def5c8d4af1 
-stsfld unsigned int64 ILGEN_0x38e6a02d::field_0x3
+stsfld unsigned int64 b16896.ILGEN_0x38e6a02d::field_0x3
 ldc.i4 0x4fcc1252 
-stsfld int16 ILGEN_0x38e6a02d::field_0x5
+stsfld int16 b16896.ILGEN_0x38e6a02d::field_0x5
 ldc.r4 float32(0x7aa321fe) 
-stsfld float32 ILGEN_0x38e6a02d::field_0x8
+stsfld float32 b16896.ILGEN_0x38e6a02d::field_0x8
 
 Start_Orphan_0:
  ldloc local_0xa
@@ -54,14 +56,14 @@ Start_Orphan_0:
  newarr [mscorlib]System.UInt16
 Start_Orphan_6:
 Start_Orphan_7:
- ldsfld unsigned int64 ILGEN_0x38e6a02d::field_0x3
+ ldsfld unsigned int64 b16896.ILGEN_0x38e6a02d::field_0x3
  stloc local_0xf
 End_Orphan_7:
 End_Orphan_6:
- ldsfld unsigned int64 ILGEN_0x38e6a02d::field_0x3
+ ldsfld unsigned int64 b16896.ILGEN_0x38e6a02d::field_0x3
  conv.ovf.i
  conv.r4
- ldsfld float32 ILGEN_0x38e6a02d::field_0x8
+ ldsfld float32 b16896.ILGEN_0x38e6a02d::field_0x8
  mul
  conv.ovf.u4
  ldelema [mscorlib]System.UInt16
@@ -69,13 +71,13 @@ End_Orphan_6:
 End_Orphan_0:
  ldloc local_0x10
  conv.ovf.u8
- ldsflda unsigned int64 ILGEN_0x38e6a02d::field_0x3
+ ldsflda unsigned int64 b16896.ILGEN_0x38e6a02d::field_0x3
  ldind.u8
  ldc.i4.1
  conv.i8
  mul.ovf
  or
- ldsfld int16 ILGEN_0x38e6a02d::field_0x5
+ ldsfld int16 b16896.ILGEN_0x38e6a02d::field_0x5
  ldloc local_0xb
  div
  conv.ovf.u8.un
@@ -103,5 +105,6 @@ End_Orphan_0:
 Beyond:
 ldc.i4 100
 ret
+}
 }
 }

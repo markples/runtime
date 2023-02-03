@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b113286'{}
+.namespace b113286
+{
 .class public _rem {
 
 .method public static int32 main() {
@@ -37,3 +39,4 @@ end:
 // -- EOF ---------------------------
 }
 // ----------------------------------
+}

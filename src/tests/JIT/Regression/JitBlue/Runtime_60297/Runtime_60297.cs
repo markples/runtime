@@ -7,10 +7,13 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_60297
+{
 public class Program
 {
     public static int Main() => Test(31) == -65538 ? 100 : 0;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     static int Test(int x) => -(1 << x) / 32767;
+}
 }

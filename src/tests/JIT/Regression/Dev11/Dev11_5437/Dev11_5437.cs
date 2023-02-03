@@ -4,6 +4,8 @@
 
 using System;
 
+namespace Dev11_5437
+{
 public class Program
 {
     static void f(int c, int d, int e)
@@ -31,4 +33,5 @@ public class Program
         Console.WriteLine("PASSED");
         return 100; //Didn't hit the bug so return success
     }
+}
 }

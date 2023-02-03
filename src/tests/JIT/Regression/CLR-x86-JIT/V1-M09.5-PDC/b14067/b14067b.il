@@ -10,6 +10,8 @@
 .assembly b14067b
 {
 }
+.namespace b14067b
+{
 .class public ILGEN_622380794 {
 
 .method public static int32 main() {
@@ -28,5 +30,6 @@
  pop
  ldc.i4 100
  ret
+}
 }
 }

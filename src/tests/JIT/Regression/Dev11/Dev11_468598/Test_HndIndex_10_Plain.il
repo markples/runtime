@@ -22,6 +22,8 @@
 .corflags 0x00000001    // ILONLY
 
 
+.namespace Test_HndIndex_10_Plain
+{
 .class
     private auto ansi beforefieldinit sealed abstract
     Test.App
@@ -336,3 +338,4 @@
     }
 }
 
+}

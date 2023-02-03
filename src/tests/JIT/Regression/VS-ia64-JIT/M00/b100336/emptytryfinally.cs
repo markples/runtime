@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b100336
+{
 public class a
 {
 
@@ -16,4 +18,5 @@ public class a
         }
         return 100;
     }
+}
 }

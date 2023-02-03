@@ -5,6 +5,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b302509
+{
 public struct AA
 {
     public static byte Static2()
@@ -42,4 +44,5 @@ public class App
     public static bool m_bFwd5;
     public static AA m_xFwd6;
     public static byte m_byFwd9;
+}
 }

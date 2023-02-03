@@ -24,6 +24,8 @@
 // cmp      cx, ax                 ; compare only 16 bits                                            
 // seta     cl                     ; set if above (unsigned comparison)  <-- Fixed instruction       
 
+namespace GitHub_2580
+{
 public static class MicrsoftNETBug
 {
     private struct S
@@ -66,4 +68,5 @@ public static class MicrsoftNETBug
             return 101;
         }
     }
+}
 }

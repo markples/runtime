@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 
 // Various tests for memory-dependent loop hoisting
 
+namespace Runtime_54118
+{
 public class Runtime_54118
 {
     public static int Main()
@@ -236,4 +238,5 @@ public class Runtime_54118
 
         return val == 1;
     }
+}
 }

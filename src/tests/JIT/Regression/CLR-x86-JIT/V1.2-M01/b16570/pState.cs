@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b16570
+{
 public class test
 {
     public struct VT
@@ -66,4 +68,5 @@ public class test
             return 1;
         }
     }
+}
 }

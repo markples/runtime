@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b119538b
+{
 class C
 {
     private string s = "This is private";
@@ -34,3 +36,4 @@ public class Class1
     }
 }
 
+}

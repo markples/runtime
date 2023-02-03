@@ -5,17 +5,20 @@
 {
 }
 .data tls FieldData = int32(51966)
+.namespace b03689
+{
 .class public test {
 
 	.field public static int32 TLSFieldData at FieldData
 	.method public static int32 main() 
 	{
 		.entrypoint
-		ldsfld	int32 test::TLSFieldData  
-		stsfld	int32 test::TLSFieldData  
+		ldsfld	int32 b03689.test::TLSFieldData  
+		stsfld	int32 b03689.test::TLSFieldData  
 		ldc.i4 100
-		stsfld	int32 test::TLSFieldData  
-		ldsfld	int32 test::TLSFieldData  
+		stsfld	int32 b03689.test::TLSFieldData  
+		ldsfld	int32 b03689.test::TLSFieldData  
 		ret
 	}
+}
 }

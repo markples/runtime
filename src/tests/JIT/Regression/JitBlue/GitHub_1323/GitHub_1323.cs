@@ -3,6 +3,8 @@
 
 using System;
 
+namespace GitHub_1323
+{
 public class Program
 {
     static ushort SkillLevel;
@@ -22,4 +24,5 @@ public class Program
             return 100;
         }
     }
+}
 }

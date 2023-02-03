@@ -8,6 +8,8 @@
 //     File: D:\a\_work\1\s\src\coreclr\jit\codegenarm64.cpp Line: 4543
 //
 
+namespace Runtime_76273
+{
 public class C0
 {
     public int F0;
@@ -70,4 +72,5 @@ public class CollectibleALC : System.Runtime.Loader.AssemblyLoadContext
     public CollectibleALC(): base(true)
     {
     }
+}
 }

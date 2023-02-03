@@ -8,6 +8,8 @@ using System;
 // 
 // Debug: Outputs 2
 // Release: Outputs 1
+namespace GitHub_21231b
+{
 struct S0
 {
     public sbyte F0;
@@ -57,4 +59,5 @@ public class Program
 	    return 100;
         }
     }
+}
 }

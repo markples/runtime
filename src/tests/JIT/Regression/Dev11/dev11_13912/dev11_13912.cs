@@ -4,6 +4,8 @@
 
 using System;
 
+namespace dev11_13912
+{
 public class P
 {
     public static int Main()
@@ -43,4 +45,5 @@ public class P
             }
         }
     }
+}
 }

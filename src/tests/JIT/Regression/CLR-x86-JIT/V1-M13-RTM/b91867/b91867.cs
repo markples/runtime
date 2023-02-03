@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b91867
+{
 public class CC
 {
     public static int Main()
@@ -14,4 +16,5 @@ public class CC
 #pragma warning restore 1718
         return 100;
     }
+}
 }

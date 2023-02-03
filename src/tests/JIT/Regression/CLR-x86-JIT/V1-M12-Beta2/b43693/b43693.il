@@ -12,6 +12,8 @@
   
 }
 .assembly extern xunit.core {}
+.namespace b43693
+{
 .class public M
 {
   .method public static int32 Main()
@@ -30,4 +32,5 @@
     ldc.i4 100
     ret
   }
+}
 }

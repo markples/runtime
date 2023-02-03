@@ -6,7 +6,7 @@ using System;
 using System.Collections;
 
 
-namespace Test
+namespace b51875
 {
     public struct AA
     {

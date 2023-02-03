@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b75250
+{
 public class testout1
 {
 
@@ -53,4 +55,5 @@ public class testout1
         return 100;
     }
 
+}
 }

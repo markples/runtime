@@ -31,7 +31,7 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
-.namespace hello
+.namespace hello_b106158
 {
   .class public auto ansi beforefieldinit Class1
          extends [mscorlib]System.Object

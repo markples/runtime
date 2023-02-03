@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b608198
+{
 /*
  QFE regression TC for AV while optimizing away basic blocks that 
  are not used which contain switch statements.
@@ -47,3 +49,4 @@ public class TEST
     }
 }
 
+}

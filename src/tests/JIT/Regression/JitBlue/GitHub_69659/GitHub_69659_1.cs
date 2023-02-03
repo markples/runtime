@@ -4,6 +4,8 @@
 // In this issue, although we were not removing an unreachable block, we were removing all the code
 // inside it and as such should update the liveness information. Since we were not updating the liveness
 // information for such scenarios, we were hitting an assert during register allocation.
+namespace GitHub_69659_1
+{
 public class Program
 {
     public static ulong[] s_14;
@@ -32,4 +34,5 @@ public class Program
             arg4 = arg4;
         }
     }
+}
 }

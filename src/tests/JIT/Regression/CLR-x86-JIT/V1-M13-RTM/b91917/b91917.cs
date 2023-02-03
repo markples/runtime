@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b91917
+{
 public class CC
 {
     public static int Main()
@@ -32,4 +34,5 @@ public class CC
             }
         }
     }
+}
 }

@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
-namespace Test
+namespace b39217
 {
     using System;
 

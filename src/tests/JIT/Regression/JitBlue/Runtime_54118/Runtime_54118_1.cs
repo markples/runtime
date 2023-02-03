@@ -13,6 +13,8 @@ using System.Runtime.CompilerServices;
 // VN must properly report loop dependence of a PhiMemoryDef
 // or the jit will hoist the load of vr7[0] past the store.
 
+namespace Runtime_54118_1
+{
 public class Runtime_54118
 {
     static short[] s_2;
@@ -43,4 +45,5 @@ public class Runtime_54118
 
         return ok ? 100 : -1;
     }
+}
 }

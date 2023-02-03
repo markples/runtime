@@ -3,6 +3,8 @@
 
 using System;
 
+namespace Runtime_58972
+{
 public class Runtime_58972
 {
     public static int Main()
@@ -34,4 +36,5 @@ public class Runtime_58972
     {
         byte b;
     }
+}
 }

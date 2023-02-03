@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 // unsigned long and `constant` is a 32- or 64-bit integer constant in the range [2,0x3fffffff]. These expressions
 // should never produce an overflow exception.
 
+namespace GitHub_8170
+{
 public static class C
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -19,4 +21,5 @@ public static class C
     {
         return M(ulong.MaxValue) == 9551615 ? 100 : 101;
     }
+}
 }

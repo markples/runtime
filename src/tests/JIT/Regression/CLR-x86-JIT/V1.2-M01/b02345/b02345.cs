@@ -5,6 +5,8 @@
 using System;
 using System.Collections;
 
+namespace b02345
+{
 public enum TestEnum
 {
     red = 1,
@@ -101,4 +103,5 @@ public class App
         Console.WriteLine("Passed.");
         return 100;
     }
+}
 }

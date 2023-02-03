@@ -5,6 +5,8 @@ using System;
 using System.Security;
 
 
+namespace b402701
+{
 public class Foo
 {
     public virtual void callee()
@@ -30,4 +32,5 @@ public class Foo
         Console.WriteLine("test passed");
         return 100;
     }
+}
 }

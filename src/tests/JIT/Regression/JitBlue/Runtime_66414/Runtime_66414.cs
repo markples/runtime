@@ -9,6 +9,8 @@
 // Release: Outputs 255
 using System.Runtime.CompilerServices;
 
+namespace Runtime_66414
+{
 public struct S0
 {
     public bool F0;
@@ -40,4 +42,5 @@ public class Runtime_66414
         arg1.F4 = (byte)(arg1.F5 - (uint)arg1.M6());
         return arg1.F4;
     }
+}
 }

@@ -7,6 +7,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_66578
+{
 public interface I0
 {
 }
@@ -81,4 +83,5 @@ public class Program2
             I1 vr12 = s_18[0][0];
         }
     }
+}
 }

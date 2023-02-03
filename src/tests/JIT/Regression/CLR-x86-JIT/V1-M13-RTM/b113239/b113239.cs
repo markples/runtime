@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Text;
 
 
+namespace b113239
+{
 public class A
 {
     public static void A1(ulong p1, byte[] p2, int p3, int p4)
@@ -142,4 +144,5 @@ public class Test_b113239
         int retval = B.B1(-123456781234567L, -123456781234567L, block, 0, 0);
         return retval;
     }
+}
 }

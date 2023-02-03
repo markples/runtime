@@ -5,6 +5,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b301479
+{
 public enum TestEnum
 {
     red = 1,
@@ -51,4 +53,5 @@ public class App
     }
     public static short m_shFwd1;
     public static uint[,] m_auFwd8;
+}
 }

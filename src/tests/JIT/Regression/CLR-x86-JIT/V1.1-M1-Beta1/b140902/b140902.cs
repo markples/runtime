@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b140902
+{
 public unsafe class testout1
 {
     public struct VT_0_8_5
@@ -3453,4 +3455,5 @@ public unsafe class testout1
         Console.WriteLine(retval);
         return retval;
     }
+}
 }

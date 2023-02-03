@@ -4,6 +4,8 @@
 using System.Runtime.CompilerServices;
 using System.Threading;
 
+namespace GitHub_19599
+{
 struct S0
 {
     public byte F0;
@@ -26,4 +28,5 @@ public class Program
     {
         s_5 = Volatile.Read(ref arg0.F0);
     }
+}
 }

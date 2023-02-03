@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Runtime_58874
+{
 public unsafe class Runtime_58874
 {
     public static int Main()
@@ -94,4 +96,5 @@ public unsafe class Runtime_58874
 struct Test
 {
     public byte A, B;
+}
 }

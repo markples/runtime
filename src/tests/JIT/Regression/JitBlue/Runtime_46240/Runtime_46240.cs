@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Numerics;
 
+namespace Runtime_46240
+{
 public struct S<T>
 {
     public object o;
@@ -108,4 +110,5 @@ public class Runtime_46240
         }
         return 100;
     }
+}
 }

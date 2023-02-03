@@ -7,6 +7,8 @@
 // Reduced from 104.8 KiB to 0.8 KiB in 00:00:44
 // Debug: Outputs 1, 0
 // Release: Outputs 1, 1
+namespace Runtime_57282_1
+{
 struct S0
 {
     public short F1;
@@ -75,4 +77,5 @@ public class Program
 
     }
 
+}
 }

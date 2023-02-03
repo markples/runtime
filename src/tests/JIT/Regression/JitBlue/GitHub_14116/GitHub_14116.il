@@ -6,6 +6,8 @@
 .assembly GitHub_14116 {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_14116
+{
 .class public Program
 {
     .field static int8 s8;
@@ -35,11 +37,11 @@
         .maxstack 1
 
         ldc.i4 -1
-        stsfld int8 Program::s8
+        stsfld int8 GitHub_14116.Program::s8
 
         .try
         {
-            call int32[] Program::Test()
+            call int32[] GitHub_14116.Program::Test()
             leave FAIL
         }
         catch [mscorlib]System.OverflowException
@@ -58,4 +60,5 @@
         ldc.i4 100
         ret
     }
+}
 }

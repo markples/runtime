@@ -37,6 +37,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b174294
+{
 .class public auto ansi beforefieldinit MainApp
        extends [mscorlib]System.Object
 {
@@ -61,11 +63,11 @@
     .maxstack  3
     .locals init (int32 V_0,
              int32 V_1)
-    IL_0000:  ldsfld     int32 MainApp::s
+    IL_0000:  ldsfld     int32 b174294.MainApp::s
     IL_0005:  stloc.0
 
     IL_000a:  ldloc.0
-    IL_000b:  call       int32 MainApp::Foo(int32)
+    IL_000b:  call       int32 b174294.MainApp::Foo(int32)
 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // These four lines have been moved.
@@ -108,7 +110,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldc.i4.1
-    IL_0001:  stsfld     int32 MainApp::s
+    IL_0001:  stsfld     int32 b174294.MainApp::s
     IL_0006:  ret
   } // end of method MainApp::.cctor
 
@@ -119,3 +121,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file spill.res
+}

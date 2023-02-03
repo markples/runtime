@@ -8,6 +8,8 @@ using System.Runtime.CompilerServices;
 // by narrowing the compare to ubyte. This should only happen if the constant fits in
 // a byte so it can be narrowed too, otherwise codegen produces an int sized compare.
 
+namespace GitHub_8599
+{
 public class Program
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -38,4 +40,5 @@ public class Program
 
         return 100;
     }
+}
 }

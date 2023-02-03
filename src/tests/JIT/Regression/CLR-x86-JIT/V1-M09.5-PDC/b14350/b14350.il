@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly b14350 { }
+.namespace b14350
+{
 .class public ILGEN_622380794 {
 
 .field static	int32 field_0x0
@@ -19,24 +21,25 @@
 .entrypoint
 .maxstack	20
 
- ldsflda float64 ILGEN_622380794::field_0x3
- ldsfld float64 ILGEN_622380794::field_0x3
- ldsflda int64 ILGEN_622380794::field_0x1
- ldsfld int64 ILGEN_622380794::field_0x1
+ ldsflda float64 b14350.ILGEN_622380794::field_0x3
+ ldsfld float64 b14350.ILGEN_622380794::field_0x3
+ ldsflda int64 b14350.ILGEN_622380794::field_0x1
+ ldsfld int64 b14350.ILGEN_622380794::field_0x1
  stind.i8
- ldsfld float32 ILGEN_622380794::field_0x2
+ ldsfld float32 b14350.ILGEN_622380794::field_0x2
  //conv.r.un
  sub
- ldsflda int32 ILGEN_622380794::field_0x0
- ldsfld float64 ILGEN_622380794::field_0x3
+ ldsflda int32 b14350.ILGEN_622380794::field_0x0
+ ldsfld float64 b14350.ILGEN_622380794::field_0x3
  conv.i1
  conv.u
  stind.i4
  pop
- ldsfld int64 ILGEN_622380794::field_0x1
+ ldsfld int64 b14350.ILGEN_622380794::field_0x1
  conv.r.un
  stind.r8
  ldc.i4 100
  ret
+}
 }
 }

@@ -9,6 +9,8 @@
 .assembly GitHub_25027 {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_25027
+{
 .class public auto ansi beforefieldinit X
        extends [System.Runtime]System.Object
 {
@@ -24,7 +26,7 @@
 
     .try
     {
-      call       int32 X::F()
+      call       int32 GitHub_25027.X::F()
       stloc.0
       leave.s    join
 
@@ -82,7 +84,7 @@
 
     dup
     dup
-    call       void X::G(int32)
+    call       void GitHub_25027.X::G(int32)
     ret
   }
 
@@ -92,4 +94,5 @@
     ret
   }
 
+}
 }

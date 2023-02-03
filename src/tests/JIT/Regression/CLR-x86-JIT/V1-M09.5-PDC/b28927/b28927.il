@@ -20,6 +20,8 @@
 {
 
 }
+.namespace b28927
+{
 .class public _ldtoken 
 {
 
@@ -29,8 +31,8 @@
 .locals	()
 .maxstack	2
 	
-	ldtoken	  method instance vararg int32 _ldtoken::test(int32)
-	stsfld valuetype [mscorlib]System.RuntimeMethodHandle _ldtoken::PTR
+	ldtoken	  method instance vararg int32 b28927._ldtoken::test(int32)
+	stsfld valuetype [mscorlib]System.RuntimeMethodHandle b28927._ldtoken::PTR
 
 // for now, if we dont crash, we pass...
 
@@ -62,5 +64,6 @@ FAIL:
 	ldc.i4	0x2
 	mul
 	ret
+}
 }
 }

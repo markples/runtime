@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
-namespace DefaultNamespace
+namespace b14616
 {
     //@BEGINRENAME; Verify this renames
     //@ENDRENAME; Verify this renames

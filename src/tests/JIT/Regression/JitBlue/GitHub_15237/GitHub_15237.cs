@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace UnsafeTesting
+namespace UnsafeTesting_GitHub_15237
 {
     public class Program
     {

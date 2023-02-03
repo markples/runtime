@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace GitHub_18672
+{
 struct S4
 {
     int FI1;
@@ -65,4 +67,5 @@ public class Program
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     private static void M(){}
+}
 }

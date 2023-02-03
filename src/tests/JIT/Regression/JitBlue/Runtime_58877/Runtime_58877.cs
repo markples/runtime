@@ -14,6 +14,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_58877
+{
 public class Program
 {
     static int s_result = -1;
@@ -39,4 +41,5 @@ public class Program
         }
         return s_result;
     }
+}
 }

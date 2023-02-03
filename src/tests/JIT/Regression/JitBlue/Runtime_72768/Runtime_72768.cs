@@ -14,6 +14,8 @@ using System.Runtime.CompilerServices;
 // 
 //     File: D:\a\_work\1\s\src\coreclr\jit\lower.cpp Line: 264
 // 
+namespace Runtime_72768
+{
 public class Program
 {
     public static int PASS = 100;
@@ -87,4 +89,5 @@ public interface IRuntime
 public class Runtime : IRuntime
 {
     public void WriteLine<T>(T value) => System.Console.WriteLine(value);
+}
 }

@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b19171
+{
 public struct AA
 {
     public static int[,] Static2()
@@ -32,4 +34,5 @@ public struct AA
         Console.WriteLine("Passed.");
         return 100;
     }
+}
 }

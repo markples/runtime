@@ -8,6 +8,8 @@
 // Crashes the runtime
 using System.Runtime.CompilerServices;
 
+namespace Runtime_57061_3
+{
 class C0
 {
     public ushort F0;
@@ -82,4 +84,5 @@ public class Runtime_57061_3
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     static int Bound() => 0;
+}
 }

@@ -16,8 +16,10 @@
 // Check the type soundness of assigning into local variables
 // The verifier should REJECT this method
 //-test_20907_stloc_ByReftoI4_over_ByReftoI2
+.namespace b59857
+{
 .class public C20907 {
-.method public static void test_20907_stloc_ByReftoI4_over_ByReftoI2(class C,int32, int32 &) {
+.method public static void test_20907_stloc_ByReftoI4_over_ByReftoI2(class b59857.C,int32, int32 &) {
 // Local 0 - an initialized int32 (not used in all tests)
 // Local 1 - an initialized int64 (not used in all tests)
 // Local 2 - an initially uninitialized ['mscorlib']System.DateTime (not used in all tests)
@@ -65,9 +67,10 @@ call       void [System.Console]System.Console::WriteLine(class System.String)
 
 ldnull
 ldc.i4 10
-ldsflda int32 C::i4
-call void C20907::test_20907_stloc_ByReftoI4_over_ByReftoI2(class C,int32, int32 &)
+ldsflda int32 b59857.C::i4
+call void b59857.C20907::test_20907_stloc_ByReftoI4_over_ByReftoI2(class b59857.C,int32, int32 &)
 ldc.i4 100
 ret
+}
 }
 }

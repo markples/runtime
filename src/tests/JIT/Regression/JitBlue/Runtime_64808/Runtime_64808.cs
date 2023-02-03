@@ -14,6 +14,8 @@ using System.Runtime.CompilerServices;
 //     File: /__w/1/s/src/coreclr/jit/codegencommon.cpp Line: 7256
 // 
 
+namespace Runtime_64808
+{
 public class C0
 {
     public int F0;
@@ -78,4 +80,5 @@ public class C : IRT
     {
         System.Console.WriteLine(value);
     }
+}
 }

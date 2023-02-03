@@ -8,6 +8,8 @@
 .assembly handleMath {}
 .assembly extern xunit.core {}
 
+.namespace handleMath
+{
 .class public F
 {
 
@@ -19,7 +21,7 @@
    ldarg.1
    ldc.i4 75
    add
-   stfld int32 F::A
+   stfld int32 handleMath.F::A
    ret
 }
 
@@ -28,7 +30,7 @@
 .method public int32 Fix() cil
 {
    ldarg.0
-   ldfld int32 F::A
+   ldfld int32 handleMath.F::A
    ldc.i4 125
    add
    ret
@@ -57,29 +59,29 @@
    )
    .entrypoint
    ldc.i4 -100
-   newobj instance void F::.ctor(int32)
-   ldftn instance int32 F::Fix()
-   call native int F::Add(native int)
-   call native int F::Sub(native int)
-   calli int32(class F)
+   newobj instance void handleMath.F::.ctor(int32)
+   ldftn instance int32 handleMath.F::Fix()
+   call native int handleMath.F::Add(native int)
+   call native int handleMath.F::Sub(native int)
+   calli int32(class handleMath.F)
    ldc.i4 100
    bne.un failure
 
    ldc.i4 -100
-   newobj instance void F::.ctor(int32)
-   ldftn instance int32 F::Fix()
+   newobj instance void handleMath.F::.ctor(int32)
+   ldftn instance int32 handleMath.F::Fix()
    neg
    neg
-   calli int32(class F)
+   calli int32(class handleMath.F)
    ldc.i4 100
    bne.un failure
    
    ldc.i4 -100
-   newobj instance void F::.ctor(int32)
-   ldftn instance int32 F::Fix()
+   newobj instance void handleMath.F::.ctor(int32)
+   ldftn instance int32 handleMath.F::Fix()
    not
    not
-   calli int32(class F)
+   calli int32(class handleMath.F)
    ldc.i4 100
    bne.un failure
 
@@ -92,4 +94,5 @@ failure:
 }
 
 
+}
 }

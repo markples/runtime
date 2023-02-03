@@ -9,6 +9,8 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+namespace GitHub_65690
+{
 public class TestClass_65690
 {
     public struct S1
@@ -117,4 +119,5 @@ public class TestClass_65690
         new TestClass_65690().Method0();
         return 100;
     }
+}
 }

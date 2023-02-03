@@ -7,6 +7,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_718151
+{
 struct Struct16bytes
 {
     public int a;
@@ -40,4 +42,5 @@ public class DevDiv_714266
         return test.foo(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, s.structField);
     }
 
+}
 }

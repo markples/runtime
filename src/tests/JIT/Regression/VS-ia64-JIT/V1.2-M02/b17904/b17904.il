@@ -35,6 +35,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b17904
+{
 .class private sequential ansi sealed beforefieldinit Struct1
        extends [mscorlib]System.ValueType
 {
@@ -53,11 +55,11 @@
 .class public auto ansi beforefieldinit MyTest
        extends [mscorlib]System.Object
 {
-  .method public static valuetype Struct1 f(int32) cil managed
+  .method public static valuetype b17904.Struct1 f(int32) cil managed
   {
     // Code size       14 (0xe)
     .maxstack  4
-    .locals init( valuetype Struct1 MYSTRUCT)
+    .locals init( valuetype b17904.Struct1 MYSTRUCT)
 
               ldarg.0
     IL_0001:  ldc.i4.0
@@ -68,7 +70,7 @@
               ldc.i4.1
               sub
               tail.
-    IL_0008:  call       valuetype Struct1 MyTest::f(int32)
+    IL_0008:  call       valuetype b17904.Struct1 b17904.MyTest::f(int32)
     IL_000d:  ret
   } // end of method MyTest::f
 
@@ -81,7 +83,7 @@
     // Code size       18 (0x12)
     .maxstack  2
               ldc.i4     100
-    IL_0002:  call       valuetype Struct1 MyTest::f(int32)
+    IL_0002:  call       valuetype b17904.Struct1 b17904.MyTest::f(int32)
               pop
     IL_0007:  ldstr      "Pass!"
     IL_000c:  call       void [System.Console]System.Console::WriteLine(string)
@@ -106,3 +108,4 @@
 
 //*********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file test.res
+}

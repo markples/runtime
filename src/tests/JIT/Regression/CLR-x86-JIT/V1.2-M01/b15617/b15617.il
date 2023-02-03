@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b15617' {}
+.namespace b15617
+{
 .class public EHTest
 {
 	.field private static int64 fld1
@@ -32,10 +34,10 @@
 		not
 		newarr     [mscorlib]System.Int64
 		ldc.i4 93
-		stsfld int32 EHTest::fld2
+		stsfld int32 b15617.EHTest::fld2
 		ldc.i4 53
 		ldelem.i8
-		stsfld int64 EHTest::fld1
+		stsfld int64 b15617.EHTest::fld1
 		leave OUT
 	end_catch: //
 
@@ -44,4 +46,5 @@
 	ret
 	.try start_try to end_try catch [mscorlib]System.Exception handler start_catch to end_catch
 	}
+}
 }

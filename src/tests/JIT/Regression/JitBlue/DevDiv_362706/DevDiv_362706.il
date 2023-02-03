@@ -3,6 +3,8 @@
 .assembly extern mscorlib{}
 .assembly DevDiv_362706{}
 .assembly extern xunit.core {}
+.namespace DevDiv_362706
+{
 .class public C extends [mscorlib]System.Object
 {
    .method static unsigned int64 M(float32, int32) cil managed noinlining
@@ -148,7 +150,7 @@ IL_011a:
        {
            ldc.r4		float32(0xFF800000)
            ldc.i4.s   25
-           call unsigned int64 C::M(float32, int32)
+           call unsigned int64 DevDiv_362706.C::M(float32, int32)
            pop
            leave.s done
        }
@@ -164,3 +166,4 @@ IL_011a:
    }
 }
 // Dumped 1
+}

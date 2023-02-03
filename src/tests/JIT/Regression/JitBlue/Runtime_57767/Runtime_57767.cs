@@ -12,6 +12,8 @@
 //     Image: D:\dev\Fuzzlyn\Fuzzlyn\publish\windows-x64\Fuzzlyn.exe
 // 
 // 
+namespace Runtime_57767
+{
 public class Program
 {
     internal static sbyte s_4;
@@ -46,4 +48,5 @@ public class Program
 
         System.Console.WriteLine(var0);
     }
+}
 }

@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b99235
+{
 public struct A
 {
     public int m_aval;
@@ -35,4 +37,5 @@ public class TestApp
         test_26((uint)&loc_x.m_b);
         return 100;
     }
+}
 }

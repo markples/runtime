@@ -14,6 +14,8 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using Xunit;
 
+namespace b08046cs
+{
 class ExternalClass
 {
     ExternalException ee;
@@ -118,4 +120,5 @@ public class ExternalException : Exception
     public ExternalException()
     {
     }
+}
 }

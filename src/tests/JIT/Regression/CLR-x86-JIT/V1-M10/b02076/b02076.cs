@@ -5,6 +5,8 @@
 using System;
 using System.Runtime.InteropServices;
 
+namespace b02076
+{
 [StructLayout(LayoutKind.Sequential)]
 class RECT
 {
@@ -49,3 +51,4 @@ public class MainClass
 };
 
 
+}

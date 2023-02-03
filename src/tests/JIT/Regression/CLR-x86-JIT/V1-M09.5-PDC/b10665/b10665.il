@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly b10665 { }
+.namespace b10665
+{
 .class public value sealed Rational implements [mscorlib]System.IComparable
 { .field int32 Numerator
   .field int32 Denominator
@@ -17,10 +19,10 @@
     .maxstack  8
     ldarg.0
     ldc.i4.0 
-    stfld     int32 Rational::Numerator
+    stfld     int32 b10665.Rational::Numerator
     ldarg.0
     ldc.i4.0 
-    stfld     int32 Rational::Denominator
+    stfld     int32 b10665.Rational::Denominator
     ret
   }
 
@@ -28,19 +30,19 @@
   // Implements IComparable::CompareTo(Object)
   {
     ldarg.0     // this as by-ref
-    ldfld int32 Rational::Numerator
+    ldfld int32 b10665.Rational::Numerator
     ldarg.1     // o as object
-    unbox value class Rational
-    ldfld int32 Rational::Numerator
+    unbox value class b10665.Rational
+    ldfld int32 b10665.Rational::Numerator
     beq.s TryDenom
     ldc.i4.0
     ret
 TryDenom:
     ldarg.0     // this as by-ref
-    ldfld int32 value class Rational::Denominator
+    ldfld int32 value class b10665.Rational::Denominator
     ldarg.1     // o as object
-    unbox value class Rational
-    ldfld int32 class Rational::Denominator
+    unbox value class b10665.Rational
+    ldfld int32 class b10665.Rational::Denominator
     ceq
     ret
   }
@@ -57,10 +59,10 @@ TryDenom:
         stloc.s S
     ldarg.0     // By-ref to self
     dup
-    ldfld int32 value class Rational::Numerator
+    ldfld int32 value class b10665.Rational::Numerator
     box [mscorlib]System.Int32
         stloc.s N
-    ldfld int32 value class Rational::Denominator
+    ldfld int32 value class b10665.Rational::Denominator
     box [mscorlib]System.Int32
         stloc.s D
         ldloc.s SB
@@ -74,26 +76,26 @@ TryDenom:
     ret
   }
 
-  .method value class Rational Mul(value class Rational)
-  { .locals (value class Rational Result)
+  .method value class b10665.Rational Mul(value class b10665.Rational)
+  { .locals (value class b10665.Rational Result)
 	
 	ldloca.s Result
-    call    instance void Rational::.ctor()
+    call    instance void b10665.Rational::.ctor()
  	ldloca.s Result
     dup
     ldarg.0     // this
-    ldfld int32 value class Rational::Numerator
+    ldfld int32 value class b10665.Rational::Numerator
     ldarga 1     // arg
-    ldfld int32 value class Rational::Numerator
+    ldfld int32 value class b10665.Rational::Numerator
     mul
-    stfld int32 value class Rational::Numerator
+    stfld int32 value class b10665.Rational::Numerator
 
     ldarg.0     // this
-    ldfld int32 value class Rational::Denominator
+    ldfld int32 value class b10665.Rational::Denominator
     ldarga 1     // arg
-    ldfld int32 value class Rational::Denominator
+    ldfld int32 value class b10665.Rational::Denominator
     mul
-    stfld int32 value class Rational::Denominator
+    stfld int32 value class b10665.Rational::Denominator
 
     ldloc.s Result
     ret
@@ -101,39 +103,39 @@ TryDenom:
 
 .method public static int32 main()
 { .entrypoint
-  .locals (value class Rational Half, value class Rational Third,
-           value class Rational Temporary,
+  .locals (value class b10665.Rational Half, value class b10665.Rational Third,
+           value class b10665.Rational Temporary,
            class [mscorlib]System.Object H, class [mscorlib]System.Object T)
 
   ldloca.s Half
-  call    instance void Rational::.ctor()
+  call    instance void b10665.Rational::.ctor()
   ldloca.s Third
-  call    instance void Rational::.ctor()
+  call    instance void b10665.Rational::.ctor()
   ldloca.s Temporary
-  call    instance void Rational::.ctor()
+  call    instance void b10665.Rational::.ctor()
   
   // Initialize Half, Third, H, and T
 
   ldloca.s Half
   dup
   ldc.i4.1
-  stfld int32 value class Rational::Numerator
+  stfld int32 value class b10665.Rational::Numerator
   ldc.i4.2
-  stfld  int32 value class Rational::Denominator
+  stfld  int32 value class b10665.Rational::Denominator
 
   ldloca.s Third
   dup
   ldc.i4.1
-  stfld int32 value class Rational::Numerator
+  stfld int32 value class b10665.Rational::Numerator
   ldc.i4.3 
-  stfld int32 value class Rational::Denominator
+  stfld int32 value class b10665.Rational::Denominator
 
   ldloc.s Half
-  box value class Rational
+  box value class b10665.Rational
   stloc.s H
 
   ldloc.s Third
-  box value class Rational
+  box value class b10665.Rational
   stloc.s T
 
   // WriteLine((Half.Mul(T)).ToString())
@@ -143,10 +145,10 @@ TryDenom:
   //   since the call to ToString requires a by-ref (address)
   ldloca.s Half
   ldloc.s Third
-  call instance value class Rational Rational::Mul(value class Rational)
+  call instance value class b10665.Rational b10665.Rational::Mul(value class b10665.Rational)
   stloc.s Temporary
   ldloca.s Temporary
-  call instance class [mscorlib]System.String Rational::ToString()
+  call instance class [mscorlib]System.String b10665.Rational::ToString()
   call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 
   // WriteLine((H.Mul(T)).ToString())
@@ -155,15 +157,16 @@ TryDenom:
   // Note that we are required to introduce a temporary variable
   //   since the call to ToString requires a by-ref (address)
   ldloc H
-  unbox value class Rational
+  unbox value class b10665.Rational
   ldloc.s Third
-  call instance value class Rational value class Rational::Mul(value class Rational)
+  call instance value class b10665.Rational value class b10665.Rational::Mul(value class b10665.Rational)
   stloc.s Temporary
   ldloca.s Temporary
-  call instance class [mscorlib]System.String Rational::ToString()
+  call instance class [mscorlib]System.String b10665.Rational::ToString()
   call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 
 ldc.i4 100
   ret
+}
 }
 }

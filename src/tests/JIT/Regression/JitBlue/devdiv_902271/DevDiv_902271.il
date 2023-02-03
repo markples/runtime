@@ -11,6 +11,8 @@
 .assembly 'DevDiv_902271' {}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_902271
+{
 .class public Repro
 {
     .field private static class [mscorlib]System.Func`2<int32,int32> d1
@@ -26,7 +28,7 @@
         ret
 
     TAILCALL1:
-        ldsfld     class [mscorlib]System.Func`6<int32,int32,int32,int32,int32,int32> Repro::d2
+        ldsfld     class [mscorlib]System.Func`6<int32,int32,int32,int32,int32,int32> DevDiv_902271.Repro::d2
         ldarg.0
         ldc.i4.1
         sub
@@ -53,7 +55,7 @@
         ret
     
     TAILCALL2:
-        ldsfld     class [mscorlib]System.Func`2<int32,int32> Repro::d1
+        ldsfld     class [mscorlib]System.Func`2<int32,int32> DevDiv_902271.Repro::d1
         ldarg.0
         ldc.i4.1
         sub
@@ -70,20 +72,20 @@
         .entrypoint
         .maxstack  8
         ldnull
-        ldftn      int32 Repro::Work1(int32)
+        ldftn      int32 DevDiv_902271.Repro::Work1(int32)
         newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
                                                                                    native int)
-        stsfld     class [mscorlib]System.Func`2<int32,int32> Repro::d1
+        stsfld     class [mscorlib]System.Func`2<int32,int32> DevDiv_902271.Repro::d1
         ldnull
-        ldftn      int32 Repro::Work2(int32,
+        ldftn      int32 DevDiv_902271.Repro::Work2(int32,
                                        int32,
                                        int32,
                                        int32,
                                        int32)
         newobj     instance void class [mscorlib]System.Func`6<int32,int32,int32,int32,int32,int32>::.ctor(object,
                                                                                                            native int)
-        stsfld     class [mscorlib]System.Func`6<int32,int32,int32,int32,int32,int32> Repro::d2
-        ldsfld     class [mscorlib]System.Func`2<int32,int32> Repro::d1
+        stsfld     class [mscorlib]System.Func`6<int32,int32,int32,int32,int32,int32> DevDiv_902271.Repro::d2
+        ldsfld     class [mscorlib]System.Func`2<int32,int32> DevDiv_902271.Repro::d1
         ldc.i4     0xf4240
         callvirt   instance !1 class [mscorlib]System.Func`2<int32,int32>::Invoke(!0)
         
@@ -91,4 +93,5 @@
         call       void [System.Console]System.Console::WriteLine(string)
         ret
     } 
+}
 }

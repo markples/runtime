@@ -9,6 +9,8 @@
 
 using Xunit;
 
+namespace DevDiv_280120
+{
 public struct S
 {
     long m_fld;
@@ -21,4 +23,5 @@ public struct S
         s.m_fld = 0;
         return 100;
     }
+}
 }

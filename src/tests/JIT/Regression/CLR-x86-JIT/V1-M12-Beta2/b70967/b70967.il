@@ -18,7 +18,7 @@
 .file alignment 512
 
 // Image base: 0x03010000
-.namespace JitTest
+.namespace b70967
 {
   .class public auto ansi beforefieldinit Test extends [mscorlib]System.Object
   {

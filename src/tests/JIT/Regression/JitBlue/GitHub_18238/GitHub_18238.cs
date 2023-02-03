@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 
 // Regression tests for bugs in fgMorphCast and optNarrowTree.
 
+namespace GitHub_18238
+{
 struct S0
 {
     public byte F0;
@@ -138,3 +140,4 @@ static class Test4
     }
 }
 
+}

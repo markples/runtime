@@ -10,6 +10,8 @@
 .assembly b13509
 {
 }
+.namespace b13509
+{
 .class public I {
  .method public static int32 main() {
  .entrypoint
@@ -23,5 +25,6 @@
 ldc.i4 100
 add
  ret
+}
 }
 }

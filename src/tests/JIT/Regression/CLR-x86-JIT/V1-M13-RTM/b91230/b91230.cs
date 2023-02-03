@@ -4,6 +4,8 @@
 
 //COMMAND LINE: csc /nologo /optimize+ /debug- /w:0 bug.cs
 using System;
+namespace b91230
+{
 public struct AA
 {
     public static int Main()
@@ -14,4 +16,5 @@ public struct AA
             ) { }
         return 100;
     }
+}
 }

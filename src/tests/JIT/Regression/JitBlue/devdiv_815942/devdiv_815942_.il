@@ -10,6 +10,8 @@
 .assembly 'devdiv_815942_' {}
 .assembly extern xunit.core {}
 
+.namespace devdiv_815942_
+{
 .class public Repro
 {
     .method public static int32 Main() cil managed
@@ -43,4 +45,5 @@ PASS:
         ldc.i4.s   100
         ret
     }
+}
 }

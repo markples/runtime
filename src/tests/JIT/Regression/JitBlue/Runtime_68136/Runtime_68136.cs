@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+namespace Runtime_68136
+{
 public class Program
 {
     public static IRuntime s_rt;
@@ -34,4 +36,5 @@ public interface IRuntime
 public class Runtime : IRuntime
 {
     public void WriteLine<T>(T value) => System.Console.WriteLine(value);
+}
 }

@@ -5,6 +5,8 @@
 using System;
 using System.Runtime.InteropServices;
 
+namespace GitHub_77854
+{
 public class Program
 {
     public static int Main()
@@ -34,4 +36,5 @@ public class Program
 public partial struct FourKStruct
 {
     internal byte bytes;
+}
 }

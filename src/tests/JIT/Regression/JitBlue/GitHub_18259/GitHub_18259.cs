@@ -10,6 +10,8 @@ using System;
 // Debug: Outputs 0
 // Release: Outputs 1234
 
+namespace GitHub_18259
+{
 struct S1
 {
     public uint F0;
@@ -45,4 +47,5 @@ public class Program
             return 100;
         }
     }
+}
 }

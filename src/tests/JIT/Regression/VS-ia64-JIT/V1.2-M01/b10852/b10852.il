@@ -28,6 +28,8 @@
 .corflags 0x00000001
 
 
+.namespace b10852
+{
 .class public auto ansi beforefieldinit T
        extends [mscorlib]System.Object
 {
@@ -44,9 +46,9 @@
                   int32 V_2)
     IL_0000:  ldc.i4.1
     IL_0001:  stloc.0
-    IL_0002:  call       void T::dirtyStack()
+    IL_0002:  call       void b10852.T::dirtyStack()
     IL_0007:  ldc.i4.4
-    IL_0008:  ldsfld     int32 T::size_to_test
+    IL_0008:  ldsfld     int32 b10852.T::size_to_test
     IL_000d:  mul
     IL_000e:  localloc
     IL_0010:  stloc.1
@@ -69,7 +71,7 @@
     IL_0021:  add
     IL_0022:  stloc.2
     IL_0023:  ldloc.2
-    IL_0024:  ldsfld     int32 T::size_to_test
+    IL_0024:  ldsfld     int32 b10852.T::size_to_test
     IL_0029:  blt.s      IL_0015
 
     IL_002b:  ldloc.0
@@ -92,7 +94,7 @@
     .locals (int32* V_0,
              int32 V_1)
     IL_0000:  ldc.i4.4
-    IL_0001:  ldsfld     int32 T::size_to_test
+    IL_0001:  ldsfld     int32 b10852.T::size_to_test
     IL_0006:  mul
     IL_0007:  localloc
     IL_0009:  stloc.0
@@ -112,7 +114,7 @@
     IL_0017:  add
     IL_0018:  stloc.1
     IL_0019:  ldloc.1
-    IL_001a:  ldsfld     int32 T::size_to_test
+    IL_001a:  ldsfld     int32 b10852.T::size_to_test
     IL_001f:  blt.s      IL_000e
 
     IL_0021:  ret
@@ -123,7 +125,7 @@
   {
     .maxstack  8
     IL_0000:  ldc.i4     0x7d0
-    IL_0005:  stsfld     int32 T::size_to_test
+    IL_0005:  stsfld     int32 b10852.T::size_to_test
     IL_000a:  ret
   } 
 
@@ -137,3 +139,4 @@
   } 
 
 } 
+}

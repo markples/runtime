@@ -3,6 +3,8 @@
 
 using System;
 
+namespace GitHub_3449
+{
 public class Program
 {
     // RyuJIT codegen, VC++, clang and gcc may produce different results for casting uint64 to 
@@ -29,4 +31,5 @@ public class Program
         }
         return 100;
     }
+}
 }

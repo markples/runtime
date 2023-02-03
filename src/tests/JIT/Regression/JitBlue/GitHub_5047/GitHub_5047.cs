@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_5047
+{
 public class Program
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -42,4 +44,5 @@ public class Program
             return Fail;
         }
     }
+}
 }

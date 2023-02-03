@@ -14,6 +14,8 @@
 // helper call, decomposition, constant folding via gtFoldExpr and constant folding via VN's EvalOpIntegral.
 // But it also works on the current 64 bit targets (ARM64 & x64) because they too have the same behavior.
 
+.namespace GitHub_15949
+{
 .class public auto ansi Program extends [mscorlib]System.Object
 {
     .method public static int32 Main() cil managed
@@ -28,83 +30,83 @@
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shl_Helper(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shl_Helper(int64, int32, bool)
         stloc.0
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shr_Helper(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shr_Helper(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_ShrUn_Helper(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_ShrUn_Helper(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shl_Decompose(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shl_Decompose(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shr_Decompose(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shr_Decompose(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_ShrUn_Decompose(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_ShrUn_Decompose(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shl_gtFoldExpr(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shl_gtFoldExpr(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shr_gtFoldExpr(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shr_gtFoldExpr(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_ShrUn_gtFoldExpr(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_ShrUn_gtFoldExpr(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shl_EvalOpIntegral(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shl_EvalOpIntegral(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_Shr_EvalOpIntegral(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_Shr_EvalOpIntegral(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
         ldc.i8 0x1020304050607080
         ldc.i4 64
         ldc.i4 1
-        call int64 Program::Test_ShrUn_EvalOpIntegral(int64, int32, bool)
+        call int64 GitHub_15949.Program::Test_ShrUn_EvalOpIntegral(int64, int32, bool)
         ldloc.0
         bne.un FAIL
 
@@ -235,4 +237,5 @@
     L2: shr.un
         ret
     }
+}
 }

@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b16071' {}
+.namespace b16071
+{
 .class public ILGEN_622380794 {
 
 .field static	unsigned int8 field_0x0
@@ -34,29 +36,29 @@ ldc.i4 0x6237d47
 stloc local_0x29
 
 ldc.i4 0x77a71a3a 
-stsfld unsigned int8 ILGEN_622380794::field_0x0
+stsfld unsigned int8 b16071.ILGEN_622380794::field_0x0
 ldc.i4 0x6cec65ab 
-stsfld int16 ILGEN_622380794::field_0x3
+stsfld int16 b16071.ILGEN_622380794::field_0x3
 ldc.i4 0x72264de8 
-stsfld unsigned int8 ILGEN_622380794::field_0x20
+stsfld unsigned int8 b16071.ILGEN_622380794::field_0x20
 ldc.i4 0x5a3924bb 
-stsfld unsigned int16 ILGEN_622380794::field_0x21
+stsfld unsigned int16 b16071.ILGEN_622380794::field_0x21
 ldc.i4 0x6e3c107a 
-stsfld int8 ILGEN_622380794::field_0x22
+stsfld int8 b16071.ILGEN_622380794::field_0x22
 ldc.i4 0x7a8d5474 
-stsfld unsigned int8 ILGEN_622380794::field_0x24
+stsfld unsigned int8 b16071.ILGEN_622380794::field_0x24
 
  ldloc local_0x29
- ldsfld unsigned int16 ILGEN_622380794::field_0x21
+ ldsfld unsigned int16 b16071.ILGEN_622380794::field_0x21
  sub
  ldc.r8 float64(0x28fb2093)
- ldsflda int8 ILGEN_622380794::field_0x22
+ ldsflda int8 b16071.ILGEN_622380794::field_0x22
  ldc.i4 8
  stind.i1
  conv.i4
  sub
- stsfld unsigned int8 ILGEN_622380794::field_0x0
- ldsflda unsigned int8 ILGEN_622380794::field_0x24
+ stsfld unsigned int8 b16071.ILGEN_622380794::field_0x0
+ ldsflda unsigned int8 b16071.ILGEN_622380794::field_0x24
  ldind.u1
  conv.u8
  ldc.i8 0x4ae6314551af63a7
@@ -65,16 +67,16 @@ stsfld unsigned int8 ILGEN_622380794::field_0x24
  conv.u8
  add
  ldc.i4.8
- ldsfld unsigned int8 ILGEN_622380794::field_0x20
+ ldsfld unsigned int8 b16071.ILGEN_622380794::field_0x20
  conv.i
  ldloca local_0x22
  ldind.i1
- ldsfld unsigned int8 ILGEN_622380794::field_0x4
+ ldsfld unsigned int8 b16071.ILGEN_622380794::field_0x4
  mul
  xor
  ceq
  shl
- ldsfld unsigned int16 ILGEN_622380794::field_0x5
+ ldsfld unsigned int16 b16071.ILGEN_622380794::field_0x5
  stloc local_0x10
  conv.i4
  shr.un
@@ -86,5 +88,6 @@ stsfld unsigned int8 ILGEN_622380794::field_0x24
 ldc.i4 100
 add
 ret
+}
 }
 }

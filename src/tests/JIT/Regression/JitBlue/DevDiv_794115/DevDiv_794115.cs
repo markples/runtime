@@ -4,6 +4,8 @@
 
 using System;
 
+namespace DevDiv_794115
+{
 public class Repro
 {
     public static int Main()
@@ -23,4 +25,5 @@ public class Repro
 
     static short Three = 3;
     static short Dummy = -1;
+}
 }

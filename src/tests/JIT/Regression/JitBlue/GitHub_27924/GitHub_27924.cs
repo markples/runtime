@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+namespace GitHub_27924
+{
 public class Program
 {
     static int returnVal = 100;
@@ -57,4 +59,5 @@ public class Program
         t.Wait();
         return returnVal;
     }
+}
 }

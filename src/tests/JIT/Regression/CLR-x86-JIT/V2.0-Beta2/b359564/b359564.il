@@ -10,6 +10,8 @@
   .ver 4:0:0:0
 }
 .assembly extern mscorlib{auto}
+.namespace b359564
+{
 .class public FullProof {
 
 .method static int32 Test() noinlining {
@@ -30,7 +32,7 @@
 .maxstack 3
 	.try
 	{
-		call int32 FullProof::Test()
+		call int32 b359564.FullProof::Test()
 		pop
 		leave.s FAIL
 	}
@@ -54,5 +56,6 @@ PASS:
 DONE:
 
 	ret
+}
 }
 }

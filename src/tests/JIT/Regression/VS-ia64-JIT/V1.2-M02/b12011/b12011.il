@@ -5,6 +5,8 @@
 .assembly 'b12011'{}
 .assembly extern xunit.core {}
 
+.namespace b12011
+{
 .class private auto ansi import beforefieldinit ShellApplication
        extends [mscorlib]System.Object
 {
@@ -38,4 +40,5 @@
 
     IL_0030:  ldc.i4 100	ret
   }
+}
 }

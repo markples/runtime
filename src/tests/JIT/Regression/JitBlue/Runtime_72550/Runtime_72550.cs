@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_72550
+{
 public static class Runtime_72550
 {
     private static int retCode = 100;
@@ -267,4 +269,5 @@ public static class Runtime_72550
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static bool StartsWith5(string s) => Str.AsSpan().StartsWith(s, StringComparison.OrdinalIgnoreCase);
     }
+}
 }

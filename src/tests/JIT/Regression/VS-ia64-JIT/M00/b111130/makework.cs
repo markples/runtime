@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b111130
+{
 public class test
 {
     public static int Main()
@@ -53,4 +55,5 @@ public class test
 
 
     }
+}
 }

@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_77773
+{
 public unsafe class Runtime_77773
 {
     public static int Main()
@@ -49,4 +51,5 @@ public unsafe class Runtime_77773
     {
         public int Field;
     }
+}
 }

@@ -4,7 +4,7 @@
 
 using System;
 
-namespace hello
+namespace hello_b115253
 {
     public class Class1
     {

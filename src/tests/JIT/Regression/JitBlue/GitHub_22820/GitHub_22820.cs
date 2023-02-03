@@ -9,6 +9,8 @@ using System;
 //
 // Run with optimized codegen and DOTNET_GCStress=0x4
 
+namespace GitHub_22820
+{
 class DisposableObject : IDisposable
 {
     public void Dispose()
@@ -57,4 +59,5 @@ public class Program
 
         return result;
     }
+}
 }

@@ -6,6 +6,8 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using Xunit;
 
+namespace b31398
+{
 internal delegate int Deleg(int i, int j, int k, int l, int m, int n);
 
 public class cs1
@@ -28,4 +30,5 @@ public class cs1
         Console.WriteLine(result);
         return result;
     }
+}
 }

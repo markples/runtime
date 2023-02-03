@@ -21,7 +21,7 @@
 }
 .assembly extern xunit.core {}
 // MVID: {23E3D49B-6CFD-4DA0-8C9D-A611CE0BA103}
-.namespace JitTest
+.namespace b42387
 {
   .class public auto ansi Test
          extends [mscorlib]System.Object
@@ -100,31 +100,31 @@
       
       			ldloc.0
       			ldc.i4 -10000
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldloc.0
       			ldc.i4.m1
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldloc.0
       			ldc.i4.0
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldloc.0
       			ldc.i4.1
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldloc.0
       			ldc.i4 1000
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldloc.0
       			ldc.i4 1000000
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldloc.0
       			ldc.i4 1300000
-      			call       void JitTest.Test::try_index(int32[0...], int32)
+      			call       void b42387.Test::try_index(int32[0...], int32)
       			
       			ldc.i4 100
       			ret

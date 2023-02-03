@@ -4,6 +4,8 @@
 
 using System;
 using System.Threading;
+namespace b10827
+{
 public class testout1
 {
 
@@ -20855,4 +20857,5 @@ public class testout1
         }
 
     }
+}
 }

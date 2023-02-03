@@ -10,6 +10,8 @@
 .assembly b10666
 {
 }
+.namespace b10666
+{
 .class public value sealed Rational extends [mscorlib]System.ValueType
 { .field int32 Numerator
   .field int32 Denominator
@@ -19,10 +21,10 @@
     .maxstack  8
     ldarg.0
     ldc.i4.0 
-    stfld     int32 Rational::Numerator
+    stfld     int32 b10666.Rational::Numerator
     ldarg.0
     ldc.i4.0 
-    stfld     int32 Rational::Denominator
+    stfld     int32 b10666.Rational::Denominator
     ret
   }
   .method instance class [mscorlib]System.String ToString1()
@@ -36,10 +38,10 @@
         stloc.s S
     ldarg.0     // By-ref to self
     dup
-    ldfld int32 value class Rational::Numerator
+    ldfld int32 value class b10666.Rational::Numerator
     box [mscorlib]System.Int32
         stloc.s N
-    ldfld int32 value class Rational::Denominator
+    ldfld int32 value class b10666.Rational::Denominator
     box [mscorlib]System.Int32
         stloc.s D
         ldloc.s SB
@@ -60,10 +62,10 @@
     ldstr "The value is: {0}/{1}"
     ldarg.0     // By-ref to self
 //    dup
-    ldfld int32 value class Rational::Numerator
+    ldfld int32 value class b10666.Rational::Numerator
     box [mscorlib]System.Int32
     ldarg.0
-    ldfld int32 value class Rational::Denominator
+    ldfld int32 value class b10666.Rational::Denominator
     box [mscorlib]System.Int32
     call instance class [mscorlib]System.Text.StringBuilder 
       [mscorlib]System.Text.StringBuilder::AppendFormat(class [mscorlib]System.String,
@@ -74,28 +76,29 @@
 
 .method public static int32 main()
 { .entrypoint
-  .locals (value class Rational Half)
+  .locals (value class b10666.Rational Half)
   ldloca.s Half
-  call    instance void Rational::.ctor()
+  call    instance void b10666.Rational::.ctor()
 
   ldloca.s Half
   dup
   ldc.i4.1
-  stfld int32 value class Rational::Numerator
+  stfld int32 value class b10666.Rational::Numerator
   ldc.i4.2
-  stfld  int32 value class Rational::Denominator
+  stfld  int32 value class b10666.Rational::Denominator
 
   ldloca.s Half
-  call instance class [mscorlib]System.String value class Rational::ToString1()
+  call instance class [mscorlib]System.String value class b10666.Rational::ToString1()
   call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 
   ldloca.s Half
-  call instance class [mscorlib]System.String value class Rational::ToString2()
+  call instance class [mscorlib]System.String value class b10666.Rational::ToString2()
   call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 
   ldstr "Passed."
   call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
   ldc.i4 100
   ret
+}
 }
 }

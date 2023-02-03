@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b21015
+{
 struct T
 {
     public string S;
@@ -45,4 +47,5 @@ public class Tester
     {
         Console.WriteLine(t.TheString);
     }
+}
 }

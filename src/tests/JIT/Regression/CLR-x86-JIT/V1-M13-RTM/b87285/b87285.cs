@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b87285
+{
 public unsafe class test1
 {
     public class CL2
@@ -43,4 +45,5 @@ public unsafe class test1
         double val = Func(a3);
         return 100;
     }
+}
 }

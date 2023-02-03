@@ -286,6 +286,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b473131_byte
+{
 .class /*02000002*/ public auto ansi sealed mynamespace.e_t
        extends [mscorlib/*23000001*/]System.Enum/*01000001*/
 {
@@ -357,3 +359,4 @@ ldc.i4 100
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file e:\junk\b473131_byte.res
+}

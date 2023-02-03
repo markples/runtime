@@ -7,6 +7,8 @@
 
 // Test that jit can inline method with a pinned pointer
 
+.namespace GitHub_23950
+{
 .class public sequential ansi sealed beforefieldinit Program
 	extends [mscorlib]System.Object
 {
@@ -23,7 +25,7 @@
 		ldc.i4.s 100
 		stloc.0
 		ldloca.s 0
-		call int32 Program::GetValueUnsafe(int32&)
+		call int32 GitHub_23950.Program::GetValueUnsafe(int32&)
 		ret
 	}
 
@@ -43,4 +45,5 @@
 		ldind.i4
 		ret
 	}
+}
 }

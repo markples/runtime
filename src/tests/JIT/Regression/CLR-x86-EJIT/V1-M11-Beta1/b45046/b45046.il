@@ -21,7 +21,7 @@
 }
 .assembly extern xunit.core {}
 // MVID: {0573B9C2-3980-4A83-9B01-889CCC1D6FBC}
-.namespace Test
+.namespace b45046
 {
   .class public auto ansi App
          extends [mscorlib]System.Object

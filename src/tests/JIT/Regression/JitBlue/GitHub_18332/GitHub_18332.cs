@@ -4,6 +4,8 @@
 using System;
 using System.Collections.Generic;
 
+namespace GitHub_18332
+{
 internal class Foo : IDisposable
 {
     public void Dispose()
@@ -52,4 +54,5 @@ public class GitHub_18332
         }
         return 100;
     }
+}
 }

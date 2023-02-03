@@ -9,6 +9,8 @@
 }
 .assembly 'b91953' {}
 .assembly extern xunit.core {}
+.namespace b91953
+{
 .class public ILGEN_0xb8267005 {
 
 .field static	float64 field_0x2
@@ -32,7 +34,7 @@ stloc LOCAL_0x7
 
 //END INIT LOCALS
 ldc.r8 float64(0x3658f4d211e645cf) 
-stsfld float64 ILGEN_0xb8267005::field_0x2
+stsfld float64 b91953.ILGEN_0xb8267005::field_0x2
 
 
 Start_Orphan_a_0:
@@ -62,7 +64,7 @@ ldc.i4 0x81398436
 ldc.i4 0x81398436 
 ldc.i4 0x81398436 
  bgt Branch_0xe
-      ldsfld float64 ILGEN_0xb8267005::field_0x2
+      ldsfld float64 b91953.ILGEN_0xb8267005::field_0x2
  br Branch_0xf
  Branch_0xe:
 ldc.r8 float64(0xd44708197df14375) 
@@ -71,7 +73,7 @@ ldc.r8 float64(0xd44708197df14375)
       ldc.r4 float32(0xe2a11a95)
       ldc.r4 float32(0xc9f53748)
  bgt Branch_0x10
-      ldsfld float64 ILGEN_0xb8267005::field_0x2
+      ldsfld float64 b91953.ILGEN_0xb8267005::field_0x2
  br Branch_0x11
  Branch_0x10:
       ldc.r4 float32(0x56b8f6cb)
@@ -96,4 +98,5 @@ ldc.i4 100
  ret
 }
 
+}
 }

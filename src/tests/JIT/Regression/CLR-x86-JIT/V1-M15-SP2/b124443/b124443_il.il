@@ -13,6 +13,8 @@
 .assembly extern xunit.core {}
 
 
+.namespace b124443_il
+{
 .class private auto ansi sealed TestDelegate
        extends [mscorlib]System.MulticastDelegate
 {
@@ -514,7 +516,7 @@
     IL_002b:  ret
   } // end of method ArrayBounds::f4c
 
-  .method public hidebysig static int32  RunTests(class TestDelegate d) cil managed
+  .method public hidebysig static int32  RunTests(class b124443_il.TestDelegate d) cil managed
   {
     // Code size       101 (0x65)
     .maxstack  2
@@ -533,7 +535,7 @@
       IL_0017:  call       void [mscorlib]System.Console::Write(string)
       IL_001c:  nop
       IL_001d:  ldarg.0
-      IL_001e:  callvirt   instance void TestDelegate::Invoke()
+      IL_001e:  callvirt   instance void b124443_il.TestDelegate::Invoke()
       IL_0023:  nop
       IL_0024:  nop
       IL_0025:  leave.s    IL_0051
@@ -591,10 +593,10 @@
              bool V_1)
     IL_0000:  nop
     IL_0001:  ldnull
-    IL_0002:  ldftn      void ArrayBounds::f1a()
-    IL_0008:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0002:  ldftn      void b124443_il.ArrayBounds::f1a()
+    IL_0008:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_000d:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_000d:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0012:  ldc.i4.s   100
     IL_0014:  ceq
     IL_0016:  stloc.1
@@ -606,10 +608,10 @@
     IL_001c:  br         IL_018b
 
     IL_0021:  ldnull
-    IL_0022:  ldftn      void ArrayBounds::f2a()
-    IL_0028:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0022:  ldftn      void b124443_il.ArrayBounds::f2a()
+    IL_0028:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_002d:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_002d:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0032:  ldc.i4.s   100
     IL_0034:  ceq
     IL_0036:  stloc.1
@@ -621,10 +623,10 @@
     IL_003c:  br         IL_018b
 
     IL_0041:  ldnull
-    IL_0042:  ldftn      void ArrayBounds::f3a()
-    IL_0048:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0042:  ldftn      void b124443_il.ArrayBounds::f3a()
+    IL_0048:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_004d:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_004d:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0052:  ldc.i4.s   100
     IL_0054:  ceq
     IL_0056:  stloc.1
@@ -636,10 +638,10 @@
     IL_005c:  br         IL_018b
 
     IL_0061:  ldnull
-    IL_0062:  ldftn      void ArrayBounds::f4a()
-    IL_0068:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0062:  ldftn      void b124443_il.ArrayBounds::f4a()
+    IL_0068:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_006d:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_006d:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0072:  ldc.i4.s   100
     IL_0074:  ceq
     IL_0076:  stloc.1
@@ -651,10 +653,10 @@
     IL_007c:  br         IL_018b
 
     IL_0081:  ldnull
-    IL_0082:  ldftn      void ArrayBounds::f1b()
-    IL_0088:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0082:  ldftn      void b124443_il.ArrayBounds::f1b()
+    IL_0088:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_008d:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_008d:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0092:  ldc.i4.s   100
     IL_0094:  ceq
     IL_0096:  stloc.1
@@ -666,10 +668,10 @@
     IL_009c:  br         IL_018b
 
     IL_00a1:  ldnull
-    IL_00a2:  ldftn      void ArrayBounds::f2b()
-    IL_00a8:  newobj     instance void TestDelegate::.ctor(object,
+    IL_00a2:  ldftn      void b124443_il.ArrayBounds::f2b()
+    IL_00a8:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_00ad:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_00ad:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_00b2:  ldc.i4.s   100
     IL_00b4:  ceq
     IL_00b6:  stloc.1
@@ -681,10 +683,10 @@
     IL_00bc:  br         IL_018b
 
     IL_00c1:  ldnull
-    IL_00c2:  ldftn      void ArrayBounds::f3b()
-    IL_00c8:  newobj     instance void TestDelegate::.ctor(object,
+    IL_00c2:  ldftn      void b124443_il.ArrayBounds::f3b()
+    IL_00c8:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_00cd:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_00cd:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_00d2:  ldc.i4.s   100
     IL_00d4:  ceq
     IL_00d6:  stloc.1
@@ -696,10 +698,10 @@
     IL_00dc:  br         IL_018b
 
     IL_00e1:  ldnull
-    IL_00e2:  ldftn      void ArrayBounds::f4b()
-    IL_00e8:  newobj     instance void TestDelegate::.ctor(object,
+    IL_00e2:  ldftn      void b124443_il.ArrayBounds::f4b()
+    IL_00e8:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_00ed:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_00ed:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_00f2:  ldc.i4.s   100
     IL_00f4:  ceq
     IL_00f6:  stloc.1
@@ -711,10 +713,10 @@
     IL_00fc:  br         IL_018b
 
     IL_0101:  ldnull
-    IL_0102:  ldftn      void ArrayBounds::f1c()
-    IL_0108:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0102:  ldftn      void b124443_il.ArrayBounds::f1c()
+    IL_0108:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_010d:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_010d:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0112:  ldc.i4.s   100
     IL_0114:  ceq
     IL_0116:  stloc.1
@@ -726,10 +728,10 @@
     IL_011c:  br.s       IL_018b
 
     IL_011e:  ldnull
-    IL_011f:  ldftn      void ArrayBounds::f2c()
-    IL_0125:  newobj     instance void TestDelegate::.ctor(object,
+    IL_011f:  ldftn      void b124443_il.ArrayBounds::f2c()
+    IL_0125:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_012a:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_012a:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_012f:  ldc.i4.s   100
     IL_0131:  ceq
     IL_0133:  stloc.1
@@ -741,10 +743,10 @@
     IL_0139:  br.s       IL_018b
 
     IL_013b:  ldnull
-    IL_013c:  ldftn      void ArrayBounds::f3c()
-    IL_0142:  newobj     instance void TestDelegate::.ctor(object,
+    IL_013c:  ldftn      void b124443_il.ArrayBounds::f3c()
+    IL_0142:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_0147:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_0147:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_014c:  ldc.i4.s   100
     IL_014e:  ceq
     IL_0150:  stloc.1
@@ -756,10 +758,10 @@
     IL_0156:  br.s       IL_018b
 
     IL_0158:  ldnull
-    IL_0159:  ldftn      void ArrayBounds::f4c()
-    IL_015f:  newobj     instance void TestDelegate::.ctor(object,
+    IL_0159:  ldftn      void b124443_il.ArrayBounds::f4c()
+    IL_015f:  newobj     instance void b124443_il.TestDelegate::.ctor(object,
                                                            native int)
-    IL_0164:  call       int32 ArrayBounds::RunTests(class TestDelegate)
+    IL_0164:  call       int32 b124443_il.ArrayBounds::RunTests(class b124443_il.TestDelegate)
     IL_0169:  ldc.i4.s   100
     IL_016b:  ceq
     IL_016d:  stloc.1
@@ -794,3 +796,4 @@
   } // end of method ArrayBounds::.ctor
 
 } // end of class ArrayBounds
+}

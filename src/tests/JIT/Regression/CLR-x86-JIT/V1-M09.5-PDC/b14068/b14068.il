@@ -10,6 +10,8 @@
 .assembly b14068
 {
 }
+.namespace b14068
+{
 .class public ILGEN_622380794 {
 
 .field static	int64 field_0x5
@@ -19,8 +21,8 @@
 .entrypoint
 .maxstack	20
 .try {
- ldsflda int64 ILGEN_622380794::field_0x5
- ldsflda float32 ILGEN_622380794::field_0xa
+ ldsflda int64 b14068.ILGEN_622380794::field_0x5
+ ldsflda float32 b14068.ILGEN_622380794::field_0xa
  ldc.r4 4.4
  stind.r4
  ldc.r8 3.982374e+012
@@ -36,5 +38,6 @@ catch [mscorlib]System.OverflowException {
 stop:
  ldc.i4 100
  ret
+}
 }
 }

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b12008
+{
 public class Bug
 {
     public void Func(ref String str)
@@ -25,4 +27,5 @@ public class Bug
         Console.WriteLine("Passed");
         return 100;
     }
+}
 }

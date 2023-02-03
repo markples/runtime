@@ -10,6 +10,8 @@
 .assembly 'b309576' {}
 .assembly extern xunit.core {}
 .assembly extern mscorlib{auto}
+.namespace b309576
+{
 .class public FullProof {
 .method static int32 Test() {
 .maxstack 500
@@ -524,7 +526,7 @@ IL_500:   ret			//
 .maxstack 3
    .try
    {
-      call int32 FullProof::Test()
+      call int32 b309576.FullProof::Test()
       pop
       leave.s AfterEH
    }
@@ -541,5 +543,6 @@ AfterEH:
    ldc.i4.s   100
 
    ret
+}
 }
 }

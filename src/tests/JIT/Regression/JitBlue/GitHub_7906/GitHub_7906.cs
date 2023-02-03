@@ -5,7 +5,7 @@
 // of induction variables.
 using System.Numerics;
 
-namespace N
+namespace GitHub_7906
 {
     public static class C
     {

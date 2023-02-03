@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b72164
+{
 public unsafe class bug1
 {
     public static void Func1(double* a01)
@@ -17,4 +19,5 @@ public unsafe class bug1
         Func1(a01);
         return 100;
     }
+}
 }

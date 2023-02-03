@@ -10,6 +10,8 @@
 .assembly extern System {}
 .assembly 'b92289' {}
 .assembly extern xunit.core {}
+.namespace b92289
+{
 .class public EHTest
 {
 .method public static void f2() cil managed synchronized
@@ -50,7 +52,7 @@
 
 			fault1_br: 
 			start_try2: 
-			call void EHTest::f3()
+			call void b92289.EHTest::f3()
 			try2_out:
 			leave fault1_out
 			end_try2: 
@@ -58,7 +60,7 @@
 		end_fault1: 
 
 	start_try1: 
-		call void EHTest::f3()
+		call void b92289.EHTest::f3()
 	try1_out:
 	newobj instance void [mscorlib]System.Exception::.ctor()
 	throw
@@ -83,7 +85,7 @@
 	.entrypoint
 	.try
 	{
-	call void EHTest::f2()
+	call void b92289.EHTest::f2()
 	leave RET
 	}
 	catch [mscorlib]System.Exception
@@ -95,4 +97,5 @@
 	call void [System.Console]System.Console::WriteLine(string)
 	ret
 	}
+}
 }

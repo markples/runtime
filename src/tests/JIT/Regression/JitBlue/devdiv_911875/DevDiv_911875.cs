@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace DevDiv_911875
+{
 public class Repro
 {
     public float x;
@@ -97,3 +99,4 @@ public struct FloatConverter
     }
 }
 
+}

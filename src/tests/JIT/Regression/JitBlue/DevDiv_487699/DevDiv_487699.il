@@ -7,6 +7,8 @@
 
 // This test originally triggered an error, that we do not reload shift index, if it was spilled to rcx.
 
+.namespace DevDiv_487699
+{
 .class public ILGEN_CLASS
 {
    .method static native int ILGEN_METHOD(unsigned int8, int64, native int, unsigned int16)
@@ -121,10 +123,11 @@
         ldc.i4 2        
         conv.ovf.u2
 
-        call native int ILGEN_CLASS::ILGEN_METHOD(unsigned int8, int64, native int, unsigned int16)
+        call native int DevDiv_487699.ILGEN_CLASS::ILGEN_METHOD(unsigned int8, int64, native int, unsigned int16)
         pop
 
         ldc.i4 100
         ret
     }
+}
 }

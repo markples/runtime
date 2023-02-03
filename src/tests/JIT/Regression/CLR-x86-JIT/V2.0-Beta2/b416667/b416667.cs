@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b416667
+{
 public class CMain
 {
     public static int Count = 0;
@@ -33,4 +35,5 @@ public class Gen<T>
         CMain.Count++;
         Console.WriteLine("cctor.  Type: {0}", typeof(T).ToString());
     }
+}
 }

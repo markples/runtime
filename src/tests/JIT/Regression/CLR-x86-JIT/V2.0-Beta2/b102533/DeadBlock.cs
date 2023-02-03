@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b102533
+{
 public struct AA
 {
     public static void f()
@@ -50,4 +52,5 @@ public class App
         return 100;
     }
     public static bool flag = true;
+}
 }

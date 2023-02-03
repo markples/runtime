@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b78392
+{
 public class foo
 {
     public static int Main()
@@ -16,4 +18,5 @@ public class foo
         Console.WriteLine(Stuff[1, 2]);
         return 100;
     }
+}
 }

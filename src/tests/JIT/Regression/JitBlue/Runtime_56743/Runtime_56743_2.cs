@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_56743_2
+{
 public unsafe class Runtime_56743_2
 {
     [MethodImpl(MethodImplOptions.NoOptimization)]
@@ -31,4 +33,5 @@ public unsafe class Runtime_56743_2
         public int A, B;
         public S* H;
     }
+}
 }

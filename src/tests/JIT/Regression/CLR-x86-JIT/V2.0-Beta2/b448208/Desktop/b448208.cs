@@ -10,6 +10,8 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Collections;
 
+namespace b448208
+{
 public class GenType1<T>
 {
     private static readonly int s_i = 0;
@@ -42,4 +44,5 @@ public class cs1
             return 101;
         }
     }
+}
 }

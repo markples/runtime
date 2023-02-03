@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_58373_1
+{
 public unsafe class Runtime_58373
 {
     public static int Main()
@@ -27,3 +29,4 @@ public unsafe class Runtime_58373
         return *(short*)&h;
     }
 }  
+}

@@ -5,6 +5,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b561129
+{
 public class WipOrderRow
 {
 }
@@ -95,3 +97,4 @@ public class MainApp
     }
 }
 
+}

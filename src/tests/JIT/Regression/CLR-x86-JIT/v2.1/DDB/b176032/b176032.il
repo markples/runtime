@@ -33,6 +33,8 @@
 // Image base: 0x004C0000
 
 
+.namespace b176032
+{
 .class interface public abstract auto ansi IWebPropertyAccessor
 {
   .method public hidebysig newslot abstract virtual 
@@ -58,7 +60,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldarg.0
-    IL_0001:  ldfld      valuetype [mscorlib]System.Nullable`1<bool> My::f
+    IL_0001:  ldfld      valuetype [mscorlib]System.Nullable`1<bool> b176032.My::f
     IL_0006:  ret
   } // end of method My::get_MyProperty
 
@@ -69,7 +71,7 @@
     .maxstack  8
     IL_0000:  ldarg.0
     IL_0001:  ldarg.1
-    IL_0002:  stfld      valuetype [mscorlib]System.Nullable`1<bool> My::f
+    IL_0002:  stfld      valuetype [mscorlib]System.Nullable`1<bool> b176032.My::f
     IL_0007:  ret
   } // end of method My::set_MyProperty
 
@@ -81,17 +83,17 @@
     .entrypoint
     // Code size       41 (0x29)
     .maxstack  3
-    .locals init (class IWebPropertyAccessor V_0,
-             class My V_1)
-    IL_000f:  newobj     instance void MyProperty::.ctor()
+    .locals init (class b176032.IWebPropertyAccessor V_0,
+             class b176032.My V_1)
+    IL_000f:  newobj     instance void b176032.MyProperty::.ctor()
     IL_0014:  stloc.0
-    IL_0015:  newobj     instance void My::.ctor()
+    IL_0015:  newobj     instance void b176032.My::.ctor()
     IL_001a:  stloc.1
     IL_001b:  ldloc.0
     IL_001c:  ldloc.1
     IL_001d:  ldc.i4.1
     IL_001e:  box        [mscorlib]System.Boolean
-    IL_0023:  callvirt   instance void IWebPropertyAccessor::SetProperty(object,
+    IL_0023:  callvirt   instance void b176032.IWebPropertyAccessor::SetProperty(object,
                                                                              object)
               ldstr "!!! TEST PASSED !!!"
               call       void [System.Console]System.Console::WriteLine(string)
@@ -112,8 +114,8 @@
   .property instance valuetype [mscorlib]System.Nullable`1<bool>
           MyProperty()
   {
-    .get instance valuetype [mscorlib]System.Nullable`1<bool> My::get_MyProperty()
-    .set instance void My::set_MyProperty(valuetype [mscorlib]System.Nullable`1<bool>)
+    .get instance valuetype [mscorlib]System.Nullable`1<bool> b176032.My::get_MyProperty()
+    .set instance void b176032.My::set_MyProperty(valuetype [mscorlib]System.Nullable`1<bool>)
   } // end of property My::MyProperty
 } // end of class My
 
@@ -121,17 +123,17 @@
 
 .class public auto ansi MyProperty
        extends [mscorlib]System.Object
-       implements IWebPropertyAccessor
+       implements b176032.IWebPropertyAccessor
 {
   .method public virtual instance object 
           GetProperty(object A_1) cil managed
   {
-    .override IWebPropertyAccessor::GetProperty
+    .override b176032.IWebPropertyAccessor::GetProperty
     // Code size       17 (0x11)
     .maxstack  1
     IL_0000:  ldarg.1
-    IL_0001:  castclass  My
-    IL_0006:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [FastPropertyAccessor]My::get_MyProperty()
+    IL_0001:  castclass  b176032.My
+    IL_0006:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [FastPropertyAccessor]b176032.My::get_MyProperty()
     IL_000b:  box        valuetype [mscorlib]System.Nullable`1<bool>
     IL_0010:  ret
   } // end of method MyProperty::GetProperty
@@ -139,15 +141,15 @@
   .method public virtual instance void  SetProperty(object A_1,
                                                     object A_2) cil managed
   {
-    .override IWebPropertyAccessor::SetProperty
+    .override b176032.IWebPropertyAccessor::SetProperty
     // Code size       23 (0x17)
     .maxstack  2
     IL_0000:  ldarg.1
-    IL_0001:  castclass  My
+    IL_0001:  castclass  b176032.My
     IL_0006:  ldarg.2
     IL_0007:  unbox      valuetype [mscorlib]System.Nullable`1<bool>
     IL_000c:  ldobj      valuetype [mscorlib]System.Nullable`1<bool>
-    IL_0011:  callvirt   instance void My::set_MyProperty(valuetype [mscorlib]System.Nullable`1<bool>)
+    IL_0011:  callvirt   instance void b176032.My::set_MyProperty(valuetype [mscorlib]System.Nullable`1<bool>)
     IL_0016:  ret
   } // end of method MyProperty::SetProperty
 
@@ -167,3 +169,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file fastpropertyaccessor.res
+}

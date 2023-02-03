@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b89600
+{
 public class AA
 {
     static sbyte su;
@@ -36,4 +38,5 @@ public class AA
         object L4 = null;
         Method1(ref L1, ref L2, ref L3, ref L4);
     }
+}
 }

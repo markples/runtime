@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Runtime_57912
+{
 [StructLayout(LayoutKind.Sequential)]
 internal struct AA
 {
@@ -40,4 +42,5 @@ public class Runtime_57912
     {
         return AA.call_target_ref(ref init.q);
     }
+}
 }

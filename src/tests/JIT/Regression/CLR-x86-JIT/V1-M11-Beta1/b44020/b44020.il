@@ -12,7 +12,7 @@
 .assembly 'b44020'// as "c"
 { }
 .assembly extern xunit.core {}
-.namespace JitTest
+.namespace b44020
 {
   .class public auto ansi Test
          extends [mscorlib]System.Object

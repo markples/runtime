@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b449827
+{
 public class MainApp
 {
     public static int Main()
@@ -49,3 +51,4 @@ public class MainApp
     }
 }
 
+}

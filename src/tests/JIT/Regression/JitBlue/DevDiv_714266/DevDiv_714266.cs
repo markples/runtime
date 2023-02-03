@@ -11,6 +11,8 @@ using System.Runtime.CompilerServices;
 // then we set `minRegCandidateCount = 0`for `RefTypeUpperVectorSaveDef` `refPosition` 
 // and was not able to find a register for do the saving.
 
+namespace DevDiv_714266
+{
 public class DevDiv_714266
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -58,4 +60,5 @@ public class DevDiv_714266
         return 100;
     }
 
+}
 }

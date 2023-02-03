@@ -14,6 +14,8 @@
 }
 .assembly 'b66620' { }
 .assembly extern xunit.core {}
+.namespace b66620
+{
 .class public auto ansi beforefieldinit TestClass
        extends [mscorlib]System.Object
 {
@@ -43,11 +45,11 @@
   {
     .maxstack  2
     .locals (bool V_0)
-    IL_0000:  ldsfld     bool TestClass::_sel
+    IL_0000:  ldsfld     bool b66620.TestClass::_sel
     IL_0005:  ldc.i4.0
     IL_0006:  ceq
-    IL_0008:  stsfld     bool TestClass::_sel
-    IL_000d:  ldsfld     bool TestClass::_sel
+    IL_0008:  stsfld     bool b66620.TestClass::_sel
+    IL_000d:  ldsfld     bool b66620.TestClass::_sel
     IL_0012:  stloc.0
     IL_0013:  br.s       IL_0015
     IL_0015:  ldloc.0
@@ -60,18 +62,18 @@
     )
     .entrypoint
     .maxstack  8
-    newobj     instance void TestClass::.ctor()
+    newobj     instance void b66620.TestClass::.ctor()
 	ldc.i4.1
     dup
     brfalse.s   BRANCH
-    ldftn      instance void TestClass::DelegateFunc2(int32)
+    ldftn      instance void b66620.TestClass::DelegateFunc2(int32)
     pop
 	pop
     br.s       MERGE
 
 BRANCH:
 	pop
-    ldftn      void TestClass::DelegateFunc1(int32)
+    ldftn      void b66620.TestClass::DelegateFunc1(int32)
     pop
 
 MERGE:
@@ -85,7 +87,7 @@ MERGE:
   {
     .maxstack  8
     IL_0000:  ldc.i4.0
-    IL_0001:  stsfld     bool TestClass::_sel
+    IL_0001:  stsfld     bool b66620.TestClass::_sel
     IL_0006:  ret
   }
   .method public hidebysig specialname rtspecialname 
@@ -96,4 +98,5 @@ MERGE:
     IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
     IL_0006:  ret
   }
+}
 }

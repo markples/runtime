@@ -6,6 +6,8 @@ using System;
 // Test for proper ordering of exception-causing ctor args and
 // the newobj allocation
 
+namespace Runtime_4781
+{
 class Foo : IDisposable
 {
     public bool IsConstructed { get; } = true;
@@ -49,4 +51,5 @@ public class Runtime_4781
         GC.WaitForPendingFinalizers();
         return failed ? -1 : 100;
     }
+}
 }

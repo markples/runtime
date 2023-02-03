@@ -5,6 +5,8 @@
 .assembly 'b22521'{}
 .assembly extern xunit.core {}
 
+.namespace b22521
+{
 .class public auto ansi beforefieldinit test
        extends [mscorlib]System.Object
 {
@@ -16129,4 +16131,5 @@ brtrue ILTEST1
 
 TESTEND: ldc.i4 100	ret
   } 
+}
 }

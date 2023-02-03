@@ -5,6 +5,8 @@
 using System;
 using System.Threading;
 using System.Runtime.CompilerServices;
+namespace GitHub_19171
+{
 public class GitHub_19171
 {
     public static long g_static = -1;
@@ -33,4 +35,5 @@ public class GitHub_19171
         Function(0x123456789abcdefL);
         return returnVal;
     }
+}
 }

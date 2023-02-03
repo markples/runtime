@@ -26,6 +26,8 @@
 // Image base: 0x01590000
 
 
+.namespace GitHub_11804
+{
 .class public abstract auto ansi sealed beforefieldinit C
        extends [System.Runtime]System.Object
 {
@@ -69,10 +71,11 @@
     // Code size       20 (0x14)
     .maxstack  8
 
-    IL_0008:  call       int32 C::IndexerGrab()
-    IL_000d:  call       int32 C::UnsafeGrab()
+    IL_0008:  call       int32 GitHub_11804.C::IndexerGrab()
+    IL_000d:  call       int32 GitHub_11804.C::UnsafeGrab()
     IL_0012:  add
     IL_0013:  ret
   } // end of method C::Main
 
 } // end of class C
+}

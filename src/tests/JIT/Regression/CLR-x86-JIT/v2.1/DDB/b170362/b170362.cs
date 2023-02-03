@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b170362
+{
 public struct MyStruct
 {
     public byte x1;
@@ -35,3 +37,4 @@ public class MainApp
         }
     }
 };
+}

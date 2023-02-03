@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 // so this test (like the original code in the bug report)
 // uses custom attribute constructor arguments as the sources
 // of the casts in question.
+namespace DevDiv_200492
+{
 public class Program
 {
     [AttributeUsage(AttributeTargets.Method)]
@@ -98,4 +100,5 @@ public class Program
 
         return 100 + errors;
     }
+}
 }

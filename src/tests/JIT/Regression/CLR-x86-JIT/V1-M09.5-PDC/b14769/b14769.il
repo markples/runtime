@@ -10,6 +10,8 @@
 .assembly b14769
 {
 }
+.namespace b14769
+{
 .class public ILGEN_622380794 {
 
 //BEGIN STATIC FIELDS
@@ -92,5 +94,6 @@ End_Orphan_d:
  pop
  ldc.i4 100
 ret
+}
 }
 }

@@ -8,6 +8,8 @@
 // Debug: Outputs 0
 // Release: Outputs 1
 
+namespace Runtime_75249
+{
 public struct S1
 {
     public uint F0;
@@ -56,4 +58,5 @@ public class Runtime_75249
         System.Console.WriteLine(r);
         return (byte) r;
     }
+}
 }

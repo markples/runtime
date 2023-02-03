@@ -5,6 +5,8 @@
 .assembly 'DevDiv_524312'{}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_524312
+{
 .class public ILGEN_CLASS
 {
   .method public static int32 Main()
@@ -20,11 +22,11 @@
         IL_0000:  nop
         IL_0001:  ldc.r8     0.0
         IL_000a:  ldc.i4.s   97
-        IL_000c:  call       char ILGEN_CLASS::ILGEN_METHOD_ZERO(float64, char)
+        IL_000c:  call       char DevDiv_524312.ILGEN_CLASS::ILGEN_METHOD_ZERO(float64, char)
         IL_0011:  pop
         IL_0201:  ldc.r8     0.0
         IL_020a:  ldc.i4.s   97
-        IL_0212:  call       char ILGEN_CLASS::ILGEN_METHOD_INF(float64, char)
+        IL_0212:  call       char DevDiv_524312.ILGEN_CLASS::ILGEN_METHOD_INF(float64, char)
         IL_0220:  pop
         IL_0320:  leave.s done
     }
@@ -73,3 +75,4 @@
 
 } // end of class test.Program
 
+}

@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b78694
+{
 public class Foo
 {
     static public int Main()
@@ -14,4 +16,5 @@ public class Foo
         System.Console.WriteLine(System.Math.Atan2(-inf, -inf));
         return 100;
     }
+}
 }

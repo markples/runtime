@@ -10,6 +10,8 @@
 .assembly b14928
 {
 }
+.namespace b14928
+{
 .class public ILGEN_622380794 {
 
 .field static	int32 field_0x0
@@ -23,16 +25,17 @@ ldc.r4 float32(0x2d8972a7)
 stloc local_0x2
 
 ldc.i4 0x781e64a7 
-stsfld int32 ILGEN_622380794::field_0x0
+stsfld int32 b14928.ILGEN_622380794::field_0x0
 
- ldsfld int32 ILGEN_622380794::field_0x0
+ ldsfld int32 b14928.ILGEN_622380794::field_0x0
  conv.u4
  ldc.r4 float32(0x18ef2f09)
  ldloc local_0x2
  cgt.un
  shl
- stsfld int32 ILGEN_622380794::field_0x0
+ stsfld int32 b14928.ILGEN_622380794::field_0x0
  ldc.i4 100
 ret
+}
 }
 }

@@ -18,6 +18,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b33183
+{
 public class MainApp
 {
 
@@ -61,3 +63,4 @@ public class MainApp
 }
 
 
+}

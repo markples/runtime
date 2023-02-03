@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_80488
+{
 public class Runtime_80488
 {
     public static int Main()
@@ -38,4 +40,5 @@ public class Runtime_80488
     {
         public long F0, F1;
     }
+}
 }

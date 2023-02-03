@@ -9,6 +9,8 @@
 // The arguments to and return value from `ILGEN_METHOD` are not meaningful; it is enough that this function
 // compiles successfully.
 
+.namespace DevDiv_397793
+{
 .class public ILGEN_CLASS
 {
     .method static float32 ILGEN_METHOD(int16, char, char, native int)
@@ -133,7 +135,7 @@
             ldc.i4 0
             ldc.i4 0
             conv.i
-            call float32 ILGEN_CLASS::ILGEN_METHOD(int16, char, char, native int)
+            call float32 DevDiv_397793.ILGEN_CLASS::ILGEN_METHOD(int16, char, char, native int)
             pop
             leave done
         }
@@ -147,4 +149,5 @@
         ldc.i4 100
         ret
     }
+}
 }

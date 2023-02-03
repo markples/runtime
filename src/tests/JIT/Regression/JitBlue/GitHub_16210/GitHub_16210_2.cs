@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_16210_2
+{
  public struct float4
 {
     public float4(float x, float y, float z, float w)
@@ -46,4 +48,5 @@ public class X
         bool ok = (v0 == 5 && v1 == 4 && v2 == 3 && v3 == 2);
         return (ok ? 100 : 0);
     }
+}
 }

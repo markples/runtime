@@ -38,6 +38,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b173569
+{
 .class private auto ansi sealed MyDelegate
        extends [mscorlib]System.MulticastDelegate
 {
@@ -81,18 +83,18 @@
     .entrypoint
     // Code size       27 (0x1b)
     .maxstack  3
-    .locals init (class MyDelegate V_0)
+    .locals init (class b173569.MyDelegate V_0)
     IL_0000:  nop
     IL_0001:  ldnull
-    IL_0002:  ldftn      int32 My::GetTickCount()
+    IL_0002:  ldftn      int32 b173569.My::GetTickCount()
 
               nop
 
-    IL_0008:  newobj     instance void MyDelegate::.ctor(object,
+    IL_0008:  newobj     instance void b173569.MyDelegate::.ctor(object,
                                                          native int)
     IL_000d:  stloc.0
     IL_000e:  ldloc.0
-    IL_000f:  callvirt   instance int32 MyDelegate::Invoke()
+    IL_000f:  callvirt   instance int32 b173569.MyDelegate::Invoke()
     IL_0014:  call       void [System.Console]System.Console::WriteLine(int32)
     IL_0019:  nop
     IL_001a:  ldc.i4 100
@@ -116,3 +118,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file ddb173569.res
+}

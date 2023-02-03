@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_4044
+{
 public class C
 {
     public static int Main()
@@ -259,4 +261,5 @@ public class C
         }
         return (n != 0);
     }
+}
 }

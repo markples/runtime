@@ -284,6 +284,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b473131_struct
+{
 .class /*02000002*/ public sequential ansi sealed beforefieldinit mynamespace.e_t
        extends [mscorlib/*23000001*/]System.ValueType/*01000001*/
 {
@@ -360,3 +362,4 @@ ldc.i4 100
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file e:\junk\b473131_struct.res
+}

@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_70333
+{
 public class Program
 {
     public static int Main()
@@ -25,4 +27,5 @@ public class Program
         arg0 = (byte)(~(ulong)var6 % 3545460779U);
         System.Console.WriteLine(arg0);
     }
+}
 }

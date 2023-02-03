@@ -7,6 +7,8 @@
 .assembly GitHub_27169 {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_27169
+{
 .class public auto beforefieldinit Program
        extends [System.Runtime]System.Object
 {
@@ -31,36 +33,36 @@
     )
     .entrypoint
     .maxstack 32
-    .locals init (valuetype Program/Block b)
+    .locals init (valuetype GitHub_27169.Program/Block b)
     
     ldloca b
-    call void Program::Test(valuetype Program/Block&)
+    call void GitHub_27169.Program::Test(valuetype GitHub_27169.Program/Block&)
 
     ldloca b
-    ldfld int32 Program/Block::a
+    ldfld int32 GitHub_27169.Program/Block::a
     ldloca b
-    ldfld int32 Program/Block::b
+    ldfld int32 GitHub_27169.Program/Block::b
     or
     ldloca b
-    ldfld int32 Program/Block::c
+    ldfld int32 GitHub_27169.Program/Block::c
     or
     ldloca b
-    ldfld int32 Program/Block::d
+    ldfld int32 GitHub_27169.Program/Block::d
     or
     ldloca b
-    ldfld int32 Program/Block::e
+    ldfld int32 GitHub_27169.Program/Block::e
     or
     ldloca b
-    ldfld int32 Program/Block::f
+    ldfld int32 GitHub_27169.Program/Block::f
     or
     ldloca b
-    ldfld int32 Program/Block::g
+    ldfld int32 GitHub_27169.Program/Block::g
     or
     ldloca b
-    ldfld int16 Program/Block::h
+    ldfld int16 GitHub_27169.Program/Block::h
     or
     ldloca b
-    ldfld int8 Program/Block::i
+    ldfld int8 GitHub_27169.Program/Block::i
     or
     brtrue FAIL
     ldc.i4 100
@@ -70,7 +72,7 @@ FAIL:
     ret
   }
 
-  .method private hidebysig static void Test(valuetype Program/Block& p) cil managed noinlining
+  .method private hidebysig static void Test(valuetype GitHub_27169.Program/Block& p) cil managed noinlining
   {
     .maxstack 3
 
@@ -80,4 +82,5 @@ FAIL:
     initblk
     ret
   }
+}
 }

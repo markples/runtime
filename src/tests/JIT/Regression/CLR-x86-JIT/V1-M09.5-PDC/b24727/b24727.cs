@@ -11,6 +11,8 @@
 
 using System;
 
+namespace b24727
+{
 interface Inter1
 {
     int Return42();
@@ -44,3 +46,4 @@ public class Test
 
 }
 
+}

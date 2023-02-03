@@ -9,6 +9,8 @@
 }
 .assembly 'b85477' {}
 .assembly extern xunit.core {}
+.namespace b85477
+{
 .class public test
 {
 .method public static void f1() cil managed
@@ -52,7 +54,7 @@ leave OUT
 	.entrypoint
 	.try
 	{
-	call void test::f1()
+	call void b85477.test::f1()
 	leave RET
 	}
 	catch [mscorlib]System.Exception
@@ -64,4 +66,5 @@ leave OUT
 	call void [System.Console]System.Console::WriteLine(string)
 	ret
 	}
+}
 }

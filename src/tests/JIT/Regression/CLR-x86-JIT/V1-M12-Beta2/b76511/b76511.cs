@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b76511
+{
 public class bug1
 {
     public struct VT
@@ -30,4 +32,5 @@ public class bug1
         Console.WriteLine(retval);
         return retval + 99;
     }
+}
 }

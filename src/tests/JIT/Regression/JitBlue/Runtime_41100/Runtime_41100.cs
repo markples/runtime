@@ -8,6 +8,8 @@ using System;
 using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_41100
+{
 public class X
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -64,4 +66,5 @@ public class X
     }
 
     public static int Main() => F();
+}
 }

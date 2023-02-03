@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_168744
+{
 public class Program
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -39,4 +41,5 @@ public class Program
         Console.WriteLine("Fail");
         return 101;
     }
+}
 }

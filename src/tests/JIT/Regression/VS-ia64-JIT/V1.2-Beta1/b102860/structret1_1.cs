@@ -5,6 +5,8 @@
 using System;
 
 
+namespace b102860
+{
 struct Pad
 {
 #pragma warning disable 0414
@@ -101,4 +103,5 @@ public class Test_structret1_1
         Console.WriteLine(c(sM));
         return 100;
     }
+}
 }

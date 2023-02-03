@@ -9,6 +9,8 @@
 .assembly extern legacy library mscorlib {}
 .assembly 'b68757' {}
 .assembly extern xunit.core {}
+.namespace b68757
+{
 .class public bug1
 {
   .class auto ansi nested public beforefieldinit CL1
@@ -21,7 +23,7 @@
       .maxstack  8
       IL_0000:  ldarg.0
       IL_0001:  ldc.r8     2.
-      IL_000a:  stfld      float64 bug1/CL1::a1
+      IL_000a:  stfld      float64 b68757.bug1/CL1::a1
       IL_000f:  ldarg.0
       IL_0010:  call       instance void [mscorlib]System.Object::.ctor()
       IL_0015:  ret
@@ -35,19 +37,19 @@
     )
     .entrypoint
     .maxstack  4
-    .locals ([0] class bug1/CL1 cl1)
-    IL_0000:  newobj     instance void bug1/CL1::.ctor()
+    .locals ([0] class b68757.bug1/CL1 cl1)
+    IL_0000:  newobj     instance void b68757.bug1/CL1::.ctor()
     IL_0005:  stloc.0
     IL_0006:  ldstr      "The result should be 4"
     IL_000b:  call       void [System.Console]System.Console::WriteLine(string)
     IL_0010:  ldc.r8     4.
     IL_0019:  ldloc.0
-    IL_001a:  ldfld      float64 bug1/CL1::a1
+    IL_001a:  ldfld      float64 b68757.bug1/CL1::a1
     IL_001f:  div
     IL_0020:  ldloc.0
-    IL_0021:  ldfld      float64 bug1/CL1::a1
+    IL_0021:  ldfld      float64 b68757.bug1/CL1::a1
     IL_0026:  ldloc.0
-    IL_0027:  ldfld      float64 bug1/CL1::a1
+    IL_0027:  ldfld      float64 b68757.bug1/CL1::a1
     IL_002c:  ldc.r8     3.
     IL_0035:  sub
     IL_0036:  mul
@@ -56,4 +58,5 @@
     		ldc.i4 100
     IL_003d:  ret
   } 
+}
 }

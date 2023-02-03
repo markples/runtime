@@ -2,6 +2,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
+namespace Runtime_75607
+{
 public class Program
 {
     private static int s_result;
@@ -60,4 +62,5 @@ public class C : Base
     public void Test(long arg)
     {
     }
+}
 }

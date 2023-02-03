@@ -5,6 +5,8 @@
 .assembly extern System.Console {auto}
 .assembly 'GitHub_17969' { }
 
+.namespace GitHub_17969
+{
 .class private sequential ansi sealed MyStruct
        extends [mscorlib]System.ValueType
 {
@@ -38,8 +40,8 @@
       .maxstack  4
       .locals ([0] int32 i,
                [1] int32 j,
-               [2] valuetype MyStruct s2,
-               [3] valuetype MyArray2 s4,
+               [2] valuetype GitHub_17969.MyStruct s2,
+               [3] valuetype GitHub_17969.MyArray2 s4,
                [4] int32     returnVal)
 
         // returnVal = 100;
@@ -150,4 +152,5 @@
         ldloc     returnVal
         ret
     }
+}
 }

@@ -8,28 +8,30 @@
 
 .assembly GitHub_19222 { }
 
+.namespace GitHub_19222
+{
 .class public auto ansi Test_GitHub_19222 extends [mscorlib] System.Object {
 .method public assembly static int32 modopt([mscorlib]System.Runtime.CompilerServices.CallConvCdecl) 
         main() cil managed
 {
   .entrypoint
   .maxstack  2
-  .locals ([0] class C c)
+  .locals ([0] class GitHub_19222.C c)
 
   // Multiple defs of local 0 here currently inhibit jit exact type tracking
   // and so the call to A::f below should not devirtualize
-  newobj     instance void C::.ctor()
+  newobj     instance void GitHub_19222.C::.ctor()
   stloc.0
-  newobj     instance void D::.ctor()
+  newobj     instance void GitHub_19222.D::.ctor()
   stloc.0
 
   // Must invoke D::f
   ldloc.0
-  callvirt   instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) A::f()
+  callvirt   instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) GitHub_19222.A::f()
 
   // Must invoke C::f
   ldloc.0
-  callvirt   instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) C::f()
+  callvirt   instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) GitHub_19222.C::f()
 
   // Sum of the 2 calls should give 100
   add
@@ -59,7 +61,7 @@
 }
 
 .class public auto ansi beforefieldinit B
-       extends A
+       extends GitHub_19222.A
 {
   .method public hidebysig virtual instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) 
           f() cil managed
@@ -79,13 +81,13 @@
 }
 
 .class public auto ansi beforefieldinit C
-       extends B
+       extends GitHub_19222.B
 {
   .method public hidebysig newslot virtual final 
           instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) 
           f() cil managed
   {
-    .override A::f
+    .override GitHub_19222.A::f
     ldc.i4 34
     ret
   }
@@ -101,13 +103,13 @@
 }
 
 .class public auto ansi beforefieldinit D
-       extends C
+       extends GitHub_19222.C
 {
   .method public hidebysig newslot virtual final 
           instance int32 modopt([mscorlib]System.Runtime.CompilerServices.IsLong) 
           f() cil managed
   {
-    .override A::f
+    .override GitHub_19222.A::f
     ldc.i4 66
     ret
   }
@@ -122,3 +124,4 @@
 
 }
 
+}

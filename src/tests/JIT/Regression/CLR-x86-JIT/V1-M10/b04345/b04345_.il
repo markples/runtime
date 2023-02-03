@@ -10,6 +10,8 @@
 .assembly 'b04345_'
 {
 }
+.namespace b04345_
+{
 .class public _simple {
 
 .method public static int32 main() {
@@ -29,5 +31,6 @@
 pop
 ldc.i4 100
 	ret
+}
 }
 }

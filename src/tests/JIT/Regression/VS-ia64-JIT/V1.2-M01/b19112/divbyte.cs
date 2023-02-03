@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b19112a
+{
 public class foo
 {
 
@@ -28,4 +30,5 @@ public class foo
         c = (sbyte)(a / b);
     }
 
+}
 }

@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b99219
+{
 public class a
 {
     static int temp = 0;
@@ -41,4 +43,5 @@ public class a
         Console.WriteLine("Failed - temp = " + temp);
         return 0;
     }
+}
 }

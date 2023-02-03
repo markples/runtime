@@ -5,6 +5,8 @@
 .assembly 'DevDiv_487703' {}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_487703
+{
 .class public ILGEN_CLASS
 {
     .method static native int ILGEN_METHOD(unsigned int8, int64, native int, unsigned int16)
@@ -87,7 +89,7 @@ IL_00a1:
             ldc.i4 0
             conv.i
             ldc.i4 0
-            call native int ILGEN_CLASS::ILGEN_METHOD(unsigned int8, int64, native int, unsigned int16)
+            call native int DevDiv_487703.ILGEN_CLASS::ILGEN_METHOD(unsigned int8, int64, native int, unsigned int16)
             pop
             leave done
         }
@@ -101,4 +103,5 @@ IL_00a1:
         ldc.i4 100
         ret
     }
+}
 }

@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_18770
+{
 public class Program
 {
     public static int Main()
@@ -112,4 +114,5 @@ class Test3
         int var0 = (ushort)((0 % arg0[0]) | (byte)(-32768 * (int)(0 & arg0[0])));
         return (byte)var0;
     }
+}
 }

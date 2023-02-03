@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b72422
+{
 public class Bug
 {
     public static int Main()
@@ -15,4 +17,5 @@ public class Bug
         Console.WriteLine(1 / d3);
         return 100;
     }
+}
 }

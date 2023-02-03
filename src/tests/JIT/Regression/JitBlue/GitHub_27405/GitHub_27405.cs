@@ -5,6 +5,8 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_27405
+{
 public class Program
 {
     public static int Main()
@@ -37,4 +39,5 @@ public class Program
         Vector3 d = Unsafe.As<Vector4, Vector3>(ref c);
         return a * new Vector4(d, 0);
     }
+}
 }

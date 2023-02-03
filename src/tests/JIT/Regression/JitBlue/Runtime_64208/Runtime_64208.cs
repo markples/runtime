@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_64208
+{
 public class Runtime_64208
 {
     public static int Main()
@@ -30,4 +32,5 @@ public class Runtime_64208
     {
         return LeafMethod15().string_0;
     }
+}
 }

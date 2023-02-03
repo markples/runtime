@@ -11,6 +11,8 @@ using System.Runtime.CompilerServices;
 // Debug: Outputs -1
 // Release: Outputs -65536
 
+namespace GitHub_18522_2
+{
 struct S0
 {
     public sbyte F0;
@@ -50,4 +52,5 @@ public class GitHub_18522_2
     {
         return s_6.F3;
     }
+}
 }

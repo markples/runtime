@@ -4,6 +4,8 @@ using System.Runtime.CompilerServices;
 //
 // Note: In below test case, we do not iterate over BBJ_ALWAYS blocks while computing the
 //       reachability leading to assert
+namespace Runtime_59298
+{
 public class Runtime_59298
 {
     public struct S2
@@ -63,4 +65,5 @@ public class Runtime_59298
         new Runtime_59298().Method0(out short s);
         return s + 100;
     }
+}
 }

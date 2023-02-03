@@ -19,6 +19,8 @@
 }
 .assembly extern xunit.core {}
 // MVID: {74C704CE-5E25-4072-A5C7-A9DD14614D82}
+.namespace b46292
+{
 .class private auto ansi Mod1
        extends [mscorlib]System.Object
 {
@@ -29,11 +31,11 @@
     )
     // Code size       26 (0x1a)
     .maxstack  1
-    .locals init (class c1 V_0)
+    .locals init (class b46292.c1 V_0)
     .try
     {
       IL_0000:  ldloc.0
-      IL_0001:  callvirt   instance void c1::foo()
+      IL_0001:  callvirt   instance void b46292.c1::foo()
       IL_0006:  leave.s    IL_0019
 
     }  // end .try
@@ -83,7 +85,7 @@
     .entrypoint
     // Code size       6 (0x6)
     .maxstack  8
-    IL_0000:  call       void Mod1::Main()
+    IL_0000:  call       void b46292.Mod1::Main()
 	ldc.i4 100
     IL_0005:  ret
   } // end of method '_vbProject::_main'
@@ -91,3 +93,4 @@
 } // end of class '_vbProject'
 
 //*********** DISASSEMBLY COMPLETE ***********************
+}

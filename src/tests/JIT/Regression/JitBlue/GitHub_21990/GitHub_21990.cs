@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 // And normally, the frame pointer is at the bottom of the frame and the stored generics context at the top. If the locals
 // space is very large, we'll need another register to use instead of a constant in the addressing mode.
 
+namespace GitHub_21990
+{
 class GenericClass<T> { }
 class GenericException<T> : Exception
 {
@@ -590,4 +592,5 @@ public class Test_GitHub_21990
 
         return Pass;
     }
+}
 }

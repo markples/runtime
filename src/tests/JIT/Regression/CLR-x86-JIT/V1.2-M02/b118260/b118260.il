@@ -9,7 +9,7 @@
 }
 .assembly b118260 {}
 .assembly extern xunit.core {}
-.namespace Test
+.namespace b118260
 {
   .class public auto ansi Test extends [mscorlib]System.Object
   {

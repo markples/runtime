@@ -10,6 +10,8 @@
 
 using System;
 
+namespace b610750
+{
 public class Program
 {
     static bool failed = false;
@@ -2038,3 +2040,4 @@ public class Program
     }
 }
 
+}

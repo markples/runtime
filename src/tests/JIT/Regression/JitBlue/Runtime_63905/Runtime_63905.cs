@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_63905
+{
 public class Runtime_63905
 {
     public static int Main()
@@ -43,4 +45,5 @@ public class Runtime_63905
     {
         public object Field;
     }
+}
 }

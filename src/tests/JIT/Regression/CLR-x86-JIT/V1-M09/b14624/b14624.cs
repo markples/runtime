@@ -3,7 +3,7 @@
 //
 
 // The legendary 37-byte value class.
-namespace DefaultNamespace
+namespace b14624
 {
     //@BEGINRENAME; Verify this renames
     //@ENDRENAME; Verify this renames

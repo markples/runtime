@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace GitHub_19910
+namespace GitHub_19910_GitHub_3539
 
 {
     public class Program

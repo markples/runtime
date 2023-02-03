@@ -37,6 +37,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b473131
+{
 .class public auto ansi sealed mynamespace.e_t
        extends [mscorlib]System.Enum
 {
@@ -98,3 +100,4 @@ ldc.i4 100
 // =============================================================
 
 // *********** DISASSEMBLY COMPLETE ***********************
+}

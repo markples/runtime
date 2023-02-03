@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+namespace b188478
+{
 public class My
 {
     public static int Main()
@@ -16,4 +18,5 @@ public class My
         Console.WriteLine(roc.Count);
         return 100;
     }
+}
 }

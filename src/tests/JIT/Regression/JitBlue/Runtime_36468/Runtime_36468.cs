@@ -3,6 +3,8 @@
 
 using System;
 
+namespace Runtime_36468
+{
 class C0
 {
     public sbyte F4;
@@ -56,4 +58,5 @@ public class Runtime_36468
         sbyte var0 = arg1.F0.F4--;
         return arg0.F8;
     }
+}
 }

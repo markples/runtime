@@ -6,6 +6,8 @@
 .assembly GitHub_14321 {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_14321
+{
 .class public Program
 {
     .method static bool TestUnsigned(int32) noinlining
@@ -41,10 +43,10 @@
         .maxstack 1
 
         ldc.i4 42
-        call bool Program::TestUnsigned(int32)
+        call bool GitHub_14321.Program::TestUnsigned(int32)
 		brtrue FAIL
         ldc.i4 0x7fffffff
-        call bool Program::TestSignedOverflow(int32)
+        call bool GitHub_14321.Program::TestSignedOverflow(int32)
 		brtrue FAIL
         ldstr "PASS"
         call void [System.Console]System.Console::WriteLine(string)
@@ -56,4 +58,5 @@
         ldc.i4 1
         ret
     }
+}
 }

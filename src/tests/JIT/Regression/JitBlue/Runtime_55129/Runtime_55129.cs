@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_55129
+{
 public class Runtime_55129
 {
     public static int Main()
@@ -99,3 +101,4 @@ public class Runtime_55129_2
     }
 }
 
+}

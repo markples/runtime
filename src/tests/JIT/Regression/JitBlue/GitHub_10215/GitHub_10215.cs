@@ -8,6 +8,8 @@ using Xunit;
 // This test represent deep execution tree that could case C stack overflow
 // in recursive tree walkers. It should work if the compiler spills deep tree periodically or
 // recursive walkers are replaced with non-recursive versions.
+namespace GitHub_10215
+{
 public class GitHub_10215
 {
     private static int CalcBigExpressionWithoutStores()
@@ -477,4 +479,5 @@ public class GitHub_10215
             return 0;
         }
     }
+}
 }

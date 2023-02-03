@@ -12,6 +12,8 @@
 
 .typedef [System.Numerics.Vectors]System.Numerics.Vector2 as Vector2
 
+.namespace Runtime_72133
+{
 .class public Runtime_72133 extends [System.Runtime]System.Object
 {
   .method public static int32 Main()
@@ -104,8 +106,8 @@
     ldloc offs
     add
     ldloca b
-    ldobj StructWithInt
-    stobj StructWithInt
+    ldobj Runtime_72133.StructWithInt
+    stobj Runtime_72133.StructWithInt
 
     ldc.i4 1
     bne.un FAILURE
@@ -253,22 +255,22 @@
 
   .method private static bool ProblemWithDirectInitObj() noinlining
   {
-    .locals (valuetype StructWithInt a, valuetype StructWithInt* pA)
+    .locals (valuetype Runtime_72133.StructWithInt a, valuetype Runtime_72133.StructWithInt* pA)
 
     ldloca a
-    ldflda int32 StructWithInt::Value
+    ldflda int32 Runtime_72133.StructWithInt::Value
     ldc.i4 1
     call !!0 .this::Get<int32>(!!0)
-    stfld int32 StructWithInt::Value
+    stfld int32 Runtime_72133.StructWithInt::Value
 
     ldloca a
     stloc pA
 
     ldloc pA
-    ldfld int32 StructWithInt::Value
+    ldfld int32 Runtime_72133.StructWithInt::Value
 
     ldloca a
-    initobj StructWithInt
+    initobj Runtime_72133.StructWithInt
 
     ldc.i4 1
     bne.un FAILURE
@@ -282,10 +284,10 @@
 
   .method private static bool ProblemWithRetBufCall() noinlining
   {
-    .locals (valuetype LargeStruct a, valuetype LargeStruct b)
+    .locals (valuetype Runtime_72133.LargeStruct a, valuetype Runtime_72133.LargeStruct b)
 
     ldc.i8 1
-    call valuetype LargeStruct LargeStruct::CreateNoinline(int64)
+    call valuetype Runtime_72133.LargeStruct Runtime_72133.LargeStruct::CreateNoinline(int64)
     dup
     stloc a
     stloc b
@@ -293,11 +295,11 @@
     ldloc a
 
     ldc.i8 2
-    call valuetype LargeStruct LargeStruct::CreateInline(int64)
+    call valuetype Runtime_72133.LargeStruct Runtime_72133.LargeStruct::CreateInline(int64)
     stloc a
 
     ldloc b
-    call bool LargeStruct::Equals(valuetype LargeStruct, valuetype LargeStruct)
+    call bool Runtime_72133.LargeStruct::Equals(valuetype Runtime_72133.LargeStruct, valuetype Runtime_72133.LargeStruct)
     brfalse FAILURE
 
     ldloc b
@@ -306,11 +308,11 @@
     ldloc a
 
     ldc.i8 3
-    call valuetype LargeStruct LargeStruct::CreateInline(int64)
+    call valuetype Runtime_72133.LargeStruct Runtime_72133.LargeStruct::CreateInline(int64)
     stloc a
 
     ldloc b
-    call bool LargeStruct::Equals(valuetype LargeStruct, valuetype LargeStruct)
+    call bool Runtime_72133.LargeStruct::Equals(valuetype Runtime_72133.LargeStruct, valuetype Runtime_72133.LargeStruct)
     brfalse FAILURE
 
     ldc.i4 FALSE
@@ -354,7 +356,7 @@
   .field public int64 LongTwo
   .field public int64 LongThree
 
-  .method public static bool Equals(valuetype LargeStruct left, valuetype LargeStruct right) noinlining
+  .method public static bool Equals(valuetype Runtime_72133.LargeStruct left, valuetype Runtime_72133.LargeStruct right) noinlining
   {
     ldarg left
     ldfld int64 .this::LongOne
@@ -382,9 +384,9 @@
     ret
   }
 
-  .method public static valuetype LargeStruct CreateInline(int64 fieldValue)
+  .method public static valuetype Runtime_72133.LargeStruct CreateInline(int64 fieldValue)
   {
-    .locals (valuetype LargeStruct result)
+    .locals (valuetype Runtime_72133.LargeStruct result)
 
     ldloca result
     ldarg fieldValue
@@ -402,10 +404,11 @@
     ret
   }
 
-  .method public static valuetype LargeStruct CreateNoinline(int64 fieldValue) noinlining
+  .method public static valuetype Runtime_72133.LargeStruct CreateNoinline(int64 fieldValue) noinlining
   {
     ldarg fieldValue
-    call valuetype LargeStruct .this::CreateInline(int64)
+    call valuetype Runtime_72133.LargeStruct .this::CreateInline(int64)
     ret
   }
+}
 }

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace DevDiv_876169
+{
 public class Repro
 {
     public static int Main()
@@ -20,4 +22,5 @@ public class Repro
         Console.WriteLine("PASS!");
         return 100;
     }
+}
 }

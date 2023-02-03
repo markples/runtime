@@ -3,7 +3,7 @@
 using System.Runtime.CompilerServices;
 using System.Numerics;
 
-namespace N
+namespace GitHub_6318
 {
     public static class C
     {

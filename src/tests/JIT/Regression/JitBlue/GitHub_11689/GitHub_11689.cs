@@ -6,7 +6,7 @@
 
 using System.Runtime.CompilerServices;
 
-namespace N
+namespace GitHub_11689
 {
     struct WrappedInt
     {

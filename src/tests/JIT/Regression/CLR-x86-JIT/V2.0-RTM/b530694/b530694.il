@@ -10,6 +10,8 @@
 .assembly extern System {}
 .assembly 'b530694' {}
 .assembly extern xunit.core {}
+.namespace b530694
+{
 .class public EHTest
 {
   .field private static int32 fld0
@@ -29,20 +31,20 @@
   }
   .method public static int32 GetInt32_jmp()
   {
-  	jmp   int32 EHTest::GetInt32()
+  	jmp   int32 b530694.EHTest::GetInt32()
   }
   .method public static int32 GetInt32_tailcall()
   {
-  	tail. call   int32 EHTest::GetInt32()
+  	tail. call   int32 b530694.EHTest::GetInt32()
   	ret
   }
   .method public static int64 GetInt64_jmp()
   {
-  	jmp   int64 EHTest::GetInt64()
+  	jmp   int64 b530694.EHTest::GetInt64()
   }
   .method public static int64 GetInt64_tailcall()
   {
-  	tail. call   int64 EHTest::GetInt64()
+  	tail. call   int64 b530694.EHTest::GetInt64()
   	ret
   }
 .method public static int32 f0(int32 arg0,int64 arg1) cil managed
@@ -53,7 +55,7 @@
 br start_try1
 start_catch1: 
 catch1_out:
-call void EHTest::f2()
+call void b530694.EHTest::f2()
 rethrow
 end_catch1: 
 
@@ -87,9 +89,9 @@ nop
 	TARGET_0_0:
 	  ldc.i8 100
 	  ldc.i8 54
-     stsfld int64 EHTest::fld2
-	  ldsfld int64 EHTest::fld2
-	  stsfld int64 EHTest::fld2
+     stsfld int64 b530694.EHTest::fld2
+	  ldsfld int64 b530694.EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 120
 	  ble.un	TARGET_0_2
 	TARGET_0_1:
@@ -101,14 +103,14 @@ nop
 	  ldc.i8 102
 	  beq	TARGET_0_1
 	TARGET_0_2:
-	  call int64 EHTest::GetInt64_tailcall()
-	  ldsfld int64 EHTest::fld2
+	  call int64 b530694.EHTest::GetInt64_tailcall()
+	  ldsfld int64 b530694.EHTest::fld2
 	  box int64
 	  unbox int64
 	  ldind.i8
 	  blt.un	TARGET_0_1
 	TARGET_0_3:
-	  ldftn int64 EHTest::GetInt64_jmp()
+	  ldftn int64 b530694.EHTest::GetInt64_jmp()
 	  calli int64 ()
 	  ldc.i4 31
 	  stloc.0
@@ -121,16 +123,16 @@ nop
 	  newarr     [mscorlib]System.Int64
 	  ldc.i4 96
 	  ldelem.i8
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 83
 	  or
 	  ldc.i8 50
 	  bgt.un	TARGET_0_4
 	TARGET_0_4:
 	  ldc.i4 51
-     stsfld int32 EHTest::fld1
-	  ldsfld int32 EHTest::fld1
-	  ldsflda int32 EHTest::fld1
+     stsfld int32 b530694.EHTest::fld1
+	  ldsfld int32 b530694.EHTest::fld1
+	  ldsflda int32 b530694.EHTest::fld1
 	  mkrefany   [mscorlib]System.Int32
 	  refanyval	[mscorlib]System.Int32
 	  ldind.i4
@@ -140,7 +142,7 @@ end_filter1:
 
 finally1_br: 
 start_try4: 
-call void EHTest::f2()
+call void b530694.EHTest::f2()
 try4_out:
 newobj instance void [mscorlib]System.EntryPointNotFoundException::.ctor()
 throw
@@ -170,7 +172,7 @@ end_finally1:
 
 fault1_br: 
 start_try3: 
-call void EHTest::f2()
+call void b530694.EHTest::f2()
 try3_out:
 newobj instance void [mscorlib]System.OutOfMemoryException::.ctor()
 throw
@@ -179,7 +181,7 @@ end_try3:
 nop
 	TARGET_1_0:
 	  ldc.i4 80
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 59
 	  starg.s arg0
 	  ldc.i4 43
@@ -200,7 +202,7 @@ nop
 	  ldc.i4 30
 	  newobj instance void int64[,,,,,,,,,,,]::.ctor(int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32)
 	  ldc.i4.6
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4.8
 	  stloc.0
 	  ldc.i4.3
@@ -210,7 +212,7 @@ nop
 	  ldc.i4 96
 	  starg.s arg0
 	  ldc.i4 45
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 92
 	  ldc.i4 120
 	  ldc.i4 35
@@ -230,10 +232,10 @@ nop
 	  bge.un	TARGET_1_2
 	TARGET_1_1:
 	  ldc.i4.7
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 43
 	  not
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 31
 	  ldc.i4 53
 	  mul
@@ -246,14 +248,14 @@ nop
 	  newarr     [mscorlib]System.Int64
 	  ldc.i4 65
 	  ldelem.i8
-	  call int64 EHTest::GetInt64_jmp()
+	  call int64 b530694.EHTest::GetInt64_jmp()
 	  blt.un	TARGET_1_1
 	TARGET_1_2:
 	  ldloca 0
 	  mkrefany   [mscorlib]System.Int32
 	  refanyval	[mscorlib]System.Int32
 	  ldind.i4
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 125
 	  ldc.i4 19
 	  beq	TARGET_1_0
@@ -331,7 +333,7 @@ nop
 	  newarr     [mscorlib]System.Int64
 	  ldc.i4 85
 	  ldelem.i8
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i4 48
 	  starg.s arg0
 	  ldc.i4 25
@@ -340,12 +342,12 @@ nop
 	  ldelem.i8
 	  bgt.un	TARGET_2_0
 	TARGET_2_2:
-	  ldftn int32 EHTest::GetInt32_tailcall()
+	  ldftn int32 b530694.EHTest::GetInt32_tailcall()
 	  calli int32 ()
 	  ldc.i4 41
 	  blt	TARGET_2_3
 	TARGET_2_3:
-	  ldsfld int64 EHTest::fld2
+	  ldsfld int64 b530694.EHTest::fld2
 	  ldc.i8 43
 	  add
 	  ldc.i8 47
@@ -376,9 +378,9 @@ nop
 	  sub
 	  stloc.1
 	  ldc.i8 46
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 13
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 27
 	  stloc.1
 	  ldc.i8 106
@@ -402,7 +404,7 @@ nop
 	  ldelem.i4
 	  stloc.0
 	  ldc.i4 18
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 99
 	  ldc.i4 76
 	  starg.s arg0
@@ -414,14 +416,14 @@ nop
 	  or
 	  ldc.i8 61
 	  mul
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 91
 	  stloc.1
 	  ldc.i8 43
 	  ldc.i8 26
 	  bge.un	TARGET_3_0
 	TARGET_3_4:
-	  call int32 EHTest::GetInt32_jmp()
+	  call int32 b530694.EHTest::GetInt32_jmp()
 	  ldc.i4 59
 	  box int32
 	  unbox int32
@@ -436,7 +438,7 @@ ldc.i4.0
 endfilter
 start_filter5: 
 pop
-call void EHTest::f2()
+call void b530694.EHTest::f2()
 filter5_out: leave OUT0
 end_filter5: 
 
@@ -468,7 +470,7 @@ nop
 	TARGET_4_1:
 	  ldarg.0
 	  neg
-	  ldsfld int32 EHTest::fld1
+	  ldsfld int32 b530694.EHTest::fld1
 	  neg
 	  bgt	TARGET_4_3
 	TARGET_4_2:
@@ -482,7 +484,7 @@ nop
 	TARGET_4_3:
 	  ldc.i4 73
 	  ldc.i4 122
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 22
 	  ceq
 	  stloc.0
@@ -490,14 +492,14 @@ nop
 	  ldc.i4 59
 	  bge.un	TARGET_4_4
 	TARGET_4_4:
-	  ldftn int32 EHTest::GetInt32_tailcall()
+	  ldftn int32 b530694.EHTest::GetInt32_tailcall()
 	  calli int32 ()
 	  starg.s arg0
-	  ldsflda int32 EHTest::fld1
+	  ldsflda int32 b530694.EHTest::fld1
 	  mkrefany   [mscorlib]System.Int32
 	  refanyval	[mscorlib]System.Int32
 	  ldind.i4
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 25
 	  ldc.i4 126
 	  starg.s arg0
@@ -536,49 +538,49 @@ end_fault1:
 start_try1: 
 nop
 	TARGET_5_0:
-	  ldsfld int64 EHTest::fld2
-	  call int32 EHTest::GetInt32()
+	  ldsfld int64 b530694.EHTest::fld2
+	  call int32 b530694.EHTest::GetInt32()
 	  neg
 	  sizeof native unsigned int
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 71
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 93
 	  stloc.0
 	  ldc.i4 42
 	  ldc.i4 17
 	  shl
 	  ldc.i4 16
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 102
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 26
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 47
 	  ldc.i4 58
 	  ldc.i4 24
 	  ldc.i4 26
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 89
 	  ldc.i4 55
 	  ldc.i4 39
 	  ldc.i4 118
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 12
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 64
 	  ldc.i4 101
 	  stloc.0
 	  ldc.i4 97
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 27
 	  ldc.i4 28
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4.7
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4.0
 	  ldc.i4 103
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 25
 	  ldc.i4 102
 	  ldc.i4 44
@@ -596,7 +598,7 @@ nop
 	  ldc.i4 104
 	  ldc.i4 101
 	  ldc.i4 57
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 113
 	  newobj instance void int64[...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...]::.ctor(int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32)
 	  ldc.i4 105
@@ -624,23 +626,23 @@ nop
 	  ldc.i4 69
 	  ldc.i4 72
 	  ldc.i4.6
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 71
 	  ldc.i4 87
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 69
 	  ldc.i4 70
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 27
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 73
 	  ldc.i4 66
 	  ldc.i4 79
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4.2
 	  ldc.i4 73
 	  ldc.i4 108
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 78
 	  ldc.i4 57
 	  call instance int64 int64[...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...,...]::Get(int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32)
@@ -651,9 +653,9 @@ nop
 	  ble.un	TARGET_5_3
 	TARGET_5_1:
 	  ldarg.0
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 65
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 23
 	  ldc.i8 45
 	  add
@@ -661,14 +663,14 @@ nop
 	  ldc.i8 97
 	  ble.un	TARGET_5_4
 	TARGET_5_2:
-	  ldftn int32 EHTest::GetInt32_jmp()
+	  ldftn int32 b530694.EHTest::GetInt32_jmp()
 	  calli int32 ()
 	  ldc.i4 50
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 110
 	  bgt.un	TARGET_5_3
 	TARGET_5_3:
-	  call int64 EHTest::GetInt64()
+	  call int64 b530694.EHTest::GetInt64()
 	  ldloc 4
 	  stloc 4
 	  ldc.i8 60
@@ -677,13 +679,13 @@ nop
 	  ldc.i4 65
 	  stloc.0
 	  ldloc.2
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 120
 	  ldc.i4 77
 	  or
 	  not
 	  ldc.i4 43
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 21
 	  bgt	TARGET_5_2
 try1_out:
@@ -692,16 +694,16 @@ throw
 end_try1: 
 
 OUT: 
-	  ldsfld int64 EHTest::fld2
+	  ldsfld int64 b530694.EHTest::fld2
 ret
 OUT0:
 nop
 	TARGET_6_0:
-	  ldsflda int32 EHTest::fld0
+	  ldsflda int32 b530694.EHTest::fld0
 	  mkrefany   [mscorlib]System.Int32
 	  refanyval	[mscorlib]System.Int32
 	  ldind.i4
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 32
 	  ldc.i4 15
 	  clt
@@ -711,20 +713,20 @@ nop
 	  ldc.i8 73
 	  ldc.i8 55
 	  xor
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 96
 	  ldc.i8 110
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 97
 	  mul
 	  neg
 	  ldc.i8 83
 	  blt.un	TARGET_6_1
 	TARGET_6_2:
-	  call int32 EHTest::GetInt32_jmp()
-	  stsfld int32 EHTest::fld1
+	  call int32 b530694.EHTest::GetInt32_jmp()
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 45
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 70
 	  ldc.i4 45
 	  clt
@@ -760,7 +762,7 @@ nop
 	  ldc.i4 110
 	  rem
 	  mul
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 54
 	  newarr     [mscorlib]System.Int32
 	  ldc.i4.7
@@ -772,7 +774,7 @@ nop
 	  mkrefany   [mscorlib]System.Int64
 	  refanyval	[mscorlib]System.Int64
 	  ldind.i8
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 7
 	  ldc.i8 13
 	  starg.s arg0
@@ -780,10 +782,10 @@ nop
 	  starg.s arg0
 	  ldc.i8 114
 	  or
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 101
 	  ldc.i8 1
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 121
 	  bge.un	TARGET_7_0
 	TARGET_7_2:
@@ -792,9 +794,9 @@ nop
 	  rem
 	  ldc.i4 44
 	  clt
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 118
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 81
 	  ldc.i4 29
 	  beq	TARGET_7_2
@@ -831,7 +833,7 @@ br filter1_br
 start_finally2: 
 nop
 	TARGET_8_0:
-	  ldftn int64 EHTest::GetInt64_tailcall()
+	  ldftn int64 b530694.EHTest::GetInt64_tailcall()
 	  calli int64 ()
 	  conv.i4
 	  stloc.0
@@ -844,24 +846,24 @@ nop
 	  mul
 	  ldc.i4 80
 	  sub
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 117
 	  ldc.i4 11
 	  ldc.i4 76
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 20
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 84
 	  stloc.0
 	  ldc.i4 108
 	  ldc.i4 97
 	  ldc.i4.2
 	  ldc.i4 79
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 115
 	  stloc.2
 	  ldc.i4 50
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 126
 	  ldc.i4 125
 	  ldc.i4 79
@@ -884,7 +886,7 @@ nop
 	  ldc.i4 117
 	  stloc.2
 	  ldc.i4 91
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 72
 	  ldc.i4 10
 	  ldc.i4.6
@@ -902,16 +904,16 @@ nop
 	  ldc.i4 15
 	  call instance int64 int64[,,,,,,,,,,,,,,,,]::Get(int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32)
 	  ldc.i8 47
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 1
 	  div
 	  ldc.i8 19
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 2
 	  ble	TARGET_8_1
 	TARGET_8_1:
 	  ldc.i4 80
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 20
 	  ldc.i4 23
 	  stloc.2
@@ -922,35 +924,35 @@ nop
 	  ldc.i4.4
 	  bge.un	TARGET_8_2
 	TARGET_8_2:
-	  ldftn int64 EHTest::GetInt64()
+	  ldftn int64 b530694.EHTest::GetInt64()
 	  calli int64 ()
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 75
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 122
 	  ldc.i8 77
 	  bge	TARGET_8_0
 	TARGET_8_3:
 	  ldloc.0
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 42
 	  ldc.i4 58
 	  mul
-	  stsfld int32 EHTest::fld1
+	  stsfld int32 b530694.EHTest::fld1
 	  ldc.i4 120
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 16
 	  ldc.i4 88
 	  bgt.un	TARGET_8_2
 	TARGET_8_4:
-	  ldsflda int64 EHTest::fld2
+	  ldsflda int64 b530694.EHTest::fld2
 	  mkrefany   [mscorlib]System.Int64
 	  refanyval	[mscorlib]System.Int64
 	  ldind.i8
-	  ldftn int32 EHTest::GetInt32_jmp()
+	  ldftn int32 b530694.EHTest::GetInt32_jmp()
 	  calli int32 ()
 	  newarr     [mscorlib]System.Int64
-	  ldsfld int32 EHTest::fld0
+	  ldsfld int32 b530694.EHTest::fld0
 	  ldc.i4 25
 	  cgt
 	  ldelem.i8
@@ -963,7 +965,7 @@ filter1_br:
 start_try4: 
 nop
 	TARGET_9_0:
-	  call int64 EHTest::GetInt64_jmp()
+	  call int64 b530694.EHTest::GetInt64_jmp()
 	  stloc 4
 	  ldc.i8 55
 	  ldc.i8 99
@@ -971,7 +973,7 @@ nop
 	  ldc.i8 99
 	  starg.s arg0
 	  ldc.i8 65
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 80
 	  stloc.3
 	  ldc.i8 17
@@ -985,7 +987,7 @@ nop
 	  div
 	  stloc 4
 	  ldc.i8 97
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 125
 	  ldc.i8 109
 	  sub
@@ -994,7 +996,7 @@ nop
 	TARGET_9_2:
 	  ldc.i8 115
 	  ldc.i8 126
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
 	  ldc.i8 49
 	  div
 	  stloc.3
@@ -1017,9 +1019,9 @@ nop
 	  ldc.i4 106
 	  stloc.0
 	  ldc.i4 87
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 29
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b530694.EHTest::fld0
 	  ldc.i4 63
 	  stloc.2
 	  ldc.i4 39
@@ -1037,7 +1039,7 @@ filter1_out: leave OUT1
 end_filter1: 
 
 start_try2: 
-call void EHTest::f2()
+call void b530694.EHTest::f2()
 try2_out:
 newobj instance void [mscorlib]System.ContextMarshalException::.ctor()
 throw
@@ -1049,7 +1051,7 @@ ldc.i4.1
 endfilter
 start_filter2: 
 pop
-call void EHTest::f2()
+call void b530694.EHTest::f2()
 filter2_out: leave OUT1
 end_filter2: 
 
@@ -1093,14 +1095,14 @@ ret
 .try
 {
 	  ldc.i8 75
-	  stsfld int64 EHTest::fld2
-	  ldsfld int64 EHTest::fld2
+	  stsfld int64 b530694.EHTest::fld2
+	  ldsfld int64 b530694.EHTest::fld2
 	  ldc.i8 68
 	  mul
 	  box int64
 	  unbox int64
 	  ldind.i8
-call int64 EHTest::f1(int64 )
+call int64 b530694.EHTest::f1(int64 )
 leave RET
 }
 catch [mscorlib]System.Exception
@@ -1113,4 +1115,5 @@ call void [System.Console]System.Console::WriteLine(string)
 ret
 }
 
+}
 }

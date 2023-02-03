@@ -9,11 +9,11 @@
 }
 .assembly 'b32374' { }
 .assembly extern xunit.core {}
-.namespace Test
+.namespace b32374
 {
   .class public auto ansi BB extends [mscorlib]System.Object
   {
-    .field public static class Test.BB[] m_axStatic1
+    .field public static class b32374.BB[] m_axStatic1
     .field public class [mscorlib]System.Object[] m_axField1
     .field public unsigned int32[] m_auField3
     .method public hidebysig static unsigned int32[] 
@@ -21,10 +21,10 @@
     {
       // Code size       13 (0xd)
       .maxstack  8
-      IL_0000:  ldsfld     class Test.BB[] Test.BB::m_axStatic1
+      IL_0000:  ldsfld     class b32374.BB[] b32374.BB::m_axStatic1
       IL_0005:  ldc.i4.2
       IL_0006:  ldelem.ref
-      IL_0007:  ldfld      unsigned int32[] Test.BB::m_auField3
+      IL_0007:  ldfld      unsigned int32[] b32374.BB::m_auField3
       IL_000c:  ret
     } // end of method 'BB::Static1'
 
@@ -34,8 +34,8 @@
     {
       // Code size       11 (0xb)
       .maxstack  8
-      IL_0000:  newobj     instance void Test.BB::.ctor()
-      IL_0005:  ldfld      class [mscorlib]System.Object[] Test.BB::m_axField1
+      IL_0000:  newobj     instance void b32374.BB::.ctor()
+      IL_0005:  ldfld      class [mscorlib]System.Object[] b32374.BB::m_axField1
       IL_000a:  ret
     } // end of method 'BB::Static2'
 
@@ -58,41 +58,41 @@
       .entrypoint
       // Code size       97 (0x61)
       .maxstack  6
-      .locals (class Test.BB V_0,
+      .locals (class b32374.BB V_0,
                int32 V_1)
       .try
       {
-        IL_0000:  newobj     instance void Test.BB::.ctor()
+        IL_0000:  newobj     instance void b32374.BB::.ctor()
         IL_0005:  stloc.0
         IL_0006:  ldnull
         IL_0007:  ldloc.0
-        IL_0008:  ldfld      unsigned int32[] Test.BB::m_auField3
+        IL_0008:  ldfld      unsigned int32[] b32374.BB::m_auField3
         IL_000d:  ldc.i4.2
         IL_000e:  ldelema    [mscorlib]System.UInt32
         IL_0013:  ldc.i4.0
-        IL_0014:  call       unsigned int32[] Test.BB::Static1(unsigned int32)
+        IL_0014:  call       unsigned int32[] b32374.BB::Static1(unsigned int32)
         IL_0019:  ldc.i4.2
         IL_001a:  ldelema    [mscorlib]System.UInt32
         IL_001f:  ldc.i4.0
-        IL_0020:  call       unsigned int32[] Test.BB::Static1(unsigned int32)
-        IL_0025:  ldsfld     class Test.BB[] Test.BB::m_axStatic1
+        IL_0020:  call       unsigned int32[] b32374.BB::Static1(unsigned int32)
+        IL_0025:  ldsfld     class b32374.BB[] b32374.BB::m_axStatic1
         IL_002a:  ldc.i4.2
         IL_002b:  ldelem.ref
-        IL_002c:  ldfld      unsigned int32[] Test.BB::m_auField3
+        IL_002c:  ldfld      unsigned int32[] b32374.BB::m_auField3
         IL_0031:  ldc.i4.2
         IL_0032:  ldelema    [mscorlib]System.UInt32
-        IL_0037:  call       vararg class [mscorlib]System.Object[] Test.BB::Static2(unsigned int32[],
+        IL_0037:  call       vararg class [mscorlib]System.Object[] b32374.BB::Static2(unsigned int32[],
                                                                            unsigned int32&)
         IL_003c:  ldc.i4.2
         IL_003d:  ldelem.ref
         IL_003e:  unbox      [mscorlib]System.UInt32
         IL_0043:  ldind.u4
-        IL_0044:  call       unsigned int32[] Test.BB::Static1(unsigned int32)
-        IL_0049:  call       float64[] Test.BB::AA_Static2(unsigned int32&,
+        IL_0044:  call       unsigned int32[] b32374.BB::Static1(unsigned int32)
+        IL_0049:  call       float64[] b32374.BB::AA_Static2(unsigned int32&,
                                                            unsigned int32[])
         IL_004e:  ldc.i4.2
         IL_004f:  ldelem.r8
-        IL_0050:  call       vararg class [mscorlib]System.Object[] Test.BB::Static2(unsigned int32[],
+        IL_0050:  call       vararg class [mscorlib]System.Object[] b32374.BB::Static2(unsigned int32[],
                                                                            unsigned int32&,
                                                                            ...,
                                                                            float64)
@@ -123,7 +123,7 @@
       // Code size       7 (0x7)
       .maxstack  8
       IL_0000:  ldnull
-      IL_0001:  stsfld     class Test.BB[] Test.BB::m_axStatic1
+      IL_0001:  stsfld     class b32374.BB[] b32374.BB::m_axStatic1
       IL_0006:  ret
     } // end of method 'BB::.cctor'
 
@@ -134,10 +134,10 @@
       .maxstack  8
       IL_0000:  ldarg.0
       IL_0001:  ldnull
-      IL_0002:  stfld      class [mscorlib]System.Object[] Test.BB::m_axField1
+      IL_0002:  stfld      class [mscorlib]System.Object[] b32374.BB::m_axField1
       IL_0007:  ldarg.0
       IL_0008:  ldnull
-      IL_0009:  stfld      unsigned int32[] Test.BB::m_auField3
+      IL_0009:  stfld      unsigned int32[] b32374.BB::m_auField3
       IL_000e:  ldarg.0
       IL_000f:  call       instance void [mscorlib]System.Object::.ctor()
       IL_0014:  ret

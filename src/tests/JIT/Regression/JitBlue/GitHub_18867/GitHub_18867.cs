@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_18867
+{
 interface IRT
 {
     void WriteLine<T>(T val);
@@ -65,4 +67,5 @@ public class Program
         arg10[0] = arg4;
         return arg1;
     }
+}
 }

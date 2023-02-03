@@ -10,6 +10,8 @@
 // 
 //     File: D:\a\_work\1\s\src\coreclr\jit\lclmorph.cpp Line: 34
 // 
+namespace Runtime_81018
+{
 public interface I0
 {
 }
@@ -33,4 +35,5 @@ public class Runtime_81018
         new S0().M17(new S0().M17(vr7, 0).M17(vr6, s_2), s_2);
         return 100;
     }
+}
 }

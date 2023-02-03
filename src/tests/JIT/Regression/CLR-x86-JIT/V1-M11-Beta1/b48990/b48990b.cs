@@ -15,6 +15,8 @@
 // <Code> 
 using System;
 
+namespace b48990b
+{
 public class MyClass
 {
     public static int Main()
@@ -35,3 +37,4 @@ public class MyClass
     }
 }
 // </Code>
+}

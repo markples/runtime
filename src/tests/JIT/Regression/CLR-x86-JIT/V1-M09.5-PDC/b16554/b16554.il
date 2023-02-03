@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b16554' {}
+.namespace b16554
+{
 .class public ILGEN_622380794 {
 
 .field static	unsigned int16 field_0x5
@@ -25,13 +27,13 @@
  stloc local_0x18
 
  ldc.i4 0x2dda159b 
- stsfld unsigned int16 ILGEN_622380794::field_0x5
+ stsfld unsigned int16 b16554.ILGEN_622380794::field_0x5
  ldc.i4 0x7d3d6bf9 
- stsfld int8 ILGEN_622380794::field_0x6
+ stsfld int8 b16554.ILGEN_622380794::field_0x6
 
  ldc.i4.2
  conv.u8
- ldsfld int8 ILGEN_622380794::field_0x6
+ ldsfld int8 b16554.ILGEN_622380794::field_0x6
  conv.i8
  not
  ldloc local_0x18
@@ -44,7 +46,7 @@
  and
 
  ldloca local_0x4
- ldsflda unsigned int16 ILGEN_622380794::field_0x5
+ ldsflda unsigned int16 b16554.ILGEN_622380794::field_0x5
  ldind.u2
  stind.i1
 
@@ -55,5 +57,6 @@
 ldc.i4 100
 add
  ret
+}
 }
 }

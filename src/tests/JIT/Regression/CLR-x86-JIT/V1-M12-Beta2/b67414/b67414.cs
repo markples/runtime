@@ -6,10 +6,13 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.IO;
 
+namespace b67414
+{
 public class bug
 {
     public static int Main()
     {
         return 100;
     }
+}
 }

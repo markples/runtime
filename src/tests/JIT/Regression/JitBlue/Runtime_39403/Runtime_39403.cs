@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 
 // The test was showing silence bad codegen for a `LclFldAddr` node under HWINSTRINSIC(IND).
 
+namespace Runtime_39403
+{
 public class Runtime_39403
 {
     struct Container
@@ -40,4 +42,5 @@ public class Runtime_39403
         System.Diagnostics.Debug.Assert(v1 == v2);
         return 100;
     }
+}
 }

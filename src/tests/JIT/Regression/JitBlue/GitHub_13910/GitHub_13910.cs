@@ -6,6 +6,8 @@ using System.Runtime.InteropServices;
 // Represents a problem with contained nodes chains, that contain lclVar reads, that were moved through lclVar stores.
 // Notice that the project file sets DOTNET_JitStressModeNames.
 
+namespace GitHub_13910
+{
 [StructLayout(LayoutKind.Explicit)]
 internal class AA
 {
@@ -116,4 +118,5 @@ public class TestApp
         }
         return result;
     }
+}
 }

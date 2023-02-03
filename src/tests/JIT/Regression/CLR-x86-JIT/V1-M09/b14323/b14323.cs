@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DefaultNamespace
+namespace b14323
 {
     public class AppStarter
     {

@@ -6,6 +6,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b26496
+{
 public enum TestEnum
 {
     red = 1,
@@ -328,4 +330,5 @@ public class App
     public static byte[] m_abyFwd14;
     public static TestEnum m_xFwd15;
     public static object[,] m_aobjFwd16;
+}
 }

@@ -8,6 +8,8 @@ using System.Runtime.CompilerServices;
 // a long shift. Tests below have known and unknown
 // long shifts where shift amount is 31 or 32.
 
+namespace GitHub_15077
+{
 public class P
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -79,4 +81,5 @@ public class P
 
         return b64 && b63 && b32 && b31 && bm1 ? 100 : 0;
     }
+}
 }

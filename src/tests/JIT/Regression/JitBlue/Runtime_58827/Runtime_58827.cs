@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
+namespace Runtime_58827
+{
 public class B
 {
     public B z() => this;
@@ -47,4 +49,5 @@ public class X : B
 
         return x.K(x, y) ? 100 : -1;
     }
+}
 }

@@ -27,7 +27,7 @@ using System.Numerics;
 //          vmovsd   xmm0, qword ptr [rax+16]
 //          vmovsd   qword ptr[rsp + 30H], xmm0
 
-namespace Repro
+namespace DevDiv_590358
 {
     public class Program
     {

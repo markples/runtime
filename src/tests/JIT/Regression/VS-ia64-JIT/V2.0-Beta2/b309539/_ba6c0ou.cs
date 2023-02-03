@@ -6,6 +6,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b309539
+{
 [StructLayout(LayoutKind.Sequential)]
 public struct AA
 {
@@ -94,4 +96,5 @@ public class App
     public static Array[,][, ,] m_axFwd8;
     public static object m_objFwd9;
     public static String m_xFwd10;
+}
 }

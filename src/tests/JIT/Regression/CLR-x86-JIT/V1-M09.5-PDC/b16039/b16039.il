@@ -11,6 +11,8 @@
 {
 }
 .assembly extern xunit.core {}
+.namespace b16039
+{
 .class public auto ansi AA extends [mscorlib]System.Object
 {
 
@@ -24,7 +26,7 @@
 		call instance void [mscorlib]System.Object::.ctor()
 		ldarg.0
 		ldc.i4 944150320
-		stfld int32 AA::m_aa
+		stfld int32 b16039.AA::m_aa
 		ret
 	}
 }
@@ -45,15 +47,15 @@
 	{
 		.maxstack 8
 		ldc.i4 17
-		stsfld int8 BB::m_bb
+		stsfld int8 b16039.BB::m_bb
 		ret
 	}
 
 	.method public static unsigned int32 bb(unsigned int8 param_F6C8_21C9, unsigned int8 param_CEA8_12A5, int8 param_509D_0A16, int16 param_9CE2_5B30) il managed
 	{
 		.maxstack 8
-		newobj instance void AA::.ctor()
-		ldflda int32 AA::m_aa
+		newobj instance void b16039.AA::.ctor()
+		ldflda int32 b16039.AA::m_aa
 		ldind.i4
 		ldc.i4 2075773924
 		add.ovf			//	this will blow up
@@ -77,7 +79,7 @@
 			ldc.i4 13
 			ldc.i4 -15
 			ldc.i4 7319
-			call unsigned int32 BB::bb(unsigned int8, unsigned int8, int8, int16)
+			call unsigned int32 b16039.BB::bb(unsigned int8, unsigned int8, int8, int16)
 			pop
 			leave Beyond
 		} catch [mscorlib]System.OverflowException
@@ -93,4 +95,5 @@
 		add
 		ret
 	}
+}
 }

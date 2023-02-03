@@ -10,6 +10,8 @@
 .assembly extern System {}
 .assembly 'b98958' {}
 .assembly extern xunit.core {}
+.namespace b98958
+{
 .class public EHTest
 {
 
@@ -117,7 +119,7 @@ leave OUT
 .entrypoint
 .try
 {
-	call void EHTest::f2()
+	call void b98958.EHTest::f2()
 	leave RET
 }
 catch [mscorlib]System.Exception
@@ -131,4 +133,5 @@ call void [System.Console]System.Console::WriteLine(string)
 ret
 }
 
+}
 }

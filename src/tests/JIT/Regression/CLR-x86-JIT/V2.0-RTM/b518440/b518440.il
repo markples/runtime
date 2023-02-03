@@ -11,6 +11,8 @@
 .assembly extern mscorlib{}
 .assembly 'b518440'{}
 
+.namespace b518440
+{
 .class public A
 {
   .method public hidebysig static int32 main()
@@ -18,7 +20,7 @@
     .entrypoint
     .maxstack 2
   
-    call void A::Test()
+    call void b518440.A::Test()
 
     ldstr "Test SUCCESS"
     call void [System.Console]System.Console::WriteLine(string)
@@ -87,4 +89,5 @@
     IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
     IL_0006:  ret
   } // end of method A::.ctor
+}
 }

@@ -9,6 +9,8 @@ using System.Threading;
 
 // Test folding of addressing expressions
 
+namespace GitHub_19550
+{
 public class Program
 {
     struct S
@@ -139,4 +141,5 @@ public class Program
         }
         return returnVal;
     }
+}
 }

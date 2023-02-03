@@ -9,16 +9,18 @@
 
 .assembly 'b143840' {}
 .assembly extern xunit.core {}
+.namespace b143840
+{
 .class private auto ansi beforefieldinit ExternalClass
        extends [mscorlib]System.Object
 {
-  .field private class ExternalException ee
+  .field private class b143840.ExternalException ee
   .method public hidebysig instance void
           ThrowException() cil managed synchronized
   {
     .maxstack  1
     IL_0000:  ldarg.0
-    IL_0001:  ldfld      class ExternalException ExternalClass::ee
+    IL_0001:  ldfld      class b143840.ExternalException b143840.ExternalClass::ee
     IL_0006:  throw
   }
 
@@ -27,8 +29,8 @@
   {
     .maxstack  2
     IL_0000:  ldarg.0
-    IL_0001:  newobj     instance void ExternalException::.ctor()
-    IL_0006:  stfld      class ExternalException ExternalClass::ee
+    IL_0001:  newobj     instance void b143840.ExternalException::.ctor()
+    IL_0006:  stfld      class b143840.ExternalException b143840.ExternalClass::ee
     IL_000b:  ldarg.0
     IL_000c:  call       instance void [mscorlib]System.Object::.ctor()
     IL_0011:  ret
@@ -47,16 +49,16 @@
     .entrypoint
     .maxstack  3
     .locals init (class [System.Threading.Thread]System.Threading.Thread V_0,
-             class ExternalException V_1,
+             class b143840.ExternalException V_1,
              int32 V_2)
-    IL_0000:  newobj     instance void ExternalException::.ctor()
+    IL_0000:  newobj     instance void b143840.ExternalException::.ctor()
     IL_0005:  stloc.1
     IL_0006:  ldc.i4.0
     IL_0007:  stloc.2
     IL_0008:  br.s       IL_0035
 
     IL_000a:  ldloc.1
-    IL_000b:  ldftn      instance void ExternalException::runtest()
+    IL_000b:  ldftn      instance void b143840.ExternalException::runtest()
     IL_0011:  newobj     instance void [System.Threading.Thread]System.Threading.ThreadStart::.ctor(object,
                                                                                      native int)
     IL_0016:  newobj     instance void [System.Threading.Thread]System.Threading.Thread::.ctor(class [System.Threading.Thread]System.Threading.ThreadStart)
@@ -95,7 +97,7 @@
     .maxstack  3
     .locals init (int32 V_0,
              int32 V_1,
-             class ExternalException V_2)
+             class b143840.ExternalException V_2)
     IL_0000:  ldc.i4.0
     IL_0001:  stloc.0
     IL_0002:  ldc.i4.0
@@ -121,7 +123,7 @@
 
         IL_0013:  ldarg.0
         IL_0014:  ldc.i4.0
-        IL_0015:  call       instance void ExternalException::recurse(int32)
+        IL_0015:  call       instance void b143840.ExternalException::recurse(int32)
         IL_001a:  leave.s    IL_002a
 
       }
@@ -135,7 +137,7 @@
         IL_0021:  leave.s    IL_0031
 
       }
-      catch ExternalException
+      catch b143840.ExternalException
       {
         IL_0023:  pop
         IL_0024:  ldloc.0
@@ -225,8 +227,8 @@
     IL_0009:  ldc.i4.s   100
     IL_000b:  bne.un.s   IL_0019
 
-    IL_000d:  newobj     instance void ExternalClass::.ctor()
-    IL_0012:  call       instance void ExternalClass::ThrowException()
+    IL_000d:  newobj     instance void b143840.ExternalClass::.ctor()
+    IL_0012:  call       instance void b143840.ExternalClass::ThrowException()
     IL_0017:  br.s       IL_0025
 
     IL_0019:  ldarg.0
@@ -235,7 +237,7 @@
     IL_001c:  add
     IL_001d:  dup
     IL_001e:  starg.s    counter
-    IL_0020:  call       instance void ExternalException::recurse(int32)
+    IL_0020:  call       instance void b143840.ExternalException::recurse(int32)
     IL_0025:  ret
   }
 
@@ -247,4 +249,5 @@
     IL_0001:  call       instance void [mscorlib]System.Exception::.ctor()
     IL_0006:  ret
   }
+}
 }

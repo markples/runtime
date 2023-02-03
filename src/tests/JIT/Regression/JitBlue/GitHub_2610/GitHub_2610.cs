@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_2610
+{
 public struct MyValue
 {
     public long val;
@@ -75,4 +77,5 @@ public class Program
 
         return false;
     }
+}
 }

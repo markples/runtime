@@ -35,6 +35,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b10802
+{
 .class public auto ansi Test_repro
        extends [mscorlib]System.Object
 {
@@ -92,3 +94,4 @@
 
 
 //*********** DISASSEMBLY COMPLETE ***********************
+}

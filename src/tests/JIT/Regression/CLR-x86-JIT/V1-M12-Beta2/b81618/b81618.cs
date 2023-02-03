@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b81618
+{
 public class test
 {
     public static int Main()
@@ -21,4 +23,5 @@ public class test
             Console.WriteLine("PASS"); return 100;
         }
     }
+}
 }

@@ -11,6 +11,8 @@
 {
 }
 .assembly extern xunit.core {}
+.namespace b15244
+{
 .class public auto ansi AA extends [mscorlib]System.Object
 {
 
@@ -38,11 +40,11 @@
 		
 	try_enter:
 		ldc.i4 2
-		newarr class AA
+		newarr class b15244.AA
 		dup
 
 		ldc.i4 0
-		newobj instance void AA::.ctor()
+		newobj instance void b15244.AA::.ctor()
 		stelem.ref
 
 		ldc.i4 0
@@ -68,4 +70,5 @@
 		ret
 		.try try_enter to catch_handler catch [mscorlib]System.OverflowException handler catch_handler to beyond
 	}
+}
 }

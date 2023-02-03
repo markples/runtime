@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b15539
+{
 internal struct VC
 {
     public int x;
@@ -33,4 +35,5 @@ public class A
         Console.WriteLine("FAIL");
         return 0;
     }
+}
 }

@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b114628'{}
+.namespace b114628
+{
 .class public _rem {
 
 .method public static int32 main() {
@@ -50,3 +52,4 @@ bend:
 }
 // ----------------------------------
 
+}

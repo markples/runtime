@@ -8,6 +8,8 @@
 }
 .assembly extern mscorlib { }
 .assembly 'b32879' { }
+.namespace b32879
+{
 .class public auto ansi HiDad extends [mscorlib]System.Object
 {
   .method public static void main() il managed forwardref
@@ -15,7 +17,7 @@
     .maxstack  8
     IL_0000:  nop
     IL_0001:  ldc.i4.1
-    IL_0002:  call       class [mscorlib]System.String HiDad::X(int32)
+    IL_0002:  call       class [mscorlib]System.String b32879.HiDad::X(int32)
     IL_0007:  call       void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
     IL_000c:  nop
     IL_000d:  ret
@@ -63,9 +65,10 @@
   {
     .entrypoint
     .maxstack  8
-    IL_0000:  call       void HiDad::main()
+    IL_0000:  call       void b32879.HiDad::main()
 	ldc.i4 100
     IL_0005:  ret
   } 
 
 } 
+}

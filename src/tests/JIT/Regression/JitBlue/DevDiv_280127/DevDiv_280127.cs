@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 // incorrect when a math intrinsic was used as an argument to a function with on-stack parameters (e.g. the call to
 // `M` on line 18).
 
+namespace DevDiv_280127
+{
 public static class C
 {
     struct S
@@ -33,4 +35,5 @@ public static class C
     {
         return M(2.0);
     }
+}
 }

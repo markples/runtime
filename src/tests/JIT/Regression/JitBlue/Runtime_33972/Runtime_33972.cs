@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.Arm;
 
+namespace Runtime_33972
+{
 public class Program
 {
     // CompareEqual
@@ -984,4 +986,5 @@ public class Program
 
         return result;
     }
+}
 }

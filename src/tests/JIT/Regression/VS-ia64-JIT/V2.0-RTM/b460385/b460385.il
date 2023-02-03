@@ -11,6 +11,8 @@
 .assembly 'b460385' {}
 .assembly extern xunit.core {}
 .assembly extern mscorlib{auto}
+.namespace b460385
+{
 .class public FullProof {
 
 .method static int32 Test() {
@@ -75,7 +77,7 @@ IL_47:   ret			//
 )
 .maxstack 3
 
-call int32 FullProof::Test()
+call int32 b460385.FullProof::Test()
 pop
 
 ldstr "Test SUCCESS"
@@ -85,3 +87,4 @@ ret
 }
 }
 
+}

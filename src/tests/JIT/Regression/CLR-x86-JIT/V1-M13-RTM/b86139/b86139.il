@@ -9,27 +9,29 @@
 }
 .assembly 'b86139' {}
 .assembly extern xunit.core {}
+.namespace b86139
+{
 .class public ILGEN_0x9e05cbcc {
 .field static	native int field_0x5
 .method static unsigned int8  Method_0xa3eeac4e(unsigned int64 Arg_0x0, unsigned int16 Arg_0x1, int16 Arg_0x2, int8 Arg_0x3, float32 Arg_0x4, unsigned int32 Arg_0x5, float32 Arg_0x6, int32 Arg_0x7) {
 .maxstack	19
 
 ldc.i4 0xadf28692 
-stsfld native int ILGEN_0x9e05cbcc::field_0x5
+stsfld native int b86139.ILGEN_0x9e05cbcc::field_0x5
 
 
-       ldsfld native int ILGEN_0x9e05cbcc::field_0x5
+       ldsfld native int b86139.ILGEN_0x9e05cbcc::field_0x5
       conv.ovf.u8.un
      conv.i
  pop
 
 
-        ldsfld native int ILGEN_0x9e05cbcc::field_0x5
+        ldsfld native int b86139.ILGEN_0x9e05cbcc::field_0x5
        conv.ovf.u8
      conv.i
 pop
 
-        ldsfld native int ILGEN_0x9e05cbcc::field_0x5
+        ldsfld native int b86139.ILGEN_0x9e05cbcc::field_0x5
        conv.ovf.u8
       conv.i
 pop
@@ -54,7 +56,7 @@ ldc.i4 0xad3c487a
 ldc.r4 float32(0x3d7e5175) 
 ldc.i4 0xfe0ddc33 
 
- call unsigned int8  ILGEN_0x9e05cbcc::Method_0xa3eeac4e(unsigned int64 Arg_0x0, unsigned int16 Arg_0x1, int16 Arg_0x2, int8 Arg_0x3, float32 Arg_0x4, unsigned int32 Arg_0x5, float32 Arg_0x6, int32 Arg_0x7)
+ call unsigned int8  b86139.ILGEN_0x9e05cbcc::Method_0xa3eeac4e(unsigned int64 Arg_0x0, unsigned int16 Arg_0x1, int16 Arg_0x2, int8 Arg_0x3, float32 Arg_0x4, unsigned int32 Arg_0x5, float32 Arg_0x6, int32 Arg_0x7)
 conv.i4
 leave.s IL_END
 
@@ -67,4 +69,5 @@ IL_END:
  
 }
 
+}
 }

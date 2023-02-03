@@ -10,6 +10,8 @@
 .assembly b14770
 {
 }
+.namespace b14770
+{
 .class public ILGEN_622380794 {
 
 .method public static int32 main() {
@@ -49,5 +51,6 @@ stloc local_0x2
 ldc.i4 100
 add
 ret
+}
 }
 }

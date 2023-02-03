@@ -9,6 +9,8 @@
 }
 .assembly 'b16198' {}
 .assembly extern xunit.core {}
+.namespace b16198
+{
 .class public auto ansi beforefieldinit MyClass
        extends [mscorlib]System.Object
 {
@@ -69,4 +71,5 @@
     IL_0006:  ret
   } // end of method MyClass::.ctor
 
+}
 }

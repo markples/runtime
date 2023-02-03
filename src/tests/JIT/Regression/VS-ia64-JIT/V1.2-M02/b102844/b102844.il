@@ -32,7 +32,7 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
-.namespace JitTest
+.namespace b102844
 {
   .class public auto ansi Test
          extends [mscorlib]System.Object
@@ -53,7 +53,7 @@
     {
       // Code size       7 (0x7)
       .maxstack  8
-      IL_0000:  ldftn      void JitTest.Test::DummyMethod()
+      IL_0000:  ldftn      void b102844.Test::DummyMethod()
       IL_0006:  ret
     } // end of method Test::RetStuff
 
@@ -73,10 +73,10 @@
       // Code size       36 (0x24)
       .maxstack  4
       .locals (int32 V_0)
-      IL_0000:  ldftn      void JitTest.Test::DummyMethod()
-      IL_0006:  ldftn      void JitTest.Test::DoStuff(method void *())
+      IL_0000:  ldftn      void b102844.Test::DummyMethod()
+      IL_0006:  ldftn      void b102844.Test::DoStuff(method void *())
       IL_000c:  calli      void(method void *())
-      IL_0011:  ldftn      method void *() JitTest.Test::RetStuff()
+      IL_0011:  ldftn      method void *() b102844.Test::RetStuff()
       IL_0017:  calli      method void *()()
       IL_001c:  tail.
       IL_001e:  calli      void()
@@ -92,7 +92,7 @@
       .entrypoint
       // Code size       17 (0x11)
       .maxstack  4
-      IL_0000:  ldftn      void JitTest.Test::TestMain()
+      IL_0000:  ldftn      void b102844.Test::TestMain()
       IL_0006:  calli      void()
       IL_000b:  ldc.i4     0x64
       IL_0010:  ret

@@ -7,6 +7,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_1161
+{
 class GitHub_1161
 {
     struct Number
@@ -38,4 +40,5 @@ class GitHub_1161
             return (Test() == 6) ? 100 : -1;
         }
     }
+}
 }

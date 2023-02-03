@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.InteropServices;
 
+namespace b103058
+{
 internal struct VT
 {
     public float m1;
@@ -62,4 +64,5 @@ public unsafe class test
             return 0;
         }
     }
+}
 }

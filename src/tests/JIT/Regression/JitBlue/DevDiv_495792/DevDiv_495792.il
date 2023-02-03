@@ -8,6 +8,8 @@
 // This test originally triggered an assert Extra_flags_on_tree, because fgMorphCast did not reset an assignment flag, when
 // its children was optimized in the assertion propagation.
 
+.namespace DevDiv_495792
+{
 .class public ILGEN_CLASS
 {
    .method static unsigned int64 ILGEN_METHOD(unsigned int8, unsigned int64, int32)
@@ -119,7 +121,7 @@
         IL_0003:  ldc.i4.2
         IL_0004:  conv.i8
         IL_0005:  ldc.i4.3
-        IL_0006:  call       uint64 ILGEN_CLASS::ILGEN_METHOD(uint8,
+        IL_0006:  call       uint64 DevDiv_495792.ILGEN_CLASS::ILGEN_METHOD(uint8,
                                                               uint64,
                                                               int32)
         IL_000b:  pop
@@ -139,4 +141,5 @@
         IL_0019:  ldloc.1
         IL_001a:  ret
     }
+}
 }

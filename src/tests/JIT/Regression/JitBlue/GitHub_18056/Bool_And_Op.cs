@@ -13,6 +13,8 @@
 #pragma warning disable
 
 using System;
+namespace Bool_And_Op
+{
 public class testout1
 {
     static bool static_field_bool;
@@ -95,4 +97,5 @@ public class testout1
         }
 
     }
+}
 }

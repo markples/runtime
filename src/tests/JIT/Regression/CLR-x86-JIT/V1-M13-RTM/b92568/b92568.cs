@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b92568
+{
 public struct AA
 {
     static bool Static3(ulong param2)
@@ -22,4 +24,5 @@ public struct AA
             return 100;
         }
     }
+}
 }

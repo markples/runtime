@@ -9,6 +9,8 @@
 .assembly extern legacy library mscorlib {}
 .assembly 'b59678' {}
 .assembly extern xunit.core {}
+.namespace b59678
+{
 .class public bug1 extends [mscorlib]System.Object
 {
   .method public static int32 Main() 
@@ -106,3 +108,4 @@
   }
 }
 	
+}

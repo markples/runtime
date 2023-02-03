@@ -15,6 +15,8 @@
 .assembly GitHub_5164 { }
 .assembly extern xunit.core {}
 
+.namespace GitHub_5164
+{
 .class public sequential ansi sealed beforefieldinit LargeStruct
        extends [mscorlib]System.ValueType
 {
@@ -28,10 +30,10 @@
     .maxstack  8
     IL_0000:  ldarg.0
     IL_0001:  ldarg.1
-    IL_0002:  stfld      int64 LargeStruct::l1
+    IL_0002:  stfld      int64 GitHub_5164.LargeStruct::l1
     IL_0007:  ldarg.0
     IL_0008:  ldarg.2
-    IL_0009:  stfld      int64 LargeStruct::l2
+    IL_0009:  stfld      int64 GitHub_5164.LargeStruct::l2
     IL_000e:  ret
   } // end of method LargeStruct::.ctor
 
@@ -48,59 +50,59 @@
     .entrypoint
     // Code size       48 (0x30)
     .maxstack  3
-    .locals init (valuetype LargeStruct V_0,
-             valuetype LargeStruct V_1,
-             valuetype LargeStruct V_2)
+    .locals init (valuetype GitHub_5164.LargeStruct V_0,
+             valuetype GitHub_5164.LargeStruct V_1,
+             valuetype GitHub_5164.LargeStruct V_2)
     IL_0000:  ldloca.s   V_0
     IL_0002:  ldc.i4.1
     IL_0003:  conv.i8
     IL_0004:  ldc.i4.2
     IL_0005:  conv.i8
-    IL_0006:  call       instance void LargeStruct::.ctor(int64,
+    IL_0006:  call       instance void GitHub_5164.LargeStruct::.ctor(int64,
                                                           int64)
     IL_000b:  ldloca.s   V_1
     IL_000d:  ldc.i4.3
     IL_000e:  conv.i8
     IL_000f:  ldc.i4.4
     IL_0010:  conv.i8
-    IL_0011:  call       instance void LargeStruct::.ctor(int64,
+    IL_0011:  call       instance void GitHub_5164.LargeStruct::.ctor(int64,
                                                           int64)
     IL_0016:  ldc.i4.0
     IL_0017:  ldloc.0
     IL_0018:  ldloc.1
-    IL_0019:  call       valuetype LargeStruct Test_GitHub_5164::A(int32,
-                                                       valuetype LargeStruct,
-                                                       valuetype LargeStruct)
+    IL_0019:  call       valuetype GitHub_5164.LargeStruct GitHub_5164.Test_GitHub_5164::A(int32,
+                                                       valuetype GitHub_5164.LargeStruct,
+                                                       valuetype GitHub_5164.LargeStruct)
     IL_001e:  stloc.2
     IL_001f:  ldloca.s   V_2
-    IL_0021:  ldfld      int64 LargeStruct::l1
+    IL_0021:  ldfld      int64 GitHub_5164.LargeStruct::l1
     IL_0026:  ldloca.s   V_2
-    IL_0028:  ldfld      int64 LargeStruct::l2
+    IL_0028:  ldfld      int64 GitHub_5164.LargeStruct::l2
     IL_002d:  add
     IL_002e:  conv.i4
     IL_002f:  ret
   } // end of method Test::Main
 
-  .method public hidebysig static valuetype LargeStruct 
+  .method public hidebysig static valuetype GitHub_5164.LargeStruct 
           A(int32 count,
-            valuetype LargeStruct s1,
-            valuetype LargeStruct s2) cil managed noinlining
+            valuetype GitHub_5164.LargeStruct s1,
+            valuetype GitHub_5164.LargeStruct s2) cil managed noinlining
   {
     // Code size       58 (0x3a)
     .maxstack  4
-    .locals init (valuetype LargeStruct V_0)
+    .locals init (valuetype GitHub_5164.LargeStruct V_0)
     IL_0000:  ldloca.s   V_0
     IL_0002:  ldarga.s   s1
-    IL_0004:  ldfld      int64 LargeStruct::l1
+    IL_0004:  ldfld      int64 GitHub_5164.LargeStruct::l1
     IL_0009:  ldarga.s   s2
-    IL_000b:  ldfld      int64 LargeStruct::l1
+    IL_000b:  ldfld      int64 GitHub_5164.LargeStruct::l1
     IL_0010:  add
     IL_0011:  ldarga.s   s1
-    IL_0013:  ldfld      int64 LargeStruct::l2
+    IL_0013:  ldfld      int64 GitHub_5164.LargeStruct::l2
     IL_0018:  ldarga.s   s2
-    IL_001a:  ldfld      int64 LargeStruct::l2
+    IL_001a:  ldfld      int64 GitHub_5164.LargeStruct::l2
     IL_001f:  add
-    IL_0020:  call       instance void LargeStruct::.ctor(int64,
+    IL_0020:  call       instance void GitHub_5164.LargeStruct::.ctor(int64,
                                                           int64)
     IL_0025:  ldarg.0
     IL_0026:  ldc.i4.3
@@ -113,27 +115,27 @@
     IL_002d:  starg.s    count
     IL_002f:  ldloc.0
     IL_0030:  tail.
-    IL_0032:  call       valuetype LargeStruct Test_GitHub_5164::B(int32,
-                                                       valuetype LargeStruct)
+    IL_0032:  call       valuetype GitHub_5164.LargeStruct GitHub_5164.Test_GitHub_5164::B(int32,
+                                                       valuetype GitHub_5164.LargeStruct)
     IL_0037:  ret
 
     IL_0038:  ldloc.0
     IL_0039:  ret
   } // end of method Test::A
 
-  .method public hidebysig static valuetype LargeStruct 
+  .method public hidebysig static valuetype GitHub_5164.LargeStruct 
           B(int32 count,
-            valuetype LargeStruct s) cil managed noinlining
+            valuetype GitHub_5164.LargeStruct s) cil managed noinlining
   {
     // Code size       28 (0x1c)
     .maxstack  3
-    .locals init (valuetype LargeStruct V_0)
+    .locals init (valuetype GitHub_5164.LargeStruct V_0)
     IL_0000:  ldloca.s   V_0
     IL_0002:  ldc.i4.1
     IL_0003:  conv.i8
     IL_0004:  ldc.i4.s   44
     IL_0006:  conv.i8
-    IL_0007:  call       instance void LargeStruct::.ctor(int64,
+    IL_0007:  call       instance void GitHub_5164.LargeStruct::.ctor(int64,
                                                           int64)
     IL_000c:  ldarg.0
     IL_000d:  ldc.i4.1
@@ -143,11 +145,12 @@
     IL_0012:  ldloc.0
     IL_0013:  ldarg.1
     IL_0014:  tail.
-    IL_0016:  call       valuetype LargeStruct Test_GitHub_5164::A(int32,
-                                                       valuetype LargeStruct,
-                                                       valuetype LargeStruct)
+    IL_0016:  call       valuetype GitHub_5164.LargeStruct GitHub_5164.Test_GitHub_5164::A(int32,
+                                                       valuetype GitHub_5164.LargeStruct,
+                                                       valuetype GitHub_5164.LargeStruct)
     IL_001b:  ret
   } // end of method Test::B
 
 } // end of class Test
 
+}

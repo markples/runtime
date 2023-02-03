@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Runtime_56743_0
+{
 public class Runtime_56743_0
 {
     [MethodImpl(MethodImplOptions.NoOptimization)]
@@ -31,4 +33,5 @@ public class Runtime_56743_0
     {
         public int A, B, C, D;
     }
+}
 }

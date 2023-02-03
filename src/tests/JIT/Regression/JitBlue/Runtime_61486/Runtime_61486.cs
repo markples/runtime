@@ -5,6 +5,8 @@ using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_61486
+{
 public class Runtime_61486
 {
     public static int Main()
@@ -42,4 +44,5 @@ public class Runtime_61486
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         public void M() => _face.M();
     }
+}
 }

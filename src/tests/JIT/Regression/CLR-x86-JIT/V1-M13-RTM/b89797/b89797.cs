@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b89797
+{
 public unsafe class testout1
 {
     public struct VT_1
@@ -43,4 +45,5 @@ public unsafe class testout1
         ulong retval = Convert.ToUInt64(Convert.ToUInt64(cl.a0 - val_1));
         return 100;
     }
+}
 }

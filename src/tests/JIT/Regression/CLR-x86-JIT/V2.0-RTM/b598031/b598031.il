@@ -11,6 +11,8 @@
 .assembly b598031 {}
 .assembly extern xunit.core {}
 
+.namespace b598031
+{
 .class public auto ansi beforefieldinit Program
        extends [mscorlib]System.Object
 {
@@ -67,7 +69,7 @@
     {
       IL_0001:  nop
       IL_0002:  ldc.i4.s   11
-      IL_0004:  call       void Program::ThrowException(int32)
+      IL_0004:  call       void b598031.Program::ThrowException(int32)
       IL_0009:  nop
       IL_000a:  ldstr      "Unexcepted result."
       IL_000f:  call       void [System.Console]System.Console::WriteLine(string)
@@ -105,3 +107,4 @@
   } // end of method Program::.ctor
 
 } // end of class Program
+}

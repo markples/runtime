@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_34937
+{
 public class Program
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -89,4 +91,5 @@ public class Program
 
         return result;
     }
+}
 }

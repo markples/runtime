@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b71005
+{
 public class testout1
 {
     private static bool s_static_field_bool;
@@ -1195,4 +1197,5 @@ public class testout1
         if (array_false_bool[index] ? array_false_bool[index] : array_false_bool[index]) True_Sum++; else False_Sum++;
         return True_Sum - False_Sum - 530;
     }
+}
 }

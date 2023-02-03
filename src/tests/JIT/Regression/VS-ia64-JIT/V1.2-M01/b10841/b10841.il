@@ -34,6 +34,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b10841
+{
 .class public auto ansi beforefieldinit C1
        extends [mscorlib]System.Object
 {
@@ -103,4 +105,5 @@ pop
     IL_0006:  ret
   } // end of method C1::.ctor
 
+}
 }

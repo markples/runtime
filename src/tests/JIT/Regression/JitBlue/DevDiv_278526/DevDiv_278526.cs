@@ -10,6 +10,8 @@
 using System;
 
 
+namespace DevDiv_278526
+{
 public class Program
 {
       public sealed class Variables
@@ -43,4 +45,5 @@ public class Program
         VerifyMacvalueSSlV2(s);
         return 100;
     }
+}
 }

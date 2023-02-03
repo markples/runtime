@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b93027
+{
 public class AA
 {
     static Array Static1(ref Array[, ,] param1, ref int param2)
@@ -24,4 +26,5 @@ public class AA
             return 100;
         }
     }
+}
 }

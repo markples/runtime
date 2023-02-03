@@ -10,6 +10,8 @@
 .assembly b14329
 {
 }
+.namespace b14329
+{
 .class public ILGEN_622380794 {
 
 .field static	int32 field_0x4
@@ -19,15 +21,16 @@
 .maxstack	20
 
  ldc.i4 50
- stsfld int32 ILGEN_622380794::field_0x4
+ stsfld int32 b14329.ILGEN_622380794::field_0x4
 
- ldsfld int32 ILGEN_622380794::field_0x4
+ ldsfld int32 b14329.ILGEN_622380794::field_0x4
 // ldc.i4 0xcb546abe
  ldc.i4 0x909090be
  shl
- stsfld int32 ILGEN_622380794::field_0x4
+ stsfld int32 b14329.ILGEN_622380794::field_0x4
 
 ldc.i4 100
 ret
+}
 }
 }

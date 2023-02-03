@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b07900
+{
 public struct AA
 {
     public static byte[, ,][] f()
@@ -46,4 +48,5 @@ public class App
         Console.WriteLine("Passed.");
         return 100;
     }
+}
 }

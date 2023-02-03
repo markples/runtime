@@ -11,6 +11,8 @@
 
 using System;
 
+namespace b611219
+{
 public abstract class Base<U>
 {
     public abstract int Foo<T>(T obj) where T : U;
@@ -43,4 +45,5 @@ public class Derived : Base<string>
         }
         return ret;
     }
+}
 }

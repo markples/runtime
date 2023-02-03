@@ -6,12 +6,14 @@
 .assembly devdiv_180411
 {
 }
+.namespace devdiv_180411
+{
 .class public _simple {
 
 .method public static int32 main() {
 .entrypoint
 .maxstack	100
-call       int64 [devdiv_180411]_simple::test()
+call       int64 [devdiv_180411]devdiv_180411._simple::test()
 conv.i4
 ldc.i4 100
 add     
@@ -31,4 +33,5 @@ conv.u8
 ret  
 }
 
+}
 }

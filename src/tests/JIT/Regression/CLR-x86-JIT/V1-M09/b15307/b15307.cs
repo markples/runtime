@@ -4,7 +4,7 @@
 using System;
 using System.Globalization;
 
-namespace DefaultNamespace
+namespace b15307
 {
     public class bug
     {

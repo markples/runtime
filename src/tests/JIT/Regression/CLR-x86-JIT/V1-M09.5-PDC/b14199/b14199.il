@@ -10,6 +10,8 @@
 .assembly b14199
 {
 }
+.namespace b14199
+{
 .class public ILGEN_622380794 {
 
 
@@ -26,19 +28,20 @@
  ldc.r8 0
  stloc.1
 
- ldsflda int64 ILGEN_622380794::field_0x1
- ldsflda float64 ILGEN_622380794::field_0x3
+ ldsflda int64 b14199.ILGEN_622380794::field_0x1
+ ldsflda float64 b14199.ILGEN_622380794::field_0x3
  ldloc local_0x3
  stind.r8
  ldloca local_0x0
  ldind.i4
  conv.u8
  stind.i8
- ldsfld float64 ILGEN_622380794::field_0x3
+ ldsfld float64 b14199.ILGEN_622380794::field_0x3
  conv.u
 
 ldc.i4 100
 add
 ret
+}
 }
 }

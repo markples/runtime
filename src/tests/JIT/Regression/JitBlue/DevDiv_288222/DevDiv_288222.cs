@@ -10,6 +10,8 @@ using System.Numerics;
 // The failure mode is that the size was not being set for a "this" pointer
 // with SIMD type.
 
+namespace DevDiv_288222
+{
 public class Program
 {
     // Declare a delegate type for calling the Vector2.CopyTo method.
@@ -46,4 +48,5 @@ public class Program
         Console.WriteLine("Pass");
         return 100;
     }
+}
 }

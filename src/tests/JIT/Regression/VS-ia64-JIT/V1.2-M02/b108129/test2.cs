@@ -3,7 +3,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace JitTest.HFA
+namespace b108129.HFA
 {
     public class TestCase
     {

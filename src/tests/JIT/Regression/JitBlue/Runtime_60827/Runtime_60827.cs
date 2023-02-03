@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_60827
+{
 public struct S0
 {
     public ushort F1;
@@ -28,4 +30,5 @@ public class Runtime_60827
 
         return 100;
     }
+}
 }

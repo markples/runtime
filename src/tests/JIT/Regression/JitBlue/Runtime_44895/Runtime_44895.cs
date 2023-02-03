@@ -3,6 +3,8 @@
 
 using System;
 
+namespace Runtime_44895
+{
 public struct Text
 {
     private readonly string _value;
@@ -34,4 +36,5 @@ public class Repro
         if (!result) Console.WriteLine($"got '{gv.Value}', expected '{test}'");
         return result ? 100 : -1;
     }
+}
 }

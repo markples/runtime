@@ -11,6 +11,8 @@
 {
 }
 //Simple program that demonstrates wrong results from JitEnable
+.namespace b03995
+{
 .class public _simple
 {
 	.method public static int32 main()
@@ -34,4 +36,5 @@ ldc.i4 100
 add
 		 ret
 	}
+}
 }

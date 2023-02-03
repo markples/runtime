@@ -9,6 +9,8 @@ using System.Threading;
 
 // Check for proper stack spilling in the presence of assignment-like nodes.
 
+namespace GitHub_19583
+{
 public class Program
 {
     public static int Main()
@@ -82,4 +84,5 @@ public class Program
             return vr16;
         }
     }
+}
 }

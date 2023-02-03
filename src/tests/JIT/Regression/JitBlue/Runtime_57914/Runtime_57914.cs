@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_57914
+{
 public class Program
 {
     public static int Main()
@@ -47,4 +49,5 @@ public class Program
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     static void Consume(int n) {}
+}
 }

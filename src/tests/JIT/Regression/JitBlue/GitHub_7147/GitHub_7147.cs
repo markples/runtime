@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace N
+namespace GitHub_7147
 {
     public class C
     {

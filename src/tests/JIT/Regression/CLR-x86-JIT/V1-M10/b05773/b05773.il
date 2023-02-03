@@ -10,6 +10,8 @@
 .assembly b05773
 {
 }
+.namespace b05773
+{
 .class public _simple {
 
 .method public static int32 main() {
@@ -33,5 +35,6 @@ clt
 ldc.i4 100
 add
 ret
+}
 }
 }

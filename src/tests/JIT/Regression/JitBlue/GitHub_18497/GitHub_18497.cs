@@ -5,6 +5,8 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_18497
+{
 struct S
 {
     public Vector<float> v1;
@@ -49,4 +51,5 @@ public static class GitHub_18497
         }
         return 100;
     }
+}
 }

@@ -9,6 +9,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_6238
+{
 public class Program
 {
     uint i;
@@ -42,4 +44,5 @@ public class Program
             return Fail;
         }
     }
+}
 }

@@ -10,6 +10,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
+namespace Runtime_62597
+{
 [StructLayout(LayoutKind.Explicit, Size = 32)]
 public readonly unsafe struct SmallString
 {
@@ -67,4 +69,5 @@ public static class Program
         }
         return new StringBuilder();
     }
+}
 }

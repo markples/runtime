@@ -9,6 +9,8 @@
 .assembly extern legacy library mscorlib {}
 .assembly 'b59546' {}
 .assembly extern xunit.core {}
+.namespace b59546
+{
 .class public bug
 {
 	.method public static void f1() cil managed
@@ -65,7 +67,7 @@
 		.entrypoint
 		.try
 		{
-		call void bug::f1()
+		call void b59546.bug::f1()
 		leave RET
 		}
 		catch [mscorlib]System.Exception
@@ -78,4 +80,5 @@
 		ret
 	}
 
+}
 }

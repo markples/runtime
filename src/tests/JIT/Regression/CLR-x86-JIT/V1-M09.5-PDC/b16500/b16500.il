@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly b16500 { }
+.namespace b16500
+{
 .class public ILGEN_622380794 {
 .field static	int8 field_0x12
 .field static	int8 field_0x26
@@ -26,12 +28,12 @@ ldc.i4 0x37cc4ddd
 stloc local_0x7
 
 ldc.i4 0x5672313a 
-stsfld int8 ILGEN_622380794::field_0x12
+stsfld int8 b16500.ILGEN_622380794::field_0x12
 ldc.i4 0x6bcd573 
-stsfld int8 ILGEN_622380794::field_0x26
+stsfld int8 b16500.ILGEN_622380794::field_0x26
 
  ldc.i4.5
- ldsfld int8 ILGEN_622380794::field_0x12
+ ldsfld int8 b16500.ILGEN_622380794::field_0x12
  cgt.un
  conv.i8
  ldc.i4.7
@@ -39,7 +41,7 @@ stsfld int8 ILGEN_622380794::field_0x26
  sub
 Start_Orphan_d:
 Start_Orphan_e:
- ldsflda int8 ILGEN_622380794::field_0x26
+ ldsflda int8 b16500.ILGEN_622380794::field_0x26
  ldc.i4.1
  stind.i1
  ldc.i4.1
@@ -64,5 +66,6 @@ sub
 ldc.i4 100
 add
 ret
+}
 }
 }

@@ -17,6 +17,8 @@
 }
 .assembly extern xunit.core {}
 
+.namespace b471305
+{
 .class public sealed Program
 {
    .field static int32 foo
@@ -40,8 +42,8 @@
 
     // Use loc.0 more so it can be enregistered.   
     ldloc.0
-    stsfld int32 Program::foo
-    ldsfld int32 Program::foo
+    stsfld int32 b471305.Program::foo
+    ldsfld int32 b471305.Program::foo
     call       void [System.Console]System.Console::WriteLine(int32)
   
     ret
@@ -57,8 +59,8 @@
     .maxstack  1
     .locals init (int32 V_0)
     IL_0000:  nop
-            newobj instance void Program::.ctor()
-    IL_0001:  call       instance void Program::Test()
+            newobj instance void b471305.Program::.ctor()
+    IL_0001:  call       instance void b471305.Program::Test()
     IL_0006:  nop
     IL_0007:  ldstr      "Test SUCCESS"
     IL_000c:  call       void [System.Console]System.Console::WriteLine(string)
@@ -78,4 +80,5 @@
        call instance void object::.ctor()
        ret
   }
+}
 }

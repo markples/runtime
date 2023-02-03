@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b88797
+{
 public class CC
 {
     public static bool Method2() { return true; }
@@ -43,4 +45,5 @@ public class CC
             }
         }
     }
+}
 }

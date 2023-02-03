@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_18542
+{
 public class C
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -106,4 +108,5 @@ public static class GitHub_18542
         ViaStruct5();
         return 100;
     }
+}
 }

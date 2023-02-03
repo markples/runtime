@@ -4,6 +4,8 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_64375
+{
 public unsafe class Runtime_64375
 {
     public static int Main()
@@ -29,4 +31,5 @@ public unsafe class Runtime_64375
         public float FloatThree;
         public float FloatFour;
     }
+}
 }

@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 
-namespace Test
+namespace CSharpPart_145295
 {
     public static class Exceptions
     {

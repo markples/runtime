@@ -4,6 +4,8 @@
 
 //COMMAND LINE: csc /nologo /optimize- /debug- /w:0 bug.cs
 using System;
+namespace b91248
+{
 public struct AA
 {
     static void Test(int param, __arglist)
@@ -17,4 +19,5 @@ public struct AA
         } while ((new bool[2, 2])[param, param]);
     }
     public static int Main() { Test(0, __arglist()); return 100; }
+}
 }

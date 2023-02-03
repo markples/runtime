@@ -7,6 +7,8 @@
 .assembly GitHub_35384 {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_35384
+{
 .class private sequential ansi sealed beforefieldinit Struct
        extends [System.Runtime]System.ValueType
 {
@@ -29,12 +31,12 @@
           ValueTypeExplicitThisInstanceMethodCalli() cil managed noinlining
   {
     .maxstack  2
-    .locals init (valuetype Struct V_0)
+    .locals init (valuetype GitHub_35384.Struct V_0)
     ldloca.s   V_0
-    initobj    Struct
+    initobj    GitHub_35384.Struct
     ldloca.s   V_0
-    ldftn      instance string Struct::InstanceMethod()
-    calli      explicit instance string(valuetype Struct&)
+    ldftn      instance string GitHub_35384.Struct::InstanceMethod()
+    calli      explicit instance string(valuetype GitHub_35384.Struct&)
     ret
   } // end of method Program::ValueTypeExplicitThisInstanceMethodCalli
   
@@ -45,9 +47,10 @@
     )
     .entrypoint
     .maxstack 1
-    call       string Program::ValueTypeExplicitThisInstanceMethodCalli()
+    call       string GitHub_35384.Program::ValueTypeExplicitThisInstanceMethodCalli()
     pop
     ldc.i4 100
     ret
   } // end of method Program::Main
 } // end of class Program
+}

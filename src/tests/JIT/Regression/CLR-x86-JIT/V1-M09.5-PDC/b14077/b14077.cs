@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b14077
+{
 public class Test
 {
     static public int Main()
@@ -22,4 +24,5 @@ public class Test
             return 1;
         }
     }
+}
 }

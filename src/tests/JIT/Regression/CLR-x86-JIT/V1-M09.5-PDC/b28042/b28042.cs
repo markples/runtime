@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b28042
+{
 public class A
 {
     public static int[] B = new int[2];
@@ -23,4 +25,5 @@ public class A
         catch (IndexOutOfRangeException) { }
         return 100;
     }
+}
 }

@@ -5,6 +5,8 @@ using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_73951
+{
 public class Runtime_73951
 {
     [ThreadStatic]
@@ -73,4 +75,5 @@ public class Runtime_73951
     {
         public void Capture(ushort value) => s_result = value;
     }
+}
 }

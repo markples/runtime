@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b102615
+{
 struct S
 {
     public Object O1;
@@ -51,4 +53,5 @@ public class Test_test1
         Console.WriteLine(s.O1);
         Console.WriteLine(s.O2);
     }
+}
 }

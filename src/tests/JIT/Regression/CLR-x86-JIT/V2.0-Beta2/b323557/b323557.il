@@ -10,6 +10,8 @@
 .assembly 'b323557' {}
 .assembly extern xunit.core {}
 .assembly extern mscorlib{auto}
+.namespace b323557
+{
 .class public FullProof {
 
 .method static int32 Test() {
@@ -51,7 +53,7 @@ IL_57:   shr.un         //  2 1 0 0 1
         cgt
         call void [System.Console]System.Console::WriteLine(int32)
 
-        call int32 FullProof::Test()
+        call int32 b323557.FullProof::Test()
 
 	ldc.i4 1
 	ceq
@@ -75,3 +77,4 @@ END:
 
 }
 
+}

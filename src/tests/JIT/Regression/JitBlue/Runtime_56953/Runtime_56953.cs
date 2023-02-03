@@ -3,6 +3,8 @@
 
 using System;
 using System.Runtime.CompilerServices;
+namespace Runtime_56953
+{
 public class TestClass13
 {
     // The test exposed a place where we were using uninitialized `gtUseNum` variable.
@@ -73,4 +75,5 @@ public class TestClass13
         }
         return 100;
     }
+}
 }

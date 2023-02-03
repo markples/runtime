@@ -14,6 +14,8 @@
 }
 .assembly extern xunit.core {}
 
+.namespace DevDiv_406160
+{
 .class public auto ansi beforefieldinit Bug.Program
        extends [System.Runtime]System.Object
 {
@@ -80,3 +82,4 @@
   } // end of method Program::.ctor
 
 } // end of class Bug.Program
+}

@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b61028
+{
 public class bug1
 {
     public struct VT1
@@ -26,4 +28,5 @@ public class bug1
         f();
         return 100;
     }
+}
 }

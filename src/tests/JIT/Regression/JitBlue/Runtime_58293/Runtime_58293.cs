@@ -6,6 +6,8 @@
 // Seed: 4314857431407232792
 // Reduced from 582.3 KiB to 3.3 KiB in 02:00:04
 // Crashes the runtime
+namespace Runtime_58293
+{
 public interface I0
 {
 }
@@ -101,4 +103,5 @@ public class C : I
     {
         System.Console.WriteLine(val);
     }
+}
 }

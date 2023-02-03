@@ -37,6 +37,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b170362_il
+{
 .class public sequential ansi sealed beforefieldinit MyStruct
        extends [mscorlib]System.ValueType
 {
@@ -56,26 +58,26 @@
     .entrypoint
     // Code size       74 (0x4a)
     .maxstack  3
-    .locals init (valuetype MyStruct V_0,
+    .locals init (valuetype b170362_il.MyStruct V_0,
              int32 V_1,
              bool V_2)
     IL_0000:  nop
     IL_0001:  ldloca.s   V_0
-    IL_0003:  ldsfld     uint8 MainApp::s
-    IL_0008:  stfld      uint8 MyStruct::x1
+    IL_0003:  ldsfld     uint8 b170362_il.MainApp::s
+    IL_0008:  stfld      uint8 b170362_il.MyStruct::x1
     IL_000d:  ldloca.s   V_0
     IL_000f:  ldloca.s   V_0
-    IL_0011:  ldfld      uint8 MyStruct::x1
+    IL_0011:  ldfld      uint8 b170362_il.MyStruct::x1
     IL_0016:  ldc.i4.1
     IL_0017:  or
    // IL_0018:  conv.u1
-    IL_0019:  stfld      uint8 MyStruct::x1
+    IL_0019:  stfld      uint8 b170362_il.MyStruct::x1
     IL_001e:  ldloca.s   V_0
-    IL_0020:  ldfld      uint8 MyStruct::x1
+    IL_0020:  ldfld      uint8 b170362_il.MyStruct::x1
     IL_0025:  call       void [System.Console]System.Console::WriteLine(int32)
     IL_002a:  nop
     IL_002b:  ldloca.s   V_0
-    IL_002d:  ldfld      uint8 MyStruct::x1
+    IL_002d:  ldfld      uint8 b170362_il.MyStruct::x1
     IL_0032:  ldc.i4.1
     IL_0033:  ceq
     IL_0035:  ldc.i4.0
@@ -114,7 +116,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldc.i4.1
-    IL_0001:  stsfld     uint8 MainApp::s
+    IL_0001:  stsfld     uint8 b170362_il.MainApp::s
     IL_0006:  ret
   } // end of method MainApp::.cctor
 
@@ -125,3 +127,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file b170362_new.res
+}

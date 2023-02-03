@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_38920
+{
 public class TestStructs
 {
     static int exitStatus = 100;
@@ -117,4 +119,5 @@ public class TestStructs
 
         return exitStatus;
     }
+}
 }

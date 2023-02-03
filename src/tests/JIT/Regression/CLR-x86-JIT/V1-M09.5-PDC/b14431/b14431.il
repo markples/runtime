@@ -10,6 +10,8 @@
 .assembly b14431
 {
 }
+.namespace b14431
+{
 .class public ILGEN_622380794 {
 
 .field static	int64 field_0x1
@@ -35,27 +37,27 @@
  ldc.r4 float32(0x3db620e4)
  ldc.i8 0x629529297ea65036
  stloc local_0x5
- ldsflda int64 ILGEN_622380794::field_0x1
+ ldsflda int64 b14431.ILGEN_622380794::field_0x1
  ldind.i8
  pop
  ldloca local_0x2
  ldind.r4
  ldloc local_0x1
- stsfld int64 ILGEN_622380794::field_0x5
- ldsflda float32 ILGEN_622380794::field_0xe
+ stsfld int64 b14431.ILGEN_622380794::field_0x5
+ ldsflda float32 b14431.ILGEN_622380794::field_0xe
  ldind.r4
  mul
  mul
  pop
  ldloc local_0x0
  conv.r.un
- stsfld float64 ILGEN_622380794::field_0xb
+ stsfld float64 b14431.ILGEN_622380794::field_0xb
  ldc.i4.1
  conv.r.un
  ldc.r8 float32(0x1491400f)
  ldloc local_0x9
  conv.r.un
- stsfld float64 ILGEN_622380794::field_0x7
+ stsfld float64 b14431.ILGEN_622380794::field_0x7
  ldloc local_0x7
  conv.r8
  ldloc local_0xb
@@ -72,5 +74,6 @@
  out_of_here:
  ldc.i4 100
  ret
+}
 }
 }

@@ -12,6 +12,8 @@
 //     Image: D:\dev\Fuzzlyn\Fuzzlyn\publish\windows-x64\Fuzzlyn.exe
 // 
 // 
+namespace Runtime_57752_1
+{
 public class Runtime_57752_1
 {
     internal static I s_rt;
@@ -92,4 +94,5 @@ public class C : I
     public void Write<T>(T val)
     {
     }
+}
 }

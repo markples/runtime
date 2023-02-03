@@ -9,6 +9,8 @@
 }
 .assembly 'b31289' {}
 .assembly extern xunit.core {}
+.namespace b31289
+{
 .class public ILGEN_0x59e058c0 {
 
 .field static	unsigned int16 field_0x0
@@ -27,11 +29,11 @@ ldc.i4 255
  stloc local_0x2
 
 ldc.i4 0xf087595 
-stsfld unsigned int16 ILGEN_0x59e058c0::field_0x0
+stsfld unsigned int16 b31289.ILGEN_0x59e058c0::field_0x0
 
 
 Start_Orphan_0:
- ldsflda unsigned int16 ILGEN_0x59e058c0::field_0x0
+ ldsflda unsigned int16 b31289.ILGEN_0x59e058c0::field_0x0
  ldc.r4 float32(0x279a2607)
  conv.u1
  stind.i2
@@ -69,7 +71,7 @@ ret
 .try {
 ldc.i8 0x65d25f3b4fa63daa 
 
-call int32 ILGEN_0x59e058c0::Method_0x2dd7(unsigned int64 Arg_0x3)
+call int32 b31289.ILGEN_0x59e058c0::Method_0x2dd7(unsigned int64 Arg_0x3)
 pop
   leave stop
  } catch [mscorlib]System.OverflowException {
@@ -81,4 +83,5 @@ pop
 ret
 }
 
+}
 }

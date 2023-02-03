@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 // The failure mode is that the RyuJIT/x86 backend changed call to ROUND intrinsic
 // with double return type to ROUND intrinsic with int return type, that is not supported.
 
+namespace DevDiv_278365
+{
 public class Program
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -45,4 +47,5 @@ public class Program
         Console.WriteLine("Pass");
         return 100;
     }
+}
 }

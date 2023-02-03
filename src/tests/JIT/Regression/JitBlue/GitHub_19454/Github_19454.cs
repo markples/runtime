@@ -6,6 +6,8 @@
 
 using System;
 
+namespace Github_19454
+{
 public struct MyStruct
 {
     public Span<byte> Span1
@@ -36,3 +38,4 @@ public class GitHub_19454
     }
 }
 
+}

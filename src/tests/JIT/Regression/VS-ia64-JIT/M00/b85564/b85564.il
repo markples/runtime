@@ -9,6 +9,8 @@
 }
 .assembly 'b85564'{}
 
+.namespace b85564
+{
 .class public _rem {
 .method public static int32 main() {
 .entrypoint
@@ -22,5 +24,6 @@
   ldc.i4.2
   mul
  ret
+}
 }
 }

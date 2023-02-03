@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_76346
+{
 public class Program
 {
     public static int Main()
@@ -37,4 +39,5 @@ public class Program
 
         return (i == 57) ? 100 : 101;
     }
+}
 }

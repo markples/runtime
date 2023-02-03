@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b83702
+{
 public struct BB
 {
     public static object m_xStatic1;
@@ -31,4 +33,5 @@ public struct BB
             return 100;
         }
     }
+}
 }

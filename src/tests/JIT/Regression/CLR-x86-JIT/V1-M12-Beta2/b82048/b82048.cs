@@ -3,6 +3,8 @@
 
 using System;
 
+namespace b82048
+{
 public struct AA
 {
     public static sbyte m_suFwd3;
@@ -37,3 +39,4 @@ public struct AA
     }
 }
 
+}

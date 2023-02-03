@@ -5,6 +5,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b163200
+{
 public class ClassWithCctor<T>
 {
     static TimeSpan span1;
@@ -30,4 +32,5 @@ public class Repro
             return 101;
         }
     }
+}
 }

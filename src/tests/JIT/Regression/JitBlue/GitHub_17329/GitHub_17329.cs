@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 //  currently handle this properly.
 // 
 
+namespace GitHub_17329
+{
 [UnsafeValueTypeAttribute]
 struct DangerousBuffer
 {
@@ -104,4 +106,5 @@ public class TestCase
 
         return mainResult;
     } 
+}
 }

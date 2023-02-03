@@ -9,6 +9,8 @@
 // bounds of its containing method's frame. The problematic access was created during morphing by folding
 // `(ind long (addr int (lclVar int V0)))` into `(lclFld long V0 0)`. This corresponds to the body of `C::Test` below.
 
+.namespace DevDiv_279396
+{
 .class public abstract auto ansi sealed beforefieldinit C extends [mscorlib]System.Object
 {
     .method private static int64 Test(int32 i) noinlining
@@ -27,7 +29,7 @@
 
         ldc.i4 100
         dup
-        call int64 C::Test(int32)
+        call int64 DevDiv_279396.C::Test(int32)
         conv.i4
         bne.un.s fail
 
@@ -38,4 +40,5 @@ fail:
         ldc.i4 101
         ret
     }
+}
 }

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b360587
+{
 public class MyDispose : IDisposable
 {
     public int DisposeCounter = 0;
@@ -312,3 +314,4 @@ public class Test_repro
 
 
 
+}

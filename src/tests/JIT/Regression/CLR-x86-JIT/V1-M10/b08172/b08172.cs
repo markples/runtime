@@ -7,6 +7,8 @@ using System;
 using System.Runtime.CompilerServices;
 using Xunit;
 
+namespace b08172
+{
 public class Test
 {
     public static int Main(string[] args)
@@ -55,4 +57,5 @@ public class Test
     {
         Console.Out.WriteLine("usage: Fact [number]");
     }
+}
 }

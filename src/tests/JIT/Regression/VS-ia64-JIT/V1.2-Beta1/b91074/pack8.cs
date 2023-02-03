@@ -5,6 +5,8 @@
 using System;
 using System.Runtime.InteropServices;
 
+namespace b91074
+{
 [StructLayoutAttribute(LayoutKind.Sequential, Pack = 8)]
 internal sealed class tagDBPROPSET
 {
@@ -43,4 +45,5 @@ public class a
         Console.WriteLine("PASSED");
         return 100;
     }
+}
 }

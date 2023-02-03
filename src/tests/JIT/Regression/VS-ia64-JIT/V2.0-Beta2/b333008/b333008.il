@@ -35,6 +35,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b333008
+{
 .class public auto ansi beforefieldinit foo
        extends [mscorlib]System.Object
 {
@@ -81,7 +83,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldc.i4.0
-    IL_0001:  stsfld     int32 foo::x
+    IL_0001:  stsfld     int32 b333008.foo::x
     IL_0006:  ret
   } // end of method foo::.cctor
 
@@ -102,3 +104,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file foo.res
+}

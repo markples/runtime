@@ -3,6 +3,8 @@
 
 using System;
 
+namespace GitHub_18235_1
+{
 class C0
 {
     public sbyte F;
@@ -18,4 +20,5 @@ public class Program
         ulong var1 = (ulong)(1000 | (byte)var0.F);
         return var1 == 1023 ? 100 : 0;
     }
+}
 }

@@ -3,6 +3,8 @@
 //
 // Note: In this repro, we accidently mark a non-EH variable as needing a spill which
 // corrupts the value stored on stack. The problem repros only on linux/arm64.
+namespace Runtime_58083
+{
 class C0
 {
     public short F0;
@@ -107,4 +109,5 @@ public class Program
         System.GC.KeepAlive(var22[0].F5);
         return var18;
     }
+}
 }

@@ -17,11 +17,13 @@
 }
 .assembly extern xunit.core {}
 
+.namespace GitHub_20625
+{
 .class private abstract auto ansi beforefieldinit Base
        extends [System.Runtime]System.Object
 {
   .method public hidebysig newslot abstract virtual
-          instance void  M(int32 arg1, int32 arg2, int32 arg3, int32 arg4, int32 arg5, class Base arg6) cil managed
+          instance void  M(int32 arg1, int32 arg2, int32 arg3, int32 arg4, int32 arg5, class GitHub_20625.Base arg6) cil managed
   {
   }
 
@@ -36,10 +38,10 @@
 }
 
 .class private auto ansi beforefieldinit Der1
-       extends Base
+       extends GitHub_20625.Base
 {
   .method public hidebysig virtual instance void
-          M(int32 arg1, int32 arg2, int32 arg3, int32 arg4, int32 arg5, class Base arg6) cil managed nooptimization
+          M(int32 arg1, int32 arg2, int32 arg3, int32 arg4, int32 arg5, class GitHub_20625.Base arg6) cil managed nooptimization
   {
     .maxstack  8
     IL_0000:  ldarg.s    arg6
@@ -50,7 +52,7 @@
     IL_0007:  ldarg.s    arg5
     IL_0009:  ldnull
     IL_000a:  tail.
-              callvirt   instance void Base::M(int32, int32, int32, int32, int32, class Base)
+              callvirt   instance void GitHub_20625.Base::M(int32, int32, int32, int32, int32, class GitHub_20625.Base)
     IL_000f:  ret
   }
 
@@ -59,17 +61,17 @@
   {
     .maxstack  8
     IL_0000:  ldarg.0
-    IL_0001:  call       instance void Base::.ctor()
+    IL_0001:  call       instance void GitHub_20625.Base::.ctor()
     IL_0006:  ret
   }
 
 }
 
 .class private auto ansi beforefieldinit Der2
-       extends Base
+       extends GitHub_20625.Base
 {
   .method public hidebysig virtual instance void
-          M(int32 arg1, int32 arg2, int32 arg3, int32 arg4, int32 arg5, class Base arg6) cil managed
+          M(int32 arg1, int32 arg2, int32 arg3, int32 arg4, int32 arg5, class GitHub_20625.Base arg6) cil managed
   {
     .maxstack  8
     IL_0000:  ret
@@ -80,7 +82,7 @@
   {
     .maxstack  8
     IL_0000:  ldarg.0
-    IL_0001:  call       instance void Base::.ctor()
+    IL_0001:  call       instance void GitHub_20625.Base::.ctor()
     IL_0006:  ret
   }
 }
@@ -89,7 +91,7 @@
        extends [System.Runtime]System.Object
 {
   .method private hidebysig static int32
-          Run(class Base der1, class Base der2) cil managed noinlining
+          Run(class GitHub_20625.Base der1, class GitHub_20625.Base der2) cil managed noinlining
   {
     .maxstack  7
     .locals init (int32 V_0)
@@ -102,7 +104,7 @@
       IL_0004:  ldc.i4.2
       IL_0005:  ldc.i4.5
       IL_0006:  ldarg.1
-      IL_0007:  callvirt   instance void Base::M(int32, int32, int32, int32, int32, class Base)
+      IL_0007:  callvirt   instance void GitHub_20625.Base::M(int32, int32, int32, int32, int32, class GitHub_20625.Base)
       IL_000c:  ldc.i4.s   100
       IL_000e:  stloc.0
       IL_000f:  leave.s    IL_0016
@@ -128,12 +130,12 @@
     .entrypoint
 
     .maxstack  2
-    .locals init (class Der2 V_0)
-    IL_0000:  newobj     instance void Der1::.ctor()
-    IL_0005:  newobj     instance void Der2::.ctor()
+    .locals init (class GitHub_20625.Der2 V_0)
+    IL_0000:  newobj     instance void GitHub_20625.Der1::.ctor()
+    IL_0005:  newobj     instance void GitHub_20625.Der2::.ctor()
     IL_000a:  stloc.0
     IL_000b:  ldloc.0
-    IL_000c:  call       int32 Program::Run(class Base, class Base)
+    IL_000c:  call       int32 GitHub_20625.Program::Run(class GitHub_20625.Base, class GitHub_20625.Base)
     IL_0011:  ret
   }
 
@@ -145,4 +147,5 @@
     IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
     IL_0006:  ret
   }
+}
 }

@@ -13,6 +13,8 @@
 .assembly 'GitHub_15291' {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_15291
+{
 .class public auto ansi beforefieldinit P
        extends [mscorlib]System.Object
 {
@@ -122,30 +124,30 @@
              [12] bool b32,
              [13] bool b31,
              [14] bool bm1)
-    IL_0000:  call       uint32 P::G64()
+    IL_0000:  call       uint32 GitHub_15291.P::G64()
     IL_0005:  stloc.0
-    IL_0006:  call       uint32 P::G63()
+    IL_0006:  call       uint32 GitHub_15291.P::G63()
     IL_000b:  stloc.1
-    IL_000c:  call       uint32 P::G32()
+    IL_000c:  call       uint32 GitHub_15291.P::G32()
     IL_0011:  stloc.2
-    IL_0012:  call       uint32 P::G31()
+    IL_0012:  call       uint32 GitHub_15291.P::G31()
     IL_0017:  stloc.3
-    IL_0018:  call       uint32 P::GM1()
+    IL_0018:  call       uint32 GitHub_15291.P::GM1()
     IL_001d:  stloc.s    rm1
     IL_001f:  ldc.i4.s   64
-    IL_0021:  call       uint32 P::Gx(int32)
+    IL_0021:  call       uint32 GitHub_15291.P::Gx(int32)
     IL_0026:  stloc.s    r64a
     IL_0028:  ldc.i4.s   63
-    IL_002a:  call       uint32 P::Gx(int32)
+    IL_002a:  call       uint32 GitHub_15291.P::Gx(int32)
     IL_002f:  stloc.s    r63a
     IL_0031:  ldc.i4.s   32
-    IL_0033:  call       uint32 P::Gx(int32)
+    IL_0033:  call       uint32 GitHub_15291.P::Gx(int32)
     IL_0038:  stloc.s    r32a
     IL_003a:  ldc.i4.s   31
-    IL_003c:  call       uint32 P::Gx(int32)
+    IL_003c:  call       uint32 GitHub_15291.P::Gx(int32)
     IL_0041:  stloc.s    r31a
     IL_0043:  ldc.i4.m1
-    IL_0044:  call       uint32 P::Gx(int32)
+    IL_0044:  call       uint32 GitHub_15291.P::Gx(int32)
     IL_0049:  stloc.s    rm1a
     IL_004b:  ldstr      "r64:{0,0:X8} r64a:{1,0:X8}"
     IL_0050:  ldloc.0
@@ -264,4 +266,5 @@
     IL_0137:  ret
   }
 
+}
 }

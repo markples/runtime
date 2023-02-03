@@ -10,6 +10,8 @@
 .assembly b16054
 {
 }
+.namespace b16054
+{
 .class public _div {
 	.method static	void _div(float64, float64) {
 	.maxstack		3
@@ -28,8 +30,9 @@ call        class [mscorlib]System.IO.TextWriter [System.Console]System.Console:
 	.maxstack		20
 		ldc.r8		float64(0xFFF0000000000000)
 		ldc.r8		float64(0xFFEFFFFFFFFFFFFF)
-		call	void _div::_div(float64, float64)
+		call	void b16054._div::_div(float64, float64)
 		ldc.i4 100
 		ret
 	}
+}
 }

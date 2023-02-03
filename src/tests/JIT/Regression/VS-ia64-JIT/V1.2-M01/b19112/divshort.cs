@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b19112b
+{
 public class foo
 {
 
@@ -24,4 +26,5 @@ public class foo
         c = (short)(a / b);
     }
 
+}
 }

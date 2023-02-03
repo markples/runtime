@@ -9,7 +9,7 @@
 }
 .assembly 'b30864' { }
 .assembly extern xunit.core {}
-.namespace BoxTest
+.namespace BoxTest_b30864
 {
   .class public auto ansi Test extends [mscorlib]System.Object 
 {
@@ -33,7 +33,7 @@
       IL_002e:  refanyval  [mscorlib]System.Object
       IL_0033:  ldind.ref
       IL_0034:  tail.
-      IL_0036:  call instance vararg class [mscorlib]System.Object BoxTest.Test::Fibonacci2(class [mscorlib]System.Object, class [mscorlib]System.Object)
+      IL_0036:  call instance vararg class [mscorlib]System.Object BoxTest_b30864.Test::Fibonacci2(class [mscorlib]System.Object, class [mscorlib]System.Object)
 
       IL_003b:  ret
     } // end of method 'Test::Fibonacci'
@@ -76,7 +76,7 @@
       IL_0036:  stloc      V_4
       IL_003a:  ldloca     V_4
       IL_003e:  mkrefany   [mscorlib]System.Object
-      IL_0043:  call instance vararg class [mscorlib]System.Object BoxTest.Test::Fibonacci(typedref, typedref)
+      IL_0043:  call instance vararg class [mscorlib]System.Object BoxTest_b30864.Test::Fibonacci(typedref, typedref)
 
       IL_0048:  unbox      [mscorlib]System.Int32
       IL_004d:  ldind.i4
@@ -94,7 +94,7 @@
       IL_0068:  mkrefany   [mscorlib]System.Object
       IL_006d:  ldarga     flag
       IL_0071:  mkrefany   [mscorlib]System.Object
-      IL_0076:  call instance vararg class [mscorlib]System.Object BoxTest.Test::Fibonacci(typedref, typedref)
+      IL_0076:  call instance vararg class [mscorlib]System.Object BoxTest_b30864.Test::Fibonacci(typedref, typedref)
 
       IL_007b:  unbox      [mscorlib]System.Int32
       IL_0080:  ldind.i4
@@ -150,7 +150,7 @@
                bool V_1,
                class [mscorlib]System.Object V_2,
                class [mscorlib]System.Object V_3)
-      IL_0000:  newobj     instance void BoxTest.Test::.ctor()
+      IL_0000:  newobj     instance void BoxTest_b30864.Test::.ctor()
       IL_0005:  ldc.i4.s   20
       IL_0007:  stloc.0
       IL_0008:  ldloc.s   V_0
@@ -165,7 +165,7 @@
       IL_0022:  stloc.3
       IL_0023:  ldloca     V_3
       IL_0027:  mkrefany   [mscorlib]System.Object
-      IL_002c:  call instance vararg class [mscorlib]System.Object BoxTest.Test::Fibonacci(typedref, typedref)
+      IL_002c:  call instance vararg class [mscorlib]System.Object BoxTest_b30864.Test::Fibonacci(typedref, typedref)
 
       IL_0031:  pop
       IL_0032:  call void [System.Console]System.Console::WriteLine()

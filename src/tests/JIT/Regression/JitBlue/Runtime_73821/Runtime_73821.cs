@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_73821
+{
 public unsafe class Runtime_73821
 {
     public struct S
@@ -32,4 +34,5 @@ public unsafe class Runtime_73821
     {
         return Test1(33).F + Test2(67);
     }
+}
 }

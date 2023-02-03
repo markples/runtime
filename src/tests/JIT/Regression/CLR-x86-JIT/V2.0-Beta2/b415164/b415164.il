@@ -10,6 +10,8 @@
 .assembly 'b415164' { }
 .assembly extern xunit.core {}
  
+.namespace b415164
+{
 .class private auto ansi sealed MyDelegate
        extends [mscorlib]System.MulticastDelegate
 {
@@ -33,7 +35,7 @@
   .method public hidebysig instance void DelegateFunc() il managed
   {
     ldarg.0
-    ldfld string TestClass::m_strField
+    ldfld string b415164.TestClass::m_strField
     call  void [System.Console]System.Console::WriteLine(string)
     ret
   }
@@ -44,11 +46,11 @@
     )
     .entrypoint
     .maxstack  3
-    .locals init (class MyDelegate V_0)
+    .locals init (class b415164.MyDelegate V_0)
     		.try {
     			ldnull
-    			ldftn      instance void TestClass::DelegateFunc()
-    			newobj     instance void MyDelegate::.ctor(object,
+    			ldftn      instance void b415164.TestClass::DelegateFunc()
+    			newobj     instance void b415164.MyDelegate::.ctor(object,
                                                          native unsigned int)
 			ldstr 	   "ArgumentException NOT thrown, Test FAILED"
 			call       void [System.Console]System.Console::WriteLine(string)
@@ -76,4 +78,5 @@ FAILURE:
     IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
     IL_0006:  ret
   }
+}
 }

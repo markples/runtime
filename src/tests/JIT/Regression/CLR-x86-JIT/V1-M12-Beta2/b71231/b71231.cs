@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b71231
+{
 public class X
 {
     static short sh_8712 = 8712;
@@ -27,4 +29,5 @@ public class X
         Console.WriteLine(us3);
         return 100;
     }
+}
 }

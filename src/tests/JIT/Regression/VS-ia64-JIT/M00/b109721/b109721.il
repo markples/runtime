@@ -10,6 +10,8 @@
 }
 .assembly 'b109721'{}
 
+.namespace b109721
+{
 .class public _div {
 //
 .method public static	int32 _div(int32,int32) {
@@ -88,7 +90,7 @@ START_AE:
 	ldc.i4		0xFFFFFFFF
         ldstr      "80000000/-1"
         call       void [System.Console]System.Console::WriteLine(string)
-	call	int32 _div::_div(int32,int32)
+	call	int32 b109721._div::_div(int32,int32)
 	ldc.i4		0xAE
 	ceq
 	brfalse		FAIL
@@ -101,7 +103,7 @@ START_DB0:
 	ldc.i4		0x00000000
         ldstr      "80000000/0"
         call       void [System.Console]System.Console::WriteLine(string)
-	call	int32 _div::_div(int32,int32)
+	call	int32 b109721._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
@@ -124,3 +126,4 @@ FAIL:
 // -- EOF ---------------------------
 }
 // ----------------------------------
+}

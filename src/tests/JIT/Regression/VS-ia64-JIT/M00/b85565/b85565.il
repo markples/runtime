@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b85565'{}
+.namespace b85565
+{
 .class public s {
 .method public static int32 return(int32) {
 .maxstack	2
@@ -19,7 +21,7 @@
 .maxstack	10
 	ldc.i4	0x7FFFFFFF
 	ldc.i4	0x1
-	call	int32 s::return(int32)
+	call	int32 b85565.s::return(int32)
 	shl
 	ldc.i4	0xFFFFFFFE
 	ceq
@@ -29,5 +31,6 @@
 FAIL:
 	ldc.i4	5
 	ret
+}
 }
 }

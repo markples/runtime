@@ -9,6 +9,8 @@
 }
 .assembly 'b92713'{}
 
+.namespace b92713
+{
 .class public _div {
 //
 .method public static	int32 _div(int32,int32) {
@@ -63,49 +65,49 @@ END:
 // -- Min / Min
 	ldc.i4		0x80000000
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
 // -- Min / -1
 	ldc.i4		0x80000000
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xAE
 	ceq
 	brfalse		FAIL
 // -- Min / 0
 	ldc.i4		0x80000000
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- Min / 1
 	ldc.i4		0x80000000
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x80000000
 	ceq
 	brfalse		FAIL
 // -- Min / Max
 	ldc.i4		0x80000000
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xFFFFFFFF
 	ceq
 	brfalse		FAIL
 // -- Min / Odd
 	ldc.i4		0x80000000
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xFFFFFFFF
 	ceq
 	brfalse		FAIL
 // -- Min / Even
 	ldc.i4		0x80000000
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
@@ -114,49 +116,49 @@ END:
 // -- -1 / Min
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000		
 	ceq
 	brfalse		FAIL
 // -- -1 / -1
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
 // -- -1 / 0
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- -1 / 1
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xFFFFFFFF
 	ceq
 	brfalse		FAIL
 // -- -1 / Max
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- -1 / Odd
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- -1 / Even
 	ldc.i4		0xFFFFFFFF
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
@@ -165,49 +167,49 @@ END:
 // -- 0 / Min
 	ldc.i4		0x00000000
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 0 / -1
 	ldc.i4		0x00000000
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 0 / 0
 	ldc.i4		0x00000000
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- 0 / 1
 	ldc.i4		0x00000000
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 0 / Max
 	ldc.i4		0x00000000
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 0 / Odd
 	ldc.i4		0x00000000
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 0 / Even
 	ldc.i4		0x00000000
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
@@ -216,49 +218,49 @@ END:
 // -- 1 / Min
 	ldc.i4		0x00000001
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 1 / -1
 	ldc.i4		0x00000001
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xFFFFFFFF
 	ceq
 	brfalse		FAIL
 // -- 1 / 0
 	ldc.i4		0x00000001
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- 1 / 1
 	ldc.i4		0x00000001
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
 // -- 1 / Max
 	ldc.i4		0x00000001
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 1 / Odd
 	ldc.i4		0x00000001
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- 1 / Even
 	ldc.i4		0x00000001
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
@@ -267,49 +269,49 @@ END:
 // -- Max / Min
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- Max / -1
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x80000001
 	ceq
 	brfalse		FAIL
 // -- Max / 0
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- Max / 1
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x7FFFFFFF
 	ceq
 	brfalse		FAIL
 // -- Max / Max
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
 // -- Max / Odd
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
 // -- Max / Even
 	ldc.i4		0x7FFFFFFF
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xFFFFFFFF
 	ceq
 	brfalse		FAIL
@@ -318,49 +320,49 @@ END:
 // -- Odd / Min
 	ldc.i4		0x55555555
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- Odd / -1
 	ldc.i4		0x55555555
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xAAAAAAAB
 	ceq
 	brfalse		FAIL
 // -- Odd / 0
 	ldc.i4		0x55555555
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- Odd / 1
 	ldc.i4		0x55555555
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x55555555
 	ceq
 	brfalse		FAIL
 // -- Odd / Max
 	ldc.i4		0x55555555
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- Odd / Odd
 	ldc.i4		0x55555555
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
 // -- Odd / Even
 	ldc.i4		0x55555555
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
@@ -369,49 +371,49 @@ END:
 // -- Even / Min
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0x80000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- Even / -1
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0xFFFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x55555556
 	ceq
 	brfalse		FAIL
 // -- Even / 0
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0x00000000
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xDB0E
 	ceq
 	brfalse		FAIL
 // -- Even / 1
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0x00000001
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xAAAAAAAA
 	ceq
 	brfalse		FAIL
 // -- Even / Max
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0x7FFFFFFF
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000000
 	ceq
 	brfalse		FAIL
 // -- Even / Odd
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0x55555555
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0xFFFFFFFF
 	ceq
 	brfalse		FAIL
 // -- Even / Even
 	ldc.i4		0xAAAAAAAA
 	ldc.i4		0xAAAAAAAA
-	call	int32 _div::_div(int32,int32)
+	call	int32 b92713._div::_div(int32,int32)
 	ldc.i4		0x00000001
 	ceq
 	brfalse		FAIL
@@ -431,3 +433,4 @@ FAIL:
 // -- EOF ---------------------------
 }
 // ----------------------------------
+}

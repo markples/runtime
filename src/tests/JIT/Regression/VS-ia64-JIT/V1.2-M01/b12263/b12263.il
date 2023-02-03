@@ -5,6 +5,8 @@
 .assembly 'b12263'{}
 .assembly extern xunit.core {}
 
+.namespace b12263
+{
 .class private auto ansi beforefieldinit MyTest
        extends [mscorlib]System.Object
 {
@@ -16,7 +18,7 @@
     .maxstack  2
     IL_0000:  ldarg.0
     IL_0001:  ldc.i4.1
-    IL_0002:  stfld      int32 MyTest::intI
+    IL_0002:  stfld      int32 b12263.MyTest::intI
     IL_0007:  ldarg.0
     IL_0008:  call       instance void [mscorlib]System.Object::.ctor()
     IL_000d:  ret
@@ -27,7 +29,7 @@
 .class public auto ansi beforefieldinit MyClass
        extends [mscorlib]System.Object
 {
-  .field private class MyTest tc
+  .field private class b12263.MyTest tc
   .method public static int32 RealMain()
   {
     .custom instance void [xunit.core]Xunit.FactAttribute::.ctor() = (
@@ -36,7 +38,7 @@
 	.entrypoint
 	.try
 	{
-		call void MyClass::Main()
+		call void b12263.MyClass::Main()
 		leave FAIL
 	}
 	catch [mscorlib]System.NullReferenceException
@@ -54,19 +56,19 @@
   .method public hidebysig static void Main() cil managed
   {
     .locals init (int32 V_0,
-             class MyClass V_1,
+             class b12263.MyClass V_1,
              int32 V_2,
              class [mscorlib]System.NullReferenceException V_3,
              int32 V_4)
 
     IL_0000:  ldc.i4.1
     IL_0001:  stloc.0
-    IL_0002:  newobj     instance void MyClass::.ctor()
+    IL_0002:  newobj     instance void b12263.MyClass::.ctor()
     IL_0007:  stloc.1
 
       IL_0008:  ldloc.1
-      IL_0009:  ldfld      class MyTest MyClass::tc
-      IL_000e:  ldfld      int32 MyTest::intI	// <-- NullRef Exception should be thrown here
+      IL_0009:  ldfld      class b12263.MyTest b12263.MyClass::tc
+      IL_000e:  ldfld      int32 b12263.MyTest::intI	// <-- NullRef Exception should be thrown here
 	        pop
     
     IL_0022:  ret
@@ -82,4 +84,5 @@
     IL_0006:  ret
   } // end of method MyClass::.ctor
 
+}
 }

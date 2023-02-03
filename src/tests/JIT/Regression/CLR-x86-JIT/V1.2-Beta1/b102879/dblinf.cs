@@ -4,6 +4,8 @@
 
 // compile with csc /o+
 using System;
+namespace b102879
+{
 public class MyClass
 {
 
@@ -25,4 +27,5 @@ public class MyClass
             return 1;
         }
     }
+}
 }

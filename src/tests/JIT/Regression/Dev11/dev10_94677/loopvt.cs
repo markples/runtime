@@ -17,6 +17,8 @@
 
 using System;
 
+namespace loopvt
+{
 struct VT
 {
     public double vt1;
@@ -99,4 +101,5 @@ public class DblArray3
         return 100;
     }
 
+}
 }

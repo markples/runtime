@@ -25,6 +25,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace GitHub_17585
+{
 .class interface private abstract auto ansi Interface
 {
   .method public hidebysig newslot abstract virtual
@@ -44,7 +46,7 @@
 
 .class private auto ansi beforefieldinit InterfaceImplementation
        extends [System.Runtime]System.Object
-       implements Interface
+       implements GitHub_17585.Interface
 {
   .method public hidebysig newslot virtual final
           instance int32  InterfaceMethodWithStackArgs(int32 a,
@@ -78,7 +80,7 @@
 .class public auto ansi beforefieldinit Test_GitHub_17585
        extends [System.Runtime]System.Object
 {
-  .method public hidebysig static int32  CallInterfaceMethod(class Interface iface) cil managed noinlining
+  .method public hidebysig static int32  CallInterfaceMethod(class GitHub_17585.Interface iface) cil managed noinlining
   {
     // Code size       17 (0x11)
     .maxstack  10
@@ -92,7 +94,7 @@
     IL_0007:  ldc.i4.7
     IL_0008:  ldc.i4.8
     IL_0009:  ldc.i4.s   9
-    IL_000b:  tail. callvirt   instance int32 Interface::InterfaceMethodWithStackArgs(int32,
+    IL_000b:  tail. callvirt   instance int32 GitHub_17585.Interface::InterfaceMethodWithStackArgs(int32,
                                                                                 int32,
                                                                                 int32,
                                                                                 int32,
@@ -112,19 +114,19 @@
     .entrypoint
     // Code size       35 (0x23)
     .maxstack  1
-    .locals init ([0] class InterfaceImplementation iface)
-    IL_0000:  newobj     instance void InterfaceImplementation::.ctor()
+    .locals init ([0] class GitHub_17585.InterfaceImplementation iface)
+    IL_0000:  newobj     instance void GitHub_17585.InterfaceImplementation::.ctor()
     IL_0005:  stloc.0
     IL_0006:  ldloc.0
-    IL_0007:  call       int32 Test_GitHub_17585::CallInterfaceMethod(class Interface)
+    IL_0007:  call       int32 GitHub_17585.Test_GitHub_17585::CallInterfaceMethod(class GitHub_17585.Interface)
     IL_000c:  pop
     IL_000d:  ldloc.0
-    IL_000e:  call       int32 Test_GitHub_17585::CallInterfaceMethod(class Interface)
+    IL_000e:  call       int32 GitHub_17585.Test_GitHub_17585::CallInterfaceMethod(class GitHub_17585.Interface)
     IL_0013:  pop
     .try
     {
       IL_0014:  ldnull
-      IL_0015:  call       int32 Test_GitHub_17585::CallInterfaceMethod(class Interface)
+      IL_0015:  call       int32 GitHub_17585.Test_GitHub_17585::CallInterfaceMethod(class GitHub_17585.Interface)
       IL_001a:  pop
       IL_001b:  leave.s    IL_0020
 
@@ -150,3 +152,4 @@
   } // end of method Test::.ctor
 
 } // end of class Test
+}

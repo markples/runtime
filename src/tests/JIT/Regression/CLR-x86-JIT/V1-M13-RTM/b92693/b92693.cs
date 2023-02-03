@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b92693
+{
 enum TestEnum { }
 
 public struct AA
@@ -14,4 +16,5 @@ public struct AA
         return new TestEnum[(long)(m_shStatic1 * 11u - m_shStatic1 * 11u)];
     }
     public static int Main() { Static2(null); return 100; }
+}
 }

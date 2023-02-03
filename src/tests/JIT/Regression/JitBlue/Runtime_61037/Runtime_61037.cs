@@ -10,6 +10,8 @@
 // 
 //     File: D:\a\_work\3\s\src\coreclr\jit\emitarm64.cpp Line: 13602
 // 
+namespace Runtime_61037
+{
 public class C0
 {
 }
@@ -31,4 +33,5 @@ public class Runtime_61037
         var vr1 = new C0[,] { { new C0() } };
         return 0;
     }
+}
 }

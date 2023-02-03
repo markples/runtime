@@ -13,6 +13,8 @@ using System.Runtime.CompilerServices;
 
 // Similar to other variants but using a 3 byte struct instead of 6.
 
+namespace GitHub_18522_7
+{
 struct S0
 {
     public byte F0;
@@ -63,4 +65,5 @@ public class GitHub_18522_7
 
         return s_6.F3;
     }
+}
 }

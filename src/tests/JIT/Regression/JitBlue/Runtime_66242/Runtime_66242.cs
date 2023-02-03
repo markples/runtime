@@ -10,6 +10,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_66242
+{
 public struct S0
 {
     public ulong F1;
@@ -40,4 +42,5 @@ public class Runtime_66242
         arg1.F6.F1 = 16700531892663534200UL;
         return 1;
     }
+}
 }

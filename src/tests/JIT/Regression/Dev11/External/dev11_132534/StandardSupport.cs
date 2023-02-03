@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Test
+namespace CSharpPart_132534
 {
     public struct BasicStruct
     {

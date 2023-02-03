@@ -32,6 +32,8 @@
 .corflags 0x00000001
 
 
+.namespace b14355
+{
 .class public auto ansi beforefieldinit LocallocTest
        extends [mscorlib]System.Object
 {
@@ -66,15 +68,15 @@
     IL_0020:  localloc
     IL_0022:  stloc.3
     IL_0023:  ldsfld     int32 [localloc_common]LocallocTesting.Global::stackAllocSize
-    IL_0028:  stsfld     int32 LocallocTest::locallocSize
+    IL_0028:  stsfld     int32 b14355.LocallocTest::locallocSize
     IL_002d:  ldloc.2
-    IL_002e:  ldsfld     int32 LocallocTest::locallocSize
+    IL_002e:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_0033:  ldc.i4     0x3e8
     IL_0038:  call       void [localloc_common]LocallocTesting.Global::initializeStack(int32*,
                                                                               int32,
                                                                               int32)
     IL_003d:  ldloc.3
-    IL_003e:  ldsfld     int32 LocallocTest::locallocSize
+    IL_003e:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_0043:  ldc.i4     0x7d0
     IL_0048:  call       void [localloc_common]LocallocTesting.Global::initializeStack(int32*,
                                                                               int32,
@@ -89,7 +91,7 @@
     IL_0055:  ldc.i4.8
     IL_0056:  ldloc.2
     IL_0057:  ldloc.3
-    IL_0058:  call       bool LocallocTest::func1(int32,
+    IL_0058:  call       bool b14355.LocallocTest::func1(int32,
                                                   int32,
                                                   int32,
                                                   int32,
@@ -107,7 +109,7 @@
 
     IL_0064:  ldstr      "intArray1"
     IL_0069:  ldloc.2
-    IL_006a:  ldsfld     int32 LocallocTest::locallocSize
+    IL_006a:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_006f:  ldc.i4     0x3e8
     IL_0074:  call       bool [localloc_common]LocallocTesting.Global::verifyStack(string,
                                                                           int32*,
@@ -121,7 +123,7 @@
 
     IL_0080:  ldstr      "intArray2"
     IL_0085:  ldloc.3
-    IL_0086:  ldsfld     int32 LocallocTest::locallocSize
+    IL_0086:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_008b:  ldc.i4     0x7d0
     IL_0090:  call       bool [localloc_common]LocallocTesting.Global::verifyStack(string,
                                                                           int32*,
@@ -198,7 +200,7 @@
     IL_000d:  ldc.i4.8
     IL_000e:  ldarg.s    ar1
     IL_0010:  ldarg.s    ar2
-    IL_0012:  call       bool LocallocTest::func1(int32,
+    IL_0012:  call       bool b14355.LocallocTest::func1(int32,
                                                   int32,
                                                   int32,
                                                   int32,
@@ -227,20 +229,20 @@
     IL_003b:  localloc
     IL_003d:  stloc.1
     IL_003e:  ldloc.0
-    IL_003f:  ldsfld     int32 LocallocTest::locallocSize
+    IL_003f:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_0044:  ldc.i4     0xbb8
     IL_0049:  call       void [localloc_common]LocallocTesting.Global::initializeStack(int32*,
                                                                               int32,
                                                                               int32)
     IL_004e:  ldloc.1
-    IL_004f:  ldsfld     int32 LocallocTest::locallocSize
+    IL_004f:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_0054:  ldc.i4     0xfa0
     IL_0059:  call       void [localloc_common]LocallocTesting.Global::initializeStack(int32*,
                                                                               int32,
                                                                               int32)
     IL_005e:  ldstr      "ar1"
     IL_0063:  ldarg.s    ar1
-    IL_0065:  ldsfld     int32 LocallocTest::locallocSize
+    IL_0065:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_006a:  ldc.i4     0x3e8
     IL_006f:  call       bool [localloc_common]LocallocTesting.Global::verifyStack(string,
                                                                           int32*,
@@ -254,7 +256,7 @@
 
     IL_007a:  ldstr      "ar2"
     IL_007f:  ldarg.s    ar2
-    IL_0081:  ldsfld     int32 LocallocTest::locallocSize
+    IL_0081:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_0086:  ldc.i4     0x7d0
     IL_008b:  call       bool [localloc_common]LocallocTesting.Global::verifyStack(string,
                                                                           int32*,
@@ -268,7 +270,7 @@
 
     IL_0096:  ldstr      "intArray1"
     IL_009b:  ldloc.0
-    IL_009c:  ldsfld     int32 LocallocTest::locallocSize
+    IL_009c:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_00a1:  ldc.i4     0xbb8
     IL_00a6:  call       bool [localloc_common]LocallocTesting.Global::verifyStack(string,
                                                                           int32*,
@@ -282,7 +284,7 @@
 
     IL_00b1:  ldstr      "intArray2"
     IL_00b6:  ldloc.1
-    IL_00b7:  ldsfld     int32 LocallocTest::locallocSize
+    IL_00b7:  ldsfld     int32 b14355.LocallocTest::locallocSize
     IL_00bc:  ldc.i4     0xfa0
     IL_00c1:  call       bool [localloc_common]LocallocTesting.Global::verifyStack(string,
                                                                           int32*,
@@ -307,7 +309,7 @@
   {
     .maxstack  8
     IL_0000:  ldc.i4.0
-    IL_0001:  stsfld     int32 LocallocTest::locallocSize
+    IL_0001:  stsfld     int32 b14355.LocallocTest::locallocSize
     IL_0006:  ret
   } 
 
@@ -321,3 +323,4 @@
   } 
 
 } 
+}

@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_70898
+{
 public unsafe class Runtime_70898
 {
     public static int Main()
@@ -33,4 +35,5 @@ public unsafe class Runtime_70898
         public byte ByteOne;
         public byte ByteTwo;
     }
+}
 }

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace DevDiv_794631
+{
 public class Repro
 {
     public static int Main()
@@ -42,4 +44,5 @@ public class Repro
 
     class U1 { }
     class U2 { }
+}
 }

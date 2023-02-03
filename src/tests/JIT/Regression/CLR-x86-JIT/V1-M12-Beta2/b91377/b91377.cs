@@ -4,6 +4,8 @@
 
 //COMMAND LINE: csc /nologo /optimize- /debug- /w:0 bug.cs
 using System;
+namespace b91377
+{
 public class BB
 {
     byte Method1(sbyte[,][][,] param2)
@@ -24,4 +26,5 @@ public class BB
         Console.WriteLine("Passed.");
         return 100;
     }
+}
 }

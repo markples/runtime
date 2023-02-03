@@ -5,6 +5,8 @@
 using System;
 using System.Threading;
 
+namespace b72218
+{
 public class My
 {
 
@@ -30,4 +32,5 @@ public class My
         return 100;
     }
 
+}
 }

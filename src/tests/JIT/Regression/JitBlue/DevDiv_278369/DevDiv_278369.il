@@ -15,6 +15,8 @@
 .assembly 'DevDiv_278369' {}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_278369
+{
 .class public auto ansi beforefieldinit C extends [mscorlib]System.Object
 {
     .method private hidebysig static int32 N(object o) cil managed noinlining
@@ -24,7 +26,7 @@
         ldc.i4.0
         stloc.0
         ldarg.0
-        isinst C
+        isinst DevDiv_278369.C
         ldnull
         ceq
         brfalse.s label
@@ -47,8 +49,8 @@ label:
         )
         .entrypoint
 
-        newobj instance void C::.ctor()
-        call int32 C::N(object)
+        newobj instance void DevDiv_278369.C::.ctor()
+        call int32 DevDiv_278369.C::N(object)
         ret
     }
 
@@ -58,4 +60,5 @@ label:
         call instance void [mscorlib]System.Object::.ctor()
         ret
     }
+}
 }

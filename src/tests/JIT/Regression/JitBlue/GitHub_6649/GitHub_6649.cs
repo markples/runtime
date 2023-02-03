@@ -4,7 +4,7 @@
 // Regression test for failure to maintain FieldSeq annotations in EarlyProp
 using System.Runtime.CompilerServices;
 
-namespace N
+namespace GitHub_6649
 {
     public static class C
     {

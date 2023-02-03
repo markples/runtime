@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b119026b
+{
 public class test
 {
     static sbyte si8;
@@ -29,4 +31,5 @@ public class test
             return 1;
         }
     }
+}
 }

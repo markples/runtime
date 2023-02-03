@@ -9,6 +9,8 @@
 }
 .assembly b07369 {}
 .assembly extern xunit.core {}
+.namespace b07369
+{
 .class public ILGEN_0x1c9344b9 {
 .field static	int16[] field_0x0
 .method static int32 Method_0xcf54fbcb() {
@@ -24,10 +26,10 @@
 
 ldc.i4 255
  newarr [mscorlib]System.Int16 
- stsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ stsfld int16[] b07369.ILGEN_0x1c9344b9::field_0x0
 
 Start_Orphan_0:
- ldsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ ldsfld int16[] b07369.ILGEN_0x1c9344b9::field_0x0
  ldloc local_0x3
  ldloc local_0x8
  blt.un Branch_0x2
@@ -35,13 +37,13 @@ Start_Orphan_0:
  ldlen
  br Branch_0x3
  Branch_0x2:
- ldsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ ldsfld int16[] b07369.ILGEN_0x1c9344b9::field_0x0
  ldlen
  Branch_0x3:
  ldelema [mscorlib]System.Int16
 
 Start_Orphan_3:
- ldsfld int16[] ILGEN_0x1c9344b9::field_0x0
+ ldsfld int16[] b07369.ILGEN_0x1c9344b9::field_0x0
  ldc.i4 55
  ldc.i4 0x6cedf978
  stelem.i2
@@ -69,7 +71,7 @@ EOM: ret
 .maxstack	20
 .try
 {
-call int32 ILGEN_0x1c9344b9::Method_0xcf54fbcb()
+call int32 b07369.ILGEN_0x1c9344b9::Method_0xcf54fbcb()
 leave FAIL
 }
 catch [mscorlib]System.IndexOutOfRangeException
@@ -84,4 +86,5 @@ ldc.i4 1
 ret
 }
 
+}
 }

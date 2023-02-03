@@ -9,6 +9,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_55141_2
+{
 struct S2
 {
     public uint F0;
@@ -35,4 +37,5 @@ public class Runtime_55141_2
     
     [MethodImpl(MethodImplOptions.NoInlining)]
     private static uint M(uint val) => val;
+}
 }

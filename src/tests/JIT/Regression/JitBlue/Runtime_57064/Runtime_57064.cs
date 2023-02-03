@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_57064
+{
 struct S
 {
     public uint F0;
@@ -32,4 +34,5 @@ public class Runtime_57064
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     static S Create() => default;
+}
 }

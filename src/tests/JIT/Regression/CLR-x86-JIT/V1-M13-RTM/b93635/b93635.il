@@ -10,6 +10,8 @@
 .assembly extern System {}
 .assembly 'b93635' {}
 .assembly extern xunit.core {}
+.namespace b93635
+{
 .class public EHTest
 {
 .method public static void f2() cil managed
@@ -75,7 +77,7 @@
 	.entrypoint
 	.try
 	{
-		call void EHTest::f2()
+		call void b93635.EHTest::f2()
 		leave RET
 	}
 	catch [mscorlib]System.Exception
@@ -89,4 +91,5 @@
 		ret
 	}
 
+}
 }

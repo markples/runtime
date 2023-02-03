@@ -34,6 +34,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace dev10_804810
+{
 .class public auto ansi beforefieldinit TestCase
        extends [mscorlib]System.Object
 {
@@ -88,7 +90,7 @@
   } // end of method TestCase::DimOut
 
   .method public hidebysig newslot virtual 
-          instance void  Test(class TestCase obj,
+          instance void  Test(class dev10_804810.TestCase obj,
                               bool b1,
                               bool b2) cil managed
   {
@@ -100,17 +102,17 @@
     IL_0005:  br.s       IL_002c
     IL_0007:  brfalse.s  IL_0012
     IL_0009:  br.s       IL_002f
-    IL_000b:  callvirt   instance void TestCase::Activate()
+    IL_000b:  callvirt   instance void dev10_804810.TestCase::Activate()
     IL_0010:  br.s       IL_0018
     IL_0012:  ldarg.1
-    IL_0013:  callvirt   instance void TestCase::Deactivate()
+    IL_0013:  callvirt   instance void dev10_804810.TestCase::Deactivate()
     IL_0018:  ldarg.3
     IL_0019:  brfalse.s  IL_0022
     IL_001b:  ldarg.1
-    IL_001c:  callvirt   instance void TestCase::LightUp()
+    IL_001c:  callvirt   instance void dev10_804810.TestCase::LightUp()
     IL_0021:  ret
     IL_0022:  ldarg.1
-    IL_0023:  callvirt   instance void TestCase::DimOut()
+    IL_0023:  callvirt   instance void dev10_804810.TestCase::DimOut()
     IL_0028:  ret
     IL_0029:  ldarg.1
     IL_002a:  br.s       IL_0002
@@ -121,7 +123,7 @@
   } // end of method TestCase::Test
 
   .method public hidebysig newslot virtual 
-          instance void  TestWrap(class TestCase obj,
+          instance void  TestWrap(class dev10_804810.TestCase obj,
                                   bool b1,
                                   bool b2) cil managed
   {
@@ -162,7 +164,7 @@
     IL_0047:  ldarg.1
     IL_0048:  ldarg.2
     IL_0049:  ldarg.3
-    IL_004a:  callvirt   instance void TestCase::Test(class TestCase,
+    IL_004a:  callvirt   instance void dev10_804810.TestCase::Test(class dev10_804810.TestCase,
                                                       bool,
                                                       bool)
     IL_004f:  ldstr      "============================================"
@@ -179,35 +181,35 @@
     .entrypoint
     // Code size       44 (0x2c)
     .maxstack  4
-    .locals init (class TestCase V_0)
-    IL_0000:  newobj     instance void TestCase::.ctor()
+    .locals init (class dev10_804810.TestCase V_0)
+    IL_0000:  newobj     instance void dev10_804810.TestCase::.ctor()
     IL_0005:  stloc.0
     IL_0006:  ldloc.0
     IL_0007:  ldloc.0
     IL_0008:  ldc.i4.0
     IL_0009:  ldc.i4.0
-    IL_000a:  callvirt   instance void TestCase::TestWrap(class TestCase,
+    IL_000a:  callvirt   instance void dev10_804810.TestCase::TestWrap(class dev10_804810.TestCase,
                                                           bool,
                                                           bool)
     IL_000f:  ldloc.0
     IL_0010:  ldloc.0
     IL_0011:  ldc.i4.0
     IL_0012:  ldc.i4.1
-    IL_0013:  callvirt   instance void TestCase::TestWrap(class TestCase,
+    IL_0013:  callvirt   instance void dev10_804810.TestCase::TestWrap(class dev10_804810.TestCase,
                                                           bool,
                                                           bool)
     IL_0018:  ldloc.0
     IL_0019:  ldloc.0
     IL_001a:  ldc.i4.1
     IL_001b:  ldc.i4.0
-    IL_001c:  callvirt   instance void TestCase::TestWrap(class TestCase,
+    IL_001c:  callvirt   instance void dev10_804810.TestCase::TestWrap(class dev10_804810.TestCase,
                                                           bool,
                                                           bool)
     IL_0021:  ldloc.0
     IL_0022:  ldloc.0
     IL_0023:  ldc.i4.1
     IL_0024:  ldc.i4.1
-    IL_0025:  callvirt   instance void TestCase::TestWrap(class TestCase,
+    IL_0025:  callvirt   instance void dev10_804810.TestCase::TestWrap(class dev10_804810.TestCase,
                                                           bool,
                                                           bool)
     IL_002a:  ldc.i4 100
@@ -221,3 +223,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file TestCase.res
+}

@@ -8,6 +8,8 @@
 
 using System;
 
+namespace DevDiv_284785
+{
 public static class C
 {
     public static int Main()
@@ -35,4 +37,5 @@ public static class C
 
         return rv;
     }
+}
 }

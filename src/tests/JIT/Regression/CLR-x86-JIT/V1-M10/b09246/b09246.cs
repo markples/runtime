@@ -2,6 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+namespace b09246
+{
 public class MyClass
 {
     //extern modifier
@@ -22,4 +24,5 @@ public class MyClass
             Console.WriteLine("Test failed.");
         return (exitcode);
     }
+}
 }

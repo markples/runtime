@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b610750_32vs64
+{
 public class RandomTwister64
 {
     const int NN = 312;
@@ -109,3 +111,4 @@ public class Program
     }
 }
 
+}

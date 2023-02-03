@@ -8,6 +8,8 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_19288
+{
 public class GitHub_19288
 {
     static int returnVal = 100;
@@ -56,4 +58,5 @@ public class GitHub_19288
             return returnVal;
         }
     }
+}
 }

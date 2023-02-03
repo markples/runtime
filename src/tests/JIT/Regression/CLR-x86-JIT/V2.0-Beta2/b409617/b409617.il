@@ -12,6 +12,8 @@
 
 .data LONG_DATA = int64(0x0000000100000002)
 
+.namespace b409617
+{
 .class sealed beforefieldinit S extends [mscorlib]System.ValueType
 {
 	.field int32 m_i1;
@@ -21,11 +23,11 @@
 {
 	ldarg 0
 	ldc.i4 101
-	stfld int32 S::m_i1
+	stfld int32 b409617.S::m_i1
 
 	ldarg 0
 	ldc.i4 102
-	stfld int32 S::m_i2
+	stfld int32 b409617.S::m_i2
 
 	ret
 }
@@ -34,17 +36,17 @@
 {
 	ldarg 0
 	dup
-	ldfld int32 S::m_i1
+	ldfld int32 b409617.S::m_i1
 	ldc.i4 1
 	add
-	stfld int32 S::m_i1
+	stfld int32 b409617.S::m_i1
 
 	ldarg 0
 	dup
-	ldfld int32 S::m_i2
+	ldfld int32 b409617.S::m_i2
 	ldc.i4 1
 	add
-	stfld int32 S::m_i2
+	stfld int32 b409617.S::m_i2
 
 	ret
 }
@@ -60,7 +62,7 @@
 .method public static specialname rtspecialname void .cctor()
 {
 	ldc.i4 1
-	stsfld int32 asm1::s_i
+	stsfld int32 b409617.asm1::s_i
 	ret
 }
 
@@ -77,23 +79,23 @@
 	    01 00 00 00
 	)
 	.entrypoint
-	.locals init(class asm1 obj, int32 i, valuetype S s)
+	.locals init(class b409617.asm1 obj, int32 i, valuetype b409617.S s)
 	.maxstack  8
 
 	ldloca s
-	call instance void S::.ctor()
+	call instance void b409617.S::.ctor()
 
 	ldloc s
-	ldsfld int32 asm1::s_i
+	ldsfld int32 b409617.asm1::s_i
 	brfalse L1
 L0:
 	stloc s
 	ldstr "L0"
 	call void [System.Console]System.Console::WriteLine(string)
 	ldloca s
-	call instance void S::Incr()
+	call instance void b409617.S::Incr()
 	ldloc s
-	ldsfld int32 asm1::s_i
+	ldsfld int32 b409617.asm1::s_i
 	brtrue L2
 	
 L1:
@@ -101,11 +103,11 @@ L1:
 	ldstr "L1"
 	call void [System.Console]System.Console::WriteLine(string)
 	ldloca s
-	call instance void S::Incr()
+	call instance void b409617.S::Incr()
 	ldloc s
 
 L2:
-	ldfld int32 S::m_i2
+	ldfld int32 b409617.S::m_i2
 	call void [System.Console]System.Console::WriteLine(int32)
 
         ldc.i4 100
@@ -113,4 +115,5 @@ L2:
 }
 
 
+}
 }

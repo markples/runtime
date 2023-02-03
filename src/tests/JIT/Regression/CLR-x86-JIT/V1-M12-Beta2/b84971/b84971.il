@@ -9,6 +9,8 @@
 }
 .assembly 'b84971' {}
 .assembly extern xunit.core {}
+.namespace b84971
+{
 .class public EHTest
 {
 .method public static void f1() cil managed
@@ -65,7 +67,7 @@ leave OUT
 .entrypoint
 .try
 {
-call void EHTest::f1()
+call void b84971.EHTest::f1()
 leave RET
 }
 catch [mscorlib]System.Exception
@@ -78,4 +80,5 @@ call void [System.Console]System.Console::WriteLine(string)
 ret
 }
 
+}
 }

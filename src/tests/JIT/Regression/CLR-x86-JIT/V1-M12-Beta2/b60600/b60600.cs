@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b60600
+{
 public unsafe class bug1
 {
     public struct VT1
@@ -22,4 +24,5 @@ public unsafe class bug1
         double val = f(a0);
         return (int)val;
     }
+}
 }

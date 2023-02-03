@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_150265
+{
 public class Program
 {
     static bool flag;
@@ -77,4 +79,5 @@ public class Program
     {
         return flag ? (string) null : "test";
     }
+}
 }

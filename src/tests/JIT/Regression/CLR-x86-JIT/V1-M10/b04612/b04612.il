@@ -11,6 +11,8 @@
 {
 }
 
+.namespace b04612
+{
 .class public _simple
 {
 	.method public static int32 main() {
@@ -63,5 +65,6 @@ Failed:
 	call        void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 	ldc.i4 1
 	ret
+}
 }
 }

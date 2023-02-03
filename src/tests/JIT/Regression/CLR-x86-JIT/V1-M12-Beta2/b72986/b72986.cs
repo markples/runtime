@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+namespace b72986
+{
 public unsafe class testout1
 {
     public struct VT_0_2
@@ -38,4 +40,5 @@ public unsafe class testout1
         Func_0_2(cl_0_2, a3_0_2);
         return 100;
     }
+}
 }

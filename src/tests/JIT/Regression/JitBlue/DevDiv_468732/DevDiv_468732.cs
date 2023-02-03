@@ -5,6 +5,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_468732
+{
 public struct S
 {
     int i;
@@ -26,4 +28,5 @@ public struct S
         S s;
         return Test(&s)->i;
     }
+}
 }

@@ -14,6 +14,8 @@
 .assembly DevDiv_278371 {}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_278371
+{
 .class public sequential ansi sealed beforefieldinit S
        extends [mscorlib]System.ValueType
 {
@@ -23,7 +25,7 @@
 .class public auto ansi beforefieldinit Program
        extends [mscorlib]System.Object
 {
-  .method public hidebysig static void  Init(valuetype S& s,
+  .method public hidebysig static void  Init(valuetype DevDiv_278371.S& s,
                                              int32 size) cil managed noinlining
   {
           nop
@@ -41,16 +43,16 @@
         01 00 00 00
     )
     .entrypoint
-    .locals init (valuetype S V_0,
+    .locals init (valuetype DevDiv_278371.S V_0,
              bool V_1,
              int32 V_2)
               ldloca.s   V_0
-              initobj    S
+              initobj    DevDiv_278371.S
               ldloca.s   V_0
               ldc.i4     4
-              call       void Program::Init(valuetype S&, int32)
+              call       void DevDiv_278371.Program::Init(valuetype DevDiv_278371.S&, int32)
               ldloc.0
-              ldfld      uint32 S::val
+              ldfld      uint32 DevDiv_278371.S::val
               ldc.i4     0xaaaaaaaa
               ceq
               ldc.i4.0
@@ -89,3 +91,4 @@
 
 } // end of class Program
 
+}

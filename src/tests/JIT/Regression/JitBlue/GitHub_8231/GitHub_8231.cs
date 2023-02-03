@@ -5,7 +5,7 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace N
+namespace GitHub_8231
 {
     public static class C
     {

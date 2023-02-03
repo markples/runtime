@@ -10,6 +10,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 
+namespace Runtime_35144
+{
 #pragma warning disable 0169 // warning CS0169: The field '{0}' is never used
 struct WrappedVector64  { Vector64<byte> _; }
 struct WrappedVector128 { Vector128<byte> _; }
@@ -62,4 +64,5 @@ public static class Runtime_35144
         }
         return returnVal;
     }
+}
 }

@@ -10,6 +10,8 @@
 .assembly b14264
 {
 }
+.namespace b14264
+{
 .class public ILGEN_622380794 {
 
 .field static	float64 field_0x3
@@ -21,9 +23,9 @@
  .locals (float64 local_0x3)
  ldc.r8 0
  stloc.0
- ldsfld float64 ILGEN_622380794::field_0x3
- ldsfld float64 ILGEN_622380794::field_0x3
- ldsfld float64 ILGEN_622380794::field_0x3
+ ldsfld float64 b14264.ILGEN_622380794::field_0x3
+ ldsfld float64 b14264.ILGEN_622380794::field_0x3
+ ldsfld float64 b14264.ILGEN_622380794::field_0x3
  ldloc local_0x3
  sub
  sub
@@ -36,5 +38,6 @@
 ldc.i4 100
 add
 ret
+}
 }
 }

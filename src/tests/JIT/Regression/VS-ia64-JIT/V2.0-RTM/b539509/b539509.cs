@@ -6,6 +6,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b539509
+{
 #pragma warning disable 1717, 0252, 1718, 0162, 0219
 
 public enum TestEnum
@@ -697,4 +699,5 @@ public class App
     public static String[][] m_axFwd22;
     public static char[,] m_achFwd23;
     public static AA<sbyte, byte, uint, uint, long, bool> m_axFwd24;
+}
 }

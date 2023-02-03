@@ -9,6 +9,8 @@
 }
 .assembly 'b138117' {}
 .assembly extern xunit.core {}
+.namespace b138117
+{
 .class public sequential ansi sealed beforefieldinit VT
        extends [mscorlib]System.ValueType
 {
@@ -18,16 +20,16 @@
 .class public auto ansi beforefieldinit ldsfldainitonlyvt
        extends [mscorlib]System.Object
 {
-  .field private static initonly valuetype VT vt1
-  .method public hidebysig static void  f(valuetype VT& arg) cil managed
+  .field private static initonly valuetype b138117.VT vt1
+  .method public hidebysig static void  f(valuetype b138117.VT& arg) cil managed
   {
     // Code size       12 (0xc)
     .maxstack  8
     IL_0000:  ldarg.0
     IL_0001:  //ldsfld     valuetype VT ldsfldainitonlyvt::vt1
     IL_0006:  //stobj      VT
-		ldsflda     valuetype VT ldsfldainitonlyvt::vt1
-		cpobj valuetype VT
+		ldsflda     valuetype b138117.VT b138117.ldsfldainitonlyvt::vt1
+		cpobj valuetype b138117.VT
     IL_000b:  ret
   } // end of method ldsfldainitonlyvt::f
 
@@ -39,17 +41,17 @@
     .entrypoint
     // Code size       39 (0x27)
     .maxstack  2
-    .locals init (valuetype VT V_0,
+    .locals init (valuetype b138117.VT V_0,
              int32 V_1)
-    IL_0000:  ldsflda    valuetype VT ldsfldainitonlyvt::vt1
+    IL_0000:  ldsflda    valuetype b138117.VT b138117.ldsfldainitonlyvt::vt1
     IL_0005:  ldc.i4.s   100
-    IL_0007:  stfld      int32 VT::m
+    IL_0007:  stfld      int32 b138117.VT::m
     IL_000c:  ldloca.s   V_0
-    IL_000e:  initobj    VT
+    IL_000e:  initobj    b138117.VT
     IL_0014:  ldloca.s   V_0
-    IL_0016:  call       void ldsfldainitonlyvt::f(valuetype VT&)
+    IL_0016:  call       void b138117.ldsfldainitonlyvt::f(valuetype b138117.VT&)
     IL_001b:  ldloca.s   V_0
-    IL_001d:  ldfld      int32 VT::m
+    IL_001d:  ldfld      int32 b138117.VT::m
     IL_0022:  stloc.1
     IL_0023:  br.s       IL_0025
 
@@ -78,4 +80,5 @@ FAIL:
     IL_0006:  ret
   } // end of method ldsfldainitonlyvt::.ctor
 
+}
 }

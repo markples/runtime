@@ -16,6 +16,8 @@
 }
 .assembly extern xunit.core {}
 
+.namespace b091942
+{
 .class public explicit ansi beforefieldinit BigClass
 {
   .field [0] public int32 firstField
@@ -42,10 +44,10 @@
        extends [mscorlib]System.Object
 {
 // Global field to store the big class
-.field static class BigClass s_bigClass
+.field static class b091942.BigClass s_bigClass
 
 // Global field to store the big struct
-.field static valuetype BigStruct s_bigStruct
+.field static valuetype b091942.BigStruct s_bigStruct
 
   .method public hidebysig static int32 Main() cil managed
   {
@@ -59,15 +61,15 @@
 	stloc.1
 
 	ldloc.1
-	call       bool TestClass::Test1(string [] args)
+	call       bool b091942.TestClass::Test1(string [] args)
 	brfalse.s  FAILED
 
 	ldloc.1
-	call       bool TestClass::Test2(string [] args)
+	call       bool b091942.TestClass::Test2(string [] args)
 	brfalse.s  FAILED
 
 	ldloc.1
-	call       bool TestClass::Test3(string [] args)
+	call       bool b091942.TestClass::Test3(string [] args)
 	brfalse.s  FAILED
 
 PASSED:
@@ -99,14 +101,14 @@ RET:
 	beq.s      FALSE
 
 STNULL:	ldnull
-	stsfld     class BigClass TestClass::s_bigClass
+	stsfld     class b091942.BigClass b091942.TestClass::s_bigClass
 	br.s       NEXT
 
-FALSE:	newobj     instance void BigClass::.ctor()
-	stsfld     class BigClass TestClass::s_bigClass
+FALSE:	newobj     instance void b091942.BigClass::.ctor()
+	stsfld     class b091942.BigClass b091942.TestClass::s_bigClass
 
-NEXT:	ldsfld     class BigClass TestClass::s_bigClass
-	ldfld      int32 BigClass::lastField
+NEXT:	ldsfld     class b091942.BigClass b091942.TestClass::s_bigClass
+	ldfld      int32 b091942.BigClass::lastField
 	stloc.0
 
     IL_0000:  ret
@@ -120,7 +122,7 @@ NEXT:	ldsfld     class BigClass TestClass::s_bigClass
 	.try
 	{
 		ldarg.0
-		call       void TestClass::RunTest1(string [] args)
+		call       void b091942.TestClass::RunTest1(string [] args)
 		leave.s    FAILED
 	} catch [mscorlib] System.NullReferenceException
 	{
@@ -145,7 +147,7 @@ RET:
 
   .method public hidebysig static void RunTest2(string [] args) cil managed
   {
-	.locals init (valuetype BigStruct &pBigStruct, int32 val)
+	.locals init (valuetype b091942.BigStruct &pBigStruct, int32 val)
 // adding some conditional code so the JIT can't optimize it
 
 	ldarg.0
@@ -156,11 +158,11 @@ RET:
 
 	br.s       NEXT
 
-FALSE:	ldsflda    valuetype BigStruct TestClass::s_bigStruct
+FALSE:	ldsflda    valuetype b091942.BigStruct b091942.TestClass::s_bigStruct
 	stloc.0
 
 NEXT:	ldloc.0
-	ldfld      int32 BigStruct::someField
+	ldfld      int32 b091942.BigStruct::someField
 
 	stloc.1
 
@@ -180,7 +182,7 @@ NEXT:	ldloc.0
 	.try
 	{
 		ldarg.0
-		call       void TestClass::RunTest2(string [] args)
+		call       void b091942.TestClass::RunTest2(string [] args)
 		leave.s    FAILED
 	} catch [mscorlib] System.NullReferenceException
 	{
@@ -205,7 +207,7 @@ RET:
 
   .method public hidebysig static void RunTest3(string [] args) cil managed
   {
-	.locals init (valuetype BigStruct &pBigStruct, int32 prevVal, int32 newVal)
+	.locals init (valuetype b091942.BigStruct &pBigStruct, int32 prevVal, int32 newVal)
 // adding some conditional code so the JIT can't optimize it
 
 	ldarg.0
@@ -216,20 +218,20 @@ RET:
 
 	br.s       NEXT
 
-FALSE:	ldsflda    valuetype BigStruct TestClass::s_bigStruct
+FALSE:	ldsflda    valuetype b091942.BigStruct b091942.TestClass::s_bigStruct
 	stloc.0
 
 NEXT:	ldloc.0
-	ldfld      int32 BigStruct::lastField
+	ldfld      int32 b091942.BigStruct::lastField
 	stloc.1
 
 // store the new value to the memory location
 	ldloc.0
 	ldc.i4.s   11
-	stfld      int32 BigStruct::lastField
+	stfld      int32 b091942.BigStruct::lastField
 
 	ldloc.0
-	ldfld      int32 BigStruct::lastField
+	ldfld      int32 b091942.BigStruct::lastField
 	stloc.1
 
 	ldstr      "Previous value: {0} - new value: {1}"
@@ -250,7 +252,7 @@ NEXT:	ldloc.0
 	.try
 	{
 		ldarg.0
-		call       void TestClass::RunTest3(string [] args)
+		call       void b091942.TestClass::RunTest3(string [] args)
 		leave.s    FAILED
 	} catch [mscorlib] System.NullReferenceException
 	{
@@ -272,4 +274,5 @@ RET:
 	ldloc.0
 	ret
   }
+}
 }

@@ -13,7 +13,7 @@
   
 }
 .assembly extern xunit.core {}
-.namespace Test
+.namespace b26324a
 {
   .class public auto ansi FormatSpecException extends [mscorlib]System.Exception
   {
@@ -43,9 +43,9 @@
       IL_0008:  ldc.r8     0.
       IL_0011:  dup
       IL_0012:  stloc.0
-      IL_0013:  stfld      float64 Test.Complex::m_dImg
+      IL_0013:  stfld      float64 b26324a.Complex::m_dImg
       IL_0018:  ldloc.0
-      IL_0019:  stfld      float64 Test.Complex::m_dReal
+      IL_0019:  stfld      float64 b26324a.Complex::m_dReal
       IL_001e:  ret
     } 
 
@@ -57,10 +57,10 @@
       IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
       IL_0006:  ldarg.0
       IL_0007:  ldarg.1
-      IL_0008:  stfld      float64 Test.Complex::m_dReal
+      IL_0008:  stfld      float64 b26324a.Complex::m_dReal
       IL_000d:  ldarg.0
       IL_000e:  ldarg.2
-      IL_000f:  stfld      float64 Test.Complex::m_dImg
+      IL_000f:  stfld      float64 b26324a.Complex::m_dImg
       IL_0014:  ret
     } 
 
@@ -78,7 +78,7 @@
       IL_000f:  ldloc.0
       IL_0010:  ldc.i4.1
       IL_0011:  ldarg.0
-      IL_0012:  ldflda     float64 Test.Complex::m_dReal
+      IL_0012:  ldflda     float64 b26324a.Complex::m_dReal
       IL_0017:  call       instance class [mscorlib]System.String [mscorlib]System.Double::ToString()
       IL_001c:  stelem.ref
       IL_001d:  ldloc.0
@@ -88,7 +88,7 @@
       IL_0025:  ldloc.0
       IL_0026:  ldc.i4.3
       IL_0027:  ldarg.0
-      IL_0028:  ldflda     float64 Test.Complex::m_dImg
+      IL_0028:  ldflda     float64 b26324a.Complex::m_dImg
       IL_002d:  call       instance class [mscorlib]System.String [mscorlib]System.Double::ToString()
       IL_0032:  stelem.ref
       IL_0033:  ldloc.0
@@ -131,14 +131,14 @@
       )
       .entrypoint
       .maxstack  12
-      .locals ([0] class Test.GCClass inst)
+      .locals ([0] class b26324a.GCClass inst)
                
-      	newobj     instance void Test.GCClass::.ctor()
+      	newobj     instance void b26324a.GCClass::.ctor()
       	dup
       	stloc.0
 		ldstr "In vararg function."
 		ldloc.0
-		ldvirtftn instance vararg void Test.GCClass::VirtVargFunc(class [mscorlib]System.String)
+		ldvirtftn instance vararg void b26324a.GCClass::VirtVargFunc(class [mscorlib]System.String)
 		calli    instance vararg void(class [mscorlib]System.String, ...)
 		
 		ldstr      "**** TEST PASSED ****"
@@ -151,9 +151,9 @@
     {
       .maxstack  8
       IL_0000:  ldstr      "%d %u %ld %lu %s %x %o %o %b"
-      IL_0005:  stsfld     class [mscorlib]System.String Test.App::formatSpec
+      IL_0005:  stsfld     class [mscorlib]System.String b26324a.App::formatSpec
       IL_000a:  ldstr      "-11 324 -11 324 string C(1.5, 2) -11 -11 true"
-      IL_000f:  stsfld     class [mscorlib]System.String Test.App::expResult
+      IL_000f:  stsfld     class [mscorlib]System.String b26324a.App::expResult
       IL_0014:  ret
     } 
 

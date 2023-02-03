@@ -10,6 +10,8 @@
 .assembly b14326
 {
 }
+.namespace b14326
+{
 .class public ILGEN_622380794 {
 
 //BEGIN STATIC FIELDS
@@ -37,17 +39,17 @@
  ldc.r8 0  stloc 7
  
  ldc.i4.1
- ldsflda int64 ILGEN_622380794::field_0x5
+ ldsflda int64 b14326.ILGEN_622380794::field_0x5
  ldind.i8
  conv.r4
  ldc.i4.1
  conv.r4
  clt.un
  conv.u2
- ldsfld int64 ILGEN_622380794::field_0x1
+ ldsfld int64 b14326.ILGEN_622380794::field_0x1
  conv.u2
  not
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14326.ILGEN_622380794::field_0x5
  neg
  conv.u2
  ldc.i4.6
@@ -71,12 +73,12 @@
  sub
  neg
  ceq
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14326.ILGEN_622380794::field_0x5
  conv.r4
  conv.u
  ldc.r4 float32(0x79756370)
  conv.u
- ldsfld int32 ILGEN_622380794::field_0x0
+ ldsfld int32 b14326.ILGEN_622380794::field_0x0
  conv.u
  clt.un
  ldloc local_0x6
@@ -86,16 +88,16 @@
  cgt.un
  cgt
  conv.i
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14326.ILGEN_622380794::field_0x5
  ldc.i4.6
  shr
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14326.ILGEN_622380794::field_0x5
  ldc.i4.0
  shr
  xor
  ldloc local_0x2
  ldloc local_0x6
- ldsfld float32 ILGEN_622380794::field_0x6
+ ldsfld float32 b14326.ILGEN_622380794::field_0x6
  sub
  cgt.un
  shr.un
@@ -120,5 +122,6 @@
 ldc.i4 100
 add
  ret
+}
 }
 }

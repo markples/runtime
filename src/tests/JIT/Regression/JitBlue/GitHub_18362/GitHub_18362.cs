@@ -6,6 +6,8 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 
 // This is a struct that will be passed as a split struct
+namespace GitHub_18362
+{
 struct S
 {
     public double d1;
@@ -108,4 +110,5 @@ public static class GitHub_18362
         }
         return 100;
     }
+}
 }

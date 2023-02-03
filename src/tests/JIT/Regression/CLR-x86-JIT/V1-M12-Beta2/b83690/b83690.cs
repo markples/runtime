@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b83690
+{
 public struct CC
 {
     static sbyte m_su;
@@ -34,4 +36,5 @@ public struct CC
                 for (; (new bool[1])[0]; m_su++) { }
         }
     }
+}
 }

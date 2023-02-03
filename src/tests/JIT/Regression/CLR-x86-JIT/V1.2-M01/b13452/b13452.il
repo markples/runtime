@@ -5,6 +5,8 @@
 .assembly b13452{}
 .assembly extern xunit.core {}
 
+.namespace b13452
+{
 .class public auto ansi beforefieldinit test extends [mscorlib]System.Object
 {
   .method public static void f() cil managed
@@ -21,7 +23,7 @@
 	.entrypoint
 	.try
 	{
-	call void test::f()
+	call void b13452.test::f()
 	leave FAIL
 	}
 	catch [mscorlib]System.MissingFieldException
@@ -39,4 +41,5 @@
 	ret
   }
 
+}
 }

@@ -29,6 +29,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b11131
+{
 .class public auto ansi beforefieldinit foo
        extends [mscorlib]System.Object
 {
@@ -102,3 +104,4 @@
 
 //*********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file switch.res
+}

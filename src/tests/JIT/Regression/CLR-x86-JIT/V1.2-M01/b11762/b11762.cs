@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b11762
+{
 public class test1
 {
 
@@ -32,4 +34,5 @@ public class test1
         Console.WriteLine("\nx=" + x);
         return x;
     }
+}
 }

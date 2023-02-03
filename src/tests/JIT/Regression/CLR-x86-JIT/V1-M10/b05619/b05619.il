@@ -10,6 +10,8 @@
 .assembly b05619
 {
 }
+.namespace b05619
+{
 .class public _simple {
 
 .method public static int32 main() {
@@ -58,5 +60,6 @@ sub
 pop
 ldc.i4 100
 ret
+}
 }
 }

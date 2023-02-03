@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b91855
+{
 public struct AA
 {
     public static int Main()
@@ -34,3 +36,4 @@ public struct AA
 }
 struct BB { }
 class CC { }
+}

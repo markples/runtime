@@ -15,6 +15,8 @@
 // be an add of a constant and a lclVar address. In order to repro the bug on a 64-bit target, the input IL must
 // directly produce a long constant.
 
+.namespace DevDiv_278523_Target_32Bit
+{
 .class private sequential ansi sealed beforefieldinit S extends [mscorlib]System.ValueType
 {
     .field public uint8 m_fld
@@ -29,30 +31,30 @@
 .class private sequential ansi sealed beforefieldinit T extends [mscorlib]System.ValueType
 {
     .field public int32 m_int
-    .field public valuetype S m_fld
+    .field public valuetype DevDiv_278523_Target_32Bit.S m_fld
 }
 
 .class public abstract auto ansi sealed beforefieldinit C extends [mscorlib]System.Object
 {
     .method private static int32 Test32Bit(int32 i) noinlining
     {
-        .locals init (valuetype S V_0, valuetype T V_1)
+        .locals init (valuetype DevDiv_278523_Target_32Bit.S V_0, valuetype DevDiv_278523_Target_32Bit.T V_1)
 
         ldloca.s V_0
         ldarg.0
         conv.u1
-        stfld uint8 S::m_fld6
+        stfld uint8 DevDiv_278523_Target_32Bit.S::m_fld6
 
         // This sequence of IL repros the issue.
         ldloca.s V_1
         ldc.i4.4
         add
         ldloc.0
-        stobj S
+        stobj DevDiv_278523_Target_32Bit.S
 
         ldloca.s V_1
-        ldfld valuetype S T::m_fld
-        ldfld uint8 S::m_fld6
+        ldfld valuetype DevDiv_278523_Target_32Bit.S DevDiv_278523_Target_32Bit.T::m_fld
+        ldfld uint8 DevDiv_278523_Target_32Bit.S::m_fld6
         conv.i4
         ret
     }
@@ -72,7 +74,7 @@
 
         ldc.i4 100
         dup
-        call int32 C::Test32Bit(int32)
+        call int32 DevDiv_278523_Target_32Bit.C::Test32Bit(int32)
         bne.un.s fail
         br.s success
 
@@ -88,4 +90,5 @@ fail:
         ldc.i4 101
         ret
     }
+}
 }

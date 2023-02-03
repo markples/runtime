@@ -10,6 +10,8 @@
 .assembly 'DevDiv_255263'{}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_255263
+{
 .class public sealed Foo
     extends [mscorlib]System.ValueType
 {
@@ -23,7 +25,7 @@
 
 
 //    .data d = int32(0x00000000)
-	.field static valuetype Foo f
+	.field static valuetype DevDiv_255263.Foo f
         .field static float64 d
 
 //-------------------------
@@ -53,7 +55,7 @@
         stloc.2
 
 	// -- init 25 bytes of memory to 0xAA
-	ldsflda		valuetype Foo DevDiv_255263::f
+	ldsflda		valuetype DevDiv_255263.Foo DevDiv_255263.DevDiv_255263::f
 	ldc.i4		0xAA
 	ldc.i4		25
 	unaligned. 0x1
@@ -63,29 +65,29 @@
         ldloc.1
         ldloc.2
         add
-        stsfld          float64 DevDiv_255263::d
+        stsfld          float64 DevDiv_255263.DevDiv_255263::d
         ldc.i4.s        100
         stloc.3
 
 	// -- load the 25 bytes of memory _and be sure they are all 0xAA
-	ldsflda		valuetype Foo DevDiv_255263::f
-        ldfld           int64 Foo::i1
+	ldsflda		valuetype DevDiv_255263.Foo DevDiv_255263.DevDiv_255263::f
+        ldfld           int64 DevDiv_255263.Foo::i1
 	ldc.i8		0xAAAAAAAAAAAAAAAA
 	ceq
 	brfalse		FAIL
 
-	ldsflda		valuetype Foo DevDiv_255263::f
-        ldfld           int64 Foo::i2
+	ldsflda		valuetype DevDiv_255263.Foo DevDiv_255263.DevDiv_255263::f
+        ldfld           int64 DevDiv_255263.Foo::i2
 	ldc.i8		0xAAAAAAAAAAAAAAAA
 	ceq
 	brfalse		FAIL
-	ldsflda		valuetype Foo DevDiv_255263::f
-        ldfld           int64 Foo::i3
+	ldsflda		valuetype DevDiv_255263.Foo DevDiv_255263.DevDiv_255263::f
+        ldfld           int64 DevDiv_255263.Foo::i3
 	ldc.i8		0xAAAAAAAAAAAAAAAA
 	ceq
 	brfalse		FAIL
-	ldsflda		valuetype Foo DevDiv_255263::f
-        ldfld           uint8 Foo::b
+	ldsflda		valuetype DevDiv_255263.Foo DevDiv_255263.DevDiv_255263::f
+        ldfld           uint8 DevDiv_255263.Foo::b
 	ldc.i4		0x000000AA
 	ceq
 	brfalse		FAIL
@@ -98,5 +100,6 @@ PASS:
 FAIL:
 	ldc.i4	0xFFFFFFFF
 	ret
+}
 }
 }

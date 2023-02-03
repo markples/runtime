@@ -10,6 +10,8 @@
 // 
 //     File: D:\a\_work\1\s\src\coreclr\jit\valuenum.cpp Line: 1306
 // 
+namespace Runtime_72767
+{
 public struct S0
 {
     public short F0;
@@ -85,4 +87,5 @@ public class Runtime_72767
     {
         return arg0;
     }
+}
 }

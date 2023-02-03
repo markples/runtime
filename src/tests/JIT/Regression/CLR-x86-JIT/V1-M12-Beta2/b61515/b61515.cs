@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b61515
+{
 public class testout1
 {
     public static int Main()
@@ -44,4 +46,5 @@ public class testout1
                                             Par += A * 2 - B * 3;
         return Par;
     }
+}
 }

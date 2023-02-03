@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 // Repro case for a bug where copies from one struct-typed field of a local
 // to another were being illegally elided.
 
-namespace N
+namespace GitHub_10481
 {
     // Original Repro
     public struct BytesReader2

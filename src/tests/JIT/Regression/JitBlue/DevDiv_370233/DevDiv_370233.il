@@ -1,6 +1,8 @@
 .assembly extern mscorlib{}
 .assembly DevDiv_370233{}
 .assembly extern xunit.core {}
+.namespace DevDiv_370233
+{
 .class public C extends [mscorlib]System.Object
 {
    .method static unsigned int32 M(bool, bool)
@@ -122,7 +124,7 @@
        {
            ldc.i4     0
            ldc.i4.s   0
-           call unsigned int32 C::M(bool, bool)
+           call unsigned int32 DevDiv_370233.C::M(bool, bool)
            pop
            leave.s done
        }
@@ -138,3 +140,4 @@
    }
 }
 // Dumped 1
+}

@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
-namespace DefaultNamespace
+namespace b34945
 {
 
     using System;

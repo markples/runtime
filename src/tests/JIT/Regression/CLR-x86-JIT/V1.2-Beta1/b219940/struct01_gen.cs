@@ -5,6 +5,8 @@
 using System;
 
 
+namespace b219940
+{
 public struct ValX1<T>
 {
     public T t;
@@ -165,3 +167,4 @@ public class Test_struct01_gen
 
 }
 
+}

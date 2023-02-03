@@ -8,6 +8,8 @@
 // Debug: Outputs 1
 // Release: Outputs 0
 
+namespace Runtime_68049_0
+{
 public struct S0
 {
     public uint F0;
@@ -67,4 +69,5 @@ public class Runtime : IRuntime
             Runtime_68049_0.s_result = ((long)(object)value) + 99;
         }
     }
+}
 }

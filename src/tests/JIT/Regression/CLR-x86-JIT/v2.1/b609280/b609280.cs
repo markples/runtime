@@ -10,6 +10,8 @@ The fix is: Disable array get/set optimizations for multidimmensional arrays of 
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b609280
+{
 struct BigStruct
 {
     public int x1;
@@ -106,4 +108,5 @@ public class My
 
 
     }
+}
 }

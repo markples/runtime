@@ -10,6 +10,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace GitHub_12761
+{
 .class public auto ansi beforefieldinit Test
        extends [mscorlib]System.Object
 {
@@ -33,7 +35,7 @@
     .maxstack  8
               ldc.i4.0
               ldc.i4.s   10
-              call       int32 Test::Sum1(int32,
+              call       int32 GitHub_12761.Test::Sum1(int32,
                                           int32)
               ldc.i4.s   55
               beq      TEST2
@@ -43,7 +45,7 @@
 
     TEST2:    ldc.i4.0
               ldc.i4.s   10
-              call       int32 Test::Sum2(int32,
+              call       int32 GitHub_12761.Test::Sum2(int32,
                                           int32)
               ldc.i4.s   55
               beq.s      SUCCESS
@@ -74,7 +76,7 @@
               ret
 
     L2:       ldloc.0
-              call       int32 Test::AddTwo(int32)
+              call       int32 GitHub_12761.Test::AddTwo(int32)
               stloc.0
               ldarg.0
               ldarg.1
@@ -82,7 +84,7 @@
               ldarg.1
               ldc.i4.1
               sub
-              call       int32 Test::Sum1(int32,
+              call       int32 GitHub_12761.Test::Sum1(int32,
                                           int32)
               ret
   } // end of method Test::Sum1
@@ -91,10 +93,10 @@
                                               int32 n) cil managed
   {
     .maxstack  3
-    .locals init (valuetype Test/IntWrapper V_0)
+    .locals init (valuetype GitHub_12761.Test/IntWrapper V_0)
 
               ldloc.0
-              call       bool Test::CheckZero(valuetype Test/IntWrapper)
+              call       bool GitHub_12761.Test::CheckZero(valuetype GitHub_12761.Test/IntWrapper)
               brtrue.s   L1
 
               ldc.i4     0x7d0
@@ -107,7 +109,7 @@
               ret
 
     L2:  ldloc.0
-              call       valuetype Test/IntWrapper Test::AddTwo(valuetype Test/IntWrapper)
+              call       valuetype GitHub_12761.Test/IntWrapper GitHub_12761.Test::AddTwo(valuetype GitHub_12761.Test/IntWrapper)
               stloc.0
               ldarg.0
               ldarg.1
@@ -115,7 +117,7 @@
               ldarg.1
               ldc.i4.1
               sub
-              call       int32 Test::Sum2(int32,
+              call       int32 GitHub_12761.Test::Sum2(int32,
                                           int32)
               ret
   } // end of method Test::Sum2
@@ -129,12 +131,12 @@
               ret
   } // end of method Test::AddTwo
 
-  .method public hidebysig static valuetype Test/IntWrapper 
-          AddTwo(valuetype Test/IntWrapper wrapper) cil managed noinlining
+  .method public hidebysig static valuetype GitHub_12761.Test/IntWrapper 
+          AddTwo(valuetype GitHub_12761.Test/IntWrapper wrapper) cil managed noinlining
   {
     .maxstack  8
               ldarga.s   wrapper
-              ldflda     int32 Test/IntWrapper::i
+              ldflda     int32 GitHub_12761.Test/IntWrapper::i
               dup
               ldind.i4
               ldc.i4.2
@@ -144,11 +146,11 @@
               ret
   } // end of method Test::AddTwo
 
-  .method public hidebysig static bool  CheckZero(valuetype Test/IntWrapper wrapper) cil managed noinlining
+  .method public hidebysig static bool  CheckZero(valuetype GitHub_12761.Test/IntWrapper wrapper) cil managed noinlining
   {
     .maxstack  8
               ldarg.0
-              ldfld      int32 Test/IntWrapper::i
+              ldfld      int32 GitHub_12761.Test/IntWrapper::i
               ldc.i4.0
               ceq
               ret
@@ -166,3 +168,4 @@
 } // end of class Test
 
 // =============================================================
+}

@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_12949_3
+{
 public class X<K> 
 {
     public X(K k1)
@@ -37,4 +39,5 @@ public class B
         Console.WriteLine("Passed: {0}", result);
         return result ? 100 : 0;
     }
+}
 }

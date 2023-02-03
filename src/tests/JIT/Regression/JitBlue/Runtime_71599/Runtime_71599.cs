@@ -13,6 +13,8 @@
 
 using System;
 
+namespace Runtime_71599
+{
 public class C0
 {
     public ushort F0;
@@ -111,4 +113,5 @@ public interface IRuntime
 public class Runtime : IRuntime
 {
     public void WriteLine<T>(T value) => System.Console.WriteLine(value);
+}
 }

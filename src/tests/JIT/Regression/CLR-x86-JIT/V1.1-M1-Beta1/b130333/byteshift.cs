@@ -3,7 +3,7 @@
 //
 
 using System;
-namespace Test
+namespace b130333
 {
     public class ShiftTest
     {

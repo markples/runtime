@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b10828
+{
 public class otherClass
 {
 
@@ -54,4 +56,5 @@ public class MyApp
         }
         return 1;
     }
+}
 }

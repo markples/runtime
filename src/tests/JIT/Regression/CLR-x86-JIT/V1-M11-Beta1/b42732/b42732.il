@@ -11,6 +11,8 @@
 {
   
 }
+.namespace b42732
+{
 .class public M
 {
   .method public instance void .ctor()
@@ -30,11 +32,11 @@
     call void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
     ret
   }
-  .method public static void test2(class M)
+  .method public static void test2(class b42732.M)
   {
     .maxstack 3
     ldarg.0
-    callvirt instance void M::Simple()
+    callvirt instance void b42732.M::Simple()
     ret
   }
   .method instance void Simple()
@@ -51,8 +53,8 @@
     .maxstack  10
 //    ldstr "My string"
 //    call void M::test(class [mscorlib]System.Object)
-    newobj instance void M::.ctor()
-    call void M::test2(class M)
+    newobj instance void b42732.M::.ctor()
+    call void b42732.M::test2(class b42732.M)
     ldc.i4 100
     ret
   }
@@ -62,3 +64,4 @@
 
 
 
+}

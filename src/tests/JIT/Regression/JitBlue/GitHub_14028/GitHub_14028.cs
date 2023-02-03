@@ -6,6 +6,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Numerics;
 
+namespace GitHub_14028
+{
 public class GitHub_10215
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -27,4 +29,5 @@ public class GitHub_10215
         }
         return returnVal;
     }
+}
 }

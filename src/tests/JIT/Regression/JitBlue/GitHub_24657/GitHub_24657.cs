@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_24657
+{
 public class GitHub_24657
 {
     struct Wrapper<T>
@@ -51,3 +53,4 @@ public class GitHub_24657
     }
 }
 
+}

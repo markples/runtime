@@ -13,6 +13,8 @@
 .assembly extern xunit.core {}
 
 
+.namespace b147147
+{
 .class public sequential ansi sealed beforefieldinit MyStruct
        extends [mscorlib]System.ValueType
 {
@@ -24,7 +26,7 @@
     .field public char FixedElementField
   } // end of class buffer__FixedBufferImpl
 
-  .field private valuetype MyStruct/buffer__FixedBufferImpl buffer
+  .field private valuetype b147147.MyStruct/buffer__FixedBufferImpl buffer
 
   .method public hidebysig static int32  Main() cil managed
   {
@@ -39,7 +41,7 @@
     IL_0001:  stloc.0
     IL_0002:  br.s       IL_000d
 
-    IL_0004:  call       void MyStruct::RunTest()
+    IL_0004:  call       void b147147.MyStruct::RunTest()
     IL_0009:  ldloc.0
     IL_000a:  ldc.i4.1
     IL_000b:  add
@@ -58,42 +60,42 @@
   {
     // Code size       137 (0x89)
     .maxstack  3
-    .locals ([0] valuetype MyStruct ms,
+    .locals ([0] valuetype b147147.MyStruct ms,
              [1] int32 i)
     IL_0000:  ldloca.s   ms
-    IL_0002:  initobj    MyStruct
+    IL_0002:  initobj    b147147.MyStruct
     IL_0008:  ldloca.s   ms
-    IL_000a:  ldflda     valuetype MyStruct/buffer__FixedBufferImpl MyStruct::buffer
-    IL_000f:  ldflda     char MyStruct/buffer__FixedBufferImpl::FixedElementField
+    IL_000a:  ldflda     valuetype b147147.MyStruct/buffer__FixedBufferImpl b147147.MyStruct::buffer
+    IL_000f:  ldflda     char b147147.MyStruct/buffer__FixedBufferImpl::FixedElementField
     IL_0014:  ldc.i4.s   72
     IL_0016:  stind.i2
     IL_0017:  ldloca.s   ms
-    IL_0019:  ldflda     valuetype MyStruct/buffer__FixedBufferImpl MyStruct::buffer
-    IL_001e:  ldflda     char MyStruct/buffer__FixedBufferImpl::FixedElementField
+    IL_0019:  ldflda     valuetype b147147.MyStruct/buffer__FixedBufferImpl b147147.MyStruct::buffer
+    IL_001e:  ldflda     char b147147.MyStruct/buffer__FixedBufferImpl::FixedElementField
     IL_0023:  ldc.i4.2
     IL_0024:  conv.i
     IL_0025:  add
     IL_0026:  ldc.i4.s   69
     IL_0028:  stind.i2
     IL_0029:  ldloca.s   ms
-    IL_002b:  ldflda     valuetype MyStruct/buffer__FixedBufferImpl MyStruct::buffer
-    IL_0030:  ldflda     char MyStruct/buffer__FixedBufferImpl::FixedElementField
+    IL_002b:  ldflda     valuetype b147147.MyStruct/buffer__FixedBufferImpl b147147.MyStruct::buffer
+    IL_0030:  ldflda     char b147147.MyStruct/buffer__FixedBufferImpl::FixedElementField
     IL_0035:  ldc.i4.4
     IL_0036:  conv.i
     IL_0037:  add
     IL_0038:  ldc.i4.s   76
     IL_003a:  stind.i2
     IL_003b:  ldloca.s   ms
-    IL_003d:  ldflda     valuetype MyStruct/buffer__FixedBufferImpl MyStruct::buffer
-    IL_0042:  ldflda     char MyStruct/buffer__FixedBufferImpl::FixedElementField
+    IL_003d:  ldflda     valuetype b147147.MyStruct/buffer__FixedBufferImpl b147147.MyStruct::buffer
+    IL_0042:  ldflda     char b147147.MyStruct/buffer__FixedBufferImpl::FixedElementField
     IL_0047:  ldc.i4.6
     IL_0048:  conv.i
     IL_0049:  add
     IL_004a:  ldc.i4.s   76
     IL_004c:  stind.i2
     IL_004d:  ldloca.s   ms
-    IL_004f:  ldflda     valuetype MyStruct/buffer__FixedBufferImpl MyStruct::buffer
-    IL_0054:  ldflda     char MyStruct/buffer__FixedBufferImpl::FixedElementField
+    IL_004f:  ldflda     valuetype b147147.MyStruct/buffer__FixedBufferImpl b147147.MyStruct::buffer
+    IL_0054:  ldflda     char b147147.MyStruct/buffer__FixedBufferImpl::FixedElementField
     IL_0059:  ldc.i4.8
     IL_005a:  conv.i
     IL_005b:  add
@@ -104,8 +106,8 @@
     IL_0061:  br.s       IL_007e
 
     IL_0063:  ldloca.s   ms
-    IL_0065:  ldflda     valuetype MyStruct/buffer__FixedBufferImpl MyStruct::buffer
-    IL_006a:  ldflda     char MyStruct/buffer__FixedBufferImpl::FixedElementField
+    IL_0065:  ldflda     valuetype b147147.MyStruct/buffer__FixedBufferImpl b147147.MyStruct::buffer
+    IL_006a:  ldflda     char b147147.MyStruct/buffer__FixedBufferImpl::FixedElementField
     IL_006f:  ldloc.1
     IL_0070:  conv.i
     IL_0071:  ldc.i4.2
@@ -130,3 +132,4 @@
 } // end of class MyStruct
 
 
+}

@@ -12,6 +12,8 @@
 .assembly 'Runtime_47308' {}
 .assembly extern xunit.core {}
 .assembly extern mscorlib{auto}
+.namespace Runtime_47308
+{
 .class public FullProof {
 .method static void Test() {
 .maxstack 500
@@ -57,7 +59,7 @@ IL_500:       ret
 .maxstack 3
    .try
    {
-      call void FullProof::Test()
+      call void Runtime_47308.FullProof::Test()
       leave.s WithoutEH
    }
    catch [mscorlib]System.Exception 
@@ -82,5 +84,6 @@ AfterEH:
 RETURN:
 
    ret
+}
 }
 }

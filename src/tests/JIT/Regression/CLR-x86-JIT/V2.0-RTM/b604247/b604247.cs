@@ -6,6 +6,8 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
+namespace b604247
+{
 public class Test
 {
     public static int Main()
@@ -35,4 +37,5 @@ public class Test
             return 666;
         }
     }
+}
 }

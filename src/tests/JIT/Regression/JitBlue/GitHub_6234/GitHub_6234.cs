@@ -6,6 +6,8 @@
 
 using System;
 
+namespace GitHub_6234
+{
 public class Program
 {
     public static int ii;
@@ -27,4 +29,5 @@ public class Program
         // subtract 2900996 from res.
         return res - 2900996;
     }
+}
 }

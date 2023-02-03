@@ -11,6 +11,8 @@
 {
 }
 .assembly extern xunit.core {}
+.namespace b56174
+{
 .class public auto ansi TestClass extends ['mscorlib']System.Object
 {
 .field static value class [mscorlib]System.RuntimeTypeHandle args
@@ -23,7 +25,7 @@
 	.maxstack  8
 	.entrypoint
 	ldtoken int32
-	stsfld value class [mscorlib]System.RuntimeTypeHandle TestClass::args
+	stsfld value class [mscorlib]System.RuntimeTypeHandle b56174.TestClass::args
 	ldc.i4 100
 	ret
 } // end of method
@@ -38,3 +40,4 @@
 } // end of method 'Test::.ctor'
 
 } // end of class 'Test'
+}

@@ -14,6 +14,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_61074
+{
 public struct S0
 {
     public long F0;
@@ -42,4 +44,5 @@ public class Runtime_61074
         long result = (-arg4.F0 * -1) & arg4.F1--;
         return result;
     }
+}
 }

@@ -4,6 +4,8 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Runtime_42723
+{
 public class Runtime_42723
 {
     public static int Main()
@@ -21,4 +23,5 @@ public class Runtime_42723
         public double X;
         public float Y;
     }
+}
 }

@@ -7,6 +7,8 @@ using System;
 // and caller that had few args or locals passed in a constant for
 // that parameter.
 
+namespace GitHub_9891
+{
 public class B
 {
     int X(
@@ -27,4 +29,5 @@ public class B
             11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
         return v + 81;
     }
+}
 }

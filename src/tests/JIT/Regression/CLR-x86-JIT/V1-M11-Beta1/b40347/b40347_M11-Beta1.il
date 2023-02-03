@@ -11,6 +11,8 @@
 {
   
 }
+.namespace b40347_M11_Beta1
+{
 .class public C
 {
   .method public static int32 main() 
@@ -51,3 +53,4 @@
 
 }      
 
+}

@@ -10,6 +10,8 @@
 .assembly b14294
 {
 }
+.namespace b14294
+{
 .class public ILGEN_622380794 {
 
 .field static	int32 field_0x0
@@ -25,7 +27,7 @@
  conv.i
  clt
  conv.i8
- ldsflda int32 ILGEN_622380794::field_0x0
+ ldsflda int32 b14294.ILGEN_622380794::field_0x0
  ldind.i4
  conv.i8
  mul
@@ -33,5 +35,6 @@
 ldc.i4 100
 add
 ret
+}
 }
 }

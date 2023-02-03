@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b27980
+{
 struct S
 {
     public String str;
@@ -27,4 +29,5 @@ public class Test_struct1
         c(sM);
         return 100;
     }
+}
 }

@@ -9,6 +9,8 @@
 }
 .assembly 'b64560' {}
 .assembly extern xunit.core {}
+.namespace b64560
+{
 .class public test1
 {
   .method public  static void f1() 
@@ -31,7 +33,7 @@
     )
     .entrypoint
     .maxstack  20
-    IL_0002:  call       void test1::f1()
+    IL_0002:  call       void b64560.test1::f1()
     		ldc.i4 100
     IL_009b:  ret
   }
@@ -39,3 +41,4 @@
 
 
 
+}

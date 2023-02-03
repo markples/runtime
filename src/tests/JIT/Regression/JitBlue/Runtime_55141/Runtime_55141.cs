@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_55141
+{
 struct S0
 {
     public ulong F0;
@@ -29,4 +31,5 @@ public class Runtime_55141
         vr1.F4 = (uint)x / 254;
         return vr1.F6;
     }
+}
 }

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b50145a
+{
 public class test
 {
     static float f1(float x, float y)
@@ -27,4 +29,5 @@ public class test
         }
         return 100;
     }
+}
 }

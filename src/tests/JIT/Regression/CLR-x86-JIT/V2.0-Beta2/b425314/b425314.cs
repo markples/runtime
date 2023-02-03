@@ -11,6 +11,8 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Collections;
 
+namespace b425314
+{
 #if false
 Here is the bug text from the bugs that motivated this regression case.  I've annotated
 the text to hopefully make it clearer where the type safety violations were occurring.
@@ -961,4 +963,5 @@ public class Mutate
         Console.WriteLine("Test SUCCESS");
         return 100;
     }
+}
 }

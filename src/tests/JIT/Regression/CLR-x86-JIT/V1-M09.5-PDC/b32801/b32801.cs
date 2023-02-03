@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b32801
+{
 public class bug
 {
     public static int Main()
@@ -23,4 +25,5 @@ public class bug
             return 100;
         }
     }
+}
 }

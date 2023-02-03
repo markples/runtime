@@ -9,6 +9,8 @@ using System;
 using System.Runtime.CompilerServices;
 using Xunit;
 
+namespace b49778
+{
 class IntWrapper
 {
     public int value;
@@ -201,4 +203,5 @@ public class ReproTwo
             return 666;
         }
     }
+}
 }

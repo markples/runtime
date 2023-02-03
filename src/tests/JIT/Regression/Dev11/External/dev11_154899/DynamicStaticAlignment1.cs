@@ -7,7 +7,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
-namespace Test
+namespace DynamicStaticAlignment
 {
     public class Container<T>
     {

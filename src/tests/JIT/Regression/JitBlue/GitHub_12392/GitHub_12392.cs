@@ -4,7 +4,7 @@
 using System;
 using System.Reflection;
 
-namespace Test
+namespace GitHub_12392
 {
     // This is a regression test for a bug in fgMorphRecognizeBoxNullable.
     // See the comment in Setting<T>.HasValue for details.

@@ -8,17 +8,20 @@
   .ver 4:0:0:0
 }
 .assembly 'b84129'{}
+.namespace b84129
+{
 .class public value sealed valClass {
 .field public int32 Field1
 }
 .class public Box_Unbox {
-.field public static	value class valClass vc
+.field public static	value class b84129.valClass vc
 .method public static int32 main() {
 .entrypoint
 .maxstack	10
-	ldsfld 	value class valClass Box_Unbox::vc
+	ldsfld 	value class b84129.valClass b84129.Box_Unbox::vc
         pop
 	ldc.i4	100
 	ret
+}
 }
 }

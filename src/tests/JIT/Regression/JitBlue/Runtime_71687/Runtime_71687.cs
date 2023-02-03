@@ -5,6 +5,8 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 
+namespace Runtime_71687
+{
 public class Runtime_71687
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -44,4 +46,5 @@ public class Runtime_71687
     private struct Struct2 { public short Field; }
     private struct Struct4 { public int Field; }
     private struct Struct8 { public long Field; }
+}
 }

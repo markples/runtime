@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Repro
+namespace GitHub_17777
 {
     public class Program
     {

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_59444
+{
 public class Program
 {
     public const byte Value = 0x50;
@@ -845,4 +847,5 @@ public class Program
             throw new InvalidOperationException($"ERROR: {actual} != {expected}");
         }
     }
+}
 }

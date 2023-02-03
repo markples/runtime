@@ -14,6 +14,8 @@ using System;
 // Failed - Test_e1_S2_F3_F1() - 640
 // Failed - Test_e1_S2_F4_F1() - 960
 
+namespace GitHub_20838
+{
 struct S1
 {
     public int F1;
@@ -624,4 +626,5 @@ public class Program
             return 101;
         }
     }
+}
 }

@@ -7,6 +7,8 @@ using System;
 using System.Runtime.CompilerServices;
 using Xunit;
 
+namespace b91189
+{
 public struct AA
 {
     [Fact]
@@ -27,4 +29,5 @@ public struct AA
             while (flag) { }
         }
     }
+}
 }

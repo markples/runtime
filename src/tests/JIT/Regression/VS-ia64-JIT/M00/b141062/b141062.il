@@ -34,6 +34,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b141062
+{
 .class public auto ansi beforefieldinit MyApp
        extends [mscorlib]System.Object
 {
@@ -400,11 +402,11 @@
     .entrypoint
     // Code size       13 (0xd)
     .maxstack  1
-    .locals init (class MyApp V_0)
-    IL_0000:  newobj     instance void MyApp::.ctor()
+    .locals init (class b141062.MyApp V_0)
+    IL_0000:  newobj     instance void b141062.MyApp::.ctor()
     IL_0005:  stloc.0
     IL_0006:  ldloc.0
-    IL_0007:  callvirt   instance void MyApp::foo()
+    IL_0007:  callvirt   instance void b141062.MyApp::foo()
 		ldc.i4 100
     IL_000c:  ret
   } // end of method MyApp::Main
@@ -427,3 +429,4 @@
 
 //*********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file ericswitch.res
+}

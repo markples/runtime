@@ -9,6 +9,8 @@
 }
 .assembly 'b51515' {}
 .assembly extern xunit.core {}
+.namespace b51515
+{
 .class public ILGEN_0x24fde2d6 {
 .method public static int32 Main()
 {
@@ -23,5 +25,6 @@
  ldc.i4 100
  add
  ret
+}
 }
 }

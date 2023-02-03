@@ -4,6 +4,8 @@
 using System;
 using System.Collections.Generic;
 
+namespace GitHub_13561
+{
 public static class Program
 {
     class MemberInfo { }
@@ -57,4 +59,5 @@ public static class Program
     {
         return GetCustomAttribute<Attribute>(new PropertyInfo()) != null ? 100 : -1;
     }
+}
 }

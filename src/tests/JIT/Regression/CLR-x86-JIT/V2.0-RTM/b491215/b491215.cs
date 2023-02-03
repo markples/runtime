@@ -5,6 +5,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+namespace b491215
+{
 public class Test
 {
     public static void IsType<T>(object o, bool expectedValue)
@@ -46,4 +48,5 @@ public class Test
             return 101;
         }
     }
+}
 }

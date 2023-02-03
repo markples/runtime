@@ -14,6 +14,8 @@ using System.Runtime.CompilerServices;
 // Similar to other variants but using an empty (~ 1 byte) struct
 // (which oddly enough currently is returned by ref)
 
+namespace GitHub_18522_8
+{
 struct S0
 {
 }
@@ -61,4 +63,5 @@ public class GitHub_18522_8
 
         return s_6.F3;
     }
+}
 }

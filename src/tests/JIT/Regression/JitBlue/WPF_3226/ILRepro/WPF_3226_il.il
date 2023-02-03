@@ -18,6 +18,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace WPF_3226_il
+{
 .class public auto ansi beforefieldinit Test
        extends [System.Runtime]System.Object
 {
@@ -36,18 +38,18 @@
     .field public int8 h
   } // end of class B
   
-  .method public hidebysig static valuetype Test/B 
-        CopyAStructUsingAddressOfASmallField(valuetype Test/B** s1) cil managed noinlining
+  .method public hidebysig static valuetype WPF_3226_il.Test/B 
+        CopyAStructUsingAddressOfASmallField(valuetype WPF_3226_il.Test/B** s1) cil managed noinlining
 {
   // Code size       14 (0xe)
   .maxstack  10
-  .locals init (valuetype Test/B V_0,
-           valuetype Test/B V_1)
+  .locals init (valuetype WPF_3226_il.Test/B V_0,
+           valuetype WPF_3226_il.Test/B V_1)
   IL_0000:  nop
             ldloca.s   V_1
   IL_0001:  ldarg.0
             ldind.i
-  IL_0026:  ldflda int8 Test/B::a
+  IL_0026:  ldflda int8 WPF_3226_il.Test/B::a
   IL_0028:  ldc.i4.8
             cpblk
   IL_000c:  ldloc.1
@@ -62,17 +64,17 @@
   .entrypoint
   // Code size       56 (0x38)
   .maxstack  2
-  .locals init (valuetype Test/B V_0,
-           valuetype Test/B* V_1,
-           valuetype Test/B** V_2,
-           valuetype Test/B V_3,
+  .locals init (valuetype WPF_3226_il.Test/B V_0,
+           valuetype WPF_3226_il.Test/B* V_1,
+           valuetype WPF_3226_il.Test/B** V_2,
+           valuetype WPF_3226_il.Test/B V_3,
            int32 V_4)
   IL_0000:  nop
   IL_0001:  ldloca.s   V_0
-  IL_0003:  initobj    Test/B
+  IL_0003:  initobj    WPF_3226_il.Test/B
   IL_0009:  ldloca.s   V_0
   IL_000b:  ldc.i4.2
-  IL_000c:  stfld      int8 Test/B::b
+  IL_000c:  stfld      int8 WPF_3226_il.Test/B::b
   IL_0011:  ldloca.s   V_0
   IL_0013:  conv.u
   IL_0014:  stloc.1
@@ -80,10 +82,10 @@
   IL_0017:  conv.u
   IL_0018:  stloc.2
   IL_0019:  ldloc.2
-  IL_001a:  call       valuetype Test/B Test::CopyAStructUsingAddressOfASmallField(valuetype Test/B**)
+  IL_001a:  call       valuetype WPF_3226_il.Test/B WPF_3226_il.Test::CopyAStructUsingAddressOfASmallField(valuetype WPF_3226_il.Test/B**)
   IL_001f:  stloc.3
   IL_0020:  ldloc.3
-  IL_0021:  ldfld      int8 Test/B::b
+  IL_0021:  ldfld      int8 WPF_3226_il.Test/B::b
   IL_0026:  ldc.i4.2
   IL_0027:  ceq
   IL_0029:  call       void [System.Diagnostics.Debug]System.Diagnostics.Debug::Assert(bool)
@@ -96,3 +98,4 @@
 } // end of method Test::Main
 
 } // end of class Test
+}

@@ -9,6 +9,8 @@
 }
 .assembly b07947 {}
 .assembly extern xunit.core {}
+.namespace b07947
+{
 .class public repro
 {
 
@@ -22,7 +24,7 @@
     {
 	ldc.i4 10
 	newarr int32
-	stsfld int32[] repro::s_Arr
+	stsfld int32[] b07947.repro::s_Arr
 
 	ret
     }
@@ -43,11 +45,11 @@
     	ldstr "."
     	call void [System.Console]System.Console::Write(string)
 	
-	ldsfld int32 repro::s_Zero
+	ldsfld int32 b07947.repro::s_Zero
         brtrue IMPOSS
 	ldnull
 	ldc.i4 0
-	stfld int32 repro::m_i
+	stfld int32 b07947.repro::m_i
     IMPOSS:
 	br LOOP
     }
@@ -64,8 +66,8 @@
 
 	.try
 	{
-	newobj instance void repro::.ctor()
-	call instance void repro::foo2()
+	newobj instance void b07947.repro::.ctor()
+	call instance void b07947.repro::foo2()
 	leave FAIL
 	}
 	catch [mscorlib]System.NullReferenceException
@@ -82,4 +84,5 @@ FAIL:
     }
 
 
+}
 }

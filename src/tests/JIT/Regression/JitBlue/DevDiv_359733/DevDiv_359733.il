@@ -12,6 +12,8 @@
 .assembly 'DevDiv_359733' {}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_359733
+{
 .class public C extends [mscorlib]System.Object
 {
     .method private static int16 M(bool a0, int16 a1, int16 a2, int32 a3) cil managed noinlining
@@ -52,7 +54,7 @@
             ldc.i4 0
             ldc.i4 0
             ldc.i4 0
-            call int16 C::M(bool, int16, int16, int32)
+            call int16 DevDiv_359733.C::M(bool, int16, int16, int32)
             pop
             leave.s done
         }
@@ -66,4 +68,5 @@
         ldc.i4 100
         ret
     }
+}
 }

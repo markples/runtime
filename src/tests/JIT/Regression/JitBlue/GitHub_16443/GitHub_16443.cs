@@ -4,6 +4,8 @@
 using System;
 using System.Numerics;
 
+namespace GitHub_16443
+{
 public class Program
 {
     struct vec2
@@ -18,4 +20,5 @@ public class Program
         var b = new vec2(0.42f, 0.24f);
         return a.value.Equals(b.value) ? 100 : 1;
     }
+}
 }

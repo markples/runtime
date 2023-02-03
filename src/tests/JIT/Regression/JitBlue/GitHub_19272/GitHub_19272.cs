@@ -4,6 +4,8 @@
 // The test showed an incorrect optimization of (int)(long<<32+) when the const 32+ tree
 // had side effects.
 
+namespace GitHub_19272
+{
 struct S0
 {
     public ulong F0;
@@ -40,4 +42,5 @@ public class Program
         }
         return result;
     }
+}
 }

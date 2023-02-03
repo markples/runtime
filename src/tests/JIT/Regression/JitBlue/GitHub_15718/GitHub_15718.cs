@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_15718
+{
 public class Program
 {
     public static int Main()
@@ -18,4 +20,5 @@ public class Program
     {
         return map["foo"];
     }
+}
 }

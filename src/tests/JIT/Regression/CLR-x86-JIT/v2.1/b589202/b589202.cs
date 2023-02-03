@@ -4,6 +4,8 @@
 
 using System;
 using System.Runtime.CompilerServices;
+namespace b589202
+{
 public class Program
 {
     public static int Main()
@@ -22,4 +24,5 @@ public class Program
             { }
         }
     }
+}
 }

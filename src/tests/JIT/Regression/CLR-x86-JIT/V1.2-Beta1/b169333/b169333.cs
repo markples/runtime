@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b169333
+{
 class A { }
 class B { }
 interface IFoo<T>
@@ -31,3 +33,4 @@ public class C : IFoo<A>, IFoo<B>
     }
 }
 
+}

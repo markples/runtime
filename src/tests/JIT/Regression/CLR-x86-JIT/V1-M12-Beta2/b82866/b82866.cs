@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b82866
+{
 public class AA
 {
     static AA m_xStatic3;
@@ -39,4 +41,5 @@ public class AA
             while (local19) { }
         }
     }
+}
 }

@@ -9,6 +9,8 @@
 // Release: Outputs 1
 using System.Runtime.CompilerServices;
 
+namespace Runtime_71600
+{
 public struct S0
 {
     public long F0;
@@ -55,4 +57,5 @@ public class Runtime_71600
         arg0.F2 += (ushort)(arg0.F1 % (uint)arg0.M82(ref s_28));
         return arg0.F2;
     }
+}
 }

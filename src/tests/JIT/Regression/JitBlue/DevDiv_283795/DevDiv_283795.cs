@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace DevDiv_283795
+{
 public class C
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,4 +53,5 @@ public class C
 
         return test1 && test2 ? 100 : 101;
     }
+}
 }

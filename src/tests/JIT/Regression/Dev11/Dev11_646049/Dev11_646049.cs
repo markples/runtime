@@ -4,6 +4,8 @@
 
 using System;
 
+namespace Dev11_646049
+{
 public class Test
 {
     /// <summary>
@@ -28,4 +30,5 @@ public class Test
             return 100;
         }
     }
+}
 }

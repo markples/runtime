@@ -18,6 +18,8 @@
 
 using System;
 
+namespace b24728
+{
 public class MyClass
 {
 
@@ -41,3 +43,4 @@ public class MyClass
     }
 }
 // </Code> 
+}

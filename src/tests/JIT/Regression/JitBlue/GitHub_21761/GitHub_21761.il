@@ -9,6 +9,8 @@
 // Some basic tests to ensure that the JIT handles non-zero
 // initialization correctly.
 
+.namespace GitHub_21761
+{
 .class sequential sealed Point extends [System.Runtime]System.ValueType
 {
     .field public int32 X
@@ -17,11 +19,11 @@
 
 .method static bool ConstFixedSizeInitBlk() cil managed noinlining
 {
-    .locals init (valuetype Point a)
+    .locals init (valuetype GitHub_21761.Point a)
 
     ldloca a
     ldc.i4 42
-    sizeof Point
+    sizeof GitHub_21761.Point
     initblk
 
     ldloca a
@@ -33,15 +35,15 @@
 
 .method static bool NonConstFixedSizeInitBlk() cil managed noinlining
 {
-    .locals init (valuetype Point a, int32 s)
+    .locals init (valuetype GitHub_21761.Point a, int32 s)
 
     ldloca a
     ldloc s
-    sizeof Point
+    sizeof GitHub_21761.Point
     initblk
 
     ldloca a
-    ldfld int32 Point::X
+    ldfld int32 GitHub_21761.Point::X
     ldc.i4 0
     ceq
     ret
@@ -55,11 +57,11 @@
 
 .method static bool ConstFixedSizeInitBlk64() cil managed noinlining
 {
-    .locals init (valuetype Point64 a)
+    .locals init (valuetype GitHub_21761.Point64 a)
 
     ldloca a
     ldc.i4 42
-    sizeof Point64
+    sizeof GitHub_21761.Point64
     initblk
 
     ldloca a
@@ -71,15 +73,15 @@
 
 .method static bool NonConstFixedSizeInitBlk64() cil managed noinlining
 {
-    .locals init (valuetype Point64 a, int32 s)
+    .locals init (valuetype GitHub_21761.Point64 a, int32 s)
 
     ldloca a
     ldloc s
-    sizeof Point64
+    sizeof GitHub_21761.Point64
     initblk
 
     ldloca a
-    ldfld int64 Point64::X
+    ldfld int64 GitHub_21761.Point64::X
     ldc.i8 0
     ceq
     ret
@@ -98,11 +100,11 @@
 
 .method static bool SmallIntsInitBlk() cil managed noinlining
 {
-    .locals init (valuetype SmallInts a)
+    .locals init (valuetype GitHub_21761.SmallInts a)
 
     ldloca a
     ldc.i4 42
-    sizeof SmallInts
+    sizeof GitHub_21761.SmallInts
     initblk
 
     ldloca a
@@ -130,11 +132,11 @@ FAIL:
 
 .method static bool SmallIntsSignedInitBlk() cil managed noinlining
 {
-    .locals init (valuetype SmallInts a)
+    .locals init (valuetype GitHub_21761.SmallInts a)
 
     ldloca a
     ldc.i4 0x8a
-    sizeof SmallInts
+    sizeof GitHub_21761.SmallInts
     initblk
 
     ldloca a
@@ -180,11 +182,11 @@ FAIL:
 
 .method static bool Float32InitBlk() cil managed noinlining
 {
-    .locals init (valuetype F32Vec3 a)
+    .locals init (valuetype GitHub_21761.F32Vec3 a)
 
     ldloca a
     ldc.i4 42
-    sizeof F32Vec3
+    sizeof GitHub_21761.F32Vec3
     initblk
 
     ldloca a
@@ -203,11 +205,11 @@ FAIL:
 
 .method static bool Float32NaNInitBlk() cil managed noinlining
 {
-    .locals init (valuetype F32Vec3 a)
+    .locals init (valuetype GitHub_21761.F32Vec3 a)
 
     ldloca a
     ldc.i4 255
-    sizeof F32Vec3
+    sizeof GitHub_21761.F32Vec3
     initblk
 
     ldloca a
@@ -229,11 +231,11 @@ FAIL:
 
 .method static bool ObjRefInitBlk() cil managed noinlining
 {
-    .locals init (valuetype Pair a)
+    .locals init (valuetype GitHub_21761.Pair a)
 
     ldloca a
     ldc.i4 1
-    sizeof Pair
+    sizeof GitHub_21761.Pair
     initblk
 
     ldloca a
@@ -253,7 +255,7 @@ FAIL:
 
 .method static bool SimdInitBlk() cil managed noinlining
 {
-    .locals init (valuetype Wrapper a, valuetype [System.Numerics.Vectors]System.Numerics.Vector4 v, float32 len)
+    .locals init (valuetype GitHub_21761.Wrapper a, valuetype [System.Numerics.Vectors]System.Numerics.Vector4 v, float32 len)
 
     ldloca a
     ldc.i4 42
@@ -261,12 +263,12 @@ FAIL:
     initblk
 
     ldloca a
-    ldflda valuetype [System.Numerics.Vectors]System.Numerics.Vector4 Wrapper::Value
+    ldflda valuetype [System.Numerics.Vectors]System.Numerics.Vector4 GitHub_21761.Wrapper::Value
     call instance float32 [System.Numerics.Vectors]System.Numerics.Vector4::Length()
     stloc len
 
     ldloca a
-    ldfld valuetype [System.Numerics.Vectors]System.Numerics.Vector4 Wrapper::Value
+    ldfld valuetype [System.Numerics.Vectors]System.Numerics.Vector4 GitHub_21761.Wrapper::Value
     stloc v
 
     ldloca v
@@ -282,7 +284,7 @@ FAIL:
         01 00 00 00
     )
     .entrypoint
-    .locals init (valuetype Point a)
+    .locals init (valuetype GitHub_21761.Point a)
 
     call bool ConstFixedSizeInitBlk()
     brfalse FAIL
@@ -319,4 +321,5 @@ FAIL:
  FAIL:
     ldc.i4 1
     ret
+}
 }

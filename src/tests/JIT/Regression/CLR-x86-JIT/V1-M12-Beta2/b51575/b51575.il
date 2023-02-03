@@ -9,7 +9,7 @@
 }
 .assembly 'b51575' { }
 .assembly extern xunit.core {}
-.namespace JitTest
+.namespace b51575
 {
   .class public auto ansi Test extends [mscorlib]System.Object
   {

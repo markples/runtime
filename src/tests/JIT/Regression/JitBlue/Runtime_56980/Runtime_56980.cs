@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 // Reduced from 447.5 KiB to 0.6 KiB in 00:02:24
 // Debug: Runs successfully
 // Release: Throws 'System.NullReferenceException'
+namespace Runtime_56980
+{
 struct S0
 {
     public uint F1;
@@ -58,4 +60,5 @@ public class Program
     static void M17(ref uint arg2)
     {
     }
+}
 }

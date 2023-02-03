@@ -9,7 +9,7 @@
 }
 .assembly 'b68872' { }
 .assembly extern xunit.core {}
-.namespace JitTest
+.namespace b68872
 {
   .class public auto ansi beforefieldinit Test
          extends [mscorlib]System.Object

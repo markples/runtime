@@ -5,6 +5,8 @@
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+namespace b309548
+{
 public enum TestEnum
 {
     red = 1,
@@ -51,4 +53,5 @@ public class App
         return 100;
     }
 
+}
 }

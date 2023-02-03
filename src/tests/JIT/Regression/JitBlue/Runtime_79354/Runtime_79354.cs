@@ -4,6 +4,8 @@
 using System;
 using System.Reflection;
 
+namespace Runtime_79354
+{
 public interface IGetContents {
     (string, int, string) GetContents();
 }
@@ -42,4 +44,5 @@ public class Program {
             return 3;
         return 100;
     }
+}
 }

@@ -5,6 +5,8 @@ using System;
 using System.Threading;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_18887
+{
 internal class BufferState
 {
     internal const int Idle = 0;
@@ -111,4 +113,5 @@ public class Program
             return 101;
         }
     }
+}
 }

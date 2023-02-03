@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b184799
+{
 public class foo
 {
 
@@ -52,3 +54,4 @@ public class foo
 
     }
 } ;
+}

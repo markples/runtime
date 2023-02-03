@@ -10,6 +10,8 @@
 .assembly b14197
 {
 }
+.namespace b14197
+{
 .class public ILGEN_622380794 {
 
 .method public static int32 main() {
@@ -33,5 +35,6 @@
 ldc.i4 100
 add
 ret
+}
 }
 }

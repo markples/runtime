@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b05477
+{
 public class TestClass
 {
     public int IntI = 0;
@@ -34,4 +36,5 @@ public class mem035
         }
         return RetInt;
     }
+}
 }

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b48248
+{
 public struct test
 {
     public String str;
@@ -35,4 +37,5 @@ public struct test
 
         return 100;
     }
+}
 }

@@ -10,6 +10,8 @@
 .assembly b14067a
 {
 }
+.namespace b14067a
+{
 .class public ILGEN_622380794 {
 
 .field static	int64 field_0x5
@@ -18,7 +20,7 @@
 .entrypoint
 .maxstack	20
 
- ldsflda int64 ILGEN_622380794::field_0x5
+ ldsflda int64 b14067a.ILGEN_622380794::field_0x5
  ldind.i8
  conv.u
  conv.r.un
@@ -26,5 +28,6 @@
 ldc.i4 100
 add
  ret
+}
 }
 }

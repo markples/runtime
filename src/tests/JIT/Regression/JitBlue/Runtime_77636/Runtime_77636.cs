@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_77636
+{
 public unsafe class Runtime_77636
 {
     public static int Main()
@@ -32,4 +34,5 @@ public unsafe class Runtime_77636
         public int Index;
         public int Value;
     }
+}
 }

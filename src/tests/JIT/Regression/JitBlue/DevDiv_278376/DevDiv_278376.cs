@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 //       return value by the cast. Because the bug is a simple assert, there is no need for the problematic code to
 //       actually run, so the implementation of `GetDouble` does not need to actually exist.
 
+namespace DevDiv_278376
+{
 public sealed class C
 {
     [DllImport("nonexistent.dll")]
@@ -33,4 +35,5 @@ public sealed class C
     {
         return Test(false);
     }
+}
 }

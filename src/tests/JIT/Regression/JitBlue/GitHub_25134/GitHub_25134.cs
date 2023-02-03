@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_25134
+{
 public class Program
 {
     static bool s_caughtException;
@@ -155,4 +157,5 @@ public class Program
             return 100;
         }
     }
+}
 }

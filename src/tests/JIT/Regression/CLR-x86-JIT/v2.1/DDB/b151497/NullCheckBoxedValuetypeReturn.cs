@@ -12,6 +12,8 @@
 
 using System;
 
+namespace b151497
+{
 struct MyStruct
 {
     int i;
@@ -40,4 +42,5 @@ public class MainApp
         }
     }
 
+}
 }

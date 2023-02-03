@@ -10,6 +10,8 @@
 .assembly extern System {}
 .assembly 'b125091' {}
 .assembly extern xunit.core {}
+.namespace b125091
+{
 .class public EHTest
 {
   .field private static int64 fld0
@@ -99,7 +101,7 @@ pop
 filter3_out: leave try1_out
 end_filter3: 
 
-call void EHTest::f2()
+call void b125091.EHTest::f2()
 try1_out:
 newobj instance void [mscorlib]System.AppDomainUnloadedException::.ctor()
 throw
@@ -154,13 +156,13 @@ ret
 	  ldc.i8 76
 	  ldc.i8 31
 	  ldc.i8 115
-	  stsfld int64 EHTest::fld0
+	  stsfld int64 b125091.EHTest::fld0
 	  ldc.i8 41
 	  ldc.i4 12
 	  stloc.2
 	  ldc.i4 96
 	  ldc.i8 28
-call int32 EHTest::f1(int64 ,int64 ,int64 ,int32 ,int64 )
+call int32 b125091.EHTest::f1(int64 ,int64 ,int64 ,int32 ,int64 )
 leave RET
 }
 catch [mscorlib]System.Exception
@@ -173,4 +175,5 @@ call void [System.Console]System.Console::WriteLine(string)
 ret
 }
 
+}
 }

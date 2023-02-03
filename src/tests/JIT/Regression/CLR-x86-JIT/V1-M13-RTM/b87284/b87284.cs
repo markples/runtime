@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b87284
+{
 public class test1
 {
     public struct VT
@@ -33,3 +35,4 @@ public class test1
 
 
 
+}

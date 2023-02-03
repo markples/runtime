@@ -3,6 +3,8 @@
 
 using System;
 
+namespace dev11_20929
+{
 public static class Repro
 {
     private struct foo
@@ -22,4 +24,5 @@ public static class Repro
         Console.WriteLine("PASS!");
         return 100;
     }
+}
 }

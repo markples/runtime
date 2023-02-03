@@ -5,6 +5,8 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_64657
+{
 public unsafe class Runtime_64657
 {
     [DllImport("kernel32")]
@@ -110,4 +112,5 @@ public unsafe class Runtime_64657
         public string a1;
         public string a2;
     }
+}
 }

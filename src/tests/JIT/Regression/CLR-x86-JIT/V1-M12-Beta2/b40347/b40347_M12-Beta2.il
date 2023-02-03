@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b40347_M12-Beta2' { }
+.namespace b40347_M12_Beta2
+{
 .class public C
 {
   .method public static int32 main() 
@@ -48,3 +50,4 @@
 
 }      
 
+}

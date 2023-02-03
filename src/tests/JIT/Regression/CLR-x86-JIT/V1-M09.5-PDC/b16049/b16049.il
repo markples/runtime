@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b16049' {}
+.namespace b16049
+{
 .class public ILGEN_622380794 {
 
 .field static	int32 field_0x2
@@ -25,7 +27,7 @@ stloc local_0x3
 
 
 ldc.i8 0x3d853cd75adf5719 
-stsfld int64 ILGEN_622380794::field_0x3
+stsfld int64 b16049.ILGEN_622380794::field_0x3
 
 Start_Orphan_2:
  ldc.i4.m1
@@ -47,8 +49,8 @@ Start_Orphan_9:
  shr
  stloc local_0x3
 End_Orphan_9:
- ldsfld int64 ILGEN_622380794::field_0x3
- ldsfld int64 ILGEN_622380794::field_0x3
+ ldsfld int64 b16049.ILGEN_622380794::field_0x3
+ ldsfld int64 b16049.ILGEN_622380794::field_0x3
  ldloc local_0x3
  add
  ldloc local_0x3
@@ -60,5 +62,6 @@ End_Orphan_9:
  ldc.i4 1
  sub
 ret
+}
 }
 }

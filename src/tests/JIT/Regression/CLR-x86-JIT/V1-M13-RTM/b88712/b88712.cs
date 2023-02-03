@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b88712
+{
 public struct AA
 {
     public static void Static5()
@@ -16,4 +18,5 @@ public struct AA
         Static5();
         return 100;
     }
+}
 }

@@ -10,6 +10,8 @@ using System.Runtime.CompilerServices;
 // Debug: Outputs 1
 // Release: Outputs 0
 
+namespace Runtime_54118_2
+{
 public class Program
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -34,4 +36,5 @@ public class Program
 
         return result ? 100 : -1;
     }
+}
 }

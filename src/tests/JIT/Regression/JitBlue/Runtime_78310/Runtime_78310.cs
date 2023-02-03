@@ -11,6 +11,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_78310
+{
 public struct S0
 {
     public long F;
@@ -69,4 +71,5 @@ public class Runtime_78310
     private static void Foo()
     {
     }
+}
 }

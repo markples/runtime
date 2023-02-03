@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Numerics;
 using System.Diagnostics;
 
+namespace Runtime_49101
+{
 public class Runtime_49101
 {
     struct S
@@ -37,4 +39,5 @@ public class Runtime_49101
         s.v = Get();
         return Test(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, s.v);
     }
+}
 }

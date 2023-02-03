@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b89946
+{
 public class AA
 {
     static Array[,] m_ax;
@@ -29,4 +31,5 @@ public class AA
             return 100;
         }
     }
+}
 }

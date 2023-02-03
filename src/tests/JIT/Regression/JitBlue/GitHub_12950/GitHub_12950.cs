@@ -4,6 +4,8 @@
 using System;
 using System.Numerics;
 
+namespace GitHub_12950
+{
 public class Program
 {
     struct BoundingBoxTest
@@ -32,4 +34,5 @@ public class Program
         someMoreMemory[someMemory[0]] = 100;
         return someMoreMemory[0];
     }
+}
 }

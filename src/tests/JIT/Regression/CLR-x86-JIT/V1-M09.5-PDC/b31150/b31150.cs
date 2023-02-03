@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+namespace b31150
+{
 public class foo
 {
     public static int Main()
@@ -11,4 +13,5 @@ public class foo
         System.Console.WriteLine(lo >> 33);
         return 100;
     }
+}
 }

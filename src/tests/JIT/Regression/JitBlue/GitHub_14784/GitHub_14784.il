@@ -15,6 +15,8 @@
 .assembly extern System.Console {auto}
 .assembly GitHub_14784 {}
 
+.namespace GitHub_14784
+{
 .class public auto ansi abstract sealed beforefieldinit Program
 extends [mscorlib]System.Object
 {
@@ -23,7 +25,7 @@ extends [mscorlib]System.Object
     .maxstack 8
     .entrypoint
 
-    call int32 Program::InlineAssignByte()
+    call int32 GitHub_14784.Program::InlineAssignByte()
     ret
   } // end of method Main
 
@@ -51,4 +53,5 @@ extends [mscorlib]System.Object
     sub
     ret
   }
+}
 }

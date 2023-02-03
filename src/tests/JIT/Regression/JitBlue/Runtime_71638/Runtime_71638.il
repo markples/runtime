@@ -6,6 +6,8 @@
 
 .assembly Runtime_71638.dll { }
 
+.namespace Runtime_71638
+{
 .class public Runtime_71638 extends [System.Runtime]System.Object
 {
   .method public static int32 Main()
@@ -13,7 +15,7 @@
     .entrypoint
 
     ldc.i4 10
-    call int32 Runtime_71638::Problem(int32)
+    call int32 Runtime_71638.Runtime_71638::Problem(int32)
     ldc.i4 10
     bne.un FAILURE
 
@@ -35,7 +37,7 @@
     ldarg a
     ldloc aRef
     ldc.i4 0
-    stfld int32 StructWithIndex::Index
+    stfld int32 Runtime_71638.StructWithIndex::Index
     ret
   }
 }
@@ -43,4 +45,5 @@
 .class sealed StructWithIndex extends [System.Runtime]System.ValueType
 {
   .field public int32 Index;
+}
 }

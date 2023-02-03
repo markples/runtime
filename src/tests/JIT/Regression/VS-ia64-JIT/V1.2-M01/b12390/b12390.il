@@ -5,6 +5,8 @@
 .assembly 'b12390'{}
 .assembly extern xunit.core {}
 
+.namespace b12390
+{
 .class public auto ansi beforefieldinit repro
        extends [mscorlib]System.Object
 {
@@ -16,7 +18,7 @@
     .entrypoint
     .try
     {
-	call void repro::f()
+	call void b12390.repro::f()
 	leave FAIL
     }
     catch [mscorlib]System.ArrayTypeMismatchException
@@ -45,4 +47,5 @@
 	ret
   }
 
+}
 }

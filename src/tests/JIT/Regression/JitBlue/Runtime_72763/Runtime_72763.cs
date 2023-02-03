@@ -10,6 +10,8 @@
 // Release: Outputs 1464
 using System.Runtime.CompilerServices;
 
+namespace Runtime_72763
+{
 public class Program
 {
     public static ushort s_41 = 1646;
@@ -33,4 +35,5 @@ public class Program
     {
         return 0;
     }
+}
 }

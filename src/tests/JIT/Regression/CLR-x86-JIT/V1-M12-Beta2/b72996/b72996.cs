@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b72996
+{
 public class testout1
 {
     public struct VT
@@ -30,4 +32,5 @@ public class testout1
         Func();
         return 100;
     }
+}
 }

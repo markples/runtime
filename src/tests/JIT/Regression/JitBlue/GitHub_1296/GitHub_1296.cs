@@ -3,6 +3,8 @@
 using System;
 
 // Simple struct containing two integers (size 8).
+namespace GitHub_1296
+{
 struct MyStruct
 {
     public MyStruct(int a, int b)
@@ -88,4 +90,5 @@ public class Program
 
         return regParam1.C;
     }
+}
 }

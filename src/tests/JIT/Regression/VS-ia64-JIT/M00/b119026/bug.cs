@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b119026a
+{
 public class test
 {
     static short si16;
@@ -29,4 +31,5 @@ public class test
             return 100;
         }
     }
+}
 }

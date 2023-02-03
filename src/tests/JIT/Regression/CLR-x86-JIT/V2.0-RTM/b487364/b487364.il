@@ -10,6 +10,8 @@
 .assembly extern System {}
 .assembly 'b487364' {}
 .assembly extern xunit.core {}
+.namespace b487364
+{
 .class public EHTest
 {
   .field private static int32 fld0
@@ -32,20 +34,20 @@
   }
   .method public static int32 GetInt32_jmp()
   {
-  	jmp   int32 EHTest::GetInt32()
+  	jmp   int32 b487364.EHTest::GetInt32()
   }
   .method public static int32 GetInt32_tailcall()
   {
-  	tail. call   int32 EHTest::GetInt32()
+  	tail. call   int32 b487364.EHTest::GetInt32()
   	ret
   }
   .method public static int64 GetInt64_jmp()
   {
-  	jmp   int64 EHTest::GetInt64()
+  	jmp   int64 b487364.EHTest::GetInt64()
   }
   .method public static int64 GetInt64_tailcall()
   {
-  	tail. call   int64 EHTest::GetInt64()
+  	tail. call   int64 b487364.EHTest::GetInt64()
   	ret
   }
 
@@ -59,7 +61,7 @@
 		int64 V_4)
 br start_try1
 start_try1: 
-call void EHTest::f2()
+call void b487364.EHTest::f2()
 try1_out:
 newobj instance void [mscorlib]System.MulticastNotSupportedException::.ctor()
 throw
@@ -78,7 +80,7 @@ start_catch3:
 pop
 br catch3_br
 start_finally1: 
-call void EHTest::f2()
+call void b487364.EHTest::f2()
 finally1_out: endfinally
 end_finally1: 
 
@@ -96,19 +98,19 @@ nop
 	  ldc.i4 98
 	  beq	TARGET_4_0
 	TARGET_4_1:
-	  ldsfld int32 EHTest::fld4
-	  ldsfld int32 EHTest::fld0
+	  ldsfld int32 b487364.EHTest::fld4
+	  ldsfld int32 b487364.EHTest::fld0
 	  starg.s arg3
 	  ldc.i4 62
 	  bge.un	TARGET_4_4
 	TARGET_4_2:
 	  ldc.i4 86
 	  stloc.2
-	  ldsfld int32 EHTest::fld0
+	  ldsfld int32 b487364.EHTest::fld0
 	  ldc.i4 65
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 43
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 10
 	  starg.s arg0
 	  ldc.i4 33
@@ -119,10 +121,10 @@ nop
 	  shr
 	  starg.s arg0
 	  ldc.i4 81
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 34
 	  ldc.i4 119
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 93
 	  ceq
 	  starg.s arg0
@@ -133,7 +135,7 @@ nop
 	  ceq
 	  conv.i4
 	  ldc.i4 93
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 24
 	  bgt.un	TARGET_4_0
 	TARGET_4_4:
@@ -159,7 +161,7 @@ start_catch4:
 catch4_out:
 nop
 	TARGET_5_0:
-	  call int32 EHTest::GetInt32_jmp()
+	  call int32 b487364.EHTest::GetInt32_jmp()
 	  ldc.i4 117
 	  ldc.i4 13
 	  shr
@@ -170,7 +172,7 @@ nop
 	  unbox int32
 	  ldind.i4
 	  ldc.i4 32
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 44
 	  ldc.i4 57
 	  ldc.i4 21
@@ -183,7 +185,7 @@ nop
 	  ldc.i4 105
 	  stloc.3
 	  ldc.i4 21
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 91
 	  ldc.i4 90
 	  ldc.i4 25
@@ -197,7 +199,7 @@ nop
 	  newobj instance void int64[41...42,11...16,96...113,103...105,108...118,39...53,37...38,115...127,53...90,103...126,13...14,41...86,70...126,115...120,29...113,83...125,79...91]::.ctor(int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32)
 	  ldc.i4 110
 	  ldc.i4 78
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 72
 	  ldc.i4 103
 	  ldc.i4.8
@@ -209,7 +211,7 @@ nop
 	  ldc.i4.5
 	  ldc.i4 122
 	  ldc.i4 62
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 21
 	  ldc.i4 92
 	  ldc.i4 15
@@ -222,7 +224,7 @@ nop
 	  ldc.i4 41
 	  ldc.i4 35
 	  ldc.i4 41
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 61
 	  call instance int64 int64[41...42,11...16,96...113,103...105,108...118,39...53,37...38,115...127,53...90,103...126,13...14,41...86,70...126,115...120,29...113,83...125,79...91]::Get(int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32,int32)
 	  ldc.i8 2
@@ -298,7 +300,7 @@ nop
 	  ldc.i4 32
 	  ldc.i4 48
 	  ldc.i4 116
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 34
 	  ldc.i4 107
 	  ldc.i4 95
@@ -326,9 +328,9 @@ nop
 	  ldc.i4 64
 	  stloc.2
 	  ldc.i4 37
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 64
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 13
 	  ldc.i4 107
 	  starg.s arg0
@@ -348,7 +350,7 @@ nop
 	  stloc.0
 	  ldc.i4 106
 	  ldc.i4 88
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4.3
 	  ldc.i4 93
 	  ldc.i4.0
@@ -365,12 +367,12 @@ nop
 	  ldc.i8 123
 	  starg.s arg1
 	  ldc.i8 30
-	  stsfld int64 EHTest::fld3
+	  stsfld int64 b487364.EHTest::fld3
 	  ldc.i8 38
 	  bgt.un	TARGET_5_4
 	TARGET_5_4:
 	  ldc.i4 115
-	  ldftn int32 EHTest::GetInt32()
+	  ldftn int32 b487364.EHTest::GetInt32()
 	  calli int32 ()
 	  starg.s arg3
 	  ldc.i4 54
@@ -384,7 +386,7 @@ end_catch4:
 start_catch5: 
 pop
 catch5_out:
-call void EHTest::f2()
+call void b487364.EHTest::f2()
 newobj instance void [mscorlib]System.InvalidCastException::.ctor()
 throw
 end_catch5: 
@@ -393,7 +395,7 @@ end_catch5:
 start_catch6: 
 pop
 catch6_out:
-call void EHTest::f2()
+call void b487364.EHTest::f2()
 leave filter1_out
 end_catch6: 
 
@@ -420,7 +422,7 @@ nop
 	  sub
 	  newarr     [mscorlib]System.Int32
 	  ldc.i4.5
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 59
 	  ldelem.i4
 	  ldc.i4 120
@@ -446,7 +448,7 @@ nop
 	  ldc.i4.2
 	  blt	TARGET_6_0
 	TARGET_6_3:
-	  call int32 EHTest::GetInt32()
+	  call int32 b487364.EHTest::GetInt32()
 	  ldloc.0
 	  ldc.i4.5
 	  neg
@@ -454,17 +456,17 @@ nop
 	  starg.s arg3
 	  ldc.i4 63
 	  ldc.i4 28
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 20
 	  starg.s arg3
 	  ldc.i4 47
 	  starg.s arg0
 	  ldc.i4 44
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 116
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 62
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 93
 	  stloc.0
 	  ldc.i4 27
@@ -487,14 +489,14 @@ nop
 	  ldc.i4 96
 	  ldc.i4.5
 	  ldc.i4.5
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 31
 	  ldc.i4 61
 	  ldc.i4 31
 	  ldc.i4 81
 	  ldc.i4 74
 	  ldc.i4 122
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 100
 	  ldc.i4 18
 	  ldc.i4 50
@@ -515,7 +517,7 @@ nop
 	  ldc.i4 68
 	  ldc.i4 29
 	  ldc.i4 51
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 126
 	  starg.s arg0
 	  ldc.i4 49
@@ -534,7 +536,7 @@ nop
 	  ldc.i4 42
 	  ldc.i4 37
 	  ldc.i4 94
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 109
 	  stloc.3
 	  ldc.i4 121
@@ -550,7 +552,7 @@ nop
 	  ldc.i4 93
 	  stloc.0
 	  ldc.i4 33
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 106
 	  stloc.0
 	  ldc.i4 28
@@ -564,13 +566,13 @@ nop
 	  ldc.i8 12
 	  bgt.un	TARGET_6_2
 	TARGET_6_4:
-	  ldsflda int32 EHTest::fld4
+	  ldsflda int32 b487364.EHTest::fld4
 	  mkrefany   [mscorlib]System.Int32
 	  refanyval	[mscorlib]System.Int32
 	  ldind.i4
 	  stloc.3
 	  ldc.i4 120
-	  stsfld int32 EHTest::fld4
+	  stsfld int32 b487364.EHTest::fld4
 	  ldc.i4 76
 	  ldc.i4 57
 	  add
@@ -593,7 +595,7 @@ ldc.i4.0
 endfilter
 start_filter4: 
 pop
-call void EHTest::f2()
+call void b487364.EHTest::f2()
 filter4_out: leave filter1_out
 end_filter4: 
 
@@ -615,7 +617,7 @@ ldc.i4.1
 endfilter
 start_filter6: 
 pop
-call void EHTest::f2()
+call void b487364.EHTest::f2()
 filter6_out: leave catch2_out
 end_filter6: 
 
@@ -639,7 +641,7 @@ end_catch7:
 
 OUT: 
 	  ldc.i4 18
-	  stsfld int32 EHTest::fld0
+	  stsfld int32 b487364.EHTest::fld0
 	  ldc.i4 33
 	  starg.s arg3
 	  ldc.i4 105
@@ -689,12 +691,12 @@ ret
 	  ldc.i8 46
 	  stloc.1
 	  ldc.i8 20
-	  stsfld int64 EHTest::fld3
+	  stsfld int64 b487364.EHTest::fld3
 	  ldc.i8 92
-	  stsfld int64 EHTest::fld2
+	  stsfld int64 b487364.EHTest::fld2
 	  ldc.i8 84
 	  ldc.i4 122
-call int32 EHTest::f1(int32 ,int64 ,int64 ,int32 )
+call int32 b487364.EHTest::f1(int32 ,int64 ,int64 ,int32 )
 leave RET
 }
 catch [mscorlib]System.Exception
@@ -707,4 +709,5 @@ call void [System.Console]System.Console::WriteLine(string)
 ret
 }
 
+}
 }

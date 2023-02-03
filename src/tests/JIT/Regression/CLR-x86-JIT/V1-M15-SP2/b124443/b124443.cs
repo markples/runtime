@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b124443
+{
 delegate void TestDelegate();
 public class ArrayBounds
 {
@@ -149,4 +151,5 @@ public class ArrayBounds
 		Console.WriteLine("PASSED");
 		return 100;
 	}
+}
 }

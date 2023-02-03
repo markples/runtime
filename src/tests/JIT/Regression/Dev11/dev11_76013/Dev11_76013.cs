@@ -4,7 +4,7 @@
 using System;
 using System.Net;
 
-namespace Test
+namespace Dev11_76013
 {
     class MyException : Exception
     {

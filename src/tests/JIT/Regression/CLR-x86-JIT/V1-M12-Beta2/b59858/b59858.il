@@ -13,9 +13,11 @@
 // Generated Method Number 30907
 // Check the type soundness of assigning into argument slots
 // The verifier should REJECT this method
+.namespace b59858
+{
 .class public C30907 {
 //-test_30907_starg_ByReftoI4_into_ByReftoI2
-.method public static void test_30907_starg_ByReftoI4_into_ByReftoI2(class C,int32, int32 &, int16 &) {
+.method public static void test_30907_starg_ByReftoI4_into_ByReftoI2(class b59858.C,int32, int32 &, int16 &) {
 // Local 0 - an initialized int32 (not used in all tests)
 // Local 1 - an initialized int64 (not used in all tests)
 // Local 2 - an initially uninitialized ['mscorlib']System.DateTime (not used in all tests)
@@ -60,11 +62,12 @@ call       void [System.Console]System.Console::WriteLine(class System.String)
 	.maxstack 10
 	ldnull
 	ldc.i4 10
-	ldsflda int32 C::i4
-	ldsflda int16 C::i2
-	call void C30907::test_30907_starg_ByReftoI4_into_ByReftoI2(class C,int32, int32 &, int16 &)
+	ldsflda int32 b59858.C::i4
+	ldsflda int16 b59858.C::i2
+	call void b59858.C30907::test_30907_starg_ByReftoI4_into_ByReftoI2(class b59858.C,int32, int32 &, int16 &)
 	ldc.i4 100
 	ret
 }
 
+}
 }

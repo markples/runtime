@@ -6,6 +6,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Github_12398
+{
 struct S0
 {
     public sbyte F1;
@@ -81,3 +83,4 @@ public class GitHub_12398
     }
 }
 
+}

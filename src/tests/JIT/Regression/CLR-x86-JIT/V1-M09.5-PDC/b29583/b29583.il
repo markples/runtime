@@ -10,7 +10,7 @@
 .assembly 'b29583' { }
 .assembly extern xunit.core {}
 
-.namespace BoxTest
+.namespace BoxTest_b29583
 {
   .class public auto ansi App extends [mscorlib]System.Object
   {

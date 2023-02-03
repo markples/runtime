@@ -10,6 +10,8 @@
 .assembly b14202
 {
 }
+.namespace b14202
+{
 .class public ILGEN_622380794 {
 
 .field static	int32 field_0x0
@@ -18,12 +20,13 @@
 .entrypoint
 .maxstack	10
 
- ldsfld int32 ILGEN_622380794::field_0x0
+ ldsfld int32 b14202.ILGEN_622380794::field_0x0
  ldc.i4 0
  shl
- stsfld int32 ILGEN_622380794::field_0x0
+ stsfld int32 b14202.ILGEN_622380794::field_0x0
 
 ldc.i4 100
 ret
+}
 }
 }

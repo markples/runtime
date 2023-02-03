@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_11733
+{
 public class C
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -22,4 +24,5 @@ public class C
     {
         return L(0) == M(float.NegativeInfinity, 0) ? 100 : 0;
     }
+}
 }

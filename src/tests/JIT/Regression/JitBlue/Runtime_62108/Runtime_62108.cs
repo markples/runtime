@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_62108
+{
 public class Runtime_62108
 {
     public static int Main()
@@ -40,4 +42,5 @@ public class Runtime_62108
     {
         return s_s1_23.int_4 / 15 + 4 << (s_int_14 |= s_int_14 / (s_s1_23.int_4 += s1_40.int_4) + 41);
     }
+}
 }

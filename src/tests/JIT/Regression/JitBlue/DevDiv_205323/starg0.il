@@ -8,6 +8,8 @@
 .assembly starg0 {}
 .assembly extern xunit.core {}
 
+.namespace starg0
+{
 .class public F
 {
 
@@ -17,7 +19,7 @@
    ldarg.1
    ldc.i4 100
    add
-   stfld int32 F::A
+   stfld int32 starg0.F::A
    ret
 }
 
@@ -26,11 +28,11 @@
 .method public int32 Starg0() cil managed
 {
    ldarg.0
-   ldfld int32 F::A
-   newobj instance void F::.ctor(int32)
+   ldfld int32 starg0.F::A
+   newobj instance void starg0.F::.ctor(int32)
    starg.s 0
    ldarg.0
-   ldfld int32 F::A
+   ldfld int32 starg0.F::A
    ret
 }
 
@@ -41,11 +43,12 @@
    )
    .entrypoint
    ldc.i4 -100
-   newobj instance void F::.ctor(int32)
-   call instance int32 F::Starg0()
+   newobj instance void starg0.F::.ctor(int32)
+   call instance int32 starg0.F::Starg0()
    ret
 }
 
 
 }
 
+}

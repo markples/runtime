@@ -9,6 +9,8 @@
 // Release: Outputs 1
 using System.Runtime.CompilerServices;
 
+namespace Runtime_57074
+{
 public class Program
 {
     static bool s_5 = true;
@@ -73,4 +75,5 @@ public class Program
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     static int Bound() => 1;
+}
 }

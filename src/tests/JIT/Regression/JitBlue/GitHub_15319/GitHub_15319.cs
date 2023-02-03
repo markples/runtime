@@ -7,6 +7,8 @@ using System.Linq;
 // Bug where interacting CSEs of N - Old.Length and Old.Length
 // were not handled properly in optCSE
 
+namespace GitHub_15319
+{
 public class P
 {
     public static int Main()
@@ -40,4 +42,5 @@ public class P
         for (int i = 0; i < N - Old.Length; i++)
         dd[i] = d;
     }
+}
 }

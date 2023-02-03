@@ -11,7 +11,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace Repro
+namespace GitHub_19361
 {
     [Serializable]
     public struct CompositeSource

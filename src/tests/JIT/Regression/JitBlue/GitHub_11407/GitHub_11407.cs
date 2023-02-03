@@ -8,6 +8,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_11407
+{
 public class GitHub_11407
 {
     struct foo { public byte b1, b2, b3, b4; }
@@ -24,4 +26,5 @@ public class GitHub_11407
         }
         return returnVal;
     }
+}
 }

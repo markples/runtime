@@ -10,6 +10,8 @@
 .assembly b14325
 {
 }
+.namespace b14325
+{
 .class public ILGEN_622380794 {
 
 .field static	int64 field_0x5
@@ -22,22 +24,22 @@
 ldc.i4 5
  stloc local_0x0
  ldc.i8 0
- stsfld int64 ILGEN_622380794::field_0x5
+ stsfld int64 b14325.ILGEN_622380794::field_0x5
 
  ldc.i4.1
- ldsflda int64 ILGEN_622380794::field_0x5
+ ldsflda int64 b14325.ILGEN_622380794::field_0x5
  ldind.i8
  conv.u2
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14325.ILGEN_622380794::field_0x5
  conv.u2
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14325.ILGEN_622380794::field_0x5
  conv.u2
  ldloc local_0x0
  conv.r.un
  conv.i4
  clt
  ceq
- ldsfld int64 ILGEN_622380794::field_0x5
+ ldsfld int64 b14325.ILGEN_622380794::field_0x5
  conv.r4
  conv.u
  conv.i
@@ -51,5 +53,6 @@ ldc.i4 5
 ldc.i4 100
 add
  ret
+}
 }
 }

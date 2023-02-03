@@ -28,6 +28,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace DevDiv_754566
+{
 .class public auto ansi beforefieldinit Program
        extends [mscorlib]System.Object
 {
@@ -56,15 +58,15 @@
     // Code size       73 (0x49)
     .maxstack  2
     .locals init (int32 V_0,
-             class Program V_1,
+             class DevDiv_754566.Program V_1,
              string V_2)
     IL_0000:  ldc.i4.m1
     IL_0001:  stloc.0
-    IL_0002:  newobj     instance void Program::.ctor()
+    IL_0002:  newobj     instance void DevDiv_754566.Program::.ctor()
     IL_0007:  stloc.1
     IL_0008:  ldloc.1
     IL_0009:  ldc.i4.s   42
-    IL_000b:  callvirt   instance string Program::Test(int32)
+    IL_000b:  callvirt   instance string DevDiv_754566.Program::Test(int32)
     IL_0010:  stloc.2
     IL_0011:  ldloc.2
     IL_0012:  ldstr      "42"
@@ -106,3 +108,4 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file test2.res
+}

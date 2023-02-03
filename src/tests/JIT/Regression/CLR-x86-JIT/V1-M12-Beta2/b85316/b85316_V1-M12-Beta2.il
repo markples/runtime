@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b85316_V1-M12-Beta2'{}
+.namespace b85316_V1_M12_Beta2
+{
 .class public _n {
 .method public static int32 main() {
 .entrypoint
@@ -21,5 +23,6 @@
 	ret
 PASS:	ldc.i4	100
 	ret
+}
 }
 }

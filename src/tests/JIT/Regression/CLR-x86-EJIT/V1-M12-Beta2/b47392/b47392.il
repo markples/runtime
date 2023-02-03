@@ -4,7 +4,7 @@
 .assembly extern legacy library mscorlib {}
 .assembly b47392 { }
 .assembly extern xunit.core {}
-.namespace Test
+.namespace b47392
 {
   .class public auto ansi AA extends [mscorlib]System.Object
   {
@@ -18,8 +18,8 @@
 		)
 		.entrypoint
 		.maxstack  8
-		.locals (class Test.AA, int32 i)
-		newobj instance void Test.AA::.ctor()
+		.locals (class b47392.AA, int32 i)
+		newobj instance void b47392.AA::.ctor()
 		stloc.0
 
 		ldc.i4.0
@@ -35,11 +35,11 @@
 		br merge
 	case2:
 		ldloc.0
-		ldflda int32 Test.AA::m_i
+		ldflda int32 b47392.AA::m_i
 		br merge
 	case3:
 		ldloc.0
-		ldfld int32[0...] Test.AA::m_ai
+		ldfld int32[0...] b47392.AA::m_ai
 		ldc.i4.1
 		ldelema [mscorlib]System.Int32
 	merge:
@@ -62,11 +62,11 @@
       call       instance void [mscorlib]System.Object::.ctor()
       ldarg.0
       ldc.i4.0
-      stfld		int32 Test.AA::m_i
+      stfld		int32 b47392.AA::m_i
       ldarg.0
       ldc.i4.8
       newobj   instance void int32[0...]::.ctor(int32)
-      stfld		int32[0...] Test.AA::m_ai
+      stfld		int32[0...] b47392.AA::m_ai
       ret
     } // end of method 'AA::.ctor'
 

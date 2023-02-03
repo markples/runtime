@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b12399
+{
 public class foo
 {
     static double nan = 0.0 / 0.0;
@@ -88,4 +90,5 @@ public class foo
         Console.Write("Tests passed.");
         return 100;
     }
+}
 }

@@ -8,6 +8,8 @@ using System.Collections;
 using System.Globalization;
 
 
+namespace b14716
+{
 public class Bug
 {
     public static int Main()
@@ -17,4 +19,5 @@ public class Bug
         Decimal dcml1 = --dcmlSecValues[aa];
         return 100;
     }
+}
 }

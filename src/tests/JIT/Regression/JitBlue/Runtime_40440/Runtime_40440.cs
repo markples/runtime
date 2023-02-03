@@ -8,6 +8,8 @@ using System.Diagnostics;
 using System.Runtime.Intrinsics;
 using System.Security.Cryptography;
 
+namespace Runtime_40440
+{
 public class Runtime_40440
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -172,4 +174,5 @@ public class Runtime_40440
 
         return f ? 100 : 0;
     }
+}
 }

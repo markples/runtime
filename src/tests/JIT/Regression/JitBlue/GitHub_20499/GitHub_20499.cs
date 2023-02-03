@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_20499
+{
 struct S
 {
     public long y;
@@ -48,4 +50,5 @@ public class X
         x.z = new Z();
         return x.G().x;
     }
+}
 }

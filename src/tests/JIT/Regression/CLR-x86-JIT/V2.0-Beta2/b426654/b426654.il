@@ -20,13 +20,15 @@
 
 
 
+.namespace b426654
+{
 .class public auto ansi beforefieldinit cs1
        extends [mscorlib]System.Object
 {
   .field private static literal int32 VAL = int32(0x00000005)
   .field static assembly int32 s_Zero
   .field static assembly int32 s_i
-  .field private static class cs1 s_obj
+  .field private static class b426654.cs1 s_obj
   .field private static bool s_timeUp
   .field private object m_obj
   .field private object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) m_objVolatile
@@ -43,31 +45,31 @@
     IL_0008:  ldarg.0
     IL_0009:  ldc.i4.2
     IL_000a:  newarr     [mscorlib]System.Object
-    IL_000f:  stfld      object[] cs1::m_objs
+    IL_000f:  stfld      object[] b426654.cs1::m_objs
     IL_0014:  ldarg.0
-    IL_0015:  ldfld      object[] cs1::m_objs
+    IL_0015:  ldfld      object[] b426654.cs1::m_objs
     IL_001a:  ldc.i4.0
     IL_001b:  ldc.i4.5
     IL_001c:  box        [mscorlib]System.Int32
     IL_0021:  stelem.ref
     IL_0022:  ldarg.0
-    IL_0023:  ldfld      object[] cs1::m_objs
+    IL_0023:  ldfld      object[] b426654.cs1::m_objs
     IL_0028:  ldc.i4.1
     IL_0029:  ldstr      "Hello"
     IL_002e:  stelem.ref
     IL_002f:  ldarg.0
     IL_0030:  ldarg.0
-    IL_0031:  ldfld      object[] cs1::m_objs
+    IL_0031:  ldfld      object[] b426654.cs1::m_objs
     IL_0036:  ldc.i4.0
     IL_0037:  ldelem.ref
-    IL_0038:  stfld      object cs1::m_obj
+    IL_0038:  stfld      object b426654.cs1::m_obj
     IL_003d:  ldarg.0
     IL_003e:  ldarg.0
-    IL_003f:  ldfld      object[] cs1::m_objs
+    IL_003f:  ldfld      object[] b426654.cs1::m_objs
     IL_0044:  ldc.i4.1
     IL_0045:  ldelem.ref
     IL_0046:  volatile.
-    IL_0048:  stfld      object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) cs1::m_objVolatile
+    IL_0048:  stfld      object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) b426654.cs1::m_objVolatile
     IL_004d:  nop
     IL_004e:  ret
   }
@@ -89,14 +91,14 @@
     {
       IL_0006:  nop
       IL_0007:  ldarg.0
-      IL_0008:  ldfld      object cs1::m_obj
+      IL_0008:  ldfld      object b426654.cs1::m_obj
       IL_000d:  unbox      [mscorlib]System.Int32
         ldc.i4 0
         stind.i4
 
       IL_0032:  ldarg.0
       IL_0033:  volatile.
-      IL_0035:  ldfld      object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) cs1::m_objVolatile
+      IL_0035:  ldfld      object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) b426654.cs1::m_objVolatile
       IL_003a:  unbox      [mscorlib]System.Int32
         ldc.i4 0
         stind.i4
@@ -120,7 +122,7 @@
     IL_006b:  xor
     IL_006c:  stloc.0
     IL_006d:  volatile.
-              ldsfld     bool cs1::s_timeUp
+              ldsfld     bool b426654.cs1::s_timeUp
     IL_0072:  ldc.i4.0
     IL_0073:  ceq
     IL_0075:  stloc.2
@@ -144,7 +146,7 @@
 
     IL_0005:  nop
     IL_0006:  ldarg.0
-    IL_0007:  ldfld      object[] cs1::m_objs
+    IL_0007:  ldfld      object[] b426654.cs1::m_objs
     IL_000c:  ldc.i4.1
     IL_000d:  ldelem.ref
     IL_000e:  castclass  [mscorlib]System.String
@@ -164,17 +166,17 @@
 
     IL_002e:  ldarg.0
     IL_002f:  ldarg.0
-    IL_0030:  ldfld      object cs1::m_obj
+    IL_0030:  ldfld      object b426654.cs1::m_obj
     IL_0035:  volatile.
-    IL_0037:  stfld      object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) cs1::m_objVolatile
+    IL_0037:  stfld      object modreq([mscorlib]System.Runtime.CompilerServices.IsVolatile) b426654.cs1::m_objVolatile
     IL_003c:  ldarg.0
     IL_003d:  ldarg.0
-    IL_003e:  ldfld      object[] cs1::m_objs
+    IL_003e:  ldfld      object[] b426654.cs1::m_objs
     IL_0043:  ldloc.0
     IL_0044:  ldc.i4.2
     IL_0045:  rem
     IL_0046:  ldelem.ref
-    IL_0047:  stfld      object cs1::m_obj
+    IL_0047:  stfld      object b426654.cs1::m_obj
     IL_004c:  nop
     IL_004d:  ldloc.0
     IL_004e:  ldc.i4.1
@@ -184,7 +186,7 @@
 
     IL_0050:  stloc.0
     IL_0051:  volatile.
-              ldsfld     bool cs1::s_timeUp
+              ldsfld     bool b426654.cs1::s_timeUp
     IL_0056:  ldc.i4.0
     IL_0057:  ceq
     IL_0059:  stloc.2
@@ -200,7 +202,7 @@
     IL_0000:  nop
     IL_0001:  ldc.i4.1
     IL_0002:  volatile.
-              stsfld     bool cs1::s_timeUp
+              stsfld     bool b426654.cs1::s_timeUp
     IL_0007:  ret
   }
 
@@ -211,16 +213,16 @@
     )
     .entrypoint
     .maxstack  5
-    .locals init (class cs1 V_0,
+    .locals init (class b426654.cs1 V_0,
              class [System.Threading.Thread]System.Threading.Thread V_1,
              class [mscorlib]System.Threading.Timer V_2,
              class [System.Threading.Thread]System.Threading.Thread V_flip
         )
     IL_0000:  nop
-    IL_0001:  newobj     instance void cs1::.ctor()
+    IL_0001:  newobj     instance void b426654.cs1::.ctor()
     IL_0006:  stloc.0
     IL_0007:  ldloc.0
-    IL_0008:  ldftn      instance void cs1::CheckVal()
+    IL_0008:  ldftn      instance void b426654.cs1::CheckVal()
     IL_000e:  newobj     instance void [System.Threading.Thread]System.Threading.ThreadStart::.ctor(object,
                                                                                      native int)
     IL_0013:  newobj     instance void [System.Threading.Thread]System.Threading.Thread::.ctor(class [System.Threading.Thread]System.Threading.ThreadStart)
@@ -233,7 +235,7 @@
     IL_0026:  nop
     IL_0027:  ldloc.0
 
-    ldftn      instance void cs1::Flip()
+    ldftn      instance void b426654.cs1::Flip()
     newobj     instance void [System.Threading.Thread]System.Threading.ThreadStart::.ctor(object,
                                                                                      native int)
     newobj     instance void [System.Threading.Thread]System.Threading.Thread::.ctor(class [System.Threading.Thread]System.Threading.ThreadStart)
@@ -245,7 +247,7 @@
 
     IL_002d:  nop
     IL_002e:  ldnull
-    IL_002f:  ldftn      void cs1::SignalTimeUp(object)
+    IL_002f:  ldftn      void b426654.cs1::SignalTimeUp(object)
     IL_0035:  newobj     instance void [mscorlib]System.Threading.TimerCallback::.ctor(object,
                                                                                        native int)
     IL_003a:  ldnull
@@ -279,15 +281,16 @@
   {
     .maxstack  8
     IL_0000:  ldc.i4.0
-    IL_0001:  stsfld     int32 cs1::s_Zero
+    IL_0001:  stsfld     int32 b426654.cs1::s_Zero
     IL_0006:  ldc.i4.0
-    IL_0007:  stsfld     int32 cs1::s_i
-    IL_000c:  newobj     instance void cs1::.ctor()
-    IL_0011:  stsfld     class cs1 cs1::s_obj
+    IL_0007:  stsfld     int32 b426654.cs1::s_i
+    IL_000c:  newobj     instance void b426654.cs1::.ctor()
+    IL_0011:  stsfld     class b426654.cs1 b426654.cs1::s_obj
     IL_0016:  ldc.i4.0
     IL_0017:  volatile.
-              stsfld     bool cs1::s_timeUp
+              stsfld     bool b426654.cs1::s_timeUp
     IL_001c:  ret
   }
 
+}
 }

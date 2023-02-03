@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b16423
+{
 public class AA
 {
 	bool[] m_null = null;
@@ -40,4 +42,5 @@ public class AA
 		new AA().CheckHeap();
 		return 100;
 	}
+}
 }

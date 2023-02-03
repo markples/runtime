@@ -6,13 +6,15 @@
 .assembly GitHub_13404 {}
 .assembly extern xunit.core {}
 
+.namespace GitHub_13404
+{
 .class public Program
 {
     .field static int8 s8;
 
     .method static void Test() noinlining
     {
-        ldsfld int8 Program::s8
+        ldsfld int8 GitHub_13404.Program::s8
         conv.ovf.i2.un
         pop
         ret
@@ -27,11 +29,11 @@
         .maxstack 1
 
         ldc.i4 -1
-        stsfld int8 Program::s8
+        stsfld int8 GitHub_13404.Program::s8
 
         .try
         {
-            call void Program::Test()
+            call void GitHub_13404.Program::Test()
             leave FAIL
         }
         catch [mscorlib]System.OverflowException
@@ -50,4 +52,5 @@
         ldc.i4 100
         ret
     }
+}
 }

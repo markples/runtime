@@ -9,6 +9,8 @@
 }
 .assembly b71869 { }
 .assembly extern xunit.core {}
+.namespace b71869
+{
 .class public I {
 .method public static int32 Main() {
 .custom instance void [xunit.core]Xunit.FactAttribute::.ctor() = (
@@ -33,5 +35,6 @@ ldc.i4.s 101
 ret
 
 
+}
 }
 }

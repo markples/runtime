@@ -6,6 +6,8 @@ using System;
 // Test for proper ordering of a gc safepoint inducing arg and
 // the newobj allocation
 
+namespace Runtime_4781_1
+{
 class Bar
 {
     public Bar() 
@@ -46,4 +48,5 @@ public class Runtime_4781_1
         var f = new Foo(s_bar);
         return Observer.failed ? -1 : 100;
     }
+}
 }

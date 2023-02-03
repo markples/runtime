@@ -10,6 +10,8 @@
 .assembly b04583
 {
 }
+.namespace b04583
+{
 .class public _simple {
 .method public static int32 main() {
 .entrypoint
@@ -76,3 +78,4 @@ ldc.i4  100
 
 
 
+}

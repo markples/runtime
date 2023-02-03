@@ -3,6 +3,8 @@
 
 using System;
 
+namespace Runtime_81019
+{
 public class Program
 {
     public static int Main()
@@ -39,4 +41,5 @@ public class Program
     {
         public int A, B, C, D, E, F, G, H;
     }
+}
 }

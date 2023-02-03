@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b92614
+{
 public struct CC
 {
     static float Static3(short N)
@@ -11,4 +13,5 @@ public struct CC
             82 * (ulong)N * (float)(((ulong)N) ^ (82u * (ulong)N));
     }
     public static int Main() { Static3(0); return 100; }
+}
 }

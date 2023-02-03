@@ -3,6 +3,8 @@
 
 using System;
 
+namespace GitHub_12949_1
+{
 public struct S<K>
 {
     public int x;
@@ -47,4 +49,5 @@ public class B
         int z = a.Test();
         return (z == 11 ? 100 : 0);
     }
+}
 }

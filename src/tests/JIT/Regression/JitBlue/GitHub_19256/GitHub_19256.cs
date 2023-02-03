@@ -6,6 +6,8 @@ using System;
 using System.Runtime.CompilerServices;
 
 
+namespace GitHub_19256
+{
 struct S2
 {
     public uint F0;
@@ -38,3 +40,4 @@ public class GitHub_19256
 }
 
 
+}

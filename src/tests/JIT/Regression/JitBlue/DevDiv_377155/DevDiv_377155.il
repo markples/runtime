@@ -2,6 +2,8 @@
 .assembly extern mscorlib{}
 .assembly DevDiv_377155{}
 .assembly extern xunit.core {}
+.namespace DevDiv_377155
+{
 .class public C extends [mscorlib]System.Object
 {
    .method static float32 M() cil managed noinlining
@@ -60,7 +62,7 @@ IL_0052:
 
        .try
        {
-           call float32 C::M()
+           call float32 DevDiv_377155.C::M()
            pop
            leave.s done
        }
@@ -77,3 +79,4 @@ IL_0052:
 
 }
 // Dumped 1
+}

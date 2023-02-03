@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_12949_6
+{
 public interface IGet 
 {
     int Get();
@@ -56,4 +58,5 @@ public class B
         Console.WriteLine("Passed: {0}", passed);
         return passed ? 100 : 0;
     }
+}
 }

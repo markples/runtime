@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace GitHub_23794
+{
 public class Program
 {
     [StructLayout(LayoutKind.Sequential)]
@@ -54,4 +56,5 @@ public class Program
         Escape(ref s);
         return Call(0, 1, 2, 3, 4, 5, 6, Unsafe.As<S, S16>(ref s));
     }
+}
 }

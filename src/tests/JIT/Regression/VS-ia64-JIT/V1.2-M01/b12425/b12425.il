@@ -5,6 +5,8 @@
 .assembly 'b12425'{}
 .assembly extern xunit.core {}
 
+.namespace b12425
+{
 .class interface public abstract auto ansi ITrees
 {
   .method public hidebysig newslot abstract virtual 
@@ -15,13 +17,13 @@
 
 .class public auto ansi beforefieldinit Garden
        extends [mscorlib]System.Object
-       implements ITrees
+       implements b12425.ITrees
 {
   .method private hidebysig newslot virtual final 
           instance class [mscorlib]System.Collections.IEnumerator 
           ITrees.GetEnumerator() cil managed
   {
-    .override ITrees::GetEnumerator
+    .override b12425.ITrees::GetEnumerator
 	ldnull
 	ret
   }
@@ -45,9 +47,9 @@
     )
     .entrypoint
 
-	ldtoken    Garden
+	ldtoken    b12425.Garden
 	call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
-	ldtoken    ITrees
+	ldtoken    b12425.ITrees
 	call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
 	callvirt   instance valuetype [mscorlib]System.Reflection.InterfaceMapping [mscorlib]System.Type::GetInterfaceMap(class [mscorlib]System.Type)
 	pop
@@ -55,4 +57,5 @@
 	ret
   }
 
+}
 }

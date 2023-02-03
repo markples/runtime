@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_73628
+{
 public unsafe class Runtime_73628
 {
     public static int Main()
@@ -47,4 +49,5 @@ public unsafe class Runtime_73628
     {
         public byte Byte;
     }
+}
 }

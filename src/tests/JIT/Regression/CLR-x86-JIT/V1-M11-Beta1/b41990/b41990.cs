@@ -5,7 +5,7 @@
 using System;
 
 
-namespace Test
+namespace b41990
 {
     public class AA
     {

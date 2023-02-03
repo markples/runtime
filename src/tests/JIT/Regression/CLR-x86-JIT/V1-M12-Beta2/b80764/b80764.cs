@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 
 
-namespace JitTest
+namespace b80764
 {
     public class Test
     {

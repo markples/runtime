@@ -3,6 +3,8 @@
 
 using System;
 
+namespace GitHub_12949_7
+{
 public struct V
 {
     public V(int x)
@@ -55,3 +57,4 @@ public class M
     }
 }
 
+}

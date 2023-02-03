@@ -4,7 +4,7 @@
 
 using System;
 
-namespace JitTest.HFA
+namespace b29343.HFA
 {
 
     public class TestCase

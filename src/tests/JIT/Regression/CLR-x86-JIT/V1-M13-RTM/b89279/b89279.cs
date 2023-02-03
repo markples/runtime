@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b89279
+{
 public class AA
 {
     public static void Static5(int param1)
@@ -18,4 +20,5 @@ public class AA
 #pragma warning restore 1717
     }
     public static int Main() { Static5(0); return 100; }
+}
 }

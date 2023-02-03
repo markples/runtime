@@ -19,14 +19,16 @@
 .assembly b14777
 {
 }
+.namespace b14777
+{
 .class	public _ldtoken	 {
 .method public static int32 main() {
 .entrypoint
 .locals	()
 .maxstack	2
 	
-	ldtoken	method instance int32 _ldtoken::test(int32)
-	stsfld valuetype [mscorlib]System.RuntimeMethodHandle _ldtoken::PTR
+	ldtoken	method instance int32 b14777._ldtoken::test(int32)
+	stsfld valuetype [mscorlib]System.RuntimeMethodHandle b14777._ldtoken::PTR
 
 // for now, if we dont crash, we pass...
 
@@ -54,5 +56,6 @@ FAIL:
 	ldc.i4	0x2
 	mul
 	ret
+}
 }
 }

@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b89506
+{
 public class AA
 {
     public static int Main() { Main1(); return 100; }
@@ -10,4 +12,5 @@ public class AA
     {
         (new float[1, 1, 1, 1])[0, 0, 0, 0] -= (new float[1, 1])[0, 0];
     }
+}
 }

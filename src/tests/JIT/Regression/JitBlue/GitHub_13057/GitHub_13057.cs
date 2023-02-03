@@ -8,6 +8,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 
+namespace GitHub_13057
+{
 public class Program
 {
     const int Pass = 100;
@@ -76,4 +78,5 @@ public class Program
 
         return Pass;
     }
+}
 }

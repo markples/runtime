@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace Runtime_62524
+{
 public class Runtime_62524
 {
     public static int Main()
@@ -28,4 +30,5 @@ public struct StructWithIndex
 {
     public int Index;
     public int Value;
+}
 }

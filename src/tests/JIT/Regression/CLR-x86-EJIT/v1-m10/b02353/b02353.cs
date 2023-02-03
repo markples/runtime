@@ -3,7 +3,7 @@
 
 using System;
 
-namespace DefaultNamespace
+namespace b02353
 {
     public class Bug
     {

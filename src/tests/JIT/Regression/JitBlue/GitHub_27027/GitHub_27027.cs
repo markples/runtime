@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_27027
+{
 public struct S
 {
     public int i;
@@ -36,4 +38,5 @@ public class Test_GitHub_27027
         int k = test.s.i + 1/j;
         return k;
     }
+}
 }

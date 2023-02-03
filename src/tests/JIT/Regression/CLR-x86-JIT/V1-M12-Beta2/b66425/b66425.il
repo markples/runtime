@@ -10,6 +10,8 @@
 .assembly 'b66425' {}
 .assembly extern xunit.core {}
 
+.namespace b66425
+{
 .class public TestClass{
 
 //+desc: leave from inner try{} to outside
@@ -60,7 +62,7 @@ lbl_21_exitSEH:
     .custom instance void [xunit.core]Xunit.FactAttribute::.ctor() = (
         01 00 00 00
     )
-    call void TestClass::test_21_try()
+    call void b66425.TestClass::test_21_try()
     .entrypoint
     ldc.i4 100
     ret
@@ -76,4 +78,5 @@ lbl_21_exitSEH:
     IL_0006:  ret
   } // end of method 'TestClass::.ctor'
 
+}
 }

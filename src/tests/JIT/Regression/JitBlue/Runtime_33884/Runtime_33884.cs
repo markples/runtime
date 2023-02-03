@@ -6,6 +6,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_33884
+{
 struct RefWrapper
 {
     public Object a; // a ref field
@@ -30,4 +32,5 @@ public class TestStructs
         arr[0] = e; // a struct typed copy.
         return 100;
     }
+}
 }

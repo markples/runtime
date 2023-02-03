@@ -14,6 +14,8 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 
+namespace Runtime_64883
+{
 public class Runtime_64883
 {
     public static uint s_29;
@@ -42,3 +44,4 @@ public class Runtime_64883
     }
 }
 
+}

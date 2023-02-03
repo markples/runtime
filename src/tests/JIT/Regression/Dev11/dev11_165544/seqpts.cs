@@ -10,6 +10,8 @@
 // csc /o- /debug+
 using System;
 
+namespace seqpts
+{
 struct BigCopy
 {
     public long l1, l2, l3;
@@ -48,4 +50,5 @@ public static class Repro
            b3.l1 == 7 && b3.l2 == 8 && b3.l3 == 9) return 100;
         return 101;
     }
+}
 }

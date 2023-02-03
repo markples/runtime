@@ -11,6 +11,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace b338014
+{
 public class My
 {
 
@@ -39,3 +41,4 @@ public class My
     }
 }
 
+}

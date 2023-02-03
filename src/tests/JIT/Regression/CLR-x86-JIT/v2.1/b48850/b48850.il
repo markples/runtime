@@ -11,6 +11,8 @@
 
 .assembly 'b48850' {}
  
+.namespace b48850
+{
 .class public auto ansi Test_b48850 extends [mscorlib] System.Object {
 .method public static int32 Main()
 {
@@ -23,7 +25,7 @@
 
     .try 
     {
-	    call void TestClass::RuntestCase()
+	    call void b48850.TestClass::RuntestCase()
         leave.s Return
     }
     catch [mscorlib]System.NullReferenceException
@@ -58,10 +60,11 @@ Return:
 {
   .method public static void RuntestCase()
   {
-	.locals init (valuetype BigStructtestCase &p1)
+	.locals init (valuetype b48850.BigStructtestCase &p1)
 	ldloc.0	
-	ldfld int32 BigStructtestCase::bigOffsetField
+	ldfld int32 b48850.BigStructtestCase::bigOffsetField
 	pop
 	ret
   }
+}
 }

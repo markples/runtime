@@ -10,6 +10,8 @@
 .assembly b05637
 {
 }
+.namespace b05637
+{
 .class public _simple {
 
 .method public static int32 main() {
@@ -42,5 +44,6 @@ sub
 ldc.i4 100
 add
 ret
+}
 }
 }

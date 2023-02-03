@@ -6,6 +6,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b320147
+{
 public struct AA
 {
     public void Method1()
@@ -46,4 +48,5 @@ public class App
         Console.WriteLine("Passed.");
         return 100;
     }
+}
 }

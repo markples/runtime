@@ -10,6 +10,8 @@
 .assembly 'devdiv_815941_' { }
 .assembly extern xunit.core {}
 
+.namespace devdiv_815941_
+{
 .class public Repro
 {
     .method public hidebysig static int32 Main() cil managed
@@ -23,12 +25,12 @@
   
         .entrypoint
         .maxstack  2
-        .locals init (valuetype DoubleConverter V_0,
+        .locals init (valuetype devdiv_815941_.DoubleConverter V_0,
             int64 V_1)
         
         ldc.r8     1.23
         ldloca.s   V_0
-        call       int64 DoubleConverter::ToLong(float64, valuetype DoubleConverter&)
+        call       int64 devdiv_815941_.DoubleConverter::ToLong(float64, valuetype devdiv_815941_.DoubleConverter&)
         stloc.1
         ldloc.1
         ldc.i8 0
@@ -54,7 +56,7 @@ FAIL:
     .field [0] private int64 l
     
     .method public hidebysig static int64 ToLong(float64 'value',
-        valuetype DoubleConverter& converter) cil managed
+        valuetype devdiv_815941_.DoubleConverter& converter) cil managed
     {
         .maxstack  2
         .locals init (int64 V_0)
@@ -62,16 +64,16 @@ FAIL:
         nop
         ldarg.1
         ldarg.0
-        stfld      float64 DoubleConverter::d
+        stfld      float64 devdiv_815941_.DoubleConverter::d
         ldarg.1
-        ldfld      int64 DoubleConverter::l
+        ldfld      int64 devdiv_815941_.DoubleConverter::l
         stloc.0
         ldloc.0
         ret
     }
 
     .method public hidebysig static float64 ToDouble(int64 'value',
-        valuetype DoubleConverter& converter) cil managed
+        valuetype devdiv_815941_.DoubleConverter& converter) cil managed
     {
         .maxstack  2
         .locals init (float64 V_0)
@@ -79,12 +81,13 @@ FAIL:
         nop
         ldarg.1
         ldarg.0
-        stfld      int64 DoubleConverter::l
+        stfld      int64 devdiv_815941_.DoubleConverter::l
         ldarg.1
-        ldfld      float64 DoubleConverter::d
+        ldfld      float64 devdiv_815941_.DoubleConverter::d
         stloc.0
         ldloc.0
         ret
     }
 
+}
 }

@@ -7,6 +7,8 @@
 // Reduced from 677.9 KiB to 2.4 KiB in 00:04:01
 // Debug: Outputs 53474
 // Release: Outputs 226
+namespace Runtime_66624
+{
 public class C0
 {
     public byte F0;
@@ -113,4 +115,5 @@ public class CollectibleALC : System.Runtime.Loader.AssemblyLoadContext
     public CollectibleALC() : base(true)
     {
     }
+}
 }

@@ -35,6 +35,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b17023
+{
 .class private sequential ansi sealed beforefieldinit Struct1
        extends [mscorlib]System.ValueType
 {
@@ -47,7 +49,7 @@
        extends [mscorlib]System.Object
 {
   .method public hidebysig static void  f(int32 x,
-                                          valuetype Struct1 y) cil managed
+                                          valuetype b17023.Struct1 y) cil managed
   {
     // Code size       14 (0xe)
     .maxstack  2
@@ -60,8 +62,8 @@
     IL_0006:  sub
     IL_0007:  ldarg.1
     IL_0008:  tail.
-    IL_0009:  call       void MyTest::f(int32,
-                                        valuetype Struct1)
+    IL_0009:  call       void b17023.MyTest::f(int32,
+                                        valuetype b17023.Struct1)
     IL_000d:  ret
   } // end of method MyTest::f
 
@@ -71,13 +73,13 @@
         01 00 00 00
     )
     .entrypoint
-    .locals init( valuetype Struct1 MYSTRUCT)
+    .locals init( valuetype b17023.Struct1 MYSTRUCT)
     // Code size       18 (0x12)
     .maxstack  2
     IL_0000:  ldc.i4.2
     IL_0001:  ldloc MYSTRUCT
-    IL_0002:  call       void MyTest::f(int32,
-                                        valuetype Struct1)
+    IL_0002:  call       void b17023.MyTest::f(int32,
+                                        valuetype b17023.Struct1)
     IL_0007:  ldstr      "Pass!"
     IL_000c:  call       void [System.Console]System.Console::WriteLine(string)
     IL_0011:  ldc.i4 100		ret
@@ -101,3 +103,4 @@
 
 //*********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file test.res
+}

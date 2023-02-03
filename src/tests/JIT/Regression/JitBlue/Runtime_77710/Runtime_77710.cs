@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_77710
+{
 public class Runtime_77710
 {
     public static int Main()
@@ -76,4 +78,5 @@ public class Runtime_77710
             return 0;
         }
     }
+}
 }

@@ -6,6 +6,8 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+namespace b302558
+{
 public enum TestEnum
 {
     red = 1,
@@ -87,4 +89,5 @@ public class App
     public static ulong[] m_aulFwd18;
     public static ushort[,][,][][] m_aushFwd19;
     public static char[] m_achFwd20;
+}
 }

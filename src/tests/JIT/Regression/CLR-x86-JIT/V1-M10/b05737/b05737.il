@@ -10,6 +10,8 @@
 .assembly b05737
 {
 }
+.namespace b05737
+{
 .class public _simple {
 
 .method public static int32 main() {
@@ -43,5 +45,6 @@ Passed:
     call	void [System.Console]System.Console::WriteLine(class [mscorlib]System.String)
 	ldc.i4 100
 	ret
+}
 }
 }

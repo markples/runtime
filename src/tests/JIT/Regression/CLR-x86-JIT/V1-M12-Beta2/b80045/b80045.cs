@@ -4,6 +4,8 @@
 
 using System;
 
+namespace b80045
+{
 public class AA
 {
     public static sbyte Static2()
@@ -26,4 +28,5 @@ public class AA
         }
         return 101;
     }
+}
 }

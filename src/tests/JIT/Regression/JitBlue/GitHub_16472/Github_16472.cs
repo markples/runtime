@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Github_16472
+{
 public class Program
 {
     public static int Main()
@@ -32,4 +34,5 @@ public class Program
         Bytes s = new Bytes(42);
         return Unsafe.As<byte, int>(ref s.b1);
     }
+}
 }

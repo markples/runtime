@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_22330
+{
 public class X
 {
     // a -> rdi
@@ -49,4 +51,5 @@ public class X
         Console.WriteLine($"Result={result}");
         return result;
     }
+}
 }

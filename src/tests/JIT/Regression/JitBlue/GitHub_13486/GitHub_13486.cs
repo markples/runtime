@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_13486
+{
 public class Program
 {
     enum LongEnum : long
@@ -29,4 +31,5 @@ public class Program
     {
         return (Test(LongEnum.Option0) == "Option0") ? 100 : 1;
     }
+}
 }

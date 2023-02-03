@@ -7,6 +7,8 @@
 
 // Ensure the jit is not tripped up by a foldable zero-length localloc
 
+.namespace GitHub_18176
+{
 .class public auto ansi beforefieldinit X
        extends [mscorlib]System.Object
 {
@@ -30,7 +32,7 @@
     localloc
     stloc.0
     ldloc.0
-    call       void X::Foo(int32*)
+    call       void GitHub_18176.X::Foo(int32*)
     ldc.i4.s   100
     ret
   }
@@ -45,4 +47,5 @@
     ret
   }
 
+}
 }

@@ -6,6 +6,8 @@ using System.Globalization;
 using System.Threading;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_53549_1
+{
 class A
 {
     public static string I(FormattableString formattable)
@@ -69,4 +71,5 @@ public class Repro
 
         return r / 10;
     }
+}
 }

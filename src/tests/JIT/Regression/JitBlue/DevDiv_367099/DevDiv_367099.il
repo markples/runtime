@@ -6,6 +6,8 @@
 .assembly 'DevDiv_367099' {}
 .assembly extern xunit.core {}
 
+.namespace DevDiv_367099
+{
 .class public auto ansi beforefieldinit P
        extends [mscorlib]System.Object
 {
@@ -19,7 +21,7 @@
     .maxstack  1
     .locals init (int32 V_0)
     IL_0000:  nop
-    IL_0001:  call       void P::TestCatchReturn()
+    IL_0001:  call       void DevDiv_367099.P::TestCatchReturn()
     IL_0006:  nop
     IL_0007:  ldc.i4.s   100
     IL_0009:  stloc.0
@@ -100,3 +102,4 @@
   } // end of method P::.ctor
 
 } // end of class P
+}

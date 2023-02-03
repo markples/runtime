@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+namespace Runtime_64764
+{
 public class TestClass
 {
     public struct S1
@@ -151,3 +153,4 @@ Reduced repo (x86 VM):
 set DOTNET_TieredCompilation=0
 set DOTNET_JitStressModeNames=STRESS_BB_PROFILE
 */
+}

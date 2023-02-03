@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace Runtime_73681
+{
 public class Program
 {
     public static int Main()
@@ -29,4 +31,5 @@ public interface IFace
 public class C : IFace
 {
     public int Foo() => 0;
+}
 }

@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace DevDiv2_10623
+{
 public class Program
 {
     public static bool IsGuid(object item)
@@ -16,4 +18,5 @@ public class Program
         else
             return 99;
     }
+}
 }

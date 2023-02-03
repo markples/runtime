@@ -12,6 +12,8 @@ using System;
 using System.Runtime.CompilerServices;
 
 // Struct with 4 fields
+namespace DevDiv_543057
+{
 public struct MyStruct
 {
     public int f1;
@@ -98,4 +100,5 @@ public class DevDiv_543057
         }
         return retVal;
     }
+}
 }

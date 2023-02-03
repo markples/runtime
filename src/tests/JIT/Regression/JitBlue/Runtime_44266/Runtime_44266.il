@@ -7,10 +7,12 @@
 .assembly extern System.Console {}
 .assembly extern legacy library mscorlib {}
 .assembly 'Runtime_44266' { }
+.namespace Runtime_44266
+{
 .class public a extends [mscorlib]System.Object
 {
-  .field static class ctest S_1
-  .method public static native int byrefsubbyref(class ctest& V_1, class ctest& V_2) aggressiveinlining
+  .field static class Runtime_44266.ctest S_1
+  .method public static native int byrefsubbyref(class Runtime_44266.ctest& V_1, class Runtime_44266.ctest& V_2) aggressiveinlining
   {
     ldarg 0
     ldarg 1
@@ -22,22 +24,22 @@
   {
     .entrypoint
     .maxstack  2
-    .locals init (class ctest V_1,
-             class ctest V_2,
+    .locals init (class Runtime_44266.ctest V_1,
+             class Runtime_44266.ctest V_2,
              native int V_3)
-    newobj     instance void ctest::.ctor()
+    newobj     instance void Runtime_44266.ctest::.ctor()
     stloc.0
-    newobj     instance void ctest::.ctor()
+    newobj     instance void Runtime_44266.ctest::.ctor()
     dup
-    stsfld class ctest a::S_1
+    stsfld class Runtime_44266.ctest Runtime_44266.a::S_1
     stloc.1
 
     ldloca V_1
-    ldsflda class ctest a::S_1
-    call native int a::byrefsubbyref(class ctest&, class ctest&)
+    ldsflda class Runtime_44266.ctest Runtime_44266.a::S_1
+    call native int Runtime_44266.a::byrefsubbyref(class Runtime_44266.ctest&, class Runtime_44266.ctest&)
     stloc V_3
     ldloc V_3
-    call       void a::KeepA(native int)
+    call       void Runtime_44266.a::KeepA(native int)
     ldc.i4.s   100    
     ret
   }
@@ -60,4 +62,5 @@
     call       instance void [mscorlib]System.Object::.ctor()
     ret
   } 
+}
 }

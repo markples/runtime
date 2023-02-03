@@ -3,6 +3,8 @@
 
 using System.Runtime.CompilerServices;
 
+namespace GitHub_11574
+{
 public class Program
 {
     static byte[] s_arr2;
@@ -40,4 +42,5 @@ public class Program
         rv = Check(cur, arr3.Length, 7, rv);
         return Check(cur, 0, len, rv);
     }
+}
 }

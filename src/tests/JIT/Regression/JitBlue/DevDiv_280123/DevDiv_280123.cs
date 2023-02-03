@@ -11,6 +11,8 @@ using Xunit;
 // assign value numbers to the dead code, but assertion prop still runs over the dead code and attempts to use VN info,
 // which resulted in a number of asserts.
 
+namespace DevDiv_280123
+{
 public static class C
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
@@ -40,4 +42,5 @@ public static class C
         int i = 0;
         return N(ref i);
     }
+}
 }

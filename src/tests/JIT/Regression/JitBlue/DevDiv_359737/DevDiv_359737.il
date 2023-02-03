@@ -8,6 +8,8 @@
 // This test originally repro'd a bug in morph that transformed modulus by a constant into division and subtraction
 // while re-morphing as part of CSE.
 
+.namespace DevDiv_359737
+{
 .class public C extends [mscorlib]System.Object
 {
     .method static int16 M() cil managed noinlining
@@ -28,7 +30,7 @@
 
         .try
         {
-            call int16 C::M()
+            call int16 DevDiv_359737.C::M()
             pop
             leave.s done
         }
@@ -42,4 +44,5 @@
         ldc.i4 100
         ret
     }
+}
 }

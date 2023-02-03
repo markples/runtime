@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b16503' {}
+.namespace b16503
+{
 .class public ILGEN_622380794 {
 .method public static int32 main() {
 .entrypoint
@@ -55,5 +57,6 @@ stloc local_0x1e
 ldc.i4 100
 add
  ret
+}
 }
 }

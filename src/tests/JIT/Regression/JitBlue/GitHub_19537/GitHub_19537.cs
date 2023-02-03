@@ -15,6 +15,8 @@ using System.Collections.Generic;
 // 
 // The key functions in the JIT that are related are Compiler::compRsvdRegCheck() and Compiler::lvaFrameAddress().
 
+namespace GitHub_19537
+{
 public class Test
 {
     public struct BigStruct
@@ -414,3 +416,4 @@ public class Test
     }
 }
 
+}

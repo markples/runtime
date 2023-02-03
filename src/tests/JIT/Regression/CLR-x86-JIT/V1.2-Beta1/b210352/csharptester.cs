@@ -4,6 +4,8 @@
 using System;
 using System.Diagnostics;
 
+namespace csharptester
+{
 public class M
 {
     public static void GenericClassStaticMethod()
@@ -2738,3 +2740,4 @@ public class M
     }
 }
 
+}

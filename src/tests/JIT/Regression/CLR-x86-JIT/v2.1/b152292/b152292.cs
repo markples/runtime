@@ -12,6 +12,8 @@
 
 using System;
 
+namespace b152292
+{
 #pragma warning disable 0649
 
 public sealed class C
@@ -4134,3 +4136,4 @@ public sealed class C
     }
 }
 
+}

@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 
 // Test cases for issues with optVNConstantPropOnTree/optPrepareTreeForReplacement/gtExtractSideEffList.
 
+namespace GitHub_18232
+{
 public class Program
 {
     static int[,] s_1 = new int[1, 1] { { 42 } };
@@ -60,4 +62,5 @@ public class Program
 
         return true;
     }
+}
 }

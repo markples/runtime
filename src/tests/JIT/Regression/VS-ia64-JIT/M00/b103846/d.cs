@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+namespace b103846
+{
 public class Bug
 {
     static short s1 = 8712, s2 = -973;
@@ -13,4 +15,5 @@ public class Bug
         System.Console.WriteLine(s4);
         return 100;
     }
+}
 }

@@ -4,6 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 
+namespace GitHub_27107
+{
 struct S
 {
     public Program p;
@@ -49,4 +51,5 @@ public class Program
 
         return p.Test();
     }
+}
 }

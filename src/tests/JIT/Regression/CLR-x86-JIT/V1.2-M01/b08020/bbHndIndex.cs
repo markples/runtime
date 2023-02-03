@@ -3,6 +3,8 @@
 //
 
 using System;
+namespace b08020
+{
 public class AA
 {
     static void f(ref Array param)
@@ -33,4 +35,5 @@ public class AA
 
     static Array m_arr;
 
+}
 }

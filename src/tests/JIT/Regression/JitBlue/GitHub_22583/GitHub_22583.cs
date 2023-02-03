@@ -6,6 +6,8 @@ using System.Runtime.InteropServices;
 
 // Test case where a type-equvalent delegate is assigned
 
+namespace GitHub_22583
+{
 public class X
 {
     static int F() => 3;
@@ -17,4 +19,5 @@ public class X
         return x() + y() + 64;
     }
     
+}
 }

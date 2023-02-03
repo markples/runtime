@@ -8,6 +8,8 @@
   .ver 4:0:0:0
 }
 .assembly 'b16886' {}
+.namespace b16886
+{
 .class public ILGEN_622380794 {
 
 
@@ -29,7 +31,7 @@
  conv.i
  ldc.i8 0x52b5523660ac7d8a
  conv.r4
- ldsfld int16 ILGEN_622380794::field_0x13
+ ldsfld int16 b16886.ILGEN_622380794::field_0x13
  conv.r4
  add
  conv.u
@@ -49,7 +51,7 @@
  conv.r8
  clt.un
  ceq
- ldsfld int8 ILGEN_622380794::field_0xe
+ ldsfld int8 b16886.ILGEN_622380794::field_0xe
  conv.u8
  not
  ldc.r4 float32(0x70ca3706)
@@ -65,15 +67,15 @@
  not
  conv.u8
  not
- ldsfld int8 ILGEN_622380794::field_0x22
+ ldsfld int8 b16886.ILGEN_622380794::field_0x22
  conv.r.un
  neg
  conv.r4
 Start_Orphan_62:
 End_Orphan_62:
 Start_Orphan_64:
- ldsflda int8 ILGEN_622380794::field_0x22
- ldsfld int16 ILGEN_622380794::field_0x1f
+ ldsflda int8 b16886.ILGEN_622380794::field_0x22
+ ldsfld int16 b16886.ILGEN_622380794::field_0x1f
  stind.i1
 End_Orphan_64:
  ldc.r4 float32(0xdee40f1)
@@ -82,9 +84,9 @@ End_Orphan_64:
  cgt
  shl
  sub
- ldsfld unsigned int16 ILGEN_622380794::field_0x9
+ ldsfld unsigned int16 b16886.ILGEN_622380794::field_0x9
  conv.u8
- ldsfld int16 ILGEN_622380794::field_0x7
+ ldsfld int16 b16886.ILGEN_622380794::field_0x7
  conv.r8
  conv.i
  conv.u8
@@ -95,5 +97,6 @@ End_Orphan_64:
 ldc.i4 100
 add
 ret
+}
 }
 }

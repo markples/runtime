@@ -3,6 +3,8 @@
 
 using System;
 
+namespace GitHub_20651
+{
 public class X
 {
     static string s = "hello, world";
@@ -21,4 +23,5 @@ public class X
         int v = s.GetHashCode();
         return c == v ? 100 : -1;
     }
+}
 }

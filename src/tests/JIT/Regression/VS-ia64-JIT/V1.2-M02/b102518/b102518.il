@@ -24,6 +24,8 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
+.namespace b102518
+{
 .class public auto ansi beforefieldinit BASIC
        extends [mscorlib]System.Object
 {
@@ -36,48 +38,48 @@
     .entrypoint
     // Code size       115 (0x73)
     .maxstack  10
-    .locals init (valuetype VT[] V_0)
+    .locals init (valuetype b102518.VT[] V_0)
     IL_0000:  ldc.i4.4
-    IL_0001:  newarr     VT
+    IL_0001:  newarr     b102518.VT
     IL_0006:  stloc.0
     IL_0007:  ldloc.0
     IL_0008:  ldc.i4.0
-    IL_0009:  ldelema    VT
+    IL_0009:  ldelema    b102518.VT
     IL_000e:  ldstr      "Boo ya!"
     IL_0013:  ldc.i4.3
-    IL_0014:  newobj     instance void VT::.ctor(string,
+    IL_0014:  newobj     instance void b102518.VT::.ctor(string,
                                                  int32)
-    IL_0019:  stobj      VT
+    IL_0019:  stobj      b102518.VT
     IL_001e:  ldloc.0
     IL_001f:  ldc.i4.1
-    IL_0020:  ldelema    VT
+    IL_0020:  ldelema    b102518.VT
     IL_0025:  ldstr      "Boo ya!"
     IL_002a:  ldc.i4.3
-    IL_002b:  newobj     instance void VT::.ctor(string,
+    IL_002b:  newobj     instance void b102518.VT::.ctor(string,
                                                  int32)
-    IL_0030:  stobj      VT
+    IL_0030:  stobj      b102518.VT
     IL_0035:  ldloc.0
     IL_0036:  ldc.i4.2
-    IL_0037:  ldelema    VT
+    IL_0037:  ldelema    b102518.VT
     IL_003c:  ldstr      "Boo ya!"
     IL_0041:  ldc.i4.3
-    IL_0042:  newobj     instance void VT::.ctor(string,
+    IL_0042:  newobj     instance void b102518.VT::.ctor(string,
                                                  int32)
-    IL_0047:  stobj      VT
+    IL_0047:  stobj      b102518.VT
     IL_004c:  ldloc.0
     IL_004d:  ldc.i4.3
-    IL_004e:  ldelema    VT
+    IL_004e:  ldelema    b102518.VT
     IL_0053:  ldstr      "Boo ya!"
     IL_0058:  ldc.i4.3
-    IL_0059:  newobj     instance void VT::.ctor(string,
+    IL_0059:  newobj     instance void b102518.VT::.ctor(string,
                                                  int32)
-    IL_005e:  stobj      VT
-    IL_0063:  ldsfld     int32 BASIC::x
+    IL_005e:  stobj      b102518.VT
+    IL_0063:  ldsfld     int32 b102518.BASIC::x
     IL_0068:  ldc.i4.0
     IL_0069:  ble.s      IL_0072
 
     tail.
-    call       int32 BASIC::Foo()
+    call       int32 b102518.BASIC::Foo()
     ret
     
     IL_0072:   ldc.i4 1
@@ -90,7 +92,7 @@
     .maxstack  10
     IL_0000:  ldstr      "In Foo: "
     IL_0005:  call       void [System.Console]System.Console::Write(string)
-    IL_000a:  ldsfld     int32 BASIC::x
+    IL_000a:  ldsfld     int32 b102518.BASIC::x
     IL_000f:  call       void [System.Console]System.Console::WriteLine(int32)
     ldc.i4 100
     IL_0014:  ret
@@ -102,7 +104,7 @@
     // Code size       7 (0x7)
     .maxstack  8
     IL_0000:  ldc.i4.4
-    IL_0001:  stsfld     int32 BASIC::x
+    IL_0001:  stsfld     int32 b102518.BASIC::x
     IL_0006:  ret
   } // end of method BASIC::.cctor
 
@@ -131,10 +133,10 @@
     .maxstack  8
     IL_0000:  ldarg.0
     IL_0001:  ldarg.1
-    IL_0002:  stfld      string VT::s
+    IL_0002:  stfld      string b102518.VT::s
     IL_0007:  ldarg.0
     IL_0008:  ldarg.2
-    IL_0009:  stfld      int32 VT::x
+    IL_0009:  stfld      int32 b102518.VT::x
     IL_000e:  ret
   } // end of method VT::.ctor
 
@@ -145,3 +147,4 @@
 
 //*********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file hole.res
+}
