@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_34937
 {
@@ -61,7 +62,8 @@ public class Program
         return a - b * c;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var result = 100;
 

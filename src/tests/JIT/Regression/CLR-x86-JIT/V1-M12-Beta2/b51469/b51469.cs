@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b51469
 {
     using System;
@@ -15,7 +16,8 @@ namespace b51469
             (new AA[137])[101].Method1();
             throw new DivideByZeroException();
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b34945
 {
 
@@ -167,7 +168,8 @@ namespace b34945
             return x;
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int result = 0;
             try

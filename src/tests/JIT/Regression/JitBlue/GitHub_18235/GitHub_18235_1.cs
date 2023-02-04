@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace GitHub_18235_1
 {
@@ -12,7 +13,8 @@ class C0
 
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         C0 var0 = new C0 { F = -1 };
         // The JIT was giving (byte)var0.F the same value number as the -1 assigned

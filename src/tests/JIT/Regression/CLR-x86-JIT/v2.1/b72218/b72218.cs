@@ -4,6 +4,7 @@
 
 using System;
 using System.Threading;
+using Xunit;
 
 namespace b72218
 {
@@ -16,7 +17,8 @@ public class My
         Thread.Sleep(5);
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         Thread t = new Thread(new ThreadStart(Worker));

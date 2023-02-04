@@ -9,6 +9,7 @@ The fix is: Disable array get/set optimizations for multidimmensional arrays of 
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace b609280
 {
@@ -83,7 +84,8 @@ struct BigStruct
 
 public class My
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         BigStruct[,] a = new BigStruct[1, 3];
 

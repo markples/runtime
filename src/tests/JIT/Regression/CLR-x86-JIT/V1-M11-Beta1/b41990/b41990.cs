@@ -3,6 +3,7 @@
 
 
 using System;
+using Xunit;
 
 
 namespace b41990
@@ -25,7 +26,8 @@ namespace b41990
             }
             catch (NullReferenceException) { }
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

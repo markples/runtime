@@ -3,13 +3,15 @@
 //
 
 using System;
+using Xunit;
 
 namespace b405223
 {
 public class Class1
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Console.WriteLine("Note that this is a test to verify that the implementation stays buggy");
         object o = new short[3];

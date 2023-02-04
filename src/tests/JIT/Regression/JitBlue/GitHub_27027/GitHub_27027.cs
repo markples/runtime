@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_27027
 {
@@ -16,7 +17,8 @@ public class Test_GitHub_27027
 {
     public S s;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         // Test that the correct exception is thrown from Run.
         // The bug was that the exceptions were reordered and DivideByZeroException

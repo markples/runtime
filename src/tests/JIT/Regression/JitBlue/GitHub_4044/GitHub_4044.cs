@@ -3,12 +3,14 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_4044
 {
 public class C
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int error = Test1();
         error += Test2();

@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b50145a
 {
@@ -13,7 +14,8 @@ public class test
         x -= x * y;
         return x;
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         // expected: 2 - 2 * 3 = -4
         // with bug: 2 * (1 + 3) = 8

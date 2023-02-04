@@ -4,11 +4,13 @@
 
 //COMMAND LINE: csc /nologo /optimize+ /debug- /w:0 bug.cs
 using System;
+using Xunit;
 namespace b91230
 {
 public struct AA
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         sbyte local2 = 0;
         while (

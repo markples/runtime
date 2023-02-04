@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b89946
 {
@@ -19,7 +20,8 @@ public class AA
             m_ax[param1, param1] = null;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

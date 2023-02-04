@@ -8,6 +8,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_6238
 {
@@ -28,7 +29,8 @@ public class Program
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         const int Pass = 100;
         const int Fail = -1;

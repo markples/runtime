@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b93027
 {
 public class AA
@@ -12,7 +13,8 @@ public class AA
         return param1[param2, param2,
             ((byte)(33 / param2)) | ((byte)((float)((byte)(33 / param2))))];
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

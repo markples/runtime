@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b77713
 {
     using System;
@@ -21,7 +22,8 @@ namespace b77713
                 throw new Exception();
             }
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

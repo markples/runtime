@@ -5,12 +5,14 @@ using System.Numerics;
 using System.Runtime.Intrinsics;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_71219
 {
 public class Runtime_71219
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Vector4 vtor = new Vector4(1, 2, 3, 4);
 

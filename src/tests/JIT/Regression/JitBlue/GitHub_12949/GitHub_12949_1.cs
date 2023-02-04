@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace GitHub_12949_1
 {
@@ -43,7 +44,8 @@ public class X<K,V>
 
 public class B
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var a = new X<int, string>(11);
         int z = a.Test();

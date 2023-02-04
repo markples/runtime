@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace UnsafeTesting_GitHub_16254
 {
@@ -33,7 +34,8 @@ namespace UnsafeTesting_GitHub_16254
             }
             return true;
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             if (QuaternionAddTest())
             {

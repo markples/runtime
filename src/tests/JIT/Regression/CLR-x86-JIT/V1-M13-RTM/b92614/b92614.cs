@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b92614
 {
 public struct CC
@@ -12,6 +13,7 @@ public struct CC
         return
             82 * (ulong)N * (float)(((ulong)N) ^ (82u * (ulong)N));
     }
-    public static int Main() { Static3(0); return 100; }
+    [Fact]
+    public static int TestEntryPoint() { Static3(0); return 100; }
 }
 }

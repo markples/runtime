@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b19112a
 {
 public class foo
@@ -11,7 +12,8 @@ public class foo
     public static sbyte a, b, c;
 #pragma warning restore 0414
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         a = 19;

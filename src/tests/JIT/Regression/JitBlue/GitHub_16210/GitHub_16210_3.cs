@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_16210_3
 {
@@ -33,7 +34,8 @@ public class X
         return Unsafe.Add(ref p, i);
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         float v0 = P(0);
         float v1 = P(1);

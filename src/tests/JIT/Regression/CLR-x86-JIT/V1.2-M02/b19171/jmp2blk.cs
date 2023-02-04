@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b19171
 {
 public struct AA
@@ -20,7 +21,8 @@ public struct AA
         return (new int[1, 1]);
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

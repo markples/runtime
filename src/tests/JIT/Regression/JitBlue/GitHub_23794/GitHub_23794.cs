@@ -4,6 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace GitHub_23794
 {
@@ -30,7 +31,8 @@ public class Program
         public uint i3;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         S s = new S();
         s.i0 = 0x12345678;

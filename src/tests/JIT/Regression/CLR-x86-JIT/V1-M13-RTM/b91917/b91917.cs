@@ -3,11 +3,13 @@
 //
 
 using System;
+using Xunit;
 namespace b91917
 {
 public class CC
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

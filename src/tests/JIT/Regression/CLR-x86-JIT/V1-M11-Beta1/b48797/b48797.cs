@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b48797
 {
     using System;
@@ -12,7 +13,8 @@ namespace b48797
 
         static void Method1(float param1, double[] ad) { }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             float[] local3 = new float[2];
             try

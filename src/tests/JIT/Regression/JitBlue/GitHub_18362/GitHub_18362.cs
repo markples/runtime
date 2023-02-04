@@ -4,6 +4,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 // This is a struct that will be passed as a split struct
 namespace GitHub_18362
@@ -98,7 +99,8 @@ public static class GitHub_18362
     }
 
     [MethodImpl(MethodImplOptions.NoOptimization)]
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

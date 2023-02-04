@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_18542
 {
@@ -98,7 +99,8 @@ public static class GitHub_18542
         s5.M();
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         ViaClass();
         ViaStruct1();

@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b07900
 {
 public struct AA
@@ -35,7 +36,8 @@ public struct AA
 
 public class App
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

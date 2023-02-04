@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b16335
 {
     using System;
@@ -20,7 +21,8 @@ namespace b16335
     {
         static BB m_static2 = new BB();
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

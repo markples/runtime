@@ -4,6 +4,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_18497
 {
@@ -30,7 +31,8 @@ public static class GitHub_18497
         return Sum(sLocal);
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool pass = true;
         sStatic.v1 = new Vector<float>(0.0F);

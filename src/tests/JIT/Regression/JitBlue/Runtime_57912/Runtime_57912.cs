@@ -4,6 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace Runtime_57912
 {
@@ -32,7 +33,8 @@ internal struct AA
 public class Runtime_57912
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return (int)test_0_17(100, new AA(100), new AA(0));
     }

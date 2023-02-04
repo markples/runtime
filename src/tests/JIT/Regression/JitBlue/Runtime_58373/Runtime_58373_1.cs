@@ -3,12 +3,14 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_58373_1
 {
 public unsafe class Runtime_58373
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         short halfValue = HalfToInt16Bits(MakeHalf());
         int x = halfValue;

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 namespace b89797
 {
 public unsafe class testout1
@@ -27,7 +28,8 @@ public unsafe class testout1
         return retval_1;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         CL cl = new CL();
 

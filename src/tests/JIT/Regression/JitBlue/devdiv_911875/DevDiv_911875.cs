@@ -4,6 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace DevDiv_911875
 {
@@ -12,7 +13,8 @@ public class Repro
     public float x;
     public float y;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         byte[] buf = new byte[8];
         WriteFloat(buf, 0, 123.0F);

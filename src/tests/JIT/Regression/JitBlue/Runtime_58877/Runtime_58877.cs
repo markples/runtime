@@ -13,6 +13,7 @@
 //
 
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_58877
 {
@@ -29,7 +30,8 @@ public class Program
          }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         ushort[] vr3 = new ushort[]{0};
         for (int vr4 = 0; vr4 < 2; vr4++)

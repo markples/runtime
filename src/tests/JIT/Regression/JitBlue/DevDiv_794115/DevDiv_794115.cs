@@ -3,12 +3,14 @@
 //
 
 using System;
+using Xunit;
 
 namespace DevDiv_794115
 {
 public class Repro
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         // This testcase ensures that we correctly handle static field
         // reads of different size than the destination for mul

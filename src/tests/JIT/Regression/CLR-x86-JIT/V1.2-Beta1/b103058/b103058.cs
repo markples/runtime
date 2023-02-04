@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace b103058
 {
@@ -41,7 +42,8 @@ public unsafe class test
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         VT vt1 = new VT();
         VT vt2 = new VT();

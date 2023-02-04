@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b38556
 {
     using System;
@@ -30,7 +31,8 @@ namespace b38556
                     ref s_au[0],
                     ref s_au)[0]);
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

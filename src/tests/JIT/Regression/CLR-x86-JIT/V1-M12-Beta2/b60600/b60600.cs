@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 namespace b60600
 {
 public unsafe class bug1
@@ -14,7 +15,8 @@ public unsafe class bug1
     {
         return *a0;
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         VT1 vt = new VT1();
         double* a0 = stackalloc double[1];

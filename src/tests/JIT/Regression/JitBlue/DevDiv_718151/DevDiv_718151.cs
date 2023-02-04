@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace DevDiv_718151
 {
@@ -33,7 +34,8 @@ public class DevDiv_714266
     }
 
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         StructWithStructField s = new StructWithStructField();
         s.structField.a = 100;

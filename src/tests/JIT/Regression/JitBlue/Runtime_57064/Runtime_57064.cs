@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_57064
 {
@@ -14,7 +15,8 @@ struct S
 
 public class Runtime_57064
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         S val = Create();
         val.F0 = 0xF0;

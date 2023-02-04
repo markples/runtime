@@ -6,6 +6,7 @@
 //       an interval as spilled.
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_66578
 {
@@ -41,7 +42,8 @@ public class Program2
     public static I1 s_64;
     public static I0 s_88;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var vr6 = new C0(0, false, 0, 0);
         try

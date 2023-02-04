@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b38403
 {
     using System;
@@ -25,7 +26,8 @@ namespace b38403
             while (AA.m_bStatic1) ;
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             CC local5 = new CC();
             do

@@ -4,6 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_64657
 {
@@ -19,7 +20,8 @@ public unsafe class Runtime_64657
         T implicitNullcheck = c[x];
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         if (!OperatingSystem.IsWindows())
             return 100; // VirtualAlloc is only for Windows

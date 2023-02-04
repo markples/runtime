@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b31917
 {
     using System;
@@ -19,7 +20,8 @@ namespace b31917
             uint[] local6 = new uint[7];
             return BB.m_adStatic1;
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

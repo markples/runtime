@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Xunit;
 namespace b52733
 {
     using System;
@@ -12,7 +13,8 @@ namespace b52733
 
         private static float[] Method1() { return s_af = new float[5]; }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             bool b = false;
             if (b)

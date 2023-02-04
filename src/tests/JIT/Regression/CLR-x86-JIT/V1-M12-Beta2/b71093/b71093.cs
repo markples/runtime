@@ -3,6 +3,7 @@
 
 
 using System;
+using Xunit;
 
 
 namespace b71093
@@ -26,7 +27,8 @@ namespace b71093
             }
             finally { }
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

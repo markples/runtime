@@ -3,6 +3,7 @@
 
 
 using System;
+using Xunit;
 
 
 namespace b13944
@@ -27,7 +28,8 @@ namespace b13944
         }
 
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int i = 0;
             X x = new X();

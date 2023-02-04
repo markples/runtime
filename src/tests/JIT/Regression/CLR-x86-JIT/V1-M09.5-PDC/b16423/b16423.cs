@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b16423
 {
@@ -36,7 +37,8 @@ public class AA
 		GC.Collect();
 	}
 	
-	public static int Main()
+	[Fact]
+	public static int TestEntryPoint()
 	{
 		DoThings();
 		new AA().CheckHeap();

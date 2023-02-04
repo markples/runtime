@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b08020
 {
 public class AA
@@ -26,7 +27,8 @@ public class AA
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         f(ref m_arr);
         Console.WriteLine("Passed.");

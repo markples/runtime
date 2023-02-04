@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b21015
 {
@@ -30,7 +31,8 @@ struct T
 
 public class Tester
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         T t1, t2;
 

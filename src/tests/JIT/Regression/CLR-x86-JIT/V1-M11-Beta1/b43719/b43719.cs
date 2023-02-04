@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b43719
 {
     using System;
@@ -30,7 +31,8 @@ namespace b43719
                     new BB().Method3(Static1(ref ab[N], ref ab[N]), bb[N].m_adField5, bb, Static2());
             }
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

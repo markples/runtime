@@ -4,13 +4,15 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace Runtime_56743_0
 {
 public class Runtime_56743_0
 {
     [MethodImpl(MethodImplOptions.NoOptimization)]
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int result = Foo(default, default);
         return result == 0 ? 100 : -1;

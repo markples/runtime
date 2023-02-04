@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace Runtime_36468
 {
@@ -22,7 +23,8 @@ struct S1
 public class Runtime_36468
 {
     static S1 s_3;
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int result = -1;
         try

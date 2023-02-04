@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b15155
 {
     //@BEGINRENAME; Verify this renames
@@ -42,7 +43,8 @@ namespace b15155
 
     public class bug
     {
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
 
             int size = 32;

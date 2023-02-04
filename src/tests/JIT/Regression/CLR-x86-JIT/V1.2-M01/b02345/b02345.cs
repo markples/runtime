@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections;
+using Xunit;
 
 namespace b02345
 {
@@ -80,7 +81,8 @@ public class AA
 
 public class App
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

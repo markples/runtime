@@ -5,6 +5,7 @@
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace b309539
 {
@@ -55,7 +56,8 @@ public struct AA
 [StructLayout(LayoutKind.Sequential)]
 public class App
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         App.m_bFwd6 = false;
 

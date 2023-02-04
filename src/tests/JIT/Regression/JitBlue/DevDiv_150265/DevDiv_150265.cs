@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace DevDiv_150265
 {
@@ -10,7 +11,8 @@ public class Program
 {
     static bool flag;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {            
         flag = true;
         return Test();

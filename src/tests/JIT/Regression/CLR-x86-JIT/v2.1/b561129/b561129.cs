@@ -4,6 +4,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace b561129
 {
@@ -79,7 +80,8 @@ public class ProgressConsumerBuilder
 
 public class MainApp
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

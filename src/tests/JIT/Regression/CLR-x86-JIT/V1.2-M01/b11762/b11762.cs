@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b11762
 {
@@ -19,7 +20,8 @@ public class test1
         Console.Write(".");
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         double c = 100.0;
         double a = f1();

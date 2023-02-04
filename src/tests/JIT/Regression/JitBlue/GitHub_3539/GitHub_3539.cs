@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_19910_GitHub_3539
 
@@ -43,7 +44,8 @@ namespace GitHub_19910_GitHub_3539
 
         public class BasicReadWriteBenchmarkBgr : BasicReadWriteBenchmark<Bgr> { }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

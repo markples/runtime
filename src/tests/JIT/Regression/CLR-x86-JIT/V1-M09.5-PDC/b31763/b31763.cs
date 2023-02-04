@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b31763
 {
     using System;
@@ -19,7 +20,8 @@ namespace b31763
                 } while ((object)m_fForward1 != param2);
             }
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

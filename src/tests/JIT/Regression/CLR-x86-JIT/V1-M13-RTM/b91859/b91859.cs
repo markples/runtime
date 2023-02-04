@@ -3,11 +3,13 @@
 //
 
 using System;
+using Xunit;
 namespace b91859
 {
 public class AA
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool b = false;
         b = (b ? (object)b : (object)new AA()) ==

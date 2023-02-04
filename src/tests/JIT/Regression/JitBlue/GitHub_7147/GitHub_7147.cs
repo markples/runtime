@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_7147
 {
@@ -67,7 +68,8 @@ namespace GitHub_7147
             return x == y;
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int errors = 0;
 

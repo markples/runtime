@@ -2,12 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace b72422
 {
 public class Bug
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         double d1 = 0;
         d1 = -d1;

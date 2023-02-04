@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Xunit;
 namespace Github_19558
 {
 struct S0
@@ -20,7 +21,8 @@ public class Program
 {
     static S0[] s_7 = new S0[] { new S0(0) };
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return (M9(0) == -1) ? 100 : 1;
     }

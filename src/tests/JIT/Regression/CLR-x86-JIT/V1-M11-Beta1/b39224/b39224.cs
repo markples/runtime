@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b39224
 {
     using System;
@@ -10,7 +11,8 @@ namespace b39224
     {
         static uint[] m_au = new uint[10];
         static void Method1(uint param1) { }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int a = 98;
             try

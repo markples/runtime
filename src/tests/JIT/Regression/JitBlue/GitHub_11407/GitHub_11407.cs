@@ -7,6 +7,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_11407
 {
@@ -16,7 +17,8 @@ public class GitHub_11407
     [MethodImpl(MethodImplOptions.NoInlining)]
     static foo getfoo() { return new foo(); }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int returnVal = 100;
         foo myFoo = getfoo();

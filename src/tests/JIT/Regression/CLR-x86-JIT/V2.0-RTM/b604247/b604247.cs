@@ -5,12 +5,14 @@ using System;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace b604247
 {
 public class Test
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool testCaseSucceeded = false;
         string[] theArray = { "Wrong =0", "Correct =1", "Wrong =2", "Wrong =3" };

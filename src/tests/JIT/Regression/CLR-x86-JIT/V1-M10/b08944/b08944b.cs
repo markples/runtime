@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b08944b
 {
     //@BEGINRENAME; Verify this renames
@@ -34,7 +35,8 @@ namespace b08944b
             p[0] = (char)0;
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             UInt32 ec, ec1;
 

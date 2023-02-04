@@ -5,6 +5,7 @@
 // loops and (illegally) above the corresponding type initializer calls.
 
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_10780
 {
@@ -41,7 +42,8 @@ namespace GitHub_10780
             }
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             Sum = 0;
             SumNFourteens(7);  // Now Sum = 14 * 7 = 98 (and Two = 2)

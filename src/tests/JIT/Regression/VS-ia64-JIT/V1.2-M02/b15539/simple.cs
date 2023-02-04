@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace b15539
 {
@@ -16,7 +17,8 @@ internal struct VC
 
 public class A
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         VC vc = new VC();
         vc.x = 5;

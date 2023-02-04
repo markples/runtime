@@ -3,6 +3,7 @@
 
 using System.Runtime.CompilerServices;
 using System.Threading;
+using Xunit;
 
 namespace GitHub_19599
 {
@@ -16,7 +17,8 @@ public class Program
     static S0 s_2;
     static long s_5;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         s_2.F0 = 128;
         M7(s_2);

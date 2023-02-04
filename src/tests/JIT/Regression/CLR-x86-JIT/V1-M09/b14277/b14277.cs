@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b14277
 {
     //@BEGINRENAME; Verify this renames
@@ -21,7 +22,8 @@ namespace b14277
 
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             Bug b = new Bug();
             b.runTest();

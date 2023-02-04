@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b89279
 {
@@ -19,6 +20,7 @@ public class AA
         param1 = param1;
 #pragma warning restore 1717
     }
-    public static int Main() { Static5(0); return 100; }
+    [Fact]
+    public static int TestEntryPoint() { Static5(0); return 100; }
 }
 }

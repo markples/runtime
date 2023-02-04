@@ -3,13 +3,15 @@
 
 
 using System;
+using Xunit;
 
 
 namespace b14323
 {
     public class AppStarter
     {
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int[] foo = new int[1];
             long j = 0;

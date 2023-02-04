@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b42009
 {
     using System;
@@ -21,7 +22,8 @@ namespace b42009
             );
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int[] an = new int[2];
             Static2(ref an);

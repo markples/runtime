@@ -6,13 +6,15 @@ using System;
 using System.Reflection;
 using System.Collections;
 using System.Globalization;
+using Xunit;
 
 
 namespace b14716
 {
 public class Bug
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Decimal[] dcmlSecValues = new Decimal[2] { 2, 3 };
         Int32 aa = 1;

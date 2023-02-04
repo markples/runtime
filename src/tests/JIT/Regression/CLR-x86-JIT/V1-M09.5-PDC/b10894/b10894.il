@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 .assembly extern legacy library mscorlib {}
+.assembly extern xunit.core {}
 .assembly extern System.Console
 {
   .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )
@@ -65,6 +66,9 @@ LoadOdd:
 
 .method public static int32 main()
 { .entrypoint
+  .custom instance void [xunit.core]Xunit.FactAttribute::.ctor() = (
+      01 00 00 00
+  )
   .maxstack     1
   ldc.i4.5
   call          void b10894.EvenOdd::Test(int32)

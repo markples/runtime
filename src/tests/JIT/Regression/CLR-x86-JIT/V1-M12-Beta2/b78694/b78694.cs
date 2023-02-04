@@ -2,12 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace b78694
 {
 public class Foo
 {
-    static public int Main()
+    [Fact]
+    static public int TestEntryPoint()
     {
         double inf = Double.PositiveInfinity;
         System.Console.WriteLine(System.Math.Atan2(inf, inf));

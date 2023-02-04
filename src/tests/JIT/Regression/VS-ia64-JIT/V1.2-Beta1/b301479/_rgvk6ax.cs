@@ -4,6 +4,7 @@
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace b301479
 {
@@ -37,7 +38,8 @@ public struct AA
 [StructLayout(LayoutKind.Sequential)]
 public class App
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

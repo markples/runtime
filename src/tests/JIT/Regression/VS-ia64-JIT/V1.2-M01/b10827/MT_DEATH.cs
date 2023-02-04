@@ -4,6 +4,7 @@
 
 using System;
 using System.Threading;
+using Xunit;
 namespace b10827
 {
 public class testout1
@@ -20826,7 +20827,8 @@ public class testout1
         return;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int Sum = 0;
         Thread[] Thrd = new Thread[15];

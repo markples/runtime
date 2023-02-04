@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b16328
 {
     using System;
@@ -9,7 +10,8 @@ namespace b16328
     public class DD
     {
         public static int zero = 0;
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

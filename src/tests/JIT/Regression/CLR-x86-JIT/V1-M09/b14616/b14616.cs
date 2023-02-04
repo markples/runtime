@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b14616
 {
     //@BEGINRENAME; Verify this renames
@@ -28,7 +29,8 @@ namespace b14616
             return true;
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             MultiDim_ArgCheck_Fail();
             return 100;

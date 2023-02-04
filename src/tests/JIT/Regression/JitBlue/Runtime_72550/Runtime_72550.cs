@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_72550
 {
@@ -10,7 +11,8 @@ public static class Runtime_72550
 {
     private static int retCode = 100;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         IsTrue(Test1.StartsWith1(""));
         IsTrue(Test1.StartsWith2(""));

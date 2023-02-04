@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b44297
 {
     using System;
@@ -26,7 +27,8 @@ namespace b44297
             }
             return 0;
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             new BB().Method1();
             return 100;

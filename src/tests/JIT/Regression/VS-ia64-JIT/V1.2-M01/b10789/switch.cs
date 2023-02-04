@@ -3,13 +3,15 @@
 //
 
 using System;
+using Xunit;
 
 namespace b10789
 {
 public class foo
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int i = 3;
 

@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b119538b
 {
 class C
@@ -17,7 +18,8 @@ class B
 
 public class Class1
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         B[,] ab = new B[1, 1];
         object[,] ao = ab;

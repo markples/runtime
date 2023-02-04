@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_13486
 {
@@ -27,7 +28,8 @@ public class Program
         return s;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return (Test(LongEnum.Option0) == "Option0") ? 100 : 1;
     }

@@ -4,6 +4,7 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_73951
 {
@@ -16,7 +17,8 @@ public class Runtime_73951
 
     public static ushort s_result;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Problem(new Runtime());
 

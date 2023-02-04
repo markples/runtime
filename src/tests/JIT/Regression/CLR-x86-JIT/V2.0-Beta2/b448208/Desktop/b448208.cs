@@ -9,6 +9,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Collections;
+using Xunit;
 
 namespace b448208
 {
@@ -29,7 +30,8 @@ public class cs1
 #pragma warning restore 0414
 
     [MethodImplAttribute(MethodImplOptions.NoInlining)]
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

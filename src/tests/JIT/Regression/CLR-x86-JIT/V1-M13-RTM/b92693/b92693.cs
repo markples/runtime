@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b92693
 {
@@ -15,6 +16,7 @@ public struct AA
     {
         return new TestEnum[(long)(m_shStatic1 * 11u - m_shStatic1 * 11u)];
     }
-    public static int Main() { Static2(null); return 100; }
+    [Fact]
+    public static int TestEntryPoint() { Static2(null); return 100; }
 }
 }

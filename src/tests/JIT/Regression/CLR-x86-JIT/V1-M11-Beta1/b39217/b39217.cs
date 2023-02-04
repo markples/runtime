@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b39217
 {
     using System;
@@ -30,7 +31,8 @@ namespace b39217
             Method1();
             Method2();
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

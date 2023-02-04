@@ -4,12 +4,14 @@
 
 // compile with csc /o+
 using System;
+using Xunit;
 namespace b102879
 {
 public class MyClass
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         double d1 = double.PositiveInfinity;

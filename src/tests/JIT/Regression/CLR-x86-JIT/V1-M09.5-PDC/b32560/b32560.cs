@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b32560
 {
     using System;
@@ -30,7 +31,8 @@ namespace b32560
                 }
             } while (param1[2]);
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

@@ -3,12 +3,14 @@
 //
 
 using System;
+using Xunit;
 
 namespace b32801
 {
 public class bug
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Decimal cur1 = new Decimal(UInt32.MaxValue);
         Console.WriteLine("The decimal value is: " + cur1);

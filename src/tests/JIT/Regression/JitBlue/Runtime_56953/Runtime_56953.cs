@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 namespace Runtime_56953
 {
 public class TestClass13
@@ -62,7 +63,8 @@ public class TestClass13
             return;
         }
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

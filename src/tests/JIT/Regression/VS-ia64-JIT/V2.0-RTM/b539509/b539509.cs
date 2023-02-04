@@ -5,6 +5,7 @@
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace b539509
 {
@@ -588,7 +589,8 @@ public struct BB
 
 public class App
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

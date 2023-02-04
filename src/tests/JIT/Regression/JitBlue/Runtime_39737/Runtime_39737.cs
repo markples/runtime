@@ -7,12 +7,14 @@
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using System;
+using Xunit;
 
 namespace Runtime_39737
 {
 public class Runtime_39403
 { 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         if (Sse41.IsSupported)
         {

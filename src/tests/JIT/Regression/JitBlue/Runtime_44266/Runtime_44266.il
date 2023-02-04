@@ -5,6 +5,7 @@
 // However, Jit could try to optimize `-` as `+ -CNST_INT` that could lead to an incorrect `long + (-byref)`.
 
 .assembly extern System.Console {}
+.assembly extern xunit.core {}
 .assembly extern legacy library mscorlib {}
 .assembly 'Runtime_44266' { }
 .namespace Runtime_44266
@@ -22,6 +23,9 @@
 
   .method public static int32 main() cil managed
   {
+    .custom instance void [xunit.core]Xunit.FactAttribute::.ctor() = (
+        01 00 00 00
+    )
     .entrypoint
     .maxstack  2
     .locals init (class Runtime_44266.ctest V_1,

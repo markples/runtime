@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
+using Xunit;
 
 namespace GitHub_13057
 {
@@ -66,7 +67,8 @@ public class Program
 
 
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         RetSt2 r = new Test("Lock").foo(-1);
         Console.WriteLine("r._key: " + r._key);

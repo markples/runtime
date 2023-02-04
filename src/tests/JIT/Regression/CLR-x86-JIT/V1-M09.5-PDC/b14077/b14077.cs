@@ -2,12 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace b14077
 {
 public class Test
 {
-    static public int Main()
+    [Fact]
+    static public int TestEntryPoint()
     {
         bool b1 = Double.IsPositiveInfinity(Math.Exp(Double.PositiveInfinity));
         bool b2 = 0 == Math.Exp(Double.NegativeInfinity);

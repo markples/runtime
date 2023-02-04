@@ -4,11 +4,13 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 namespace b589202
 {
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Test(null);
         Console.WriteLine("Test Success");

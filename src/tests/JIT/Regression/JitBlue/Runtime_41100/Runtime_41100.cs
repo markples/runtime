@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_41100
 {
@@ -65,6 +66,7 @@ public class X
         return r;
     }
 
-    public static int Main() => F();
+    [Fact]
+    public static int TestEntryPoint() => F();
 }
 }

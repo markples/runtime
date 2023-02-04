@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b56154
 {
     using System;
@@ -16,7 +17,8 @@ namespace b56154
                 Array[] a = new Array[2];
             }
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             byte b = 0;
             Method1(ref b);

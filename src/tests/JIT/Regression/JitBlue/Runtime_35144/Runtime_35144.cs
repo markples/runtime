@@ -9,6 +9,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
+using Xunit;
 
 namespace Runtime_35144
 {
@@ -45,7 +46,8 @@ public static class Runtime_35144
         if (((string)o) != "SomeString") throw new Exception();
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int returnVal = 100;
         try

@@ -5,6 +5,7 @@
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+using Xunit;
 namespace b309548
 {
 public enum TestEnum
@@ -37,7 +38,8 @@ public class AA
 
 public class App
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

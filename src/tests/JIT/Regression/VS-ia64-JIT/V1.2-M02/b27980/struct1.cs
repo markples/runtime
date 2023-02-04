@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b27980
 {
@@ -21,7 +22,8 @@ public class Test_struct1
         GC.Collect();
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         S sM;
 

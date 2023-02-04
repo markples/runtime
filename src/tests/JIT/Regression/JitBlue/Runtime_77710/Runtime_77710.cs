@@ -3,12 +3,14 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_77710
 {
 public class Runtime_77710
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return Test(new Derived());
     }

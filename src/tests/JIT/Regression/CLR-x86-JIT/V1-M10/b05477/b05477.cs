@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b05477
 {
@@ -22,7 +23,8 @@ public class mem035
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int RetInt = 1;
 

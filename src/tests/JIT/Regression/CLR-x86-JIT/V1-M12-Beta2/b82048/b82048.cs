@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace b82048
 {
@@ -9,7 +10,8 @@ public struct AA
 {
     public static sbyte m_suFwd3;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool local9 = false;
         sbyte local11 = m_suFwd3;

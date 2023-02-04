@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b47047
 {
     using System;
@@ -9,7 +10,8 @@ namespace b47047
     public class BB
     {
         static void Method1() { }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             bool local1 = false;
             for (; local1; Method1()) { }

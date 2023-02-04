@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b48872
 {
     using System;
@@ -9,7 +10,8 @@ namespace b48872
     public class AA
     {
         static uint m_u;
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             bool[] ab = new bool[4];
             uint uu;

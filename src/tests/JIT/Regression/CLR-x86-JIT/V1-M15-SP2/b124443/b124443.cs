@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b124443
 {
 delegate void TestDelegate();
@@ -132,7 +133,8 @@ public class ArrayBounds
 		return 100;
 	}
 
-	public static int Main()
+	[Fact]
+	public static int TestEntryPoint()
 	{
 		if (RunTests(new TestDelegate(f1a))!=100) return 1;
 		if (RunTests(new TestDelegate(f2a))!=100) return 1;

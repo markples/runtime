@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_12949_6
 {
@@ -48,7 +49,8 @@ public class X<K> where K: IGet
 
 public class B
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var r = new R();
         r.a = 3;

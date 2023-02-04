@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace DevDiv2_10623
 {
 public class Program
@@ -11,7 +12,8 @@ public class Program
     {
         return item is Guid;
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         if (IsGuid(Guid.NewGuid()))
             return 100;

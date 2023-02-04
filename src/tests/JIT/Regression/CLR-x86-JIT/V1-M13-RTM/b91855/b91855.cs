@@ -3,11 +3,13 @@
 //
 
 using System;
+using Xunit;
 namespace b91855
 {
 public struct AA
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

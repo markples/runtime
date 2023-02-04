@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b610750_32vs64
 {
@@ -75,7 +76,8 @@ public class RandomTwister64
 
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int i;
         int countZero = 0;

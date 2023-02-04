@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 // Various tests for memory-dependent loop hoisting
 
@@ -10,7 +11,8 @@ namespace Runtime_54118
 {
 public class Runtime_54118
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         _clsVar = -1;
         int result = 0;

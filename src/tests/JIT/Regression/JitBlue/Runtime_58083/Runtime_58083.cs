@@ -3,6 +3,7 @@
 //
 // Note: In this repro, we accidently mark a non-EH variable as needing a spill which
 // corrupts the value stored on stack. The problem repros only on linux/arm64.
+using Xunit;
 namespace Runtime_58083
 {
 class C0
@@ -64,7 +65,8 @@ public class Program
     internal static ushort[][] s_133 = new ushort[][] { new ushort[] { 0 }, new ushort[] { 0 }, new ushort[] { 0 }, new ushort[] { 1, 1, 1 }, new ushort[] { 0 }, new ushort[] { 0 }, new ushort[] { 0 }, new ushort[] { 0 }, new ushort[] { 0 } };
     internal static long[] s_138 = new long[] { 0 };
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         s_32 = s_32;
         M64(new C3(0));

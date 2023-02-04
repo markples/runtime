@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_12949_2
 {
@@ -34,7 +35,8 @@ public class X<K>
 
 public class B
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var a = new X<int>(11);
         bool result = a.Test();

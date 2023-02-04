@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b119538a
 {
 class A
@@ -10,7 +11,8 @@ class A
 
 public class B
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         object[,] oa = new B[1, 1];
         B[,] ba = (B[,])oa;

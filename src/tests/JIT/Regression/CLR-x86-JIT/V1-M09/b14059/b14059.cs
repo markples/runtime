@@ -3,13 +3,15 @@
 //
 
 using System;
+using Xunit;
 
 namespace b14059
 {
 public class test
 {
     static byte by = 13;
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         byte by1 = (byte)(-by);
 

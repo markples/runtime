@@ -8,6 +8,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Numerics;
+using Xunit;
 
 namespace GitHub_8220
 {
@@ -145,7 +146,8 @@ namespace GitHub_8220
             return 100;
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             int returnValue = 100;
             Console.WriteLine("Testing Dot Product");

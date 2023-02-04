@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b124232
 {
@@ -29,7 +30,8 @@ class C2
 }
 public class Test_genisinst
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         C1<int> c1 = new C1<int>(100);
         object o = c1;

@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace DevDiv2_8863
 {
@@ -67,7 +68,8 @@ public class Program
         d.j = 0x77777777;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         /* This issue is caused by CSE and trying to pull a typecheck out of a loop.
          * We used to do this incorrectly and this could allow a type to call methods

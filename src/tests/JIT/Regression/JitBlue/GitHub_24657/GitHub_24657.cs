@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_24657
 {
@@ -30,7 +31,8 @@ public class GitHub_24657
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int returnVal = 100;
         var array = new [] { new TestStruct(123), new TestStruct(456) };

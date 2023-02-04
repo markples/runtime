@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b102615
 {
@@ -26,7 +27,8 @@ class C
 
 public class Test_test1
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         test1();
         test2();

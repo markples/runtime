@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b48248
 {
@@ -28,7 +29,8 @@ public struct test
         int6 = i;
         int7 = i;
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         test t = new test();
 

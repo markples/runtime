@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace DevDiv_168744
 {
@@ -28,7 +29,8 @@ public class Program
         return res;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool res = Program.Test(0x8100000000000000);
 

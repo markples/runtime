@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 
 namespace b219940
@@ -78,7 +79,8 @@ public class Test_struct01_gen
 
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int i = 0;
         int[] int_arr = new int[] { 0, 1, 2, 3 };

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_11574
 {
@@ -22,7 +23,8 @@ public class Program
         return (actual == expected) ? rv : 0;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Init();
 

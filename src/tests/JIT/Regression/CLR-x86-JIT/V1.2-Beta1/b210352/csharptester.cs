@@ -3,6 +3,7 @@
 
 using System;
 using System.Diagnostics;
+using Xunit;
 
 namespace csharptester
 {
@@ -2662,7 +2663,8 @@ public class M
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

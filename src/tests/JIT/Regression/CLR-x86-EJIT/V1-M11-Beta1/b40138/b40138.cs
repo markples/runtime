@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b40138
 {
     using System;
@@ -15,7 +16,8 @@ namespace b40138
 
         static bool Static1(float[] param1) { return false; }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

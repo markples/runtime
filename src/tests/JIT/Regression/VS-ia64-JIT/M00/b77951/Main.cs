@@ -6,7 +6,8 @@ namespace b77951
 {
 public class Test
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int[] arrayValues = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         Property prop = new Property(0);

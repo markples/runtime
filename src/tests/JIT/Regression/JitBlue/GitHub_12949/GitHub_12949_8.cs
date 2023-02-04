@@ -4,6 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Numerics;
+using Xunit;
 
 namespace GitHub_12949_8
 {
@@ -25,7 +26,8 @@ public class X<K>
 
 public class B
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         X<Vector3> a = null;
         bool result = false;

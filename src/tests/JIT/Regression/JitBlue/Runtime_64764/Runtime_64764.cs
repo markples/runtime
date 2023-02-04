@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Xunit;
 namespace Runtime_64764
 {
 public class TestClass
@@ -128,7 +129,8 @@ public class TestClass
             return;
         }
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         new TestClass().Method0();
 

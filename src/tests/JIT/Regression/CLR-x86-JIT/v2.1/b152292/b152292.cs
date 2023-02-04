@@ -11,6 +11,7 @@
 */
 
 using System;
+using Xunit;
 
 namespace b152292
 {
@@ -4119,7 +4120,8 @@ public sealed class C
         return c.i4094;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

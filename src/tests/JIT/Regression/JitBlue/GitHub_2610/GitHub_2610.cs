@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_2610
 {
@@ -24,7 +25,8 @@ public struct MyStruct
 
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         MyValue p1 = new MyValue(10);
         MyValue p2 = new MyValue(20);

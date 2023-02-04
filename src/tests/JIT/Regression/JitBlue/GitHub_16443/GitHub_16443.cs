@@ -3,6 +3,7 @@
 
 using System;
 using System.Numerics;
+using Xunit;
 
 namespace GitHub_16443
 {
@@ -14,7 +15,8 @@ public class Program
         public vec2(float x, float y) => value = new Vector2(x, y);
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var a = new vec2(0.42f, 0.24f);
         var b = new vec2(0.42f, 0.24f);

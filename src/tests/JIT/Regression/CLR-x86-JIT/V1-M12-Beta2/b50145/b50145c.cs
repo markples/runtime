@@ -3,12 +3,14 @@
 //
 
 using System;
+using Xunit;
 
 namespace b50145c
 {
 public class test
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         float x = 2;
         x *= x * 3;

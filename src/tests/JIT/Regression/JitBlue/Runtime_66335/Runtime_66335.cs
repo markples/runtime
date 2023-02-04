@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_66335
 {
@@ -9,7 +10,8 @@ public class Runtime_66335
 {
     private static S0 s_24;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return Problem() == 1 ? 100 : 101;
     }

@@ -3,11 +3,13 @@
 //
 
 using System;
+using Xunit;
 namespace b78392
 {
 public class foo
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         byte[,] Param = new byte[2, 2];
         Param[0, 0] = 1;

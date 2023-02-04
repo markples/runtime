@@ -7,12 +7,14 @@
 // thrown.
 
 using System;
+using Xunit;
 
 namespace DevDiv_284785
 {
 public static class C
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int i = -4;
         ulong l = 0;

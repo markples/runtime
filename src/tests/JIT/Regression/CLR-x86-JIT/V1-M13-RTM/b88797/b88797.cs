@@ -3,13 +3,15 @@
 //
 
 using System;
+using Xunit;
 
 namespace b88797
 {
 public class CC
 {
     public static bool Method2() { return true; }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

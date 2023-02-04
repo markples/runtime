@@ -4,6 +4,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace b565808
 {
@@ -26,7 +27,8 @@ public class ContentType
 public class My
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         new ContentType();

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b31903
 {
     using System;
@@ -9,7 +10,8 @@ namespace b31903
     public class AA
     {
         static double m_dStatic3 = 273.31;
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

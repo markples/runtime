@@ -3,6 +3,7 @@
 
 using System;
 using System.Security;
+using Xunit;
 
 
 namespace b402701
@@ -24,7 +25,8 @@ public class Foo
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Foo f = new Foo();
         caller(f);

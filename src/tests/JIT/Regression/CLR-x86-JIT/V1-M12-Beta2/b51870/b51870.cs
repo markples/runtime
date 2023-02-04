@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b51870
 {
     using System;
@@ -10,7 +11,8 @@ namespace b51870
     {
         int m_iField4;
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             BB local3 = new BB();
             bool b = false;

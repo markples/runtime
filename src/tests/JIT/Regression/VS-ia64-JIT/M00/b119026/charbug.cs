@@ -2,13 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b119026b
 {
 public class test
 {
     static sbyte si8;
     static char sc;
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         sbyte i8 = -1;
         char c = (char)i8;

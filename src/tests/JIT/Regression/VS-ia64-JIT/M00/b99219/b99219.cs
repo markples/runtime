@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b99219
 {
 public class a
@@ -26,7 +27,8 @@ public class a
         Console.WriteLine("Done...");
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Console.WriteLine("Starting....");
 

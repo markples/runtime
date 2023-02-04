@@ -16,13 +16,15 @@
 // <Code> 
 
 using System;
+using Xunit;
 
 namespace b36274
 {
 public class MyClass
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         long test1 = long.MinValue;
         long test2 = 0;

@@ -3,6 +3,7 @@
 
 using System;
 using System.Reflection;
+using Xunit;
 
 namespace GitHub_12392
 {
@@ -11,7 +12,8 @@ namespace GitHub_12392
     public class Program
     {
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             Test t = new Test();
             if (!t.TestMethod())

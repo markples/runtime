@@ -3,6 +3,7 @@
 
 using System.Globalization;
 using System;
+using Xunit;
 
 namespace b04914
 {
@@ -21,7 +22,8 @@ namespace b04914
                 Console.WriteLine("Test FAiLED");
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             new Bug().runTest();
             return 100;

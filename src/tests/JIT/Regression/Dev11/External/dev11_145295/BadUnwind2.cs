@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 
 namespace CSharpPart_145295
@@ -106,7 +107,8 @@ namespace CSharpPart_145295
         }
 
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             App.DispatchCalloutSequence("TopLevel", Test.ILPart.CallThroughFrameWithMultipleEndfinallyOps_TopLevel);
             App.DispatchCalloutSequence("Nested", Test.ILPart.CallThroughFrameWithMultipleEndfinallyOps_Nested);

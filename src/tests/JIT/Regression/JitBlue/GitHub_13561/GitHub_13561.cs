@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using Xunit;
 
 namespace GitHub_13561
 {
@@ -55,7 +56,8 @@ public static class Program
         return result;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return GetCustomAttribute<Attribute>(new PropertyInfo()) != null ? 100 : -1;
     }

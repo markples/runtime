@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace Dev11_5437
 {
@@ -17,7 +18,8 @@ public class Program
             throw new Exception("FAILED");
         }
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int d = 0;
         int i = 3;

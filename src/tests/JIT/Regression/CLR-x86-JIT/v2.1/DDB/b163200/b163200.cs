@@ -4,6 +4,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace b163200
 {
@@ -19,7 +20,8 @@ public class ClassWithCctor<T>
 
 public class Repro
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

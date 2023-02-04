@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections;
+using Xunit;
 
 
 namespace b51875
@@ -26,7 +27,8 @@ namespace b51875
                 return 1;
             return 0;
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

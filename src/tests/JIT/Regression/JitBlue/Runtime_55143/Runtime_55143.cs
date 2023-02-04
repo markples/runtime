@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Xunit;
 namespace Runtime_55143
 {
 struct S0
@@ -16,7 +17,8 @@ struct S0
 
 public class Runtime_55143
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int value = M47(-1);
         return value == 0 ? 100 : 101;

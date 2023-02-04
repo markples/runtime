@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 /*
 COMPILE THIS WITH OPTIMIZATION TURNED OFF:
 coolc /o- bug.cs
@@ -28,7 +29,8 @@ namespace b28037
             }
         }
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

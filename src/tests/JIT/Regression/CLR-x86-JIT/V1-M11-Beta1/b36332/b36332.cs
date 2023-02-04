@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b36332
 {
     using System;
@@ -14,7 +15,8 @@ namespace b36332
         {
             return ((object)(m_axField4[2].m_dField3));
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

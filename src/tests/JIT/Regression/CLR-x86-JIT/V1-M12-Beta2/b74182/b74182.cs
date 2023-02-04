@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b74182
 {
 public class bug1
@@ -21,7 +22,8 @@ public class bug1
 
     public static VT vtstatic = new VT();
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         double a5 = -0.5;
 

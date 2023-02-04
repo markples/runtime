@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b40221
 {
     using System;
@@ -14,7 +15,8 @@ namespace b40221
             while (a == 1)
                 throw new Exception();
         }
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             try
             {

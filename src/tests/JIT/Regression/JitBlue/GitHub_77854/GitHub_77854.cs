@@ -4,12 +4,14 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Xunit;
 
 namespace GitHub_77854
 {
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         new Program().TestFunction();
         return 100;

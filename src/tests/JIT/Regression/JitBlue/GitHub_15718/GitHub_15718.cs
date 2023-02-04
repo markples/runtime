@@ -4,12 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_15718
 {
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         var map = new Dictionary<string, bool?> { { "foo", true } };
         return (Test(map) == true) ? 100 : 1;

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b608198
 {
 /*
@@ -11,7 +12,8 @@ namespace b608198
 
 public class TEST
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int SSS;
         try

@@ -3,13 +3,15 @@
 //
 
 using System;
+using Xunit;
 
 namespace b184799
 {
 public class foo
 {
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Console.WriteLine("testTableSwitch:  ");
         int s = 2, r = 3;

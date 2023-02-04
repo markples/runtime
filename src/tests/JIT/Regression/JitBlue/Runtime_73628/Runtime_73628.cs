@@ -3,12 +3,14 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_73628
 {
 public unsafe class Runtime_73628
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return Problem() ? 101 : 100;
     }

@@ -2,11 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 namespace b92714
 {
 public struct AA
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool local3 = false;
         do

@@ -10,6 +10,7 @@
 //<Expects Status=success> </Expects>
 
 using System;
+using Xunit;
 
 namespace b24727
 {
@@ -37,7 +38,8 @@ struct Struct1 : Inter1, Inter2, Inter3
 
 public class Test
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Inter1 i1 = new Struct1();
 

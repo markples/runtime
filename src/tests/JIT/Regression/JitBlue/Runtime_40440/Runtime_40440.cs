@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Runtime.Intrinsics;
 using System.Security.Cryptography;
+using Xunit;
 
 namespace Runtime_40440
 {
@@ -154,7 +155,8 @@ public class Runtime_40440
         return UseArrayElementAsCallArgument(v, e);
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         bool f = true;
         f &= CheckVectorFloat();

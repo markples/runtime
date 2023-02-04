@@ -10,6 +10,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Collections;
+using Xunit;
 
 namespace b425314
 {
@@ -931,7 +932,8 @@ public class Mutate
         }
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

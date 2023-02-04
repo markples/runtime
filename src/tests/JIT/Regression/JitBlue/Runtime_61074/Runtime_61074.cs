@@ -13,6 +13,7 @@
 // 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace Runtime_61074
 {
@@ -24,7 +25,8 @@ public struct S0
 
 public class Runtime_61074
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         S0 vr4 = new S0 { F0 = 10, F1 = -1 };
         long result = WeirdAnd(vr4);

@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b00735
 {
 public struct AA
@@ -19,7 +20,8 @@ public struct AA
         }
         do { } while (flag);
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         f();
         return 100;

@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 namespace b92568
 {
 public struct AA
@@ -12,7 +13,8 @@ public struct AA
         bool b = false;
         return (bool)(object)(long)(byte)(b ? Convert.ToInt64(param2) : (long)param2);
     }
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         try
         {

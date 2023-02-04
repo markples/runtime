@@ -3,12 +3,14 @@
 //
 
 using System;
+using Xunit;
 
 namespace b102763
 {
 public class test
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int i = 0;
         i += ParamOnStack();

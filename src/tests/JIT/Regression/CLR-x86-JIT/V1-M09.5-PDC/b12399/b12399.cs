@@ -3,6 +3,7 @@
 //
 
 using System;
+using Xunit;
 
 namespace b12399
 {
@@ -10,7 +11,8 @@ public class foo
 {
     static double nan = 0.0 / 0.0;
     static double d = 1.1;
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
 #pragma warning disable 1718

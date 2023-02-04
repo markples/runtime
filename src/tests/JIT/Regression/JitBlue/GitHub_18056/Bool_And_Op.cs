@@ -13,6 +13,7 @@
 #pragma warning disable
 
 using System;
+using Xunit;
 namespace Bool_And_Op
 {
 public class testout1
@@ -79,7 +80,8 @@ public class testout1
         return (True_Sum * 2) - False_Sum;
     }
   
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int Sum = 0;
        

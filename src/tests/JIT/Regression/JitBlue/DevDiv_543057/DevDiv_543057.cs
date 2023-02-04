@@ -10,6 +10,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 // Struct with 4 fields
 namespace DevDiv_543057
@@ -90,7 +91,8 @@ public class TestClass
 
 public class DevDiv_543057
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int retVal = TestClass.Pass;
         TestClass c = new TestClass();

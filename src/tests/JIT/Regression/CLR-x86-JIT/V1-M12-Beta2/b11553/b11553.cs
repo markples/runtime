@@ -4,12 +4,14 @@
 using System;
 using System.IO;
 using System.Reflection;
+using Xunit;
 
 namespace b11553
 {
 public class test
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         Type t = typeof(int);
         Type t2 = typeof(long);

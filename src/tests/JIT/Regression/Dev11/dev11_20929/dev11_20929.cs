@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 
 namespace dev11_20929
 {
@@ -12,7 +13,8 @@ public static class Repro
         public int x, y;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         foo f = new foo();

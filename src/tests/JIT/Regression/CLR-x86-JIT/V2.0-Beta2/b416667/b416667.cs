@@ -3,12 +3,14 @@
 //
 
 using System;
+using Xunit;
 namespace b416667
 {
 public class CMain
 {
     public static int Count = 0;
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         String s;
         s = Gen<String>.x;

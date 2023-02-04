@@ -9,6 +9,7 @@
 // Well, and it runs fast. 
 
 using System;
+using Xunit;
 
 namespace b610750
 {
@@ -2017,7 +2018,8 @@ public class Program
 
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         TestSHL();
 

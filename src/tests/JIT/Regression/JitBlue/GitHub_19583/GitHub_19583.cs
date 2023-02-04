@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using System.Threading;
+using Xunit;
 
 // Check for proper stack spilling in the presence of assignment-like nodes.
 
@@ -13,7 +14,8 @@ namespace GitHub_19583
 {
 public class Program
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         return 100 +
             (Test1.Run() == 0 ? 0 : 1) +

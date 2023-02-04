@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b13647
 {
     //@BEGINRENAME; Verify this renames
@@ -10,7 +11,8 @@ namespace b13647
 
     public class Bug
     {
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             //Console.WriteLine (DateTime.GetNow().ToString());
             Console.WriteLine(DateTime.Now.ToString());

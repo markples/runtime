@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace GitHub_18867
 {
@@ -24,7 +25,8 @@ public class Program
     static int s_3;
     static short[] s_8 = new short[] { -1 };
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         s_rt = new CRT();
         M11(s_8, 0, 0, 0, true, s_1);

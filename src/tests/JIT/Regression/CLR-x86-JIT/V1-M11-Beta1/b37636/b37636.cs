@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b37636
 {
     using System;
@@ -10,7 +11,8 @@ namespace b37636
     {
         static float[] m_af = new float[2];
 
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             while (m_af[0] < m_af[1])
             {

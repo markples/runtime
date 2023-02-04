@@ -14,12 +14,14 @@
 
 // <Code> 
 using System;
+using Xunit;
 
 namespace DevDiv_376412
 {
 public class MyClass
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         bool failed = false;

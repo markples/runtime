@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Xunit;
 namespace b71005
 {
 public class testout1
@@ -37,7 +38,8 @@ public class testout1
         return false;
     }
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         int True_Sum = 0;
         int False_Sum = 0;

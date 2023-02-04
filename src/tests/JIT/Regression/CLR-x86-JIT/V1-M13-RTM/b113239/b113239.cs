@@ -4,6 +4,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using Xunit;
 
 
 namespace b113239
@@ -138,7 +139,8 @@ public class B
 
 public class Test_b113239
 {
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
         byte[] block = new byte[20];
         int retval = B.B1(-123456781234567L, -123456781234567L, block, 0, 0);

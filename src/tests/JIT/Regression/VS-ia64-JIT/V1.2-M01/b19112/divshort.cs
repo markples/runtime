@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 //
 
+using Xunit;
 namespace b19112b
 {
 public class foo
@@ -9,7 +10,8 @@ public class foo
 
     public static short a, b, c;
 
-    public static int Main()
+    [Fact]
+    public static int TestEntryPoint()
     {
 
         a = 19;
