@@ -136,7 +136,7 @@
     )
     .entrypoint
     .maxstack  4
-    call       int32 b06020.b06020.$::Main()
+    call       int32 b06020.$::Main()
     ret
   }
 }
