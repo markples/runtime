@@ -5,7 +5,7 @@
 .assembly extern xunit.core {}
 .assembly extern System.Console { }
 
-.assembly Runtime_71638.dll { }
+.assembly Runtime_71638 { }
 
 .namespace Runtime_71638
 {
