@@ -151,7 +151,7 @@ public sealed class XUnitWrapperGenerator : IIncrementalGenerator
     {
         // For simplicity, we'll use top-level statements for the generated Main method.
         StringBuilder builder = new();
-        builder.AppendLine(string.Join("\n", aliasMap.Values.Where(alias => alias != "global").Select(alias => $"extern alias {alias};")));
+        builder.AppendLine(string.Join(Environment.NewLine, aliasMap.Values.Where(alias => alias != "global").Select(alias => $"extern alias {alias};")));
         builder.AppendLine("System.Collections.Generic.HashSet<string> testExclusionList = XUnitWrapperLibrary.TestFilter.LoadTestExclusionList();");
 
         builder.AppendLine("XUnitWrapperLibrary.TestFilter filter = new (args, testExclusionList);");
@@ -162,7 +162,7 @@ public sealed class XUnitWrapperGenerator : IIncrementalGenerator
 
         ITestReporterWrapper reporter = new WrapperLibraryTestSummaryReporting("summary", "filter", "outputRecorder");
 
-        StringBuilder testExecutorBuilder = new();
+        IndentedStringBuilder testExecutorBuilder = new();
         int testsLeftInCurrentTestExecutor = 0;
         int currentTestExecutor = 0;
         int totalTestsEmitted = 0;
@@ -177,16 +177,22 @@ public sealed class XUnitWrapperGenerator : IIncrementalGenerator
                 if (testsLeftInCurrentTestExecutor == 0)
                 {
                     if (currentTestExecutor != 0)
+                    {
+                        testExecutorBuilder.DecreaseIndent();
                         testExecutorBuilder.AppendLine("}");
+                    }
                     currentTestExecutor++;
+                    testExecutorBuilder.AppendLine();
                     testExecutorBuilder.AppendLine($"void TestExecutor{currentTestExecutor}(){{");
+                    testExecutorBuilder.IncreaseIndent();
                     builder.AppendLine($"TestExecutor{currentTestExecutor}();");
                     testsLeftInCurrentTestExecutor = 50; // Break test executors into groups of 50, which empircally seems to work well
                 }
-                testExecutorBuilder.AppendLine(test.GenerateTestExecution(reporter));
+                testExecutorBuilder.Append(test.GenerateTestExecution(reporter));
                 totalTestsEmitted++;
                 testsLeftInCurrentTestExecutor--;
             }
+            testExecutorBuilder.DecreaseIndent();
             testExecutorBuilder.AppendLine("}");
         }
 
@@ -196,8 +202,9 @@ public sealed class XUnitWrapperGenerator : IIncrementalGenerator
         builder.AppendLine($@"System.IO.File.WriteAllText(""{assemblyName}.testResults.xml"", testResults);");
         builder.AppendLine("return 100;");
 
-        builder.Append(testExecutorBuilder);
+        testExecutorBuilder.AppendTo(builder);
 
+        builder.AppendLine();
         builder.AppendLine("public static class TestCount { public const int Count = " + totalTestsEmitted.ToString() + "; }");
         return builder.ToString();
     }
@@ -206,7 +213,7 @@ public sealed class XUnitWrapperGenerator : IIncrementalGenerator
     {
         // For simplicity, we'll use top-level statements for the generated Main method.
         StringBuilder builder = new();
-        builder.AppendLine(string.Join("\n", aliasMap.Values.Where(alias => alias != "global").Select(alias => $"extern alias {alias};")));
+        builder.AppendLine(string.Join(Environment.NewLine, aliasMap.Values.Where(alias => alias != "global").Select(alias => $"extern alias {alias};")));
         builder.AppendLine("System.Collections.Generic.HashSet<string> testExclusionList = XUnitWrapperLibrary.TestFilter.LoadTestExclusionList();");
 
         builder.AppendLine("try {");
@@ -261,9 +268,9 @@ public sealed class XUnitWrapperGenerator : IIncrementalGenerator
         // For simplicity, we'll use top-level statements for the generated Main method.
         ITestReporterWrapper reporter = new NoTestReporting();
         StringBuilder builder = new();
-        builder.AppendLine(string.Join("\n", aliasMap.Values.Where(alias => alias != "global").Select(alias => $"extern alias {alias};")));
+        builder.AppendLine(string.Join(Environment.NewLine, aliasMap.Values.Where(alias => alias != "global").Select(alias => $"extern alias {alias};")));
         builder.AppendLine("try {");
-        builder.AppendLine(string.Join("\n", testInfos.Select(m => m.GenerateTestExecution(reporter))));
+        builder.AppendLine(string.Join(Environment.NewLine, testInfos.Select(m => m.GenerateTestExecution(reporter))));
         builder.AppendLine("} catch(System.Exception ex) { System.Console.WriteLine(ex.ToString()); return 101; }");
         builder.AppendLine("return 100;");
         return builder.ToString();
