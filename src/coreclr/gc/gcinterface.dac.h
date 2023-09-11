@@ -74,7 +74,7 @@ public:
 // Analogue for the GC CFinalize class, containing information about the finalize queue.
 class dac_finalize_queue {
 public:
-    static const int ExtraSegCount = 2;
+    static const int ExtraSegCount = 3;
     uint8_t** m_FillPointers[NUMBERGENERATIONS + ExtraSegCount];
 };
 

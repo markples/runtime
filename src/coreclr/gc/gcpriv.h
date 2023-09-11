@@ -4696,11 +4696,12 @@ private:
     // side (low index).
 
     // Adjust the count and add a constant to add a segment
-    static const int ExtraSegCount = 2;
-    static const int FreeListSeg = total_generation_count;
-    static const int FinalizerListSeg = total_generation_count + 1;
+    static const int ExtraSegCount = 3;
+    static const int AvailableFreeListSeg = total_generation_count;
+    static const int PendingFreeListSeg = total_generation_count + 1;
+    static const int FinalizerListSeg = total_generation_count + 2;
     // The end of this segment is m_EndArray, not an entry in m_FillPointers.
-    static const int CriticalFinalizerListSeg = total_generation_count + 2;
+    static const int CriticalFinalizerListSeg = total_generation_count + 3;
 
     static const int FinalizerStartSeg = FinalizerListSeg;
     static const int FinalizerMaxSeg = CriticalFinalizerListSeg;
@@ -4712,9 +4713,11 @@ private:
     PTR_PTR_Object m_EndArray;
     size_t   m_PromotedCount;
 
-    VOLATILE(int32_t) lock;
+    static const int AvailableLock = 0;
+    static const int PendingLock = 1;
+    VOLATILE(int32_t) lock[2];
 #ifdef _DEBUG
-    EEThreadId lockowner_threadid;
+    EEThreadId lockowner_threadid[2];
 #endif // _DEBUG
 
     BOOL GrowArray();
@@ -4733,7 +4736,7 @@ private:
 
     size_t UsedCount ()
     {
-        return (SegQueue(FreeListSeg) - m_Array) + (m_EndArray - SegQueueLimit(FreeListSeg));
+        return (SegQueue(AvailableFreeListSeg) - m_Array) + (m_EndArray - SegQueueLimit(PendingFreeListSeg));
     }
 
     BOOL IsSegEmpty ( unsigned int i)
@@ -4747,8 +4750,8 @@ private:
 public:
     ~CFinalize();
     bool Initialize();
-    void EnterFinalizeLock();
-    void LeaveFinalizeLock();
+    void EnterFinalizeLock(int which);
+    void LeaveFinalizeLock(int which);
     bool RegisterForFinalization (int gen, Object* obj, size_t size=0);
     Object* GetNextFinalizableObject (BOOL only_non_critical=FALSE);
     BOOL ScanForFinalization (promote_func* fn, int gen, gc_heap* hp);
