@@ -50994,18 +50994,20 @@ bool CFinalize::Initialize()
     }
     m_EndArray = &m_Array[INITIAL_FINALIZER_ARRAY_SIZE];
 
-    for (int i = 0; i < FreeListSeg; i++)
+    for (int i = 0; i < AvailableFreeListSeg; i++)
     {
         SegQueueLimit (i) = m_Array;
     }
-    for (int i = FreeListSeg; i < MaxSeg; i++)
+    for (int i = AvailableFreeListSeg; i < MaxSeg; i++)
     {
         SegQueueLimit (i) = m_EndArray;
     }
     m_PromotedCount = 0;
-    lock = -1;
+    lock[AvailableLock] = -1;
+    lock[PendingLock] = -1;
 #ifdef _DEBUG
-    lockowner_threadid.Clear();
+    lockowner_threadid[AvailableLock].Clear();
+    lockowner_threadid[PendingLock].Clear();
 #endif // _DEBUG
 
     return true;
@@ -51060,30 +51062,30 @@ size_t CFinalize::GetPromotedCount ()
 // allow a GC), then the Alloc client would have to GC protect a finalizable object
 // to protect against that eventuality.  That is too slow!
 inline
-void CFinalize::EnterFinalizeLock()
+void CFinalize::EnterFinalizeLock(int which)
 {
     _ASSERTE(dbgOnly_IsSpecialEEThread() ||
              GCToEEInterface::GetThread() == 0 ||
              GCToEEInterface::IsPreemptiveGCDisabled());
 
 retry:
-    if (Interlocked::CompareExchange(&lock, 0, -1) >= 0)
+    if (Interlocked::CompareExchange(&lock[which], 0, -1) >= 0)
     {
         unsigned int i = 0;
-        while (lock >= 0)
+        while (lock[which] >= 0)
         {
             if (g_num_processors > 1)
             {
                 int spin_count = 128 * yp_spin_count_unit;
                 for (int j = 0; j < spin_count; j++)
                 {
-                    if (lock < 0)
+                    if (lock[which] < 0)
                         break;
                     // give the HT neighbor a chance to run
                     YieldProcessor ();
                 }
             }
-            if (lock < 0)
+            if (lock[which] < 0)
                 break;
             if (++i & 7)
                 GCToOSInterface::YieldThread (0);
@@ -51094,21 +51096,21 @@ retry:
     }
 
 #ifdef _DEBUG
-    lockowner_threadid.SetToCurrentThread();
+    lockowner_threadid[which].SetToCurrentThread();
 #endif // _DEBUG
 }
 
 inline
-void CFinalize::LeaveFinalizeLock()
+void CFinalize::LeaveFinalizeLock(int which)
 {
     _ASSERTE(dbgOnly_IsSpecialEEThread() ||
              GCToEEInterface::GetThread() == 0 ||
              GCToEEInterface::IsPreemptiveGCDisabled());
 
 #ifdef _DEBUG
-    lockowner_threadid.Clear();
+    lockowner_threadid[which].Clear();
 #endif // _DEBUG
-    lock = -1;
+    lock[which] = -1;
 }
 
 bool
@@ -51119,18 +51121,24 @@ CFinalize::RegisterForFinalization (int gen, Object* obj, size_t size)
         GC_NOTRIGGER;
     } CONTRACTL_END;
 
-    EnterFinalizeLock();
+    EnterFinalizeLock(AvailableLock);
 
     // Adjust gen
     unsigned int dest = gen_segment (gen);
 
     // Adjust boundary for segments so that GC will keep objects alive.
-    Object*** s_i = &SegQueue (FreeListSeg);
-    if ((*s_i) == SegQueueLimit(FreeListSeg))
+    Object*** s_i = &SegQueue (AvailableFreeListSeg);
+    if ((*s_i) == SegQueueLimit(AvailableFreeListSeg))
     {
-        if (!GrowArray())
+        EnterFinalizeLock(PendingLock);
+        if (SegQueueLimit(AvailableFreeListSeg) != SegQueueLimit(PendingFreeListSeg))
         {
-            LeaveFinalizeLock();
+            SegQueueLimit(AvailableFreeListSeg) = SegQueueLimit(PendingFreeListSeg);
+        }
+        else if (!GrowArray())
+        {
+            LeaveFinalizeLock(PendingLock);
+            LeaveFinalizeLock(AvailableLock);
             if (method_table(obj) == NULL)
             {
                 // If the object is uninitialized, a valid size should have been passed.
@@ -51145,6 +51153,7 @@ CFinalize::RegisterForFinalization (int gen, Object* obj, size_t size)
             }
             return false;
         }
+        LeaveFinalizeLock(PendingLock);
     }
 
     // Start:   | ... | dest   |a  other  |b  gen0  |_  free   |  ...
@@ -51152,7 +51161,7 @@ CFinalize::RegisterForFinalization (int gen, Object* obj, size_t size)
     //
     // The loop shuffles 'a' to 'b' to _, and the final store after the loop puts 'o' in place.
 
-    assert (dest < FreeListSeg);
+    assert (dest < AvailableFreeListSeg);
     Object*** end_si = &SegQueueLimit (dest);
     while (s_i > end_si)
     {
@@ -51174,7 +51183,7 @@ CFinalize::RegisterForFinalization (int gen, Object* obj, size_t size)
     // increment the fill pointer
     (*s_i)++;
 
-    LeaveFinalizeLock();
+    LeaveFinalizeLock(AvailableLock);
 
     return true;
 }
@@ -51183,7 +51192,7 @@ Object*
 CFinalize::GetNextFinalizableObject (BOOL only_non_critical)
 {
     Object* obj = 0;
-    EnterFinalizeLock();
+    EnterFinalizeLock(PendingLock);
 
     if (!IsSegEmpty(FinalizerListSeg))
     {
@@ -51200,7 +51209,7 @@ CFinalize::GetNextFinalizableObject (BOOL only_non_critical)
     {
         dprintf (3, ("running finalizer for %p (mt: %p)", obj, method_table (obj)));
     }
-    LeaveFinalizeLock();
+    LeaveFinalizeLock(PendingLock);
     return obj;
 }
 
@@ -51320,13 +51329,13 @@ CFinalize::ScanForFinalization (promote_func* pfn, int gen, gc_heap* hp)
 
                     if (GCToEEInterface::EagerFinalized(obj))
                     {
-                        MoveItem (i, Seg, FreeListSeg);
+                        MoveItem (i, Seg, AvailableFreeListSeg);
                     }
                     else if ((obj->GetHeader()->GetBits()) & BIT_SBLK_FINALIZER_RUN)
                     {
                         //remove the object because we don't want to
                         //run the finalizer
-                        MoveItem (i, Seg, FreeListSeg);
+                        MoveItem (i, Seg, AvailableFreeListSeg);
 
                         //Reset the bit so it will be put back on the queue
                         //if resurrected and re-registered.
@@ -51409,7 +51418,7 @@ CFinalize::RelocateFinalizationData (int gen, gc_heap* hp)
     unsigned int Seg = gen_segment (gen);
 
     Object** startIndex = SegQueue (Seg);
-    Object** endIndex = SegQueue (FreeListSeg);
+    Object** endIndex = SegQueue (AvailableFreeListSeg);
 
     dprintf (3, ("RelocateFinalizationData gen=%d, [%p,%p[", gen, startIndex, endIndex));
 
@@ -51418,7 +51427,7 @@ CFinalize::RelocateFinalizationData (int gen, gc_heap* hp)
         GCHeap::Relocate (po, &sc);
     }
 
-    startIndex = SegQueueLimit (FreeListSeg);
+    startIndex = SegQueueLimit (PendingFreeListSeg);
     endIndex = SegQueueLimit (MaxSeg);
 
     dprintf (3, ("RelocateFinalizationData gen=%d, [%p,%p[", gen, startIndex, endIndex));
@@ -51497,20 +51506,20 @@ CFinalize::GrowArray()
     //
     // Result:  | gen2 | gen1 | gen0 |   free    | final | crit |
 
-    size_t prefixCount = SegQueue(FreeListSeg) - m_Array;
+    size_t prefixCount = SegQueue(AvailableFreeListSeg) - m_Array;
     memcpy (newArray, m_Array, prefixCount * sizeof(Object*));
-    size_t postfixCount = m_EndArray - SegQueueLimit(FreeListSeg);
-    memcpy (newArray + newArraySize - postfixCount, SegQueueLimit(FreeListSeg), postfixCount * sizeof(Object*));
+    size_t postfixCount = m_EndArray - SegQueueLimit(PendingFreeListSeg);
+    memcpy (newArray + newArraySize - postfixCount, SegQueueLimit(PendingFreeListSeg), postfixCount * sizeof(Object*));
 
     dprintf (3, ("Grow finalizer array [%p,%p[ -> [%p,%p[", m_Array, m_EndArray, newArray, &m_Array[newArraySize]));
 
     //adjust the fill pointers
-    for (int i = 0; i < FreeListSeg; i++)
+    for (int i = 0; i < AvailableFreeListSeg; i++)
     {
         m_FillPointers [i] += (newArray - m_Array);
     }
-    //additional space in new array is added to FreeListSeg, not the end
-    for (int i = FreeListSeg; i < MaxSeg; ++i)
+    //additional space in new array is added to AvailableFreeListSeg, not the end
+    for (int i = AvailableFreeListSeg; i < MaxSeg; ++i)
     {
         m_FillPointers [i] += (newArray - m_Array) + (newArraySize - oldArraySize);
     }
@@ -51560,7 +51569,7 @@ bool CFinalize::MergeFinalizationData (CFinalize* other_fq)
     // the unused data in the freelist.
 
     // copy the generation data from this and the other finalize queue
-    for (int i = FreeListSeg - 1; i >= 0; i--)
+    for (int i = AvailableFreeListSeg - 1; i >= 0; i--)
     {
         size_t thisIndex = SegQueue (i) - m_Array;
         size_t otherIndex = other_fq->SegQueue (i) - other_fq->m_Array;
@@ -51576,7 +51585,7 @@ bool CFinalize::MergeFinalizationData (CFinalize* other_fq)
     // copy the finalization data from this and the other finalize queue
     //
     // note reverse order from above to preserve the existing data
-    for (int i = FreeListSeg + 1; i <= MaxSeg; i++)
+    for (int i = PendingFreeListSeg + 1; i <= MaxSeg; i++)
     {
         size_t thisIndexFromEnd = m_EndArray - SegQueue (i);
         size_t otherIndexFromEnd = other_fq->m_EndArray - other_fq->SegQueue (i);
@@ -51592,9 +51601,9 @@ bool CFinalize::MergeFinalizationData (CFinalize* other_fq)
     // adjust the m_FillPointers to reflect the sum of both queues on this queue,
     // and reflect that the other queue is now empty
     //
-    // unlike copying, these loops do need to set the 'FreeListSeg' boundaries,
+    // unlike copying, these loops do need to set the freelist boundaries,
     // but including MaxSeg itself would set m_EndArray
-    for (int i = 0; i < FreeListSeg; ++i)
+    for (int i = 0; i < AvailableFreeListSeg; ++i)
     {
         size_t thisLimit = SegQueueLimit (i) - m_Array;
         size_t otherLimit = other_fq->SegQueueLimit (i) - other_fq->m_Array;
@@ -51603,7 +51612,7 @@ bool CFinalize::MergeFinalizationData (CFinalize* other_fq)
 
         other_fq->SegQueueLimit (i) = other_fq->m_Array;
     }
-    for (int i = MaxSeg; i > FreeListSeg; i--)
+    for (int i = MaxSeg; i > PendingFreeListSeg; i--)
     {
         size_t thisLimit = m_EndArray - SegQueue (i);
         size_t otherLimit = other_fq->m_EndArray - other_fq->SegQueue (i);
@@ -51612,6 +51621,9 @@ bool CFinalize::MergeFinalizationData (CFinalize* other_fq)
 
         other_fq->SegQueue (i) = other_fq->m_EndArray;
     }
+    SegQueue(PendingFreeListSeg) = SegQueue(PendingFreeListSeg + 1);
+    other_fq->SegQueue(PendingFreeListSeg) = other_fq->SegQueue(PendingFreeListSeg + 1);
+
     if (m_Array != newArray)
     {
         delete[] m_Array;
@@ -51657,13 +51669,13 @@ bool CFinalize::SplitFinalizationData (CFinalize* other_fq)
     // move half of the items in each section over to the other queue
     PTR_PTR_Object newFillPointers[MaxSeg];
     PTR_PTR_Object segQueue = m_Array;
-    for (int i = 0; i < FreeListSeg; i++)
+    for (int i = 0; i < AvailableFreeListSeg; i++)
     {
         segQueue = SplitSegment(segQueue, &newFillPointers[0], other_fq, i);
     }
 
     segQueue = m_EndArray;
-    for (int i = MaxSeg; i > FreeListSeg; i--)
+    for (int i = MaxSeg; i > PendingFreeListSeg; i--)
     {
         segQueue = SplitSegment(segQueue, &newFillPointers[0], other_fq, i);
     }
@@ -51673,6 +51685,7 @@ bool CFinalize::SplitFinalizationData (CFinalize* other_fq)
     {
         m_FillPointers[i] = newFillPointers[i];
     }
+    SegQueue(PendingFreeListSeg) = SegQueue(PendingFreeListSeg + 1);
 
     return true;
 }
@@ -51710,7 +51723,7 @@ bool CFinalize::SplitFinalizationData (CFinalize* other_fq)
 // dest might be unique or m_Array in fq1
 Object** CFinalize::SplitSegment(Object** thisDest, Object*** newFillPointers, CFinalize* other_fq, unsigned int segment)
 {
-    ASSERT(segment != FreeListSeg);
+    ASSERT(segment != AvailableFreeListSeg && segment != PendingFreeListSeg);
 
     size_t thisIndex = SegQueue (segment) - m_Array;
     size_t thisLimit = SegQueueLimit (segment) - m_Array;
@@ -51722,7 +51735,7 @@ Object** CFinalize::SplitSegment(Object** thisDest, Object*** newFillPointers, C
     size_t otherSize = thisSize / 2;
     size_t thisNewSize = thisSize - otherSize;
 
-    if (segment < FreeListSeg)
+    if (segment < AvailableFreeListSeg)
     {
         Object** otherDest = other_fq->SegQueue(segment);
         memmove (otherDest, &m_Array[thisIndex + thisNewSize], sizeof(other_fq->m_Array[0]) * otherSize);
