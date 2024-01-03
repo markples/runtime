@@ -25538,7 +25538,7 @@ int gc_heap::calculate_new_heap_count ()
 #else //STRESS_DYNAMIC_HEAP_COUNT
     int new_n_heaps = n_heaps;
 
-    if (median_throughput_cost_percent > 10.0f)
+    if ((median_throughput_cost_percent > 10.0f) && !precise_count_change_p)
     {
         float scale;
         if (precise_count_change_p)
@@ -25569,9 +25569,10 @@ int gc_heap::calculate_new_heap_count ()
             median_throughput_cost_percent, n_heaps, scale, new_n_heaps));
     }
     // if the median tcp is 10% or less, react slower
-    else if ((smoothed_median_throughput_cost_percent > 5.0f) || (median_gen2_tcp_percent > 10.0f))
+    // (mtcp>10 is skipped about if being precise)
+    else if ((median_throughput_cost_percent > 10.0f) || (smoothed_median_throughput_cost_percent > 5.0f) || (median_gen2_tcp_percent > 10.0f))
     {
-        if (smoothed_median_throughput_cost_percent > 5.0f)
+        if ((median_throughput_cost_percent > 10.0f) || (smoothed_median_throughput_cost_percent > 5.0f))
         {
             if (precise_count_change_p)
             {
