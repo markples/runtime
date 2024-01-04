@@ -25540,33 +25540,24 @@ int gc_heap::calculate_new_heap_count ()
 
     if (median_throughput_cost_percent > 10.0f)
     {
-        float scale;
         if (precise_count_change_p)
         {
-            // This scale is constructed to match the step_up that the aggressive ('else' branch)
-            // scale would determine times a factor that goes from 0.5 at 10% tcp to 1.0 at 50% tcp.
-            // (step_up would be ((n_heaps * tcp / 5) - n_heaps) * ((tcp + 30) / 80))
-            float limited_tcp = min (50, median_throughput_cost_percent);
-            scale = ((limited_tcp * limited_tcp / 400.0f) + (limited_tcp / 16.0f) + (5.0f / 8));
+            new_n_heaps = (int)(n_heaps * (median_throughput_cost_percent - 3.0f) * 3.0f/14);
+
+            // Absolute limit to growth when being precise
+            new_n_heaps = min (new_n_heaps, n_heaps + max (n_max_heaps / 4, 4));
         }
         else
         {
             // ramp up more aggressively - use as many heaps as it would take to bring
             // the tcp down to 5%
-            scale = median_throughput_cost_percent / 5.0f;
-        }
-
-        new_n_heaps = (int)(scale * n_heaps);
-        if (precise_count_change_p)
-        {
-            // Absolute limit to growth when being precise
-            new_n_heaps = min (new_n_heaps, n_heaps + max (n_max_heaps / 4, 4));
+            new_n_heaps = (int)(median_throughput_cost_percent * n_heaps / 5.0f);
         }
 
         new_n_heaps = max (new_n_heaps, n_heaps + 1);
         new_n_heaps = min (new_n_heaps, n_max_heaps - extra_heaps);
-        dprintf (6666, ("[CHP0%s] tcp %.3f > 10 -> %d * %.3f = %d", precise_count_change_p ? "P" : "",
-            median_throughput_cost_percent, n_heaps, scale, new_n_heaps));
+        dprintf (6666, ("[CHP0%s] tcp %.3f > 10 -> %d -> %d", precise_count_change_p ? "P" : "",
+            median_throughput_cost_percent, n_heaps, new_n_heaps));
     }
     // if the median tcp is 10% or less, react slower
     else if ((smoothed_median_throughput_cost_percent > 5.0f) || (median_gen2_tcp_percent > 10.0f))
