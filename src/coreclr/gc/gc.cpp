@@ -25492,10 +25492,14 @@ int gc_heap::calculate_new_heap_count ()
                         {
                             if (((int)dynamic_heap_count_data.last_changed_count > 0) && (dynamic_heap_count_data.last_changed_gc_index > 0.0))
                             {
-                                (dynamic_heap_count_data.inc_failure_count)++;
-                                dprintf (6666, ("[CHP0-4] just grew %d GCs ago, grow more aggressively from %d -> %d more heaps",
-                                    (current_gc_index - dynamic_heap_count_data.last_changed_gc_index), step_up_int, (step_up_int * (dynamic_heap_count_data.inc_failure_count + 1))));
-                                step_up_int *= dynamic_heap_count_data.inc_failure_count + 1;
+                                size_t gc_count_since_last_growth = (current_gc_index - dynamic_heap_count_data.last_changed_gc_index);
+                                if (gc_count_since_last_growth <= dynamic_heap_count_data.inc_failure_gcs_threshold)
+                                {
+                                    dynamic_heap_count_data.inc_failure_count = min(dynamic_heap_count_data.inc_failure_count + 1, dynamic_heap_count_data.inc_failure_limit);
+                                    dprintf (6666, ("[CHP0-4] just grew %d GCs ago, grow more aggressively from %d -> %d more heaps",
+                                        gc_count_since_last_growth, step_up_int, (step_up_int * (dynamic_heap_count_data.inc_failure_count + 1))));
+                                    step_up_int *= dynamic_heap_count_data.inc_failure_count + 1;
+                                }
                             }
                         }
                     }
