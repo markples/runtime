@@ -3745,17 +3745,6 @@ heap_segment* get_region_info_for_address (uint8_t* address)
     return ((heap_segment*)(&seg_mapping_table[basic_region_index]));
 }
 
-// Go from the physical start of a region to its region info.
-inline
-heap_segment* get_region_info (uint8_t* region_start)
-{
-    size_t region_index = (size_t)region_start >> gc_heap::min_segment_size_shr;
-    heap_segment* region_info_entry = (heap_segment*)&seg_mapping_table[region_index];
-    dprintf (REGIONS_LOG, ("region info for region %p is at %zd, %zx (alloc: %p)",
-        region_start, region_index, (size_t)region_info_entry, heap_segment_allocated (region_info_entry)));
-    return (heap_segment*)&seg_mapping_table[region_index];
-}
-
 // Go from the actual region info to its region start.
 inline
 uint8_t* get_region_start (heap_segment* region_info)
@@ -3768,6 +3757,17 @@ inline
 size_t get_region_size (heap_segment* region_info)
 {
     return (size_t)(heap_segment_reserved (region_info) - get_region_start (region_info));
+}
+
+// Go from the physical start of a region to its region info.
+inline
+heap_segment* get_region_info (uint8_t* region_start)
+{
+    size_t region_index = (size_t)region_start >> gc_heap::min_segment_size_shr;
+    heap_segment* region_info_entry = (heap_segment*)&seg_mapping_table[region_index];
+    dprintf (REGIONS_LOG, ("region info for region %p is at %zd, %zx (size: %zx, alloc: %p)",
+        region_start, region_index, (size_t)region_info_entry, get_region_size(region_info_entry), heap_segment_allocated (region_info_entry)));
+    return (heap_segment*)&seg_mapping_table[region_index];
 }
 
 inline
@@ -4241,10 +4241,13 @@ void region_allocator::move_highest_free_regions (int64_t n, bool small_region_p
         uint32_t current_val = *current_index;
         uint32_t current_num_units = get_num_units (current_val);
         bool free_p = is_unit_memory_free (current_val);
+        dprintf (REGIONS_LOG, ("mhfr: current=%p, lowest=%p, free_p=%d, current_num_units=%u, small_region_p=%d", current_val, lowest_index, free_p, current_num_units, small_region_p));
+
         if (!free_p && ((current_num_units == 1) == small_region_p))
         {
             uint32_t* index = current_index - (current_num_units - 1);
             heap_segment* region = get_region_info (region_address_of (index));
+            dprintf (REGIONS_LOG, ("mhfr: is_free=%d on_free_list=%d n=%I64d", is_free_region(region), region_free_list::is_on_free_list (region, to_free_list), n));
             if (is_free_region (region) && !region_free_list::is_on_free_list (region, to_free_list))
             {
                 if (n >= current_num_units)
