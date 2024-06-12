@@ -4241,13 +4241,13 @@ void region_allocator::move_highest_free_regions (int64_t n, bool small_region_p
         uint32_t current_val = *current_index;
         uint32_t current_num_units = get_num_units (current_val);
         bool free_p = is_unit_memory_free (current_val);
-        dprintf (REGIONS_LOG, ("mhfr: current=%p, lowest=%p, free_p=%d, current_num_units=%u, small_region_p=%d", current_val, lowest_index, free_p, current_num_units, small_region_p));
+        dprintf (REGIONS_LOG, ("mhfr1: current=%p, lowest=%p, val=%u, free_p=%d, current_num_units=%u, small_region_p=%d", current_index, lowest_index, current_val, free_p, current_num_units, small_region_p));
 
         if (!free_p && ((current_num_units == 1) == small_region_p))
         {
             uint32_t* index = current_index - (current_num_units - 1);
             heap_segment* region = get_region_info (region_address_of (index));
-            dprintf (REGIONS_LOG, ("mhfr: is_free=%d on_free_list=%d n=%I64d", is_free_region(region), region_free_list::is_on_free_list (region, to_free_list), n));
+            dprintf (REGIONS_LOG, ("mhfr2: is_free=%d, on_free_list=%d, n=%I64d", is_free_region(region), region_free_list::is_on_free_list (region, to_free_list), n));
             if (is_free_region (region) && !region_free_list::is_on_free_list (region, to_free_list))
             {
                 if (n >= current_num_units)
