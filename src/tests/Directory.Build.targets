@@ -496,22 +496,37 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="GetRequiresProcessIsolation" Returns="@(ProjectRequiringProcessIsolation)">
-    <ItemGroup Condition="'$(RequiresProcessIsolation)' == 'true'">
-      <ProjectRequiringProcessIsolation Include="$(MSBuildProjectFullPath)" />
+  <Target Name="GetRunRequiresProcessIsolation" Returns="@(ProjectRunRequiringProcessIsolation)">
+    <ItemGroup Condition="'$(RequiresProcessIsolation)' == 'true' and '$(_CLRTestNeedsToRun)' == 'true'">
+      <ProjectRunRequiringProcessIsolation Include="$(MSBuildProjectFullPath)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="GetNotRunRequiresProcessIsolation" Returns="@(ProjectNotRunRequiringProcessIsolation)">
+    <ItemGroup Condition="'$(RequiresProcessIsolation)' == 'true' and '$(_CLRTestNeedsToRun)' != 'true'">
+      <ProjectNotRunRequiringProcessIsolation Include="$(MSBuildProjectFullPath)" />
     </ItemGroup>
   </Target>
 
   <Target Name="DiscoverProcessIsolatedTestProjectReferences" BeforeTargets="AssignProjectConfiguration" Condition="'$(IsMergedTestRunnerAssembly)' == 'true'">
-    <MSBuild Projects="@(ProjectReference)" Targets="GetRequiresProcessIsolation" SkipNonexistentTargets="true">
-      <Output TaskParameter="TargetOutputs" ItemName="ReferencedProjectRequiringProcessIsolation" />
+    <MSBuild Projects="@(ProjectReference)" Targets="GetRunRequiresProcessIsolation" SkipNonexistentTargets="true">
+      <Output TaskParameter="TargetOutputs" ItemName="ReferencedProjectRunRequiringProcessIsolation" />
     </MSBuild>
 
     <ItemGroup>
-      <ProjectReference Remove="@(ReferencedProjectRequiringProcessIsolation->'%(OriginalItemSpec)')" />
-      <ProjectReference Include="@(ReferencedProjectRequiringProcessIsolation->'%(OriginalItemSpec)')" OutputItemType="OutOfProcessTests" BuildReference="true" ReferenceOutputAssembly="false" Private="False" />
+      <ProjectReference Remove="@(ReferencedProjectRunRequiringProcessIsolation->'%(OriginalItemSpec)')" />
+      <ProjectReference Include="@(ReferencedProjectRunRequiringProcessIsolation->'%(OriginalItemSpec)')" OutputItemType="OutOfProcessTests" BuildReference="true" ReferenceOutputAssembly="false" Private="False" />
     </ItemGroup>
-  </Target>
+
+    <MSBuild Projects="@(ProjectReference)" Targets="GetNotRunRequiresProcessIsolation" SkipNonexistentTargets="true">
+      <Output TaskParameter="TargetOutputs" ItemName="ReferencedProjectNotRunRequiringProcessIsolation" />
+    </MSBuild>
+
+    <ItemGroup>
+      <ProjectReference Remove="@(ReferencedProjectNotRunRequiringProcessIsolation->'%(OriginalItemSpec)')" />
+      <ProjectReference Include="@(ReferencedProjectNotRunRequiringProcessIsolation->'%(OriginalItemSpec)')" BuildReference="true" ReferenceOutputAssembly="false" Private="False" />
+    </ItemGroup>
+</Target>
 
   <PropertyGroup Condition="'$(Language)' == 'C#' and '$(_CLRTestNeedsToRun)' == 'true' and ('$(BuildAsStandalone)' == 'true' or '$(RequiresProcessIsolation)' == 'true' or '$(InMergedTestDirectory)' == 'true' or '$(IsMergedTestRunnerAssembly)' == 'true')">
     <ReferenceXUnitWrapperGenerator Condition="'$(ReferenceXUnitWrapperGenerator)' == ''">true</ReferenceXUnitWrapperGenerator>
