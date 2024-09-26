@@ -1686,6 +1686,8 @@ private:
     PER_HEAP_ISOLATED_METHOD void compute_gc_and_ephemeral_range (int condemned_gen_number, bool end_of_gc_p);
 
     PER_HEAP_ISOLATED_METHOD void distribute_free_regions();
+    PER_HEAP_ISOLATED_METHOD void move_old_regions(region_free_list& dst, region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom);
+    PER_HEAP_ISOLATED_METHOD bool old_region_p(heap_segment* region, free_region_kind kind);
 
     PER_HEAP_ISOLATED_METHOD void age_free_regions (const char* msg);
 
@@ -6078,8 +6080,9 @@ public:
     // GCs. We stop at 99. It's initialized to 0 when a region is added to
     // the region's free list.
     #define MAX_AGE_IN_FREE 99
-    #define AGE_IN_FREE_TO_DECOMMIT 20
-    #define MIN_AGE_TO_DECOMMIT_HUGE 2
+    #define AGE_IN_FREE_TO_DECOMMIT_BASIC 20
+    #define AGE_IN_FREE_TO_DECOMMIT_LARGE 5
+    #define AGE_IN_FREE_TO_DECOMMIT_HUGE 1
     int             age_in_free;
     // This is currently only used by regions that are swept in plan -
     // we then thread this list onto the generation's free list.
