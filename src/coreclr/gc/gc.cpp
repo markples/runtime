@@ -13402,7 +13402,7 @@ void gc_heap::distribute_free_regions()
 
     size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][kind_count] = {};
     size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS] = {};
-    size_t region_size[kind_count] = { global_region_allocator.get_region_alignment(), global_region_allocator.get_large_region_alignment() }; //!
+    size_t region_size[kind_count] = { global_region_allocator.get_region_alignment(), global_region_allocator.get_large_region_alignment() };
     region_free_list old_regions[count_free_region_kinds];
     region_free_list surplus_regions[kind_count];
 
@@ -13410,7 +13410,7 @@ void gc_heap::distribute_free_regions()
     // use these to fill the budget as well
     surplus_regions[basic_free_region].transfer_regions (&global_regions_to_decommit[basic_free_region]);
 
-    move_old_regions(old_regions[huge_free_region], global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
+    move_old_regions(old_regions, global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
 
 #ifdef MULTIPLE_HEAPS
     for (int i = 0; i < n_heaps; i++)
@@ -13425,7 +13425,7 @@ void gc_heap::distribute_free_regions()
 
         for (int kind = basic_free_region; kind < kind_count; kind++)
         {
-            move_old_regions(old_regions[kind], hp->free_regions[kind], static_cast<free_region_kind>(kind), joined_last_gc_before_oom);
+            move_old_regions(old_regions, hp->free_regions[kind], static_cast<free_region_kind>(kind), joined_last_gc_before_oom);
             total_num_free_regions[kind] += hp->free_regions[kind].get_num_free_regions();
         }
 
@@ -13702,7 +13702,7 @@ void gc_heap::distribute_free_regions()
 #endif //MULTIPLE_HEAPS
 }
 
-void gc_heap::move_old_regions(region_free_list& dst, region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
+void gc_heap::move_old_regions(region_free_list* dst, region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
 {
     heap_segment* next_region = nullptr;
     for (heap_segment* region = src.get_first_free_region(); region != nullptr; region = next_region)
@@ -13713,7 +13713,7 @@ void gc_heap::move_old_regions(region_free_list& dst, region_free_list& src, fre
             ((get_region_committed_size (region) == GC_PAGE_SIZE) && joined_last_gc_before_oom))
         {
             region_free_list::unlink_region (region);
-            region_free_list::add_region (region, &dst);
+            region_free_list::add_region (region, dst);
         }
     }
 }

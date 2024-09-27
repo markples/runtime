@@ -1686,7 +1686,7 @@ private:
     PER_HEAP_ISOLATED_METHOD void compute_gc_and_ephemeral_range (int condemned_gen_number, bool end_of_gc_p);
 
     PER_HEAP_ISOLATED_METHOD void distribute_free_regions();
-    PER_HEAP_ISOLATED_METHOD void move_old_regions(region_free_list& dst, region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom);
+    PER_HEAP_ISOLATED_METHOD void move_old_regions(region_free_list* dst, region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom);
     PER_HEAP_ISOLATED_METHOD bool old_region_p(heap_segment* region, free_region_kind kind);
 
     PER_HEAP_ISOLATED_METHOD void age_free_regions (const char* msg);
