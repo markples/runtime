@@ -13410,6 +13410,8 @@ void gc_heap::distribute_free_regions()
     // use these to fill the budget as well
     surplus_regions[basic_free_region].transfer_regions (&global_regions_to_decommit[basic_free_region]);
 
+    move_old_regions(old_regions[huge_free_region], global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
+
 #ifdef MULTIPLE_HEAPS
     for (int i = 0; i < n_heaps; i++)
     {
