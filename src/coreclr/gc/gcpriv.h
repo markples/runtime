@@ -6082,7 +6082,7 @@ public:
     #define MAX_AGE_IN_FREE 99
     #define AGE_IN_FREE_TO_DECOMMIT_BASIC 20
     #define AGE_IN_FREE_TO_DECOMMIT_LARGE 5
-    #define AGE_IN_FREE_TO_DECOMMIT_HUGE 1
+    #define AGE_IN_FREE_TO_DECOMMIT_HUGE 2
     int             age_in_free;
     // This is currently only used by regions that are swept in plan -
     // we then thread this list onto the generation's free list.
