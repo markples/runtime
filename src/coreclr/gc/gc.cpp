@@ -13440,7 +13440,7 @@ void gc_heap::distribute_free_regions()
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
         dprintf (1, ("moved %2zd %s regions (%8zd) to decommit based on time",
-            kind_name[kind], old_regions.get_num_free_regions(), old_regions.get_size_committed_in_free()));
+            kind_name[kind], old_regions[kind].get_num_free_regions(), old_regions[kind].get_size_committed_in_free()));
     }
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
@@ -13448,8 +13448,8 @@ void gc_heap::distribute_free_regions()
         for (heap_segment* region = old_regions[kind].get_first_free_region(); region != nullptr; region = next_region)
         {
             next_region = heap_segment_next (region);
-            dprintf (REGIONS_LOG, ("h%2d region %p age %2d, decommit",
-                i, heap_segment_mem (region), heap_segment_age_in_free (region)));
+            dprintf (REGIONS_LOG, ("region %p age %2d, decommit",
+                heap_segment_mem (region), heap_segment_age_in_free (region)));
             region_free_list::unlink_region (region);
             region_free_list::add_region (region, global_regions_to_decommit);
         }
