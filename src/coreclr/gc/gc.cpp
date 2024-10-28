@@ -13531,12 +13531,27 @@ void gc_heap::distribute_free_regions()
 
         ptrdiff_t balance = total_num_free_regions[kind] - total_budget_in_region_units[kind];
 
-        if (
+        // If distribute is false, then we will decommit the surplus regions
+        bool distribute_p;
+
+        if (balance < 0)
+        {
+            distribute_p = true;
+        }
+        else if (kind == basic_free_region)
+        {
 #ifdef BACKGROUND_GC
-            (background_running_p() && (settings.condemned_generation != max_generation)) ||
+            distribute_p = (background_running_p() && (settings.condemned_generation != max_generation));
+#else
+            distribute_p = false;
 #endif
-            (kind != basic_free_region) ||
-            (balance < 0))
+        }
+        else
+        {
+            distribute_p = !dt_high_memory_load_p();
+        }
+
+        if (distribute_p)
         {
 #ifdef MULTIPLE_HEAPS
             // we may have a deficit or - for large regions or if background GC is going on - a surplus.
@@ -13593,6 +13608,8 @@ void gc_heap::distribute_free_regions()
         }
         else
         {
+            assert (balance >= 0);
+
             dprintf(REGIONS_LOG, ("distributing the %zd %s regions, removing %zd regions",
                 total_budget_in_region_units[kind],
                 kind_name[kind],
