@@ -13548,6 +13548,8 @@ void gc_heap::distribute_free_regions()
         }
         else
         {
+            distribute_p = false;
+
             // also do _oh versions?
             if (heap_hard_limit)
             {
