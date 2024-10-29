@@ -13548,7 +13548,7 @@ void gc_heap::distribute_free_regions()
         }
         else
         {
-            distribute_p = false;
+            distribute_p = true;
 
             // also do _oh versions?
             if (heap_hard_limit)
@@ -13558,11 +13558,11 @@ void gc_heap::distribute_free_regions()
                     current_total_committed, current_percent_heap_hard_limit, heap_hard_limit));
                 if (current_percent_heap_hard_limit >= 90)
                 {
-                    distribute_p = true;
+                    distribute_p = false;
                 }
             }
 
-            distribute_p = distribute_p || !dt_high_memory_load_p();
+            distribute_p = distribute_p && !dt_high_memory_load_p();
         }
 
         if (distribute_p)
