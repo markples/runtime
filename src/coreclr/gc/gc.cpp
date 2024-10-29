@@ -13510,6 +13510,21 @@ void gc_heap::distribute_free_regions()
         }
     }
 
+    bool high_memory_load_p = false;
+
+    // also do _oh versions?
+    if (heap_hard_limit)
+    {
+        int current_percent_heap_hard_limit = (int)((float)current_total_committed * 100.0 / (float)heap_hard_limit);
+        dprintf (REGIONS_LOG, ("committed %zd is %d%% of limit %zd",
+            current_total_committed, current_percent_heap_hard_limit, heap_hard_limit));
+        if (current_percent_heap_hard_limit >= 90)
+        {
+            high_memory_load_p = true;
+        }
+    }
+    high_memory_load_p = high_memory_load_p || dt_high_memory_load_p();
+
     int region_factor[kind_count] = { 1, LARGE_REGION_FACTOR };
 
 #ifndef MULTIPLE_HEAPS
@@ -13548,21 +13563,7 @@ void gc_heap::distribute_free_regions()
         }
         else
         {
-            distribute_p = true;
-
-            // also do _oh versions?
-            if (heap_hard_limit)
-            {
-                int current_percent_heap_hard_limit = (int)((float)current_total_committed * 100.0 / (float)heap_hard_limit);
-                dprintf (REGIONS_LOG, ("committed %zd is %d%% of limit %zd",
-                    current_total_committed, current_percent_heap_hard_limit, heap_hard_limit));
-                if (current_percent_heap_hard_limit >= 90)
-                {
-                    distribute_p = false;
-                }
-            }
-
-            distribute_p = distribute_p && !dt_high_memory_load_p();
+            distribute_p = !high_memory_load_p;
         }
 
         if (distribute_p)
@@ -13710,14 +13711,12 @@ void gc_heap::distribute_free_regions()
         }
     }
 
+    size_t decommit_step_milliseconds = 0;
+
 #ifdef MULTIPLE_HEAPS
-    for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
+    if (high_memory_load_p)
     {
-        if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
-        {
-            gradual_decommit_in_progress_p = TRUE;
-            break;
-        }
+        decommit_step_milliseconds = DECOMMIT_TIME_STEP_MILLISECONDS;
     }
 #else //MULTIPLE_HEAPS
     // we want to limit the amount of decommit we do per time to indirectly
@@ -13732,10 +13731,25 @@ void gc_heap::distribute_free_regions()
     if (ephemeral_elapsed >= DECOMMIT_TIME_STEP_MILLISECONDS)
     {
         gc_last_ephemeral_decommit_time = dd_time_clock (dd0);
-        size_t decommit_step_milliseconds = min (ephemeral_elapsed, (size_t)(10*1000));
+        decommit_step_milliseconds = min (ephemeral_elapsed, (size_t)(10*1000));
+    }
+#endif //MULTIPLE_HEAPS
 
+    if (decommit_step_milliseconds > 0)
+    {
         decommit_step (decommit_step_milliseconds);
     }
+
+#ifdef MULTIPLE_HEAPS
+    for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
+    {
+        if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
+        {
+            gradual_decommit_in_progress_p = TRUE;
+            break;
+        }
+    }
+#else //MULTIPLE_HEAPS
     // transfer any remaining regions on the decommit list back to the free list
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
