@@ -13712,7 +13712,7 @@ void gc_heap::distribute_free_regions()
     }
 
 #ifdef MULTIPLE_HEAPS
-    if (last_gc_before_oom) // high_memory_load_p)
+    if (joined_last_gc_before_oom) // high_memory_load_p)
     {
         while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
         {
