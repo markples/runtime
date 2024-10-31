@@ -13523,7 +13523,7 @@ void gc_heap::distribute_free_regions()
             high_memory_load_p = true;
         }
     }
-    high_memory_load_p = high_memory_load_p || dt_high_memory_load_p();
+    high_memory_load_p = joined_last_gc_before_oom || high_memory_load_p || dt_high_memory_load_p();
 
     int region_factor[kind_count] = { 1, LARGE_REGION_FACTOR };
 
