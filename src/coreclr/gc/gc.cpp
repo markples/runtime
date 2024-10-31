@@ -18359,6 +18359,7 @@ allocation_state gc_heap::allocate_soh (int gen_number,
 
                 BOOL got_full_compacting_gc = FALSE;
 
+#ifdef USE_REGIONS
                 //test
                 size_t size_free = free_regions[0].get_size_free_regions();
 
@@ -18367,6 +18368,9 @@ allocation_state gc_heap::allocate_soh (int gen_number,
 
                 size_t new_size_free = free_regions[0].get_size_free_regions();
                 bool free_increased_p = new_size_free > size_free;
+#else
+                bool free_increased_p = false;
+#endif
 
                 soh_alloc_state = ((got_full_compacting_gc || free_increased_p) ? a_state_try_fit_after_cg : a_state_cant_allocate);
                 break;
