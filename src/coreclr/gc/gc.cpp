@@ -18359,10 +18359,16 @@ allocation_state gc_heap::allocate_soh (int gen_number,
 
                 BOOL got_full_compacting_gc = FALSE;
 
+                //test
+                size_t size_free = free_regions[0].get_size_free_regions();
+
                 got_full_compacting_gc = trigger_full_compact_gc (gr, &oom_r, false, &msl_status);
                 if (msl_status == msl_retry_different_heap) return a_state_retry_allocate;
 
-                soh_alloc_state = (got_full_compacting_gc ? a_state_try_fit_after_cg : a_state_cant_allocate);
+                size_t new_size_free = free_regions[0].get_size_free_regions();
+                bool free_increased_p = new_size_free > size_free;
+
+                soh_alloc_state = ((got_full_compacting_gc || free_increased_p) ? a_state_try_fit_after_cg : a_state_cant_allocate);
                 break;
             }
             default:
