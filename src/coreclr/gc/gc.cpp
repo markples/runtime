@@ -13414,6 +13414,10 @@ void gc_heap::distribute_free_regions()
     }
 
     // first step: accumulate the number of free regions and the budget over all heaps
+    //
+    // The initial budget will only be calculated for basic free regions.  For large regions, the initial budget
+    // is zero, and distribute-vs-decommit will be determined entirely by region ages and whether we are in a
+    // high memory usage scenario.  Distributing a surplus/deficit of regions can change the budgets that are used.
     size_t total_num_free_regions[kind_count] = { 0, 0 };
     size_t total_budget_in_region_units[kind_count] = { 0, 0 };
 
@@ -13512,7 +13516,6 @@ void gc_heap::distribute_free_regions()
 
     bool high_memory_load_p = false;
 
-    // also do _oh versions?
     if (heap_hard_limit)
     {
         int current_percent_heap_hard_limit = (int)((float)current_total_committed * 100.0 / (float)heap_hard_limit);
@@ -13712,7 +13715,7 @@ void gc_heap::distribute_free_regions()
     }
 
 #ifdef MULTIPLE_HEAPS
-    if (joined_last_gc_before_oom) // high_memory_load_p)
+    if (high_memory_load_p)
     {
         while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
         {
@@ -18359,20 +18362,10 @@ allocation_state gc_heap::allocate_soh (int gen_number,
 
                 BOOL got_full_compacting_gc = FALSE;
 
-#ifdef USE_REGIONS
-                //test
-                size_t size_free = free_regions[0].get_size_free_regions();
-
                 got_full_compacting_gc = trigger_full_compact_gc (gr, &oom_r, false, &msl_status);
                 if (msl_status == msl_retry_different_heap) return a_state_retry_allocate;
 
-                size_t new_size_free = free_regions[0].get_size_free_regions();
-                bool free_increased_p = new_size_free > size_free;
-#else
-                bool free_increased_p = false;
-#endif
-
-                soh_alloc_state = ((got_full_compacting_gc || free_increased_p) ? a_state_try_fit_after_cg : a_state_cant_allocate);
+                soh_alloc_state = (got_full_compacting_gc ? a_state_try_fit_after_cg : a_state_cant_allocate);
                 break;
             }
             default:
