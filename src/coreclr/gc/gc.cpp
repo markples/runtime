@@ -13778,24 +13778,71 @@ bool gc_heap::distribute_surplus_p(size_t balance, int kind, bool aggressive_dec
     return !aggressive_decommit_large_p;
 }
 
-void gc_heap::decide_decommit_strategy(bool aggressive_decommit_large_p)
+void gc_heap::decide_decommit_strategy(bool joined_last_gc_before_oom)
 {
 #ifdef MULTIPLE_HEAPS
-    if (aggressive_decommit_large_p)
+
+    if (joined_last_gc_before_oom || g_low_memory_status)
     {
+        dprintf (REGIONS_LOG, ("low memory - decommitting everything (last_gc_before_oom=%d, g_low_memory_status=%d)", joined_last_gc_before_oom, g_low_memory_status));
+
         while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
         {
         }
+        return;
     }
-    else
+
+    ptrdiff_t size_to_decommit_for_heap_hard_limit = 0;
+    if (heap_hard_limit)
     {
-        for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
+        size_to_decommit_for_heap_hard_limit = (ptrdiff_t)(current_total_committed - (heap_hard_limit * 0.85)); //! magic constant
+        size_to_decommit_for_heap_hard_limit = max(size_to_decommit_for_heap_hard_limit, (ptrdiff_t)0);
+    }
+
+    ptrdiff_t size_to_decommit_for_physical = 0;
+    if (settings.entry_memory_load >= high_memory_load_th)
+    {
+        if (is_restricted_physical_mem)
         {
-            if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
+            size_t entry_used_physical_mem = total_physical_mem - entry_available_physical_mem; 
+            size_t goal_used_physical_mem = (size_t)(((high_memory_load_th - 5.0) / 100.0) * total_physical_mem); //! magic constant
+            size_to_decommit_for_physical = entry_used_physical_mem - goal_used_physical_mem;
+        }
+        else
+        {
+            //!! Probably need to change GetMemoryStatus or use a different API to get the total physical memory
+            if (settings.entry_memory_load >= 100)
             {
-                gradual_decommit_in_progress_p = TRUE;
-                break;
+                dprintf (REGIONS_LOG, ("low memory - decommitting everything (unknown total physical, entry_memory_load=%d", settings.entry_memory_load));
+
+                while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
+                {
+                }
+                return;
             }
+
+            // We have the (rounded) memory load percentage and available physical memory, so we can scale the
+            // available physical memory as an approximation.
+            size_t memory_load_desired_diff = settings.entry_memory_load - (high_memory_load_th - 5); //! magic constant
+            size_to_decommit_for_physical = (ptrdiff_t)((((float)memory_load_desired_diff) / (100.0 - settings.entry_memory_load)) * entry_available_physical_mem);
+        }
+        size_to_decommit_for_physical = max(size_to_decommit_for_physical, (ptrdiff_t)0);
+    }
+
+    size_t size_to_decommit = max(size_to_decommit_for_heap_hard_limit, size_to_decommit_for_physical);
+    if (size_to_decommit > 0)
+    {
+        dprintf (REGIONS_LOG, ("low memory - decommitting %zd (for heap_hard_limit: %zd, for physical: %zd)", size_to_decommit, size_to_decommit_for_heap_hard_limit, size_to_decommit_for_physical));
+
+        decommit_step(size_to_decommit / DECOMMIT_SIZE_PER_MILLISECOND);
+    }
+
+    for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
+    {
+        if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
+        {
+            gradual_decommit_in_progress_p = TRUE;
+            break;
         }
     }
 #else //MULTIPLE_HEAPS
@@ -13824,7 +13871,6 @@ void gc_heap::decide_decommit_strategy(bool aggressive_decommit_large_p)
         }
     }
 #endif //MULTIPLE_HEAPS
-
 }
 
 #endif //USE_REGIONS
