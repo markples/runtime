@@ -1746,6 +1746,8 @@ private:
     PER_HEAP_ISOLATED_METHOD size_t compute_basic_region_budgets(size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_core_free_region_kinds], size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS], size_t total_basic_free_regions);
     PER_HEAP_ISOLATED_METHOD bool high_memory_load_p(); //TODO: name? change dt_high_memory_load_p to match this?
     PER_HEAP_ISOLATED_METHOD bool distribute_surplus_p(size_t balance, int kind, bool aggressive_decommit_large_p);
+    PER_HEAP_ISOLATED_METHOD void decide_decommit_strategy(bool aggressive_decommit_large_p);
+
     PER_HEAP_ISOLATED_METHOD void age_free_regions (const char* msg);
 
 #ifdef STRESS_REGIONS

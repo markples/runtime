@@ -13603,50 +13603,7 @@ void gc_heap::distribute_free_regions()
         }
     }
 
-#ifdef MULTIPLE_HEAPS
-    if (aggressive_decommit_large_p)
-    {
-        while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
-        {
-        }
-    }
-    else
-    {
-        for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
-        {
-            if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
-            {
-                gradual_decommit_in_progress_p = TRUE;
-                break;
-            }
-        }
-    }
-#else //MULTIPLE_HEAPS
-    // we want to limit the amount of decommit we do per time to indirectly
-    // limit the amount of time spent in recommit and page faults
-    // we use the elapsed time since the last GC to arrive at the desired
-    // decommit size
-    // we limit the elapsed time to 10 seconds to avoid spending too much time decommitting
-    // if less than DECOMMIT_TIME_STEP_MILLISECONDS elapsed, we don't decommit -
-    // we don't want to decommit fractions of regions here
-    dynamic_data* dd0 = dynamic_data_of (0);
-    size_t ephemeral_elapsed = (size_t)((dd_time_clock (dd0) - gc_last_ephemeral_decommit_time) / 1000);
-    if (ephemeral_elapsed >= DECOMMIT_TIME_STEP_MILLISECONDS)
-    {
-        gc_last_ephemeral_decommit_time = dd_time_clock (dd0);
-        size_t decommit_step_milliseconds = min (ephemeral_elapsed, (size_t)(10*1000));
-
-        decommit_step (decommit_step_milliseconds);
-    }
-    // transfer any remaining regions on the decommit list back to the free list
-    for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
-    {
-        if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
-        {
-            free_regions[kind].transfer_regions (&global_regions_to_decommit[kind]);
-        }
-    }
-#endif //MULTIPLE_HEAPS
+    decide_decommit_strategy(aggressive_decommit_large_p);
 }
 
 void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_free_region_kinds], region_free_list old_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
@@ -13819,6 +13776,55 @@ bool gc_heap::distribute_surplus_p(size_t balance, int kind, bool aggressive_dec
     }
 
     return !aggressive_decommit_large_p;
+}
+
+void gc_heap::decide_decommit_strategy(bool aggressive_decommit_large_p)
+{
+#ifdef MULTIPLE_HEAPS
+    if (aggressive_decommit_large_p)
+    {
+        while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
+        {
+        }
+    }
+    else
+    {
+        for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
+        {
+            if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
+            {
+                gradual_decommit_in_progress_p = TRUE;
+                break;
+            }
+        }
+    }
+#else //MULTIPLE_HEAPS
+    // we want to limit the amount of decommit we do per time to indirectly
+    // limit the amount of time spent in recommit and page faults
+    // we use the elapsed time since the last GC to arrive at the desired
+    // decommit size
+    // we limit the elapsed time to 10 seconds to avoid spending too much time decommitting
+    // if less than DECOMMIT_TIME_STEP_MILLISECONDS elapsed, we don't decommit -
+    // we don't want to decommit fractions of regions here
+    dynamic_data* dd0 = dynamic_data_of (0);
+    size_t ephemeral_elapsed = (size_t)((dd_time_clock (dd0) - gc_last_ephemeral_decommit_time) / 1000);
+    if (ephemeral_elapsed >= DECOMMIT_TIME_STEP_MILLISECONDS)
+    {
+        gc_last_ephemeral_decommit_time = dd_time_clock (dd0);
+        size_t decommit_step_milliseconds = min (ephemeral_elapsed, (size_t)(10*1000));
+
+        decommit_step (decommit_step_milliseconds);
+    }
+    // transfer any remaining regions on the decommit list back to the free list
+    for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
+    {
+        if (global_regions_to_decommit[kind].get_num_free_regions() != 0)
+        {
+            free_regions[kind].transfer_regions (&global_regions_to_decommit[kind]);
+        }
+    }
+#endif //MULTIPLE_HEAPS
+
 }
 
 #endif //USE_REGIONS
