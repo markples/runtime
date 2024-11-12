@@ -13435,7 +13435,7 @@ void gc_heap::distribute_free_regions()
     size_t total_basic_free_regions = total_num_free_regions[basic_free_region] + surplus_regions[basic_free_region].get_num_free_regions();
     total_budget_in_region_units[basic_free_region] = compute_basic_region_budgets(heap_budget_in_region_units, min_heap_budget_in_region_units, total_basic_free_regions);
 
-    bool aggressive_decommit_large_p = joined_last_gc_before_oom || high_memory_load_p();
+    bool aggressive_decommit_large_p = joined_last_gc_before_oom || dt_high_memory_load_p() || near_heap_hard_limit_p();
 
     int region_factor[count_core_free_region_kinds] = { 1, LARGE_REGION_FACTOR };
 
@@ -13743,7 +13743,7 @@ size_t gc_heap::compute_basic_region_budgets(
     return total_budget_in_region_units;
 }
 
-bool gc_heap::high_memory_load_p()
+bool gc_heap::near_heap_hard_limit_p()
 {
     if (heap_hard_limit)
     {
@@ -13756,7 +13756,7 @@ bool gc_heap::high_memory_load_p()
         }
     }
 
-    return dt_high_memory_load_p();
+    return false;
 }
 
 bool gc_heap::distribute_surplus_p(size_t balance, int kind, bool aggressive_decommit_large_p)
@@ -13802,31 +13802,14 @@ void gc_heap::decide_decommit_strategy(bool joined_last_gc_before_oom)
     ptrdiff_t size_to_decommit_for_physical = 0;
     if (settings.entry_memory_load >= high_memory_load_th)
     {
-        if (is_restricted_physical_mem)
-        {
-            size_t entry_used_physical_mem = total_physical_mem - entry_available_physical_mem; 
-            size_t goal_used_physical_mem = (size_t)(((high_memory_load_th - 5.0) / 100.0) * total_physical_mem); //! magic constant
-            size_to_decommit_for_physical = entry_used_physical_mem - goal_used_physical_mem;
-        }
-        else
-        {
-            //!! Probably need to change GetMemoryStatus or use a different API to get the total physical memory
-            if (settings.entry_memory_load >= 100)
-            {
-                dprintf (REGIONS_LOG, ("low memory - decommitting everything (unknown total physical, entry_memory_load=%d", settings.entry_memory_load));
+        // Note that if is_restricted_physical_mem isn't set, then there may be some inconsistency between the
+        // total memory value used in get_memory_info/GetMemoryStatus to compute the entry_* values and
+        // and the total_physical_memory stored in the GC. This is ok for this heuristic that is determining how
+        // much memory to decommit.
 
-                while (decommit_step(DECOMMIT_TIME_STEP_MILLISECONDS))
-                {
-                }
-                return;
-            }
-
-            // We have the (rounded) memory load percentage and available physical memory, so we can scale the
-            // available physical memory as an approximation.
-            size_t memory_load_desired_diff = settings.entry_memory_load - (high_memory_load_th - 5); //! magic constant
-            size_to_decommit_for_physical = (ptrdiff_t)((((float)memory_load_desired_diff) / (100.0 - settings.entry_memory_load)) * entry_available_physical_mem);
-        }
-        size_to_decommit_for_physical = max(size_to_decommit_for_physical, (ptrdiff_t)0);
+        size_t entry_used_physical_mem = total_physical_mem - entry_available_physical_mem;
+        size_t goal_used_physical_mem = (size_t)(((high_memory_load_th - 5.0) / 100.0) * total_physical_mem); //! magic constant
+        size_to_decommit_for_physical = entry_used_physical_mem - goal_used_physical_mem;
     }
 
     size_t size_to_decommit = max(size_to_decommit_for_heap_hard_limit, size_to_decommit_for_physical);
