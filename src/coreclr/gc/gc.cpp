@@ -13544,7 +13544,7 @@ void gc_heap::distribute_free_regions()
                 else
                 {
                     dprintf (REGIONS_LOG, ("Moved %zd %s regions to decommit list",
-                        global_regions_to_decommit[huge_free_region].get_num_free_regions(), kind_name[huge_free_region]));
+                        global_regions_to_decommit[huge_free_region].get_num_free_regions(), free_region_kind_name[huge_free_region]));
 
                     // cannot assert we moved any regions because there may be a single huge region with more than we want to decommit
                 }
@@ -13564,7 +13564,7 @@ void gc_heap::distribute_free_regions()
             {
                 dprintf (REGIONS_LOG, ("removing %zd %s regions from heap %d with %zd regions, budget is %zd",
                     hp->free_regions[kind].get_num_free_regions() - heap_budget_in_region_units[i][kind],
-                    kind_name[kind],
+                    free_region_kind_name[kind],
                     i,
                     hp->free_regions[kind].get_num_free_regions(),
                     heap_budget_in_region_units[i][kind]));
@@ -13588,7 +13588,7 @@ void gc_heap::distribute_free_regions()
                 int64_t num_added_regions = add_regions (&hp->free_regions[kind], &surplus_regions[kind], heap_budget_in_region_units[i][kind]);
                 dprintf (REGIONS_LOG, ("added %zd %s regions to heap %d - now has %zd, budget is %zd",
                     (size_t)num_added_regions,
-                    kind_name[kind],
+                    free_region_kind_name[kind],
                     i,
                     hp->free_regions[kind].get_num_free_regions(),
                     heap_budget_in_region_units[i][kind]));
