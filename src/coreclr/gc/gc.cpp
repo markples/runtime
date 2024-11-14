@@ -13678,7 +13678,7 @@ void gc_heap::move_regions_to_decommit(region_free_list regions[count_free_regio
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
         dprintf (1, ("moved %2zd %s regions (%8zd) to decommit based on time",
-            regions[kind].get_num_free_regions(), kind_name[kind], regions[kind].get_size_committed_in_free()));
+            regions[kind].get_num_free_regions(), free_region_kind_name[kind], regions[kind].get_size_committed_in_free()));
     }
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
