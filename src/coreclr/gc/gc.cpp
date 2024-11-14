@@ -13421,16 +13421,16 @@ void gc_heap::distribute_free_regions()
 
     size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_core_free_region_kinds] = {};
     size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS] = {};
-    region_free_list old_regions[count_free_region_kinds];
+    region_free_list aged_regions[count_free_region_kinds];
     region_free_list surplus_regions[count_core_free_region_kinds];
 
     // we may still have regions left on the regions_to_decommit list -
     // use these to fill the budget as well
     surplus_regions[basic_free_region].transfer_regions (&global_regions_to_decommit[basic_free_region]);
 
-    consider_free_regions(total_num_free_regions, old_regions, joined_last_gc_before_oom);
+    consider_free_regions(total_num_free_regions, aged_regions, joined_last_gc_before_oom);
     // For now, we just decommit right away, but eventually these will be used in move_highest_free_regions
-    move_regions_to_decommit(old_regions);
+    move_regions_to_decommit(aged_regions);
 
     size_t total_basic_free_regions = total_num_free_regions[basic_free_region] + surplus_regions[basic_free_region].get_num_free_regions();
     total_budget_in_region_units[basic_free_region] = compute_basic_region_budgets(heap_budget_in_region_units, min_heap_budget_in_region_units, total_basic_free_regions);
@@ -13606,9 +13606,9 @@ void gc_heap::distribute_free_regions()
     decide_decommit_strategy(aggressive_decommit_large_p);
 }
 
-void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_free_region_kinds], region_free_list old_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
+void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
 {
-    move_old_regions(old_regions, global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
+    move_aged_regions(aged_regions, global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
 
 #ifdef MULTIPLE_HEAPS
     for (int i = 0; i < n_heaps; i++)
@@ -13621,7 +13621,7 @@ void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_fre
 
         for (int kind = basic_free_region; kind < count_core_free_region_kinds; kind++)
         {
-            move_old_regions(old_regions, hp->free_regions[kind], static_cast<free_region_kind>(kind), joined_last_gc_before_oom);
+            move_aged_regions(aged_regions, hp->free_regions[kind], static_cast<free_region_kind>(kind), joined_last_gc_before_oom);
             total_num_free_regions[kind] += hp->free_regions[kind].get_num_free_regions();
         }
 
@@ -13630,14 +13630,14 @@ void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_fre
 
 }
 
-void gc_heap::move_old_regions(region_free_list dst[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
+void gc_heap::move_aged_regions(region_free_list dst[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
 {
     heap_segment* next_region = nullptr;
     for (heap_segment* region = src.get_first_free_region(); region != nullptr; region = next_region)
     {
         next_region = heap_segment_next (region);
         // when we are about to get OOM, we'd like to discount the free regions that just have the initial page commit as they are not useful
-        if (old_region_p(region, kind) ||
+        if (aged_region_p(region, kind) ||
             ((get_region_committed_size (region) == GC_PAGE_SIZE) && joined_last_gc_before_oom))
         {
             region_free_list::unlink_region (region);
@@ -13646,7 +13646,7 @@ void gc_heap::move_old_regions(region_free_list dst[count_free_region_kinds], re
     }
 }
 
-bool gc_heap::old_region_p(heap_segment* region, free_region_kind kind)
+bool gc_heap::aged_region_p(heap_segment* region, free_region_kind kind)
 {
 #ifndef MULTIPLE_HEAPS
     const int n_heaps = 1;
@@ -13678,7 +13678,7 @@ void gc_heap::move_regions_to_decommit(region_free_list regions[count_free_regio
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
         dprintf (1, ("moved %2zd %s regions (%8zd) to decommit based on time",
-            regions[kind].get_num_free_regions(), kind_name[kind],  old_regions[kind].get_size_committed_in_free()));
+            regions[kind].get_num_free_regions(), kind_name[kind], regions[kind].get_size_committed_in_free()));
     }
     for (int kind = basic_free_region; kind < count_free_region_kinds; kind++)
     {
