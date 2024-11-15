@@ -38578,8 +38578,7 @@ void gc_heap::background_mark_phase ()
         // age the free regions twice.
         if (!do_ephemeral_gc_p)
         {
-            // Will be enabled with future distribute_free_regions changes
-            //distribute_free_regions ();
+            distribute_free_regions ();
             age_free_regions ("BGC");
         }
 #endif //USE_REGIONS
