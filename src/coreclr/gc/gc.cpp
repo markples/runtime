@@ -13440,7 +13440,7 @@ void gc_heap::distribute_free_regions()
         global_free_huge_regions.transfer_regions (&hp->free_regions[huge_free_region]);
     }
 
-    consider_free_regions(total_num_free_regions, aged_regions, joined_last_gc_before_oom);
+    move_all_aged_regions(total_num_free_regions, aged_regions, joined_last_gc_before_oom);
     // For now, we just decommit right away, but eventually these will be used in move_highest_free_regions
     move_regions_to_decommit(aged_regions);
 
@@ -13618,7 +13618,7 @@ void gc_heap::distribute_free_regions()
     decide_decommit_strategy(aggressive_decommit_large_p);
 }
 
-void gc_heap::consider_free_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
+void gc_heap::move_all_aged_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
 {
     move_aged_regions(aged_regions, global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
 

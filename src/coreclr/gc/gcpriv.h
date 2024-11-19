@@ -1733,7 +1733,7 @@ private:
     PER_HEAP_ISOLATED_METHOD void compute_gc_and_ephemeral_range (int condemned_gen_number, bool end_of_gc_p);
 
     PER_HEAP_ISOLATED_METHOD void distribute_free_regions();
-    PER_HEAP_ISOLATED_METHOD void consider_free_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom);
+    PER_HEAP_ISOLATED_METHOD void move_all_aged_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom);
     PER_HEAP_ISOLATED_METHOD void move_aged_regions(region_free_list dst[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom);
     PER_HEAP_ISOLATED_METHOD bool aged_region_p(heap_segment* region, free_region_kind kind);
     PER_HEAP_ISOLATED_METHOD void move_regions_to_decommit(region_free_list oregions[count_free_region_kinds]);
