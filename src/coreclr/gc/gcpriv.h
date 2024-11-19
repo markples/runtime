@@ -1414,7 +1414,7 @@ enum free_region_kind
 {
     basic_free_region = 0,
     large_free_region = 1,
-    count_core_free_region_kinds = 2,
+    count_distributed_free_region_kinds = 2,
     huge_free_region = 2,
     count_free_region_kinds = 3,
 };
@@ -1733,11 +1733,11 @@ private:
     PER_HEAP_ISOLATED_METHOD void compute_gc_and_ephemeral_range (int condemned_gen_number, bool end_of_gc_p);
 
     PER_HEAP_ISOLATED_METHOD void distribute_free_regions();
-    PER_HEAP_ISOLATED_METHOD void consider_free_regions(size_t total_num_free_regions[count_core_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom);
+    PER_HEAP_ISOLATED_METHOD void consider_free_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom);
     PER_HEAP_ISOLATED_METHOD void move_aged_regions(region_free_list dst[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom);
     PER_HEAP_ISOLATED_METHOD bool aged_region_p(heap_segment* region, free_region_kind kind);
     PER_HEAP_ISOLATED_METHOD void move_regions_to_decommit(region_free_list oregions[count_free_region_kinds]);
-    PER_HEAP_ISOLATED_METHOD size_t compute_basic_region_budgets(size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_core_free_region_kinds], size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS], size_t total_basic_free_regions);
+    PER_HEAP_ISOLATED_METHOD size_t compute_basic_region_budgets(size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_distributed_free_region_kinds], size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS], size_t total_basic_free_regions);
     PER_HEAP_ISOLATED_METHOD bool near_heap_hard_limit_p();
     PER_HEAP_ISOLATED_METHOD bool distribute_surplus_p(size_t balance, int kind, bool aggressive_decommit_large_p);
     PER_HEAP_ISOLATED_METHOD void decide_decommit_strategy(bool joined_last_gc_before_oom);

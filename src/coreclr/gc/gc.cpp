@@ -13416,13 +13416,13 @@ void gc_heap::distribute_free_regions()
     // The initial budget will only be calculated for basic free regions.  For large regions, the initial budget
     // is zero, and distribute-vs-decommit will be determined entirely by region ages and whether we are in a
     // high memory usage scenario.  Distributing a surplus/deficit of regions can change the budgets that are used.
-    size_t total_num_free_regions[count_core_free_region_kinds] = { 0, 0 };
-    size_t total_budget_in_region_units[count_core_free_region_kinds] = { 0, 0 };
+    size_t total_num_free_regions[count_distributed_free_region_kinds] = { 0, 0 };
+    size_t total_budget_in_region_units[count_distributed_free_region_kinds] = { 0, 0 };
 
-    size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_core_free_region_kinds] = {};
+    size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_distributed_free_region_kinds] = {};
     size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS] = {};
     region_free_list aged_regions[count_free_region_kinds];
-    region_free_list surplus_regions[count_core_free_region_kinds];
+    region_free_list surplus_regions[count_distributed_free_region_kinds];
 
     // we may still have regions left on the regions_to_decommit list -
     // use these to fill the budget as well
@@ -13449,14 +13449,14 @@ void gc_heap::distribute_free_regions()
 
     bool aggressive_decommit_large_p = joined_last_gc_before_oom || dt_high_memory_load_p() || near_heap_hard_limit_p();
 
-    int region_factor[count_core_free_region_kinds] = { 1, LARGE_REGION_FACTOR };
+    int region_factor[count_distributed_free_region_kinds] = { 1, LARGE_REGION_FACTOR };
 
 #ifndef MULTIPLE_HEAPS
     // just to reduce the number of #ifdefs in the code below
     const int n_heaps = 1;
 #endif //!MULTIPLE_HEAPS
 
-    for (int kind = basic_free_region; kind < count_core_free_region_kinds; kind++)
+    for (int kind = basic_free_region; kind < count_distributed_free_region_kinds; kind++)
     {
         dprintf(REGIONS_LOG, ("%zd %s free regions, %zd regions budget, %zd regions on surplus list",
             total_num_free_regions[kind],
@@ -13564,7 +13564,7 @@ void gc_heap::distribute_free_regions()
         }
     }
 
-    for (int kind = basic_free_region; kind < count_core_free_region_kinds; kind++)
+    for (int kind = basic_free_region; kind < count_distributed_free_region_kinds; kind++)
     {
 #ifdef MULTIPLE_HEAPS
         // now go through all the heaps and remove any free regions above the target count
@@ -13618,7 +13618,7 @@ void gc_heap::distribute_free_regions()
     decide_decommit_strategy(aggressive_decommit_large_p);
 }
 
-void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
+void gc_heap::consider_free_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
 {
     move_aged_regions(aged_regions, global_free_huge_regions, huge_free_region, joined_last_gc_before_oom);
 
@@ -13631,7 +13631,7 @@ void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_fre
         gc_heap* hp = pGenGCHeap;
 #endif //MULTIPLE_HEAPS
 
-        for (int kind = basic_free_region; kind < count_core_free_region_kinds; kind++)
+        for (int kind = basic_free_region; kind < count_distributed_free_region_kinds; kind++)
         {
             move_aged_regions(aged_regions, hp->free_regions[kind], static_cast<free_region_kind>(kind), joined_last_gc_before_oom);
             total_num_free_regions[kind] += hp->free_regions[kind].get_num_free_regions();
@@ -13708,11 +13708,11 @@ void gc_heap::move_regions_to_decommit(region_free_list regions[count_free_regio
 }
 
 size_t gc_heap::compute_basic_region_budgets(
-    size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_core_free_region_kinds],
+    size_t heap_budget_in_region_units[MAX_SUPPORTED_CPUS][count_distributed_free_region_kinds],
     size_t min_heap_budget_in_region_units[MAX_SUPPORTED_CPUS],
     size_t total_basic_free_regions)
 {
-    const size_t region_size[count_core_free_region_kinds] = { global_region_allocator.get_region_alignment(), global_region_allocator.get_large_region_alignment() };
+    const size_t region_size[count_distributed_free_region_kinds] = { global_region_allocator.get_region_alignment(), global_region_allocator.get_large_region_alignment() };
     size_t total_budget_in_region_units = 0;
 
     for (int gen = soh_gen0; gen <= max_generation; gen++)
