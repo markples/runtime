@@ -13811,11 +13811,6 @@ void gc_heap::decide_decommit_strategy(bool joined_last_gc_before_oom)
     ptrdiff_t size_to_decommit_for_physical = 0;
     if (settings.entry_memory_load >= high_memory_load_th)
     {
-        // Note that if is_restricted_physical_mem isn't set, then there may be some inconsistency between the
-        // total memory value used in get_memory_info/GetMemoryStatus to compute the entry_* values and
-        // and the total_physical_memory stored in the GC. This is ok for this heuristic that is determining how
-        // much memory to decommit.
-
         size_t entry_used_physical_mem = total_physical_mem - entry_available_physical_mem;
         size_t goal_used_physical_mem = (size_t)(((high_memory_load_th - 5.0) / 100.0) * total_physical_mem); //! magic constant
         size_to_decommit_for_physical = entry_used_physical_mem - goal_used_physical_mem;
