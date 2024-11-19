@@ -13428,6 +13428,18 @@ void gc_heap::distribute_free_regions()
     // use these to fill the budget as well
     surplus_regions[basic_free_region].transfer_regions (&global_regions_to_decommit[basic_free_region]);
 
+#ifdef MULTIPLE_HEAPS
+    for (int i = 0; i < n_heaps; i++)
+    {
+        gc_heap* hp = g_heaps[i];
+#else //MULTIPLE_HEAPS
+    {
+        gc_heap* hp = pGenGCHeap;
+#endif //MULTIPLE_HEAPS
+
+        global_free_huge_regions.transfer_regions (&hp->free_regions[huge_free_region]);
+    }
+
     consider_free_regions(total_num_free_regions, aged_regions, joined_last_gc_before_oom);
     // For now, we just decommit right away, but eventually these will be used in move_highest_free_regions
     move_regions_to_decommit(aged_regions);
@@ -13624,10 +13636,7 @@ void gc_heap::consider_free_regions(size_t total_num_free_regions[count_core_fre
             move_aged_regions(aged_regions, hp->free_regions[kind], static_cast<free_region_kind>(kind), joined_last_gc_before_oom);
             total_num_free_regions[kind] += hp->free_regions[kind].get_num_free_regions();
         }
-
-        global_free_huge_regions.transfer_regions (&hp->free_regions[huge_free_region]);
     }
-
 }
 
 void gc_heap::move_aged_regions(region_free_list dst[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
