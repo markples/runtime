@@ -2468,6 +2468,8 @@ uint32_t    gc_heap::m_high_memory_load_th;
 
 uint32_t    gc_heap::v_high_memory_load_th;
 
+uint32_t    gc_heap::almost_high_memory_load_th;
+
 bool        gc_heap::is_restricted_physical_mem;
 
 uint64_t    gc_heap::total_physical_mem = 0;
@@ -13804,7 +13806,7 @@ void gc_heap::decide_decommit_strategy(bool joined_last_gc_before_oom)
     ptrdiff_t size_to_decommit_for_heap_hard_limit = 0;
     if (heap_hard_limit)
     {
-        size_to_decommit_for_heap_hard_limit = (ptrdiff_t)(current_total_committed - (heap_hard_limit * 0.85)); //! magic constant
+        size_to_decommit_for_heap_hard_limit = (ptrdiff_t)(current_total_committed - (heap_hard_limit * (MAX_ALLOWED_MEM_LOAD / 100.0f)));
         size_to_decommit_for_heap_hard_limit = max(size_to_decommit_for_heap_hard_limit, (ptrdiff_t)0);
     }
 
@@ -13812,7 +13814,7 @@ void gc_heap::decide_decommit_strategy(bool joined_last_gc_before_oom)
     if (settings.entry_memory_load >= high_memory_load_th)
     {
         size_t entry_used_physical_mem = total_physical_mem - entry_available_physical_mem;
-        size_t goal_used_physical_mem = (size_t)(((high_memory_load_th - 5.0) / 100.0) * total_physical_mem); //! magic constant
+        size_t goal_used_physical_mem = (size_t)(((almost_high_memory_load_th) / 100.0) * total_physical_mem);
         size_to_decommit_for_physical = entry_used_physical_mem - goal_used_physical_mem;
     }
 
@@ -53464,6 +53466,7 @@ bool gc_heap::compute_memory_settings(bool is_initialization, uint32_t& nhp, uin
     }
 
     m_high_memory_load_th = min ((high_memory_load_th + 5), v_high_memory_load_th);
+    almost_high_memory_load_th = max((high_memory_load_th - 5), 1u);
 
     return true;
 }

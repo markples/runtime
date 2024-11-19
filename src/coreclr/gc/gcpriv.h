@@ -5230,6 +5230,7 @@ private:
     PER_HEAP_ISOLATED_FIELD_INIT_ONLY uint32_t high_memory_load_th;
     PER_HEAP_ISOLATED_FIELD_INIT_ONLY uint32_t m_high_memory_load_th;
     PER_HEAP_ISOLATED_FIELD_INIT_ONLY uint32_t v_high_memory_load_th;
+    PER_HEAP_ISOLATED_FIELD_INIT_ONLY uint32_t almost_high_memory_load_th;
     PER_HEAP_ISOLATED_FIELD_INIT_ONLY bool is_restricted_physical_mem;
     PER_HEAP_ISOLATED_FIELD_INIT_ONLY uint64_t mem_one_percent;
     PER_HEAP_ISOLATED_FIELD_INIT_ONLY uint64_t total_physical_mem;
