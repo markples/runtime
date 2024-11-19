@@ -32,7 +32,6 @@
 #if defined(FEATURE_SVR_GC)
 
 #define SERVER_GC 1
-#undef BUILD_AS_STANDALONE
 
 #else // defined(FEATURE_SVR_GC)
 
