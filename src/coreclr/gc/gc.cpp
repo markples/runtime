@@ -13713,7 +13713,7 @@ size_t gc_heap::compute_basic_region_budgets(
     size_t min_heap_basic_budget_in_region_units[MAX_SUPPORTED_CPUS],
     size_t total_basic_free_regions)
 {
-    const size_t region_size[count_distributed_free_region_kinds] = { global_region_allocator.get_region_alignment(), global_region_allocator.get_large_region_alignment() };
+    const size_t region_size = global_region_allocator.get_region_alignment();
     size_t total_budget_in_region_units = 0;
 
     for (int gen = soh_gen0; gen <= max_generation; gen++)
@@ -13739,7 +13739,7 @@ size_t gc_heap::compute_basic_region_budgets(
             const int i = 0;
 #endif //MULTIPLE_HEAPS
             ptrdiff_t budget_gen = max (hp->estimate_gen_growth (gen), (ptrdiff_t)0);
-            size_t budget_gen_in_region_units = (budget_gen + (region_size[basic_free_region] - 1)) / region_size[basic_free_region];
+            size_t budget_gen_in_region_units = (budget_gen + (region_size - 1)) / region_size;
             dprintf (REGIONS_LOG, ("h%2d gen %d has an estimated growth of %zd bytes (%zd regions)", i, gen, budget_gen, budget_gen_in_region_units));
 
             // preserve the budget for the previous generation - we should not go below that
