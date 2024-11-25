@@ -13769,7 +13769,7 @@ bool gc_heap::near_heap_hard_limit_p()
     return false;
 }
 
-bool gc_heap::distribute_surplus_p(size_t balance, int kind, bool aggressive_decommit_large_p)
+bool gc_heap::distribute_surplus_p(ptrdiff_t balance, int kind, bool aggressive_decommit_large_p)
 {
     if (balance < 0)
     {
