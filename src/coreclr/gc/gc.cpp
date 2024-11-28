@@ -13640,7 +13640,7 @@ void gc_heap::move_all_aged_regions(size_t total_num_free_regions[count_distribu
     }
 }
 
-void gc_heap::move_aged_regions(region_free_list dst[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
+void gc_heap::move_aged_regions(region_free_list dest[count_free_region_kinds], region_free_list& src, free_region_kind kind, bool joined_last_gc_before_oom)
 {
     heap_segment* next_region = nullptr;
     for (heap_segment* region = src.get_first_free_region(); region != nullptr; region = next_region)
@@ -13651,7 +13651,7 @@ void gc_heap::move_aged_regions(region_free_list dst[count_free_region_kinds], r
             ((get_region_committed_size (region) == GC_PAGE_SIZE) && joined_last_gc_before_oom))
         {
             region_free_list::unlink_region (region);
-            region_free_list::add_region (region, dst);
+            region_free_list::add_region (region, dest);
         }
     }
 }
