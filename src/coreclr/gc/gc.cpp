@@ -53440,7 +53440,7 @@ bool gc_heap::compute_memory_settings(bool is_initialization, uint32_t& nhp, uin
     if (highmem_th_from_config)
     {
         high_memory_load_th = min (99u, highmem_th_from_config);
-        v_high_memory_load_th = min (99u, (highmem_th_from_config + 7));
+        v_high_memory_load_th = min (99u, (high_memory_load_th + 7));
 #ifdef FEATURE_EVENT_TRACE
         high_mem_percent_from_config = highmem_th_from_config;
 #endif //FEATURE_EVENT_TRACE
@@ -53465,7 +53465,7 @@ bool gc_heap::compute_memory_settings(bool is_initialization, uint32_t& nhp, uin
     }
 
     m_high_memory_load_th = min ((high_memory_load_th + 5), v_high_memory_load_th);
-    almost_high_memory_load_th = max((high_memory_load_th - 5), 1u);
+    almost_high_memory_load_th = (high_memory_load_th > 5) ? (high_memory_load_th - 5) : 1; // avoid underflow of high_memory_load_th - 5
 
     return true;
 }
