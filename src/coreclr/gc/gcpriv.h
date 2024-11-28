@@ -1740,7 +1740,7 @@ private:
     PER_HEAP_ISOLATED_METHOD size_t compute_basic_region_budgets(size_t heap_basic_budget_in_region_units[MAX_SUPPORTED_CPUS], size_t min_heap_basic_budget_in_region_units[MAX_SUPPORTED_CPUS], size_t total_basic_free_regions);
     PER_HEAP_ISOLATED_METHOD bool near_heap_hard_limit_p();
     PER_HEAP_ISOLATED_METHOD bool distribute_surplus_p(ptrdiff_t balance, int kind, bool aggressive_decommit_large_p);
-    PER_HEAP_ISOLATED_METHOD void decide_decommit_strategy(bool joined_last_gc_before_oom);
+    PER_HEAP_ISOLATED_METHOD void decide_on_decommit_strategy(bool joined_last_gc_before_oom);
 
     PER_HEAP_ISOLATED_METHOD void age_free_regions (const char* msg);
 

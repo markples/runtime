@@ -13616,7 +13616,7 @@ void gc_heap::distribute_free_regions()
         }
     }
 
-    decide_decommit_strategy(aggressive_decommit_large_p);
+    decide_on_decommit_strategy(aggressive_decommit_large_p);
 }
 
 void gc_heap::move_all_aged_regions(size_t total_num_free_regions[count_distributed_free_region_kinds], region_free_list aged_regions[count_free_region_kinds], bool joined_last_gc_before_oom)
@@ -13788,7 +13788,7 @@ bool gc_heap::distribute_surplus_p(ptrdiff_t balance, int kind, bool aggressive_
     return !aggressive_decommit_large_p;
 }
 
-void gc_heap::decide_decommit_strategy(bool joined_last_gc_before_oom)
+void gc_heap::decide_on_decommit_strategy(bool joined_last_gc_before_oom)
 {
 #ifdef MULTIPLE_HEAPS
 
