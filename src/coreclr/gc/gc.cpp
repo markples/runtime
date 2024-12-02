@@ -13338,6 +13338,49 @@ void gc_heap::age_free_regions (const char* msg)
     }
 }
 
+// distribute_free_regions is called during all blocking GCs and in the start of the BGC mark phase
+// unless we already called it during an ephemeral GC right before the BGC.
+//
+// Free regions are stored on the following permanent lists:
+// - global_regions_to_decommit
+// - global_free_huge_regions
+// - (per-heap) free_regions
+// and the following lists that are local to distribute_free_regions:
+// - aged_regions
+// - surplus_regions
+//
+// For reason_induced_aggressive GCs, we decommit all regions.  Therefore, the below description is
+// for other GC types.
+//
+// distribute_free_regions steps:
+//
+// 1. Process region ages
+//    a. Move all huge regions from free_regions to global_free_huge_regions.
+//       (The intention is that free_regions shouldn't contain any huge regions outside of the period
+//       where a GC reclaims them and distribute_free_regions moves them to global_free_huge_regions,
+//       though perhaps BGC can leave them there.  Future work could verify and assert this.)
+//    b. Move any basic region in global_regions_to_decommit (which means we intended to decommit them
+//       but haven't done so yet) to surplus_regions
+//    b. Move all huge regions that are past the age threshold from global_free_huge_regions to aged_regions
+//    c. Move all basic/large regions that are past the age threshold from free_regions to aged_regions
+// 2. Move all regions from aged_regions to global_regions_to_decommit.  Note that the intention is to
+//    combine this with move_highest_free_regions in a future change, which is why we don't just do this
+//    in steps 1b/1c.
+// 3. Compute the required per-heap budgets for SOH (basic regions) and the balance.  The budget for LOH
+//    (large/huge) is zero as we are using an entirely age-based approach.
+//        balance = (number of free regions) - budget
+// 4. Decide if we are going to distribute or decommit a nonzero balance.  To distribute, we adjust the
+//    per-heap budgets, so after this step the LOH (large/huge) budgets can be positive.
+//    a. A negative balance (deficit) must be distributed since decommitting a negative number of regions
+//       doesn't make sense.  A negative balance isn't possible for LOH since the budgets start at zero.
+//    b. For SOH (basic), we will decommit surplus regions unless we are in a foreground GC during BGC.
+//    c. For LOH (large/huge), we will distribute surplus regions since we are using an entirely age-based
+//       approach.  However, if we are in a high-memory-usage scenario, we will decommit.
+// 5. Implement the distribute-or-decommit strategy.  To distribute, we simply move regions across heaps,
+//    using surplus_regions as a holding space.  To decommit, for server GC we generally leave them on the
+//    global_regions_to_decommit list and decommit them over time.  However, in high-memory-usage scenarios,
+//    we will immediately decommit some or all of these regions.  For workstation GC, we decommit a limited
+//    amount and move the rest back to the (one) heap's free_list.
 void gc_heap::distribute_free_regions()
 {
 #ifdef MULTIPLE_HEAPS
